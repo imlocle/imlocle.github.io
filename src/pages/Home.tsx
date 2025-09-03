@@ -41,7 +41,7 @@ const Home = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           <a href="#contact" className="primary-button">Get In Touch</a>
-          <a href="/work" className="secondary-button">View My Work</a>
+          <a href="#work" className="secondary-button">View My Work</a>
         </motion.div>
       </motion.div>
       
