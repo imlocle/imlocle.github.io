@@ -1,11 +1,38 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal portfolio website built with React, TypeScript, and Vite. It's configured for deployment to GitHub Pages.
 
-Currently, two official plugins are available:
+## Deployment to GitHub Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is configured for easy deployment to GitHub Pages. You can deploy it in two ways:
+
+### Manual Deployment
+
+To manually deploy the website to GitHub Pages:
+
+1. Run the deployment script:
+   ```bash
+   npm run deploy
+   ```
+
+2. This will build the project and push it to the `gh-pages` branch of your repository.
+
+### Automated Deployment
+
+The project includes a GitHub Actions workflow that automatically deploys the website whenever changes are pushed to the main branch:
+
+1. Push your changes to the main branch:
+   ```bash
+   git push origin main
+   ```
+
+2. GitHub Actions will automatically build and deploy your website to GitHub Pages.
+
+### First-time Setup
+
+1. Create a GitHub repository named `imlocle.github.io`
+2. Push your code to the repository
+3. In your repository settings, ensure GitHub Pages is configured to deploy from the `gh-pages` branch
 
 ## Expanding the ESLint configuration
 
