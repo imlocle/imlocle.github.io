@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import '../styles/About.css';
 import profilePhoto from '../assets/loc_headshot.jpg';
+import SkillCategory from '../components/SkillCategory';
 
 const About = () => {
   return (
@@ -74,143 +75,11 @@ const About = () => {
         viewport={{ once: true }}
       >
         <h2 className="section-title">Technical Skills</h2>
-        
         <div className="skills-container">
-          <div className="skill-category">
-            <h3>Languages</h3>
-            <ul className="skills-list">
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >TypeScript</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >Python</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >JavaScript</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >C#</motion.li>
-            </ul>
-          </div>
-
-          <div className="skill-category">
-            <h3>Infrastructure</h3>
-            <ul className="skills-list">
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >AWS SAM</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >Serverless Framework</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >Serverless Stack</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >Terraform</motion.li>
-            </ul>
-          </div>
-          <div className="skill-category">
-            <h3>APIs & Frameworks</h3>
-            <ul className="skills-list">
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >AWS API Gateway</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >FastAPI</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >Flask</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >Django</motion.li>
-            </ul>
-          </div>
-          
-          <div className="skill-category">
-            <h3>Databases</h3>
-            <ul className="skills-list">
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >AWS DynamoDB</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >MongoDB</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >NoSQL</motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >SQL</motion.li>
-            </ul>
-          </div>
-          
+          <SkillCategory category="Languages" skills={['TypeScript', 'Python', 'JavaScript', 'C#']} />
+          <SkillCategory category="Infrastructure" skills={['AWS SAM', 'Serverless Framework', 'Serverless Stack', 'Terraform']} />
+          <SkillCategory category="APIs & Frameworks" skills={['AWS API Gateway', 'FastAPI', 'Flask', 'Django']} />
+          <SkillCategory category="Databases" skills={['AWS DynamoDB', 'MongoDB', 'NoSQL', 'SQL']} />
         </div>
       </motion.div>
     </div>
