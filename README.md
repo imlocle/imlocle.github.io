@@ -2,6 +2,27 @@
 
 This is a personal portfolio website built with React, TypeScript, and Vite. It's configured for deployment to GitHub Pages.
 
+## Requirements
+
+- Node.js 22.12.0 or later
+- npm (comes with Node.js)
+
+## MIME Type Issue Solution
+
+If you encounter MIME type errors when loading JavaScript files (e.g., "Refused to execute script because its MIME type is text/html"), this is typically caused by GitHub Pages serving the files with incorrect content types. To fix this:
+
+1. Ensure your `vite.config.ts` includes the correct base path:
+   ```ts
+   export default defineConfig({
+     base: './',
+     // other config options
+   });
+   ```
+
+2. Make sure all script and asset references use relative paths
+
+3. Add a `.nojekyll` file to the root of your `gh-pages` branch to prevent GitHub's Jekyll processor from interfering with your build files
+
 ## Deployment to GitHub Pages
 
 This project is configured for easy deployment to GitHub Pages. You can deploy it in two ways:
