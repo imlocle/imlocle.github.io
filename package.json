@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy:token": "gh-pages -d dist -r https://${GH_TOKEN}@github.com/imlocle/imlocle.github.io.git"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
