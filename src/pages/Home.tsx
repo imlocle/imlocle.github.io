@@ -12,60 +12,62 @@ import { POSITION_TITLE } from '../utils/constants';
 const Home = () => {
   return (
     <div className="home-container">
-      <motion.div 
-        className="hero-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.h1 
-          className="hero-title"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Hi, I'm <span className="highlight">Loc Le</span>
-        </motion.h1>
-
-        <motion.h2 
-          className="position-title"
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          {POSITION_TITLE}
-        </motion.h2>
-        
-        <motion.p 
-          className="hero-subtitle"
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          Building robust and scalable solutions
-        </motion.p>
-        
-        <motion.div
-          className="cta-buttons"
+      <div className='hero-container'>
+        <motion.div 
+          className="hero-section"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-        >
-          <Link to="/contact" className="primary-button">Get In Touch</Link>
-          <Link to="/work" className="secondary-button">View My Work</Link>
+          transition={{ duration: 0.8 }}
+          >
+          <motion.h1 
+            className="hero-title"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            >
+            Hi, I'm <span className="highlight">Loc Le</span>
+          </motion.h1>
+
+          <motion.h2 
+            className="position-title"
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            >
+            {POSITION_TITLE}
+          </motion.h2>
+          
+          <motion.p 
+            className="hero-subtitle"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            >
+            Building robust and scalable solutions
+          </motion.p>
+          
+          <motion.div
+            className="cta-buttons"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            >
+            <Link to="/contact" className="primary-button">Get In Touch</Link>
+            <Link to="/work" className="secondary-button">View My Work</Link>
+          </motion.div>
         </motion.div>
-      </motion.div>
-      
-      <motion.div 
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        whileHover={{ y: 10 }}
-      >
-        <p>Scroll Down</p>
-        <div className="arrow-down"></div>
-      </motion.div>
+        
+        <motion.div 
+          className="scroll-indicator"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          whileHover={{ y: 10 }}
+          >
+          <p>Scroll Down</p>
+          <div className="arrow-down"></div>
+        </motion.div>
+      </div>
       
       <motion.section 
         className="skills-section"
@@ -73,7 +75,7 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
-      >
+        >
         <h2 className="section-title">What I Do</h2>
         
         <div className="skills-grid">
