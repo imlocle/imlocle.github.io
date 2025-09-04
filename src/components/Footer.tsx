@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
-// Import icons for GitHub and LinkedIn
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,10 +29,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Connect</h3>
           <div className="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href={GITHUB_LINK} target="_blank" rel="noopener noreferrer" className="social-link">
               <FaGithub className="social-icon" /> GitHub
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="social-link">
               <FaLinkedin className="social-icon" /> LinkedIn
             </a>
           </div>

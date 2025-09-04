@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
 import '../styles/Contact.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
 
 const Contact = () => {
   return (
@@ -56,10 +57,10 @@ const Contact = () => {
             <div className="contact-item">
               <h3>Social</h3>
               <div className="social-links">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link-contact">
+                <a href={GITHUB_LINK} target="_blank" rel="noopener noreferrer" className="social-link-contact">
                   <FaGithub className="social-icon-contact" /> GitHub
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-contact">
+                <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="social-link-contact">
                   <FaLinkedin className="social-icon-contact" /> LinkedIn
                 </a>
               </div>
