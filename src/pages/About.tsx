@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import '../styles/About.css';
 import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
+import { POSITION_TITLE } from '../utils/constants';
 
 const About = () => {
   return (
@@ -48,9 +49,9 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Backend Software Engineer</h2>
+          <h2>{POSITION_TITLE}</h2>
           <p>
-            I'm a passionate backend software engineer with expertise in building robust and scalable server-side applications. 
+            I'm a passionate backend cloud engineer with expertise in building robust and scalable server-side applications. 
             With a strong foundation in computer science and years of experience in the industry, I specialize in creating 
             efficient, maintainable, and high-performance backend systems.
           </p>

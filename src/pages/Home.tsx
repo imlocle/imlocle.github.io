@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import '../styles/Home.css';
 import { FaServer, FaAws, FaCode } from 'react-icons/fa';
 import { SiTerraform, SiServerless, SiAwslambda } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import neptuneLogo from '../assets/neptune-logo.svg';
 import company3Logo from '../assets/company3.svg';
 import company4Logo from '../assets/company4.svg';
+import { POSITION_TITLE } from '../utils/constants';
 
 const Home = () => {
   return (
@@ -24,14 +26,23 @@ const Home = () => {
         >
           Hi, I'm <span className="highlight">Loc Le</span>
         </motion.h1>
+
+        <motion.h2 
+          className="position-title"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          {POSITION_TITLE}
+        </motion.h2>
         
         <motion.p 
           className="hero-subtitle"
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Backend Software Engineer building robust and scalable solutions
+          Building robust and scalable solutions
         </motion.p>
         
         <motion.div
@@ -40,8 +51,8 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <a href="#contact" className="primary-button">Get In Touch</a>
-          <a href="#work" className="secondary-button">View My Work</a>
+          <Link to="/contact" className="primary-button">Get In Touch</Link>
+          <Link to="/work" className="secondary-button">View My Work</Link>
         </motion.div>
       </motion.div>
       

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
+import { GITHUB_LINK, LINKEDIN_LINK, POSITION_TITLE } from '../utils/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Loc Le</h3>
           <p className="footer-description">
-            Backend Software Engineer looking to explore.
+            {POSITION_TITLE} looking to explore.
           </p>
         </div>
         
