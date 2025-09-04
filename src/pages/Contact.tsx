@@ -3,11 +3,14 @@ import ContactForm from '../components/ContactForm';
 import '../styles/Contact.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
+  const { pathname } = useLocation();
   return (
     <div id="contact" className="contact-container">
       <motion.div 
+        key={pathname}
         className="contact-header"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import '../styles/Work.css';
+import { useLocation } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -11,7 +12,7 @@ interface Project {
 }
 
 const Work = () => {
-  // Sample projects data - replace with your actual projects
+  const { pathname } = useLocation();
   const projects: Project[] = [
     {
       id: 1,
@@ -46,6 +47,7 @@ const Work = () => {
   return (
     <div className="work-container">
       <motion.div 
+        key={pathname}
         className="work-header"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -78,7 +80,7 @@ const Work = () => {
       <div className="projects-grid">
         {projects.map((project, index) => (
           <motion.div 
-            key={project.id}
+            key={pathname + project.id}
             className="project-card"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

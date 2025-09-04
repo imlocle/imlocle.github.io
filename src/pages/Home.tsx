@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import '../styles/Home.css';
 import { FaServer, FaAws, FaCode } from 'react-icons/fa';
 import { SiTerraform, SiServerless, SiAwslambda } from 'react-icons/si';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import neptuneLogo from '../assets/neptune-logo.svg';
 import company3Logo from '../assets/company3.svg';
@@ -10,10 +10,12 @@ import company4Logo from '../assets/company4.svg';
 import { POSITION_TITLE } from '../utils/constants';
 
 const Home = () => {
+  const { pathname } = useLocation();
   return (
     <div className="home-container">
-      <div className='hero-container'>
+      <div className='background'>
         <motion.div 
+          key={pathname}
           className="hero-section"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

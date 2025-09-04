@@ -4,21 +4,25 @@ import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
 import { POSITION_TITLE } from '../utils/constants';
 
+import { useLocation } from 'react-router-dom';
+
 const About = () => {
+  const { pathname } = useLocation();
   return (
     <div className="about-container">
       <motion.div 
+        key={pathname}
         className="about-header"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-      >
+        >
         <motion.h1 
           className="about-title"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-        >
+          >
           About Me
         </motion.h1>
         <motion.div 
@@ -26,7 +30,7 @@ const About = () => {
           initial={{ width: 0 }}
           animate={{ width: '80px' }}
           transition={{ delay: 0.5, duration: 0.8 }}
-        />
+          />
       </motion.div>
       
       <div className="about-content">
@@ -36,7 +40,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-        >
+          >
           <div className="about-image-placeholder">
             <img src={profilePhoto} alt="Profile" className="profile-photo" />
           </div>
@@ -48,7 +52,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-        >
+          >
           <h2>{POSITION_TITLE}</h2>
           <p>
             I'm a passionate backend cloud engineer with expertise in building robust and scalable server-side applications. 
