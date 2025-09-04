@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion';
 import '../styles/Work.css';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import neptuneLogo from '../assets/neptune-logo.svg';
+import downloadOnAppStore from '../assets/download-on-the-app-store.svg';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   technologies: string[];
-  image: string;
+  image?: string;
   link?: string;
+  appStore?: string;
 }
 
 const Work = () => {
@@ -16,31 +19,33 @@ const Work = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'The Neptune App',
-      description: 'A scalable backend system for an e-commerce platform with inventory management, order processing, and payment integration.',
-      technologies: ['AWS', 'Node.js', 'Python', 'TypeScript'],
-      image: 'project1.jpg'
+      title: 'Neptune - Be Yourself',
+      description: 'A video-based social media platform for artists, entertainers, and dreamers.',
+      technologies: ['AWS', 'Python', 'TypeScript', "Node.js", "Terraform"],
+      image: neptuneLogo,
+      link: "https://www.theneptuneapp.com/",
+      appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224"
     },
     {
       id: 2,
       title: 'Alfred: The Chatbot',
       description: 'A real-time messaging API with WebSocket integration, message persistence, and user presence tracking.',
       technologies: ['Python', 'Django', 'PostgreSQL', 'WebSockets'],
-      image: 'project2.jpg'
+      // image: 'project2.jpg'
     },
     {
       id: 3,
       title: 'Content Management System',
       description: 'A headless CMS with a RESTful API for content delivery, user management, and media handling.',
       technologies: ['Java', 'Spring Boot', 'MySQL', 'AWS S3'],
-      image: 'project3.jpg'
+      // image: 'project3.jpg'
     },
     {
       id: 4,
       title: 'Data Analytics Pipeline',
       description: 'An ETL pipeline for processing and analyzing large datasets with visualization capabilities.',
       technologies: ['Python', 'Apache Airflow', 'Pandas', 'PostgreSQL'],
-      image: 'project4.jpg'
+      // image: 'project4.jpg'
     }
   ];
 
@@ -89,9 +94,17 @@ const Work = () => {
             whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
           >
             <div className="project-image-container">
-              <div className="project-image-placeholder">
-                <span>{project.title}</span>
-              </div>
+              {project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="project-image" 
+                />
+              ) : (
+                <div className="project-image-placeholder">
+                  <span>{project.title}</span>
+                </div>
+              )}
             </div>
             <div className="project-content">
               <h3 className="project-title">{project.title}</h3>
@@ -102,16 +115,36 @@ const Work = () => {
                 ))}
               </div>
               <div className="project-links">
-                <a href={project.link || '#'} className="project-link" target="_blank" rel="noopener noreferrer">
-                  View Project
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project
+                  </a>
+                )}
+                {project.appStore && (
+                  <a
+                    href={project.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={downloadOnAppStore}
+                      alt="Download on the App Store"
+                      className="app-store-badge"
+                    />
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>
         ))}
       </div>
       
-      {/* <motion.div 
+      <motion.div 
         className="contact-cta"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -120,8 +153,8 @@ const Work = () => {
       >
         <h2>Interested in working together?</h2>
         <p>I'm always open to discussing new projects and opportunities.</p>
-        <a href="#contact" className="contact-button">Get In Touch</a>
-      </motion.div> */}
+        <Link to="/contact" className="contact-button">Get In Touch</Link>
+      </motion.div>
     </div>
   );
 };

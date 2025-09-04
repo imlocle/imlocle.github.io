@@ -59,6 +59,15 @@
   font-size: 1.2rem;
 }
 
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* show the full image without cropping */
+  display: block;
+  background-color: #f8fafc; /* optional: neutral background behind image */
+  padding: 0.5rem; /* optional: small padding so image doesn't touch edges */
+}
+
 .project-content {
   padding: 2rem;
 }
@@ -94,6 +103,7 @@
 .project-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .project-link {
@@ -110,6 +120,15 @@
 .project-link:hover {
   background-color: #1e40af; /* Slightly lighter blue */
   transform: translateY(-2px);
+}
+
+.app-store-badge {
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.app-store-badge:hover {
+  transform: scale(1.05);
 }
 
 .contact-cta {
