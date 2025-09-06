@@ -4,7 +4,8 @@ import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
 import { POSITION_TITLE } from '../utils/constants';
 
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import GetInTouch from '../components/GetInTouch';
 
 const About = () => {
   const { pathname } = useLocation();
@@ -81,12 +82,13 @@ const About = () => {
       >
         <h2 className="section-title">Technical Skills</h2>
         <div className="skills-container">
-          <SkillCategory category="Languages" skills={['TypeScript', 'Python', 'JavaScript', 'C#']} />
+          <SkillCategory category="Languages" skills={['Python', 'TypeScript', 'JavaScript', 'C#']} />
           <SkillCategory category="Infrastructure" skills={['AWS SAM', 'Serverless Framework', 'Serverless Stack', 'Terraform']} />
           <SkillCategory category="APIs & Frameworks" skills={['AWS API Gateway', 'FastAPI', 'Flask', 'Django']} />
           <SkillCategory category="Databases" skills={['AWS DynamoDB', 'MongoDB', 'NoSQL', 'SQL']} />
         </div>
       </motion.div>
+      <GetInTouch />
     </div>
   );
 };

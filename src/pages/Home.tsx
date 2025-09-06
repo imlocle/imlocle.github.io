@@ -4,16 +4,18 @@ import { FaServer, FaAws, FaCode } from 'react-icons/fa';
 import { SiTerraform, SiServerless, SiAwslambda } from 'react-icons/si';
 import { Link, useLocation } from 'react-router-dom';
 import raxLogo from '../assets/rax-logo-2020.svg';
-import neptuneLogo from '../assets/neptune-logo.svg';
-import company3Logo from '../assets/company3.svg';
-import company4Logo from '../assets/company4.svg';
+import neptuneLogo from '../assets/neptune-logo2.png';
+import mdsLogo from '../assets/mds-logo.png';
+import wayviaLogo from '../assets/wayvia-logo.svg';
 import { POSITION_TITLE } from '../utils/constants';
+import GetInTouch from '../components/GetInTouch';
+// import Testimonials from '../components/Testimonials';
 
 const Home = () => {
   const { pathname } = useLocation();
   return (
     <div className="home-container">
-      <div className='background'>
+      <div className='hero-container'>
         <motion.div 
           key={pathname}
           className="hero-section"
@@ -161,6 +163,8 @@ const Home = () => {
         </div>
       </motion.section>
 
+      {/* <Testimonials /> */}
+
       <motion.section 
         className="companies-section"
         initial={{ opacity: 0, y: 50 }}
@@ -168,31 +172,34 @@ const Home = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="section-title">Companies I've Worked With</h2>
+        <h2 className="section-title">Who I've Worked With</h2>
         
         <div className="companies-grid">
-          <motion.div 
+          <Link to="https://www.neptuneapp.com/" target="_blank" rel="noopener noreferrer">
+            <motion.div 
             className="company-logo"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-          >
-            <img src={raxLogo} alt="Rackspace Technology" />
-          </motion.div>
-          
-          <motion.div 
-            className="company-logo"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5}}
             viewport={{ once: true }}
             whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
           >
             <img src={neptuneLogo} alt="The Neptune App" />
           </motion.div>
-          
+          </Link>
+          <Link to="https://www.rackspace.com/" target="_blank" rel="noopener noreferrer">
+          <motion.div 
+            className="company-logo"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2  }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
+          >
+              <img src={raxLogo} alt="Rackspace Technology" />
+          </motion.div>
+          </Link>
+          <Link to="https://www.methoddatascience.com/" target="_blank" rel="noopener noreferrer">
           <motion.div 
             className="company-logo"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -201,9 +208,10 @@ const Home = () => {
             viewport={{ once: true }}
             whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
           >
-            <img src={company3Logo} alt="Company 3" />
+            <img src={mdsLogo} alt="Method Data Science" />
           </motion.div>
-          
+          </Link>
+          <Link to="https://www.wayvia.com/" target="_blank" rel="noopener noreferrer">
           <motion.div 
             className="company-logo"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -212,9 +220,11 @@ const Home = () => {
             viewport={{ once: true }}
             whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
           >
-            <img src={company4Logo} alt="Company 4" />
+            <img src={wayviaLogo} alt="Wayvia: Formerly PriceSpider" />
           </motion.div>
+          </Link>
         </div>
+        <GetInTouch />
       </motion.section>
     </div>
   );

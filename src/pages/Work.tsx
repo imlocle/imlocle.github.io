@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import '../styles/Work.css';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import neptuneLogo from '../assets/neptune-logo.svg';
+import llLogo from '../assets/ll-logo.png';
 import downloadOnAppStore from '../assets/download-on-the-app-store.svg';
+import GetInTouch from '../components/GetInTouch';
 
 interface Project {
   id: number;
@@ -28,25 +30,26 @@ const Work = () => {
     },
     {
       id: 2,
-      title: 'Alfred: The Chatbot',
-      description: 'A real-time messaging API with WebSocket integration, message persistence, and user presence tracking.',
-      technologies: ['Python', 'Django', 'PostgreSQL', 'WebSockets'],
-      // image: 'project2.jpg'
+      title: 'Portfolio Website',
+      description: 'My current personal portfolio website that you are seeing',
+      technologies: ['TypeScript', 'React', "Node.js", 'Vite', 'GenAI', "TRAE"],
+      image: llLogo,
+      link: "/",
     },
-    {
-      id: 3,
-      title: 'Content Management System',
-      description: 'A headless CMS with a RESTful API for content delivery, user management, and media handling.',
-      technologies: ['Java', 'Spring Boot', 'MySQL', 'AWS S3'],
-      // image: 'project3.jpg'
-    },
-    {
-      id: 4,
-      title: 'Data Analytics Pipeline',
-      description: 'An ETL pipeline for processing and analyzing large datasets with visualization capabilities.',
-      technologies: ['Python', 'Apache Airflow', 'Pandas', 'PostgreSQL'],
-      // image: 'project4.jpg'
-    }
+    // {
+    //   id: 3,
+    //   title: 'Content Management System',
+    //   description: 'A headless CMS with a RESTful API for content delivery, user management, and media handling.',
+    //   technologies: ['Java', 'Spring Boot', 'MySQL', 'AWS S3'],
+    //   // image: 'project3.jpg'
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Data Analytics Pipeline',
+    //   description: 'An ETL pipeline for processing and analyzing large datasets with visualization capabilities.',
+    //   technologies: ['Python', 'Apache Airflow', 'Pandas', 'PostgreSQL'],
+    //   // image: 'project4.jpg'
+    // }
   ];
 
   return (
@@ -143,18 +146,7 @@ const Work = () => {
           </motion.div>
         ))}
       </div>
-      
-      <motion.div 
-        className="contact-cta"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2>Interested in working together?</h2>
-        <p>I'm always open to discussing new projects and opportunities.</p>
-        <Link to="/contact" className="contact-button">Get In Touch</Link>
-      </motion.div>
+      <GetInTouch />
     </div>
   );
 };

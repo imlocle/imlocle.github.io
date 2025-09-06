@@ -4,6 +4,19 @@
   min-height: 100vh;
 }
 
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 90vh; /* same as hero-section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: white;
+  overflow: hidden;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
