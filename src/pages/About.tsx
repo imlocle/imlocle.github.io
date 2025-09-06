@@ -4,7 +4,7 @@ import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
 import { POSITION_TITLE } from '../utils/constants';
 
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import GetInTouch from '../components/GetInTouch';
 
 const About = () => {

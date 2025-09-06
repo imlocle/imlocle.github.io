@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonials = () => {
-  const visibleCount = 3; // show 3 at a time
+  // const visibleCount = 3; // show 3 at a time
   const [index, setIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const total = testimonials.length;
