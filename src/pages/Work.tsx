@@ -24,7 +24,7 @@ const Work = () => {
       id: 1,
       title: 'Neptune - Be Yourself',
       description: 'A video-based social media platform for artists, entertainers, and dreamers.',
-      technologies: ['AWS', 'Python', 'TypeScript', "Node.js", "Terraform"],
+      technologies: ['AWS SAM', 'Python', 'TypeScript', "Node.js", "Terraform"],
       image: neptuneLogo,
       link: "https://www.theneptuneapp.com/",
       appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224"
@@ -33,17 +33,17 @@ const Work = () => {
       id: 2,
       title: 'Portfolio Website',
       description: 'My current personal portfolio website that you are seeing',
-      technologies: ['TypeScript', 'React', "Node.js", 'Vite', 'GenAI', "TRAE"],
+      technologies: ["React",'TypeScript', "Node.js", 'Vite', 'GenAI', "TRAE"],
       image: llLogo,
-      link: "/",
+      link: "https://github.com/imlocle/imlocle.github.io",
     },
     {
       id: 3,
       title: 'Alfred - AI Chatbot',
       description: 'An AI chatbot using AWS Bedrock and Python that answers questions about Loc.',
       technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
+      image: alfredLogo,
       link: "https://github.com/imlocle/alfred-chatbot",
-      image: alfredLogo
     },
     // {
     //   id: 4,
