@@ -3,6 +3,7 @@ import '../styles/Work.css';
 import { useLocation } from 'react-router-dom';
 import neptuneLogo from '../assets/neptune-logo.svg';
 import llLogo from '../assets/ll-logo.png';
+import alfredLogo from "../assets/alfred-logo.png";
 import downloadOnAppStore from '../assets/download-on-the-app-store.svg';
 import GetInTouch from '../components/GetInTouch';
 
@@ -36,13 +37,14 @@ const Work = () => {
       image: llLogo,
       link: "/",
     },
-    // {
-    //   id: 3,
-    //   title: 'Content Management System',
-    //   description: 'A headless CMS with a RESTful API for content delivery, user management, and media handling.',
-    //   technologies: ['Java', 'Spring Boot', 'MySQL', 'AWS S3'],
-    //   // image: 'project3.jpg'
-    // },
+    {
+      id: 3,
+      title: 'Alfred - AI Chatbot',
+      description: 'An AI chatbot using AWS Bedrock and Python that answers questions about Loc.',
+      technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
+      link: "https://github.com/imlocle/alfred-chatbot",
+      image: alfredLogo
+    },
     // {
     //   id: 4,
     //   title: 'Data Analytics Pipeline',

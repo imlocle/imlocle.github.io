@@ -7,6 +7,7 @@ import Work from './pages/Work';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
+import AlfredChat from './components/AlfredChat';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+      <AlfredChat />
       </div>
     </Router>
   );
