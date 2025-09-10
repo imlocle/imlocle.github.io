@@ -3,6 +3,7 @@
   bottom: 20px;
   right: 20px;
   font-family: "Roboto", sans-serif;
+  z-index: 2147483647;
 }
 
 .chat-toggle {
