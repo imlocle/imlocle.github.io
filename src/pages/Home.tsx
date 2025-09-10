@@ -175,7 +175,7 @@ const Home = () => {
         <h2 className="section-title">Who I've Worked With</h2>
         
         <div className="companies-grid">
-          <Link to="https://www.neptuneapp.com/" target="_blank" rel="noopener noreferrer">
+          <Link to="https://www.theneptuneapp.com/" target="_blank" rel="noopener noreferrer">
             <motion.div 
             className="company-logo"
             initial={{ opacity: 0, scale: 0.8 }}
