@@ -3,8 +3,6 @@ import '../styles/AlfredChat.css';
 import ReactMarkdown from "react-markdown";
 import alfredLogo from "../assets/alfred-logo.png";
 
-const API_URL = "https://2aejjgalef.execute-api.us-west-1.amazonaws.com/ask"
-
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -37,7 +35,7 @@ const AlfredChat: React.FC = () => {
     setInput("");
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: input }),
@@ -61,10 +59,11 @@ const AlfredChat: React.FC = () => {
     <div className="alfred-chat">
       {isOpen ? (
         <div className="chat-window">
-          <div className="chat-header">
-            <span>Alfred</span>
-            <button className="close-btn" onClick={toggleChat}>x</button>
-          </div>
+          <button className="close-btn" onClick={toggleChat}>
+            <div className="chat-header">
+              <span>Alfred</span>
+            </div>
+          </button>
           <div className="chat-messages">
             {messages.map((msg, idx) => (
               <div

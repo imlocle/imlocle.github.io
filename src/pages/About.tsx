@@ -56,19 +56,16 @@ const About = () => {
           >
           <h2>{POSITION_TITLE}</h2>
           <p>
-            I'm a passionate backend cloud engineer with expertise in building robust and scalable server-side applications. 
-            With a strong foundation in computer science and years of experience in the industry, I specialize in creating 
-            efficient, maintainable, and high-performance backend systems.
+            I'm a backend cloud engineer based in Las Vegas, NV, specializing in building reliable and efficient server-side systems on AWS. I focus on creating high-performance, maintainable solutions that scale as applications grow.
           </p>
           <p>
-            My journey in software engineering began with a deep curiosity about how systems work behind the scenes. 
-            This curiosity led me to focus on backend development, where I've had the opportunity to work on various 
-            challenging projects that have honed my skills in designing and implementing complex systems.
+            Beyond backend development, I explore AI projects and how they can be applied to real-world problems. I'm also a sim racing enthusiast, where I combine my love for technology and motorsports with projects that integrate racing data and cloud engineering.
           </p>
           <p>
-            I'm constantly learning and staying updated with the latest technologies and best practices in the field. 
-            I believe in writing clean, well-documented code and following software development principles that ensure 
-            long-term maintainability and scalability.
+            I'm fluent in Vietnamese and bring a global perspective from studying abroad in Vietnam and teaching in Japan. These experiences have shaped my adaptability and ability to collaborate across cultures and time zones.
+          </p>
+          <p>
+            I believe in writing clean, well-documented code, staying curious about emerging technologies, and continually learning to grow as an engineer.
           </p>
         </motion.div>
       </div>
@@ -83,8 +80,9 @@ const About = () => {
         <h2 className="section-title">Technical Skills</h2>
         <div className="skills-container">
           <SkillCategory category="Languages" skills={['Python', 'TypeScript', 'JavaScript', 'C#']} />
-          <SkillCategory category="Infrastructure" skills={['AWS SAM', 'Serverless Framework', 'Serverless Stack', 'Terraform']} />
-          <SkillCategory category="APIs & Frameworks" skills={['AWS API Gateway', 'FastAPI', 'Flask', 'Django']} />
+          <SkillCategory category="AI & Machine Learning" skills={['AWS Bedrock', 'LLMs', 'AI Chatbots', 'AI Agents']} />
+          <SkillCategory category="Infrastructure" skills={['AWS CloudFormation', 'Serverless Framework', 'Serverless Stack', 'Terraform']} />
+          <SkillCategory category="APIs & Frameworks" skills={['AWS API Gateway', 'FastAPI', 'Flask', '.NET']} />
           <SkillCategory category="Databases" skills={['AWS DynamoDB', 'MongoDB', 'NoSQL', 'SQL']} />
         </div>
       </motion.div>
