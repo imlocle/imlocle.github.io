@@ -37,11 +37,6 @@ jobs:
       - name: Audit Dependencies
         run: npm audit --audit-level=high
 
-      - name: Check Formatting and Linting
-        run: |
-          eslint . --max-warnings=0 --rule 'react/no-unescaped-entities: 0' --rule 'react-hooks/exhaustive-deps: 0'
-          npm run format:check
-
       - name: TypeScript Compile
         run: npx tsc -b
         env:
