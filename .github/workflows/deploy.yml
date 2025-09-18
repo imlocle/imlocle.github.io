@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # Updated to latest version
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4 # Updated to latest version
+        uses: actions/setup-node@v4
         with:
-          node-version: '22' # Match your local Node.js version
+          node-version: '22'
           cache: 'npm'
 
       - name: Check for API URL
@@ -28,8 +28,24 @@ jobs:
             exit 1
           fi
 
+      - name: Clear node_modules and package-lock.json
+        run: rm -rf node_modules package-lock.json
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+
+      - name: Audit Dependencies
+        run: npm audit --audit-level=high
+
+      - name: Check Formatting and Linting
+        run: |
+          npm run format:check
+          npm run lint:check
+
+      - name: TypeScript Compile
+        run: npx tsc -b
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
 
       - name: Build site
         run: npm run build
