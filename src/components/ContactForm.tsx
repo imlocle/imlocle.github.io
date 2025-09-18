@@ -87,7 +87,7 @@ const ContactForm = () => {
             );
           }
         })
-        .catch(_err => {
+        .catch(() => {
           setIsSubmitting(false);
           setSubmitError('An error occurred. Please try again.');
         });

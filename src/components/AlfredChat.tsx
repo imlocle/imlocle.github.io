@@ -3,6 +3,7 @@ import '../styles/AlfredChat.css';
 import ReactMarkdown from 'react-markdown';
 import alfredLogo from '../assets/alfred-logo.png';
 import { API_URL } from '../utils/constants';
+import sanitizeHtml from 'sanitize-html';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -81,7 +82,22 @@ const AlfredChat: React.FC = () => {
                       className="alfred-logo"
                     />
                     <div className="assistant-text">
-                      <ReactMarkdown>{msg.content}</ReactMarkdown>
+                      <ReactMarkdown>
+                        {sanitizeHtml(msg.content, {
+                          allowedTags: [
+                            'p',
+                            'strong',
+                            'em',
+                            'a',
+                            'ul',
+                            'ol',
+                            'li',
+                            'code',
+                            'pre',
+                          ],
+                          allowedAttributes: { a: ['href'] },
+                        })}
+                      </ReactMarkdown>
                     </div>
                   </div>
                 ) : (
