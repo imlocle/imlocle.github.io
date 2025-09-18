@@ -27,7 +27,7 @@
 }
 
 .footer-title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -95,7 +95,7 @@
     flex-direction: column;
     padding: 0 1rem;
   }
-  
+
   .footer-section {
     margin-bottom: 2rem;
   }

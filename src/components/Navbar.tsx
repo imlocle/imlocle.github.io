@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,22 +15,28 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <span className="logo-text">Loc Le</span>
         </Link>
         <div className="navbar-links">
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/work" className="nav-link">Work</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+          <Link to="/work" className="nav-link">
+            Work
+          </Link>
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
         </div>
       </div>
     </nav>

@@ -54,7 +54,7 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -72,15 +72,15 @@
   .navbar-container {
     padding: 1rem;
   }
-  
+
   .navbar-links {
     gap: 1rem;
   }
-  
+
   .logo-text {
     font-size: 1.2rem;
   }
-  
+
   .nav-link {
     font-size: 0.9rem;
   }

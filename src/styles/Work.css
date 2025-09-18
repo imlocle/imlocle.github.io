@@ -62,7 +62,7 @@
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* show the full image without cropping */
+  object-fit: contain; /* show the full image without cropping */
   display: block;
   background-color: #f8fafc; /* optional: neutral background behind image */
   padding: 0.5rem; /* optional: small padding so image doesn't touch edges */
@@ -174,11 +174,11 @@
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .project-image-container {
     height: 200px;
   }
-  
+
   .contact-cta {
     padding: 2rem 1rem;
   }
