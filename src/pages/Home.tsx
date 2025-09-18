@@ -1,16 +1,16 @@
-import { motion } from "framer-motion";
-import "../styles/Home.css";
-import { FaServer, FaAws, FaRobot, FaDatabase } from "react-icons/fa";
-import { SiTerraform, SiAwslambda } from "react-icons/si";
-import { Link, useLocation } from "react-router-dom";
-import raxLogo from "../assets/rax-logo-2020.svg";
-import neptuneLogo from "../assets/neptune-logo2.png";
-import mdsLogo from "../assets/mds-logo.png";
-import wayviaLogo from "../assets/wayvia-logo.svg";
-import { POSITION_TITLE } from "../utils/constants";
-import GetInTouch from "../components/GetInTouch";
-import SkillCard from "../components/SkillCard";
-import CompanyCard from "../components/CompanyCard";
+import { motion } from 'framer-motion';
+import '../styles/Home.css';
+import { FaServer, FaAws, FaRobot, FaDatabase } from 'react-icons/fa';
+import { SiTerraform, SiAwslambda } from 'react-icons/si';
+import { Link, useLocation } from 'react-router-dom';
+import raxLogo from '../assets/rax-logo-2020.svg';
+import neptuneLogo from '../assets/neptune-logo2.png';
+import mdsLogo from '../assets/mds-logo.png';
+import wayviaLogo from '../assets/wayvia-logo.svg';
+import { POSITION_TITLE } from '../utils/constants';
+import GetInTouch from '../components/GetInTouch';
+import SkillCard from '../components/SkillCard';
+import CompanyCard from '../components/CompanyCard';
 // import Testimonials from '../components/Testimonials';
 
 const Home = () => {

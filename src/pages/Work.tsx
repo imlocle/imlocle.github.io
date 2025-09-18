@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
-import "../styles/Work.css";
-import { useLocation } from "react-router-dom";
-import neptuneLogo from "../assets/neptune-logo.svg";
-import llLogo from "../assets/ll-logo.png";
-import alfredLogo from "../assets/alfred-logo.png";
-import downloadOnAppStore from "../assets/download-on-the-app-store.svg";
-import GetInTouch from "../components/GetInTouch";
+import { motion } from 'framer-motion';
+import '../styles/Work.css';
+import { useLocation } from 'react-router-dom';
+import neptuneLogo from '../assets/neptune-logo.svg';
+import llLogo from '../assets/ll-logo.png';
+import alfredLogo from '../assets/alfred-logo.png';
+import downloadOnAppStore from '../assets/download-on-the-app-store.svg';
+import GetInTouch from '../components/GetInTouch';
 
 interface Project {
   id: number;
@@ -22,31 +22,31 @@ const Work = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Neptune - Be Yourself",
+      title: 'Neptune - Be Yourself',
       description:
-        "A video-based social media platform for artists, entertainers, and dreamers.",
-      technologies: ["AWS SAM", "Python", "TypeScript", "Node.js", "Terraform"],
+        'A video-based social media platform for artists, entertainers, and dreamers.',
+      technologies: ['AWS SAM', 'Python', 'TypeScript', 'Node.js', 'Terraform'],
       image: neptuneLogo,
-      link: "https://www.theneptuneapp.com/",
+      link: 'https://www.theneptuneapp.com/',
       appStore:
-        "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
+        'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
     },
     {
       id: 2,
-      title: "Portfolio Website",
-      description: "My current personal portfolio website that you are seeing",
-      technologies: ["React", "TypeScript", "Node.js", "Vite", "GenAI", "TRAE"],
+      title: 'Portfolio Website',
+      description: 'My current personal portfolio website that you are seeing',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Vite', 'GenAI', 'TRAE'],
       image: llLogo,
-      link: "https://github.com/imlocle/imlocle.github.io",
+      link: 'https://github.com/imlocle/imlocle.github.io',
     },
     {
       id: 3,
-      title: "Alfred - AI Chatbot",
+      title: 'Alfred - AI Chatbot',
       description:
-        "An AI chatbot using AWS Bedrock and Python that answers questions about Loc.",
-      technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
+        'An AI chatbot using AWS Bedrock and Python that answers questions about Loc.',
+      technologies: ['AWS Bedrock', 'Lambda', 'Python', 'S3', 'Terraform'],
       image: alfredLogo,
-      link: "https://github.com/imlocle/alfred-chatbot",
+      link: 'https://github.com/imlocle/alfred-chatbot',
     },
     // {
     //   id: 4,
@@ -77,7 +77,7 @@ const Work = () => {
         <motion.div
           className="title-underline"
           initial={{ width: 0 }}
-          animate={{ width: "80px" }}
+          animate={{ width: '80px' }}
           transition={{ delay: 0.5, duration: 0.8 }}
         />
         <motion.p
@@ -99,7 +99,7 @@ const Work = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, amount: 0.2 }}
-            whileHover={{ y: -10, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)" }}
+            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
           >
             <div className="project-image-container">
               {project.image ? (

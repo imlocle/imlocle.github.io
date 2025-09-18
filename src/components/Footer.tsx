@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import "../styles/Footer.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { GITHUB_LINK, LINKEDIN_LINK, POSITION_TITLE } from "../utils/constants";
+import { Link } from 'react-router-dom';
+import '../styles/Footer.css';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK, POSITION_TITLE } from '../utils/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import "../styles/Testimonials.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from 'react';
+import '../styles/Testimonials.css';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 interface Testimonial {
   id: number;
@@ -14,38 +14,38 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Jane Doe",
-    role: "Product Manager",
-    text: "Loc is an exceptional developer who always goes above and beyond.",
-    image: "/assets/testimonial1.jpg",
+    name: 'Jane Doe',
+    role: 'Product Manager',
+    text: 'Loc is an exceptional developer who always goes above and beyond.',
+    image: '/assets/testimonial1.jpg',
   },
   {
     id: 2,
-    name: "John Smith",
-    role: "CTO",
-    text: "Working with Loc was a fantastic experience. Highly recommend!",
-    image: "/assets/testimonial2.jpg",
+    name: 'John Smith',
+    role: 'CTO',
+    text: 'Working with Loc was a fantastic experience. Highly recommend!',
+    image: '/assets/testimonial2.jpg',
   },
   {
     id: 3,
-    name: "Alice Johnson",
-    role: "UX Designer",
-    text: "The projects were delivered on time and exceeded expectations.",
-    image: "/assets/testimonial3.jpg",
+    name: 'Alice Johnson',
+    role: 'UX Designer',
+    text: 'The projects were delivered on time and exceeded expectations.',
+    image: '/assets/testimonial3.jpg',
   },
   {
     id: 4,
-    name: "Michael Brown",
-    role: "CEO",
-    text: "Loc brings professionalism, skill, and creativity to every project.",
-    image: "/assets/testimonial4.jpg",
+    name: 'Michael Brown',
+    role: 'CEO',
+    text: 'Loc brings professionalism, skill, and creativity to every project.',
+    image: '/assets/testimonial4.jpg',
   },
   {
     id: 5,
-    name: "Sarah Lee",
-    role: "Engineer",
-    text: "Truly a pleasure to work with. Consistently high quality work.",
-    image: "/assets/testimonial5.jpg",
+    name: 'Sarah Lee',
+    role: 'Engineer',
+    text: 'Truly a pleasure to work with. Consistently high quality work.',
+    image: '/assets/testimonial5.jpg',
   },
 ];
 
@@ -63,7 +63,7 @@ const Testimonials = () => {
     const cardWidth = card.clientWidth + 24; // 24px gap
     container.scrollTo({
       left: newIndex * cardWidth,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 

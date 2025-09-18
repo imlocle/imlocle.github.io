@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
-import "../styles/About.css";
-import profilePhoto from "../assets/loc_headshot.jpg";
-import SkillCategory from "../components/SkillCategory";
-import { POSITION_TITLE } from "../utils/constants";
+import { motion } from 'framer-motion';
+import '../styles/About.css';
+import profilePhoto from '../assets/loc_headshot.jpg';
+import SkillCategory from '../components/SkillCategory';
+import { POSITION_TITLE } from '../utils/constants';
 
-import { useLocation } from "react-router-dom";
-import GetInTouch from "../components/GetInTouch";
+import { useLocation } from 'react-router-dom';
+import GetInTouch from '../components/GetInTouch';
 
 const About = () => {
   const { pathname } = useLocation();
@@ -29,7 +29,7 @@ const About = () => {
         <motion.div
           className="title-underline"
           initial={{ width: 0 }}
-          animate={{ width: "80px" }}
+          animate={{ width: '80px' }}
           transition={{ delay: 0.5, duration: 0.8 }}
         />
       </motion.div>
@@ -92,28 +92,28 @@ const About = () => {
         <div className="skills-container">
           <SkillCategory
             category="Languages"
-            skills={["Python", "TypeScript", "JavaScript", "C#"]}
+            skills={['Python', 'TypeScript', 'JavaScript', 'C#']}
           />
           <SkillCategory
             category="AI & Machine Learning"
-            skills={["AWS Bedrock", "LLMs", "AI Chatbots", "AI Agents"]}
+            skills={['AWS Bedrock', 'LLMs', 'AI Chatbots', 'AI Agents']}
           />
           <SkillCategory
             category="Infrastructure"
             skills={[
-              "AWS CloudFormation",
-              "Serverless Framework",
-              "Serverless Stack",
-              "Terraform",
+              'AWS CloudFormation',
+              'Serverless Framework',
+              'Serverless Stack',
+              'Terraform',
             ]}
           />
           <SkillCategory
             category="APIs & Frameworks"
-            skills={["AWS API Gateway", "FastAPI", "Flask", ".NET"]}
+            skills={['AWS API Gateway', 'FastAPI', 'Flask', '.NET']}
           />
           <SkillCategory
             category="Databases"
-            skills={["AWS DynamoDB", "MongoDB", "NoSQL", "SQL"]}
+            skills={['AWS DynamoDB', 'MongoDB', 'NoSQL', 'SQL']}
           />
         </div>
       </motion.div>

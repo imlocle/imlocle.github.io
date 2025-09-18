@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import type { IconType } from "react-icons";
+import { motion } from 'framer-motion';
+import type { IconType } from 'react-icons';
 
 const SkillCard = ({
   icon,
@@ -13,7 +13,7 @@ const SkillCard = ({
   return (
     <motion.div
       className="skill-card"
-      whileHover={{ y: -10, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)" }}
+      whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}

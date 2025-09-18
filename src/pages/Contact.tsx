@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import ContactForm from "../components/ContactForm";
-import "../styles/Contact.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { GITHUB_LINK, LINKEDIN_LINK } from "../utils/constants";
-import { useLocation } from "react-router-dom";
+import { motion } from 'framer-motion';
+import ContactForm from '../components/ContactForm';
+import '../styles/Contact.css';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
   const { pathname } = useLocation();
@@ -27,7 +27,7 @@ const Contact = () => {
         <motion.div
           className="title-underline"
           initial={{ width: 0 }}
-          animate={{ width: "80px" }}
+          animate={{ width: '80px' }}
           transition={{ delay: 0.5, duration: 0.8 }}
         />
       </motion.div>
