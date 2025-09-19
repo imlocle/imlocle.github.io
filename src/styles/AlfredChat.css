@@ -11,7 +11,7 @@
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -40,7 +40,7 @@
   color: white;
   font-size: 18px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .chat-messages {
@@ -104,7 +104,7 @@
 .chat-input {
   display: flex;
   border-top: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .chat-input input {
@@ -112,7 +112,7 @@
   border: none;
   padding: 10px;
   outline: none;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .chat-input button {
@@ -121,13 +121,13 @@
   border: none;
   padding: 10px 15px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .send-btn {
   background-color: #1e3a8a;
   color: white;
   padding: 0.8rem 2rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 500;
 }

@@ -42,7 +42,7 @@
 .form-group textarea {
   padding: 0.8rem;
   border: 1px solid #e2e8f0;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1rem;
   transition:
     border-color 0.3s ease,
@@ -72,7 +72,7 @@
   color: white;
   border: none;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -100,7 +100,7 @@
 .success-message {
   background-color: #ecfdf5; /* Light green */
   border: 1px solid #10b981; /* Green */
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
   color: #047857; /* Dark green */

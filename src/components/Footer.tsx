@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Loc Le</h3>
           <p className="footer-description">
-            {POSITION_TITLE} looking to explore.
+            {POSITION_TITLE} looking to continuosly learn, explore, and grow.
           </p>
         </div>
 

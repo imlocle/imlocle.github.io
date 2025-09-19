@@ -26,18 +26,19 @@
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
   margin-bottom: 5rem;
+  align-items: start;
 }
 
 .about-image-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .about-image-placeholder {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  height: 100%;
+  max-width: 400px;
+  aspect-ratio: 3 / 4;
   display: flex;
   justify-content: center;
   align-items: center;
