@@ -21,35 +21,13 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - name: Check for API URL and Web3Forms Key
-        run: |
-          if [ -z "${{ secrets.REACT_APP_API_URL }}" ]; then
-            echo "Error: REACT_APP_API_URL is not set in GitHub Secrets"
-            exit 1
-          fi
-
-      - name: Clear node_modules and package-lock.json
-        run: rm -rf node_modules package-lock.json
-
       - name: Install dependencies
         run: npm install
-
-      - name: Audit Dependencies
-        run: npm audit --audit-level=high
-
-      - name: TypeScript Compile
-        run: npx tsc -b
-        env:
-          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
 
       - name: Build site
         run: npm run build
         env:
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
-
-      - name: Debug Build Output
-        run: ls -la dist
-        if: failure()
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

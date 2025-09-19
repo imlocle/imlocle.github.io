@@ -5,7 +5,7 @@ import { SiTerraform, SiAwslambda } from 'react-icons/si';
 import { Link, useLocation } from 'react-router-dom';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import neptuneLogo from '../assets/neptune-logo2.png';
-import mdsLogo from '../assets/mds-logo.png';
+import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
 import { POSITION_TITLE } from '../utils/constants';
 import GetInTouch from '../components/GetInTouch';
