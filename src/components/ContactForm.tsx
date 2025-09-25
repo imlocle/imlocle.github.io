@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import '../styles/ContactForm.css';
-import { WEB3FORMS_ACCESS_KEY } from '../utils/constants';
+import { VITE_WEB3FORMS_ACCESS_KEY } from '../config';
 
 interface FormData {
   name: string;
@@ -65,7 +65,7 @@ const ContactForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
+          access_key: VITE_WEB3FORMS_ACCESS_KEY,
           ...formData,
           subject: `[ContactForm] Submission from ${formData.name}`,
         }),

@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/AlfredChat.css';
 import ReactMarkdown from 'react-markdown';
 import alfredLogo from '../assets/alfred-logo.png';
-import { API_URL } from '../utils/constants';
 import sanitizeHtml from 'sanitize-html';
+import { VITE_API_URL } from '../config';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -36,7 +36,7 @@ const AlfredChat: React.FC = () => {
     setMessages(prev => [...prev, newMessage]);
     setInput('');
     try {
-      const response = await fetch(`${API_URL}/ask`, {
+      const response = await fetch(`${VITE_API_URL}/ask`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: input }),
