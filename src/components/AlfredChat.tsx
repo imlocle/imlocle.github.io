@@ -16,7 +16,7 @@ const AlfredChat: React.FC = () => {
     {
       role: 'assistant',
       content:
-        'Hello! I am Alfred, your helpful AI butler. I know everything about Loc Le. How may I assist you today?',
+        'Hello! I am Alfred, Loc\'s helpful AI butler. I know everything about Loc. How may I assist you today?',
     },
   ]);
   const [input, setInput] = useState('');
@@ -47,12 +47,15 @@ const AlfredChat: React.FC = () => {
 
   const toggleChat = () => setIsOpen(prev => !prev);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     const newMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, newMessage]);
     setInput('');
+    setIsLoading(true);
 
     try {
       const response = await fetch(`${VITE_API_URL}/ask`, {
@@ -75,6 +78,9 @@ const AlfredChat: React.FC = () => {
           content: err instanceof Error ? err.message : 'An error occurred.',
         },
       ]);
+    } finally {
+      await new Promise(r => setTimeout(r, 500));
+      setIsLoading(false);
     }
   };
 
@@ -157,6 +163,20 @@ const AlfredChat: React.FC = () => {
                     )}
                   </div>
                 ))}
+                {isLoading && (
+                  <div className="chat-message assistant">
+                    <div className="assistant-message">
+                      <img src={alfredLogo} alt="Alfred Logo" className="alfred-logo" />
+                      <div className="assistant-text">
+                        <div className="loading-dots">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div ref={messagesEndRef} />
               </div>
 
