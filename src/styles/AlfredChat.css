@@ -1,133 +1,186 @@
+/* Container - ensure it's on top */
 .alfred-chat {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   font-family: 'Roboto', sans-serif;
-  z-index: 2147483647;
+  z-index: 2147483647; /* extremely high to avoid stacking problems */
 }
 
+/* Floating toggle button */
 .chat-toggle {
   background: #1e3a8a;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.chat-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.chat-window {
-  width: 300px;
-  height: 400px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Overlay - sits directly under the chat window but above the page */
+.chat-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2147483646;
+  /* clicking the overlay closes the chat (handled in TSX) */
+}
+
+/* The chat container which animates into view */
+.chatbot-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
   display: flex;
   flex-direction: column;
+  width: 360px;
+  max-width: 90vw;
+  height: 70vh;
+  max-height: 700px;
+  z-index: 2147483647;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.32s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat window sits on top of overlay */
+.chat-window {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 2147483648;
+  overflow: hidden;
+}
+
+/* Header + close button */
 .chat-header {
   background: #1e3a8a;
   color: white;
-  padding: 10px;
+  padding: 12px 14px;
   display: flex;
   justify-content: space-between;
-  border-radius: 10px 10px 0 0;
+  align-items: center;
 }
-
 .close-btn {
-  background: #1e3a8a;
+  background: transparent;
   border: none;
   color: white;
   font-size: 18px;
   cursor: pointer;
-  border-radius: 10px;
 }
 
+/* Messages area */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adds consistent spacing between messages */
+  gap: 10px;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Message layout */
 .chat-message {
   display: flex;
-  width: 100%; /* Full width to balance space */
+  width: 100%;
 }
-
 .chat-message.user {
-  justify-content: flex-end; /* Leans user message to the right */
+  justify-content: flex-end;
 }
-
 .chat-message.assistant {
-  justify-content: space-between; /* Spreads logo left, text right */
-  align-self: stretch; /* Takes full available height */
+  justify-content: flex-start;
 }
 
 .assistant-message {
   display: flex;
-  flex-direction: row; /* Logo on left, text on right */
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
   width: 100%;
-  gap: 8px;
+  gap: 10px;
 }
 
 .assistant-text {
-  max-width: 90%; /* Limits text width to balance with logo */
   background: #f0f0f0;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 12px;
-  order: 2; /* Places text after logo */
+  max-width: calc(100% - 56px);
+  overflow-wrap: break-word;
+}
+
+/* Ensure lists are inside the grey bubble */
+.assistant-text ol,
+.assistant-text ul {
+  margin: 0 0 0 1.1rem;
+  padding: 0;
+}
+.assistant-text li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.assistant-text p {
+  margin: 0 0 0.5rem;
 }
 
 .alfred-logo {
-  background-color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  flex-shrink: 0; /* Prevents logo from shrinking */
-  align-self: flex-start;
-  order: 1; /* Places logo before text */
+  flex-shrink: 0;
 }
 
 .user-message {
   background: #d1e7ff;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 12px;
-  max-width: 90%; /* Keeps user messages compact but not too narrow */
-  white-space: pre-wrap; /* Handles line breaks */
+  max-width: 80%;
+  white-space: pre-wrap;
 }
 
+/* Input */
 .chat-input {
   display: flex;
-  border-top: 1px solid #ddd;
-  border-radius: 10px;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: #fff;
 }
-
 .chat-input input {
   flex: 1;
-  border: none;
-  padding: 10px;
-  outline: none;
+  border: 1px solid #e6e6e6;
+  padding: 10px 12px;
   border-radius: 10px;
+  outline: none;
 }
-
-.chat-input button {
+.chat-input button,
+.send-btn {
   background: #1e3a8a;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 16px;
+  border-radius: 10px;
   cursor: pointer;
-  border-radius: 10px;
-}
-
-.send-btn {
-  background-color: #1e3a8a;
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  font-weight: 500;
 }

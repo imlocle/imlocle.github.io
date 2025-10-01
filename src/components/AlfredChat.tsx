@@ -22,12 +22,30 @@ const AlfredChat: React.FC = () => {
   const [input, setInput] = useState('');
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
+  // Scroll to bottom when messages change
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  // Lock body scroll and focus input when opening
+  useEffect(() => {
+    if (isOpen) {
+      // prevent background from scrolling
+      document.body.style.overflow = 'hidden';
+      // focus input after the animation/frame
+      requestAnimationFrame(() => inputRef.current?.focus());
+    } else {
+      document.body.style.overflow = '';
+    }
+    // cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const toggleChat = () => setIsOpen(prev => !prev);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -35,6 +53,7 @@ const AlfredChat: React.FC = () => {
     const newMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, newMessage]);
     setInput('');
+
     try {
       const response = await fetch(`${VITE_API_URL}/ask`, {
         method: 'POST',
@@ -60,70 +79,108 @@ const AlfredChat: React.FC = () => {
   };
 
   return (
-    <div className="alfred-chat">
-      {isOpen ? (
-        <div className="chat-window">
-          <button className="close-btn" onClick={toggleChat}>
-            <div className="chat-header">
-              <span>Alfred</span>
-            </div>
-          </button>
-          <div className="chat-messages">
-            {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`chat-message ${msg.role === 'user' ? 'user' : 'assistant'}`}
-              >
-                {msg.role === 'assistant' ? (
-                  <div className="assistant-message">
-                    <img
-                      src={alfredLogo}
-                      alt="Alfred Logo"
-                      className="alfred-logo"
-                    />
-                    <div className="assistant-text">
-                      <ReactMarkdown>
-                        {sanitizeHtml(msg.content, {
-                          allowedTags: [
-                            'p',
-                            'strong',
-                            'em',
-                            'a',
-                            'ul',
-                            'ol',
-                            'li',
-                            'code',
-                            'pre',
-                          ],
-                          allowedAttributes: { a: ['href'] },
-                        })}
-                      </ReactMarkdown>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="user-message">{msg.content}</div>
-                )}
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-          <div className="chat-input">
-            <input
-              type="text"
-              value={input}
-              placeholder="Ask Alfred..."
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && sendMessage()}
-            />
-            <button className="send-btn" onClick={sendMessage}>
-              Send
-            </button>
-          </div>
-        </div>
-      ) : (
-        <button className="chat-toggle" onClick={toggleChat}>
+    <div className="alfred-chat" aria-live="polite">
+      {/* Floating button */}
+      {!isOpen && (
+        <button
+          className="chat-toggle"
+          onClick={toggleChat}
+          aria-label="Open chat with Alfred"
+        >
           💬 Chat with Alfred
         </button>
+      )}
+
+      {/* Overlay + Chat when open */}
+      {isOpen && (
+        <>
+          {/* overlay sits below the chat window but above everything else */}
+          <div
+            className="chat-overlay"
+            onClick={toggleChat}
+            aria-hidden="true"
+          />
+          <div
+            className="chatbot-container slide-up"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Alfred chat window"
+          >
+            <div className="chat-window">
+              <div className="chat-header">
+                <span>Alfred</span>
+                <button
+                  className="close-btn"
+                  onClick={toggleChat}
+                  aria-label="Close chat"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="chat-messages">
+                {messages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`chat-message ${msg.role === 'user' ? 'user' : 'assistant'}`}
+                  >
+                    {msg.role === 'assistant' ? (
+                      <div className="assistant-message">
+                        <img
+                          src={alfredLogo}
+                          alt="Alfred Logo"
+                          className="alfred-logo"
+                        />
+                        <div className="assistant-text">
+                          <ReactMarkdown>
+                            {sanitizeHtml(msg.content, {
+                              allowedTags: [
+                                'p',
+                                'strong',
+                                'em',
+                                'a',
+                                'ul',
+                                'ol',
+                                'li',
+                                'code',
+                                'pre',
+                              ],
+                              allowedAttributes: {
+                                a: ['href', 'target', 'rel'],
+                              },
+                            })}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="user-message">{msg.content}</div>
+                    )}
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
+              </div>
+
+              <div className="chat-input">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  placeholder="Ask Alfred..."
+                  onChange={e => setInput(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && sendMessage()}
+                  aria-label="Ask Alfred a question"
+                />
+                <button
+                  className="send-btn"
+                  onClick={sendMessage}
+                  aria-label="Send message"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
