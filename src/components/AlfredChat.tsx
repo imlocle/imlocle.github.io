@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import alfredLogo from '../assets/alfred-logo.png';
 import sanitizeHtml from 'sanitize-html';
 import { VITE_API_URL } from '../config';
+import { ALFRED_GREETINGS } from '../utils/constants';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -15,8 +16,7 @@ const AlfredChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content:
-        'Hello! I am Alfred, Loc\'s helpful AI butler. I know everything about Loc. How may I assist you today?',
+      content: ALFRED_GREETINGS[Math.floor(Math.random() * ALFRED_GREETINGS.length)],
     },
   ]);
   const [input, setInput] = useState('');
@@ -67,7 +67,7 @@ const AlfredChat: React.FC = () => {
       const data = await response.json();
       const alfredReply: Message = {
         role: 'assistant',
-        content: data.reply || "Sorry, I don't have an answer for that.",
+        content: data.reply || "I apologize, but I don't have an answer for that.",
       };
       setMessages(prev => [...prev, alfredReply]);
     } catch (err) {
@@ -75,7 +75,7 @@ const AlfredChat: React.FC = () => {
         ...prev,
         {
           role: 'assistant',
-          content: err instanceof Error ? err.message : 'An error occurred.',
+          content: err instanceof Error ? err.message : 'My apologies, I am currently unavailable. Please come back soon.',
         },
       ]);
     } finally {
