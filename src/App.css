@@ -8,3 +8,9 @@
   flex: 1;
   background-color: #f8fafc; /* Slate 50 */
 }
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}

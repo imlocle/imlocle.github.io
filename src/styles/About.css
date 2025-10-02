@@ -1,26 +1,3 @@
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
-}
-
-.about-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.about-title {
-  font-size: 2.5rem;
-  color: #1e293b; /* Slate 800 */
-  margin-bottom: 1rem;
-}
-
-.title-underline {
-  height: 4px;
-  background-color: #3b82f6; /* Lighter blue */
-  margin: 0 auto;
-}
-
 .about-content {
   display: grid;
   grid-template-columns: 1fr 2fr;

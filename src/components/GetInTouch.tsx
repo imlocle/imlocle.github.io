@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import ButtonLink from './button/ButtonLink';
 
 const GetInTouch = () => {
   return (
@@ -12,9 +12,7 @@ const GetInTouch = () => {
     >
       <h2>Interested in working together?</h2>
       <p>I'm always open to discussing new projects and opportunities.</p>
-      <Link to="/contact" className="contact-button">
-        Get In Touch
-      </Link>
+      <ButtonLink link="/contact" text="Get In Touch" />
     </motion.div>
   );
 };

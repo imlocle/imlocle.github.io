@@ -1,14 +1,20 @@
 import { motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
+import ButtonLink from './button/ButtonLink';
+import '../styles/card/SkillCard.css';
 
 const SkillCard = ({
   icon,
   title,
   description,
+  link,
+  linkText
 }: {
   icon: IconType;
   title: string;
   description: string;
+  link: string;
+  linkText: string;
 }) => {
   return (
     <motion.div
@@ -22,6 +28,7 @@ const SkillCard = ({
       <div className="skill-icon">{icon({})}</div>
       <h3>{title}</h3>
       <p>{description}</p>
+      <ButtonLink link={link} text={linkText} />
     </motion.div>
   );
 };

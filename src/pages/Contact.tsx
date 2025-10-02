@@ -4,33 +4,13 @@ import '../styles/Contact.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
 import { useLocation } from 'react-router-dom';
+import Title from '../components/page/Title';
 
 const Contact = () => {
   const { pathname } = useLocation();
   return (
-    <div id="contact" className="contact-container">
-      <motion.div
-        key={pathname}
-        className="contact-header"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.h1
-          className="contact-title"
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Contact Me
-        </motion.h1>
-        <motion.div
-          className="title-underline"
-          initial={{ width: 0 }}
-          animate={{ width: '80px' }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        />
-      </motion.div>
+    <div id="contact" className="page-container">
+      <Title pathname={pathname} title="Contact Me" />
 
       <div className="contact-content">
         <motion.div
