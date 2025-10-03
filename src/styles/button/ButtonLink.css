@@ -7,9 +7,25 @@
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  align-self: center;
+  text-align: center;
+  margin-top: auto;
 }
 
 .button-link:hover {
+  background-color: #1e40af; /* Slightly lighter blue */
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);
+}
+
+.secondary-button {
+  align-self: center;
+  text-align: center;
+  margin-top: auto;
+}
+
+.secondary-button:hover {
+  color:white;
   background-color: #1e40af; /* Slightly lighter blue */
   transform: translateY(-3px);
   box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);

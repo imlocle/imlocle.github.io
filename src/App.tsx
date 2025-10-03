@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import AlfredChat from './components/AlfredChat';
+import Services from './pages/Services';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />

@@ -28,6 +28,9 @@ const Navbar = () => {
           <span className="logo-text">Loc Le</span>
         </Link>
         <div className="navbar-links">
+          <Link to="/services" className="nav-link">
+            Services
+          </Link>
           <Link to="/about" className="nav-link">
             About
           </Link>
