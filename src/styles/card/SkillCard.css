@@ -32,9 +32,3 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-/* Center the ButtonLink component */
-.skill-card .button-link {
-  align-self: center;
-  margin-top: auto;
-}
