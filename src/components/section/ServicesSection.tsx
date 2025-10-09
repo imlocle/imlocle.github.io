@@ -20,24 +20,24 @@ const ServicesSection = () => {
           title="AI Product Integration"
           description="I build scalable AI-powered backend systems for startups."
           link="/services#ai-product-integration"
-          linkText="Learn More"
-          buttonClassName="secondary-button"
+          linkText="Learn More ->"
+          buttonClassName="arrow-link"
         />
         <SkillCard
           icon={FaCloud}
           title="Backend MVP in 2 weeks"
           description="Fast, production-ready AWS backend architecture for startups. Serverless, scalable, and cost-efficient."
           link="/services#backend-mvp-in-2-weeks"
-          linkText="Learn More"
-          buttonClassName="secondary-button"
+          linkText="Learn More ->"
+          buttonClassName="arrow-link"
         />
         <SkillCard
           icon={FaGear}
           title="Cloud Modernization"
           description="Refactor or migrate existing infrastructure to modern serverless solutions for better performance and lower costs."
           link="/services#cloud-modernization"
-          linkText="Learn More"
-          buttonClassName="secondary-button"
+          linkText="Learn More ->"
+          buttonClassName="arrow-link"
         />
       </div>
     </motion.section>
