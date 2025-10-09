@@ -40,37 +40,20 @@
 
 .about-text h2 {
   font-size: 1.8rem;
-  color: #1e3a8a; /* Dark blue */
+  color: #1e3a8a;
   margin-bottom: 1.5rem;
 }
 
 .about-text p {
   margin-bottom: 1.5rem;
   line-height: 1.8;
-  color: #475569; /* Slate 600 */
+  color: #475569;
 }
 
 .skills-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
   margin-top: 3rem;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #1e293b; /* Slate 800 */
-  margin-bottom: 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 3px;
-  background-color: #3b82f6; /* Lighter blue */
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .skills-container {
@@ -89,7 +72,7 @@
 
 .skill-category h3 {
   font-size: 1.3rem;
-  color: #1e3a8a; /* Dark blue */
+  color: #1e3a8a;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -100,7 +83,7 @@
   position: absolute;
   width: 40px;
   height: 2px;
-  background-color: #3b82f6; /* Lighter blue */
+  background-color: #3b82f6;
   bottom: 0;
   left: 0;
 }
@@ -112,7 +95,7 @@
 
 .skills-list li {
   padding: 0.5rem 0;
-  color: #475569; /* Slate 600 */
+  color: #475569;
   position: relative;
   padding-left: 1.5rem;
 }
@@ -121,7 +104,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #3b82f6; /* Lighter blue */
+  color: #3b82f6;
 }
 
 @media (max-width: 768px) {
@@ -140,43 +123,5 @@
 
   .skills-container {
     grid-template-columns: 1fr;
-  }
-}
-
-.loading-dots {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 4px;
-  background-color: #f3f4f6; /* gray-100 */
-  padding: 8px 12px;
-  border-radius: 12px;
-}
-
-.loading-dots span {
-  width: 8px;
-  height: 8px;
-  background-color: #9ca3af; /* gray-400 */
-  border-radius: 50%;
-  display: inline-block;
-  animation: loadingBounce 1.4s infinite ease-in-out both;
-}
-
-.loading-dots span:nth-child(1) {
-  animation-delay: -0.32s;
-}
-
-.loading-dots span:nth-child(2) {
-  animation-delay: -0.16s;
-}
-
-@keyframes loadingBounce {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
   }
 }
