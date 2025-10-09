@@ -2,22 +2,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .service-card {
   background: #ffffff;
   padding: 2rem;
-  border-radius: 14px;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: var(--transform-all);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .service-card:hover {
@@ -27,7 +23,7 @@
 
 .service-icon {
   font-size: 2.8rem;
-  color: #1e3a8a; /* Dark blue */
+  color: #1e3a8a;
   margin-bottom: 1rem;
   align-self: center;
 }
