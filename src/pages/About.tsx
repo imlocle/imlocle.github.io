@@ -3,10 +3,9 @@ import '../styles/About.css';
 import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
 import { POSITION_TITLE } from '../utils/constants';
-
 import { useLocation } from 'react-router-dom';
-import GetInTouch from '../components/GetInTouch';
 import Title from '../components/page/Title';
+import Cta from '../components/Cta';
 
 const About = () => {
   const { pathname } = useLocation();
@@ -124,7 +123,7 @@ const About = () => {
           />
         </div>
       </motion.div>
-      <GetInTouch />
+      <Cta />
     </div>
   );
 };

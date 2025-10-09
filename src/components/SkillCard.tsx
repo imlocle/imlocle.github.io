@@ -8,13 +8,15 @@ const SkillCard = ({
   title,
   description,
   link,
-  linkText
+  linkText,
+  buttonClassName = 'button-link',
 }: {
   icon: IconType;
   title: string;
   description: string;
   link?: string;
   linkText?: string;
+  buttonClassName?: string;
 }) => {
   return (
     <motion.div
@@ -28,7 +30,9 @@ const SkillCard = ({
       <div className="skill-icon">{icon({})}</div>
       <h3>{title}</h3>
       <p>{description}</p>
-      {link && linkText && <ButtonLink link={link} text={linkText} />}
+      {link && linkText && (
+        <ButtonLink link={link} text={linkText} className={buttonClassName} />
+      )}
     </motion.div>
   );
 };

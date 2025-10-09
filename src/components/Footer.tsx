@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { GITHUB_LINK, LINKEDIN_LINK, POSITION_TITLE } from '../utils/constants';
+import { GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,21 +12,22 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Loc Le</h3>
           <p className="footer-description">
-            {POSITION_TITLE} looking to continuously learn, explore, and grow.
+            Building Tomorrow's Cloud Solutions Today. Expert Backend
+            Engineering & Consulting.
           </p>
         </div>
 
         <div className="footer-section">
           <h3 className="footer-title">Quick Links</h3>
           <div className="footer-links">
-            <Link to="/" className="footer-link">
-              Home
-            </Link>
             <Link to="/about" className="footer-link">
               About
             </Link>
-            <Link to="/work" className="footer-link">
-              Work
+            <Link to="/services" className="footer-link">
+              Services
+            </Link>
+            <Link to="/portfolio" className="footer-link">
+              Portfolio
             </Link>
             <Link to="/contact" className="footer-link">
               Contact

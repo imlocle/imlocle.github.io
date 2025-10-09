@@ -16,7 +16,8 @@ const AlfredChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: ALFRED_GREETINGS[Math.floor(Math.random() * ALFRED_GREETINGS.length)],
+      content:
+        ALFRED_GREETINGS[Math.floor(Math.random() * ALFRED_GREETINGS.length)],
     },
   ]);
   const [input, setInput] = useState('');
@@ -67,7 +68,8 @@ const AlfredChat: React.FC = () => {
       const data = await response.json();
       const alfredReply: Message = {
         role: 'assistant',
-        content: data.reply || "I apologize, but I don't have an answer for that.",
+        content:
+          data.reply || "I apologize, but I don't have an answer for that.",
       };
       setMessages(prev => [...prev, alfredReply]);
     } catch (err) {
@@ -75,7 +77,10 @@ const AlfredChat: React.FC = () => {
         ...prev,
         {
           role: 'assistant',
-          content: err instanceof Error ? err.message : 'My apologies, I am currently unavailable. Please come back soon.',
+          content:
+            err instanceof Error
+              ? err.message
+              : 'My apologies, I am currently unavailable. Please come back soon.',
         },
       ]);
     } finally {
@@ -166,7 +171,11 @@ const AlfredChat: React.FC = () => {
                 {isLoading && (
                   <div className="chat-message assistant">
                     <div className="assistant-message">
-                      <img src={alfredLogo} alt="Alfred Logo" className="alfred-logo" />
+                      <img
+                        src={alfredLogo}
+                        alt="Alfred Logo"
+                        className="alfred-logo"
+                      />
                       <div className="assistant-text">
                         <div className="loading-dots">
                           <span></span>

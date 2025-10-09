@@ -1,24 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -27,14 +21,47 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo">
           <span className="logo-text">Loc Le</span>
         </Link>
-        <div className="navbar-links">
-          <Link to="/about" className="nav-link">
+
+        {/* Hamburger Icon */}
+        <div
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className={`navbar-links ${menuOpen ? 'mobile-open' : ''}`}>
+          <Link
+            to="/about"
+            className={`nav-link ${pathname === '/about' ? 'active' : ''}`}
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </Link>
-          <Link to="/work" className="nav-link">
-            Work
+
+          <Link
+            to="/services"
+            className={`nav-link ${pathname === '/services' ? 'active' : ''}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
           </Link>
-          <Link to="/contact" className="nav-link">
+
+          <Link
+            to="/portfolio"
+            className={`nav-link ${pathname === '/portfolio' ? 'active' : ''}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Portfolio
+          </Link>
+
+          <Link
+            to="/contact"
+            className="nav-link cta-link"
+            onClick={() => setMenuOpen(false)}
+          >
             Contact
           </Link>
         </div>

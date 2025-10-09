@@ -1,3 +1,24 @@
+:root {
+  --primary-color: #1e3a8a;
+  /* Dark blue */
+  --primary-light: #3b82f6;
+  /* Lighter blue */
+  --text-primary: #1e293b;
+  /* Slate 800 */
+  --text-secondary: #64748b;
+  /* Slate 500 */
+  --bg-color: #f8fafc;
+  /* Slate 50 */
+  --white: #ffffff;
+  --transition-all: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -6,11 +27,17 @@
 
 .main-content {
   flex: 1;
-  background-color: #f8fafc; /* Slate 50 */
+  background-color: var(--bg-color);
 }
 
 .page-container {
-  max-width: 1200px;
+  max-width: clamp(800px, 90%, 1200px);
   margin: 0 auto;
   padding: 5rem 2rem;
 }
+
+/* .subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #64748b;
+} */

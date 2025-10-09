@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
 import '../styles/Home.css';
-import { FaServer, FaAws, FaRobot, FaDatabase } from 'react-icons/fa';
-import { SiTerraform, SiAwslambda } from 'react-icons/si';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import neptuneLogo from '../assets/neptune-logo2.png';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
 import { POSITION_TITLE } from '../utils/constants';
-import GetInTouch from '../components/GetInTouch';
-import SkillCard from '../components/SkillCard';
 import CompanyCard from '../components/CompanyCard';
-// import Testimonials from '../components/Testimonials';
+import ServicesSection from '../components/section/ServicesSection';
+import ButtonLink from '../components/button/ButtonLink';
+import Cta from '../components/Cta';
+import ProjectPreviewSection from '../components/section/ProjectPreviewSection';
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -49,7 +48,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Building robust and scalable solutions
+            I build scalable AI-powered backend systems for startups.
           </motion.p>
 
           <motion.div
@@ -58,12 +57,16 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <Link to="/contact" className="primary-button">
-              Get In Touch
-            </Link>
-            <Link to="/work" className="secondary-button">
-              View My Work
-            </Link>
+            <ButtonLink
+              link="/contact"
+              text="🚀 Let's Build Together"
+              className="primary-button"
+            />
+            <ButtonLink
+              link="/portfolio"
+              text="View My Work"
+              className="secondary-button"
+            />
           </motion.div>
         </motion.div>
 
@@ -79,50 +82,8 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <motion.section
-        className="skills-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <h2 className="section-title">What I Do</h2>
-
-        <div className="skills-grid">
-          <SkillCard
-            icon={FaAws}
-            title="AWS Cloud Engineering"
-            description="Architecting secure and scalable cloud solutions using AWS services"
-          />
-          <SkillCard
-            icon={FaRobot}
-            title="AI & Machine Learning"
-            description="Creating AI-powered chatbots and NLP solutions with AWS Bedrock"
-          />
-          <SkillCard
-            icon={FaServer}
-            title="Backend Development"
-            description="Designing and building scalable server-side applications with Node.js and Python"
-          />
-          <SkillCard
-            icon={SiTerraform}
-            title="Infrastructure as Code"
-            description="Automating cloud infrastructure with Terraform and AWS CloudFormation"
-          />
-          <SkillCard
-            icon={SiAwslambda}
-            title="Serverless Architecture"
-            description="Developing event-driven applications using AWS Lambda and API Gateway"
-          />
-          <SkillCard
-            icon={FaDatabase}
-            title="Data Engineering"
-            description="Building data pipelines and analytics systems for actionable insights"
-          />
-        </div>
-      </motion.section>
-
-      {/* <Testimonials /> */}
+      <ServicesSection />
+      <ProjectPreviewSection />
 
       <motion.section
         className="companies-section"
@@ -154,7 +115,7 @@ const Home = () => {
             alt="Wayvia"
           />
         </div>
-        <GetInTouch />
+        <Cta />
       </motion.section>
     </div>
   );

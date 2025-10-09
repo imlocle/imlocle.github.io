@@ -1,18 +1,20 @@
-import { Link } from "react-router-dom";
-import '../../styles/button/ButtonLink.css'
+import { Link } from 'react-router-dom';
+import '../../styles/button/ButtonLink.css';
 
 const ButtonLink = ({
-    link,
-    text,
+  link,
+  text,
+  className = 'button-link',
 }: {
-    link: string,
-    text: string,
+  link: string;
+  text: string;
+  className?: string;
 }) => {
-    return (
-        <Link to={link} className="button-link">
-        {text}
-      </Link>
-    )
-}
+  return (
+    <Link to={link} className={className}>
+      {text}
+    </Link>
+  );
+};
 
-export default ButtonLink
+export default ButtonLink;
