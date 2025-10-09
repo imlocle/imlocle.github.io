@@ -13,8 +13,8 @@ const SkillCard = ({
   icon: IconType;
   title: string;
   description: string;
-  link: string;
-  linkText: string;
+  link?: string;
+  linkText?: string;
 }) => {
   return (
     <motion.div
@@ -28,7 +28,7 @@ const SkillCard = ({
       <div className="skill-icon">{icon({})}</div>
       <h3>{title}</h3>
       <p>{description}</p>
-      <ButtonLink link={link} text={linkText} />
+      {link && linkText && <ButtonLink link={link} text={linkText} />}
     </motion.div>
   );
 };
