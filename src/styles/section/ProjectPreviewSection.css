@@ -13,6 +13,7 @@
 }
 
 .preview-card {
+  flex-direction: column;
   background: white;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -55,4 +56,17 @@
 
 .preview-cta:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .projects-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-preview-grid {
+    grid-template-columns: 1fr;
+  }
 }

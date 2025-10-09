@@ -63,7 +63,7 @@ const Home = () => {
               className="primary-button"
             />
             <ButtonLink
-              link="/work"
+              link="/portfolio"
               text="View My Work"
               className="secondary-button"
             />

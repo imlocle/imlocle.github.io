@@ -17,15 +17,14 @@ const projects = [
   {
     id: 2,
     title: 'Portfolio Website',
-    description: 'My current personal portfolio website that you are seeing.',
+    description: 'My personal portfolio website that you are viewing now.',
     image: llLogo,
     link: 'https://github.com/imlocle/imlocle.github.io',
   },
   {
     id: 3,
     title: 'Alfred - AI Chatbot',
-    description:
-      'An AI chatbot using AWS Bedrock and Python that answers questions about Loc.',
+    description: 'An AI chatbot using AWS Bedrock and Python.',
     image: alfredLogo,
     link: 'https://github.com/imlocle/alfred-chatbot',
   },
@@ -53,7 +52,7 @@ const ProjectsPreviewSection = () => {
             <h3 className="preview-title">{project.title}</h3>
             <p className="preview-description">{project.description}</p>
             <ButtonLink
-              link="/work"
+              link="/portfolio"
               text="Learn More ->"
               className="arrow-link"
             ></ButtonLink>

@@ -19,14 +19,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Quick Links</h3>
           <div className="footer-links">
-            <Link to="/" className="footer-link">
-              Home
-            </Link>
             <Link to="/about" className="footer-link">
               About
             </Link>
-            <Link to="/work" className="footer-link">
-              Work
+            <Link to="/services" className="footer-link">
+              Services
+            </Link>
+            <Link to="/portfolio" className="footer-link">
+              Portfolio
             </Link>
             <Link to="/contact" className="footer-link">
               Contact

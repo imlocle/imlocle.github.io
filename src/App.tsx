@@ -3,12 +3,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Work from './pages/Work';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import AlfredChat from './components/AlfredChat';
 import Services from './pages/Services';
+import Portfolio from './pages/Portfolio';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
