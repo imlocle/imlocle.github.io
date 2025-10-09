@@ -12,7 +12,8 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Loc Le</h3>
           <p className="footer-description">
-            Building Tomorrow's Cloud Solutions Today. Expert Backend Engineering & Consulting.
+            Building Tomorrow's Cloud Solutions Today. Expert Backend
+            Engineering & Consulting.
           </p>
         </div>
 
