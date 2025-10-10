@@ -1,42 +1,56 @@
-.button-link {
+.primary-button {
   display: inline-block;
-  background-color: #1e3a8a;
+  background-color: var(--primary-color);
   color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
   align-self: center;
   text-align: center;
   margin-top: auto;
 }
 
-.button-link:hover {
-  background-color: #1e40af;
-  transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);
-}
-
-.secondary-button {
-  background-color: transparent;
-  color: #1e3a8a;
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  border: 2px solid #1e3a8a;
-  transition: all 0.3s ease;
-  align-self: center;
-  text-align: center;
-  margin-top: auto;
-}
-
-.secondary-button:hover {
+.highlight-primary-button {
+  background-color: var(--primary-color);
   color: var(--white);
-  background-color: #1e40af;
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-all);
+  box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+}
+
+.highlight-primary-button:hover,
+.primary-button:hover {
+  background-color: var(--primary-light);
+  color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.highlight-secondary-button {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0.8rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  border: 2px solid var(--primary-color);
+  transition: var(--transition-all);
+  align-self: center;
+  text-align: center;
+  margin-top: auto;
+}
+
+.highlight-secondary-button:hover {
+  color: var(--white);
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .arrow-link {
@@ -48,4 +62,12 @@
 
 .arrow-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .primary-button,
+  .secondary-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }

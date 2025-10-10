@@ -6,7 +6,7 @@ import neptuneLogo from '../assets/neptune-logo2.png';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
 import { POSITION_TITLE } from '../utils/constants';
-import CompanyCard from '../components/CompanyCard';
+import CompanyCard from '../components/card/CompanyCard';
 import ServicesSection from '../components/section/ServicesSection';
 import ButtonLink from '../components/button/ButtonLink';
 import Cta from '../components/Cta';
@@ -60,12 +60,12 @@ const Home = () => {
             <ButtonLink
               link="/contact"
               text="🚀 Let's Build Together"
-              className="primary-button"
+              className="highlight-primary-button"
             />
             <ButtonLink
               link="/portfolio"
               text="View My Work"
-              className="secondary-button"
+              className="highlight-secondary-button"
             />
           </motion.div>
         </motion.div>
