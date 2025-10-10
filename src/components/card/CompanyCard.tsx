@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import '../../styles/card/CompanyCard.css';
 
 const CompanyCard = ({
   link,
@@ -13,12 +14,12 @@ const CompanyCard = ({
   return (
     <Link to={link} target="_blank" rel="noopener noreferrer">
       <motion.div
-        className="company-logo"
+        className="company-logo-card"
         initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
         whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
       >
         <img src={imgLogo} alt={alt} />
       </motion.div>

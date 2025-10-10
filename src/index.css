@@ -1,10 +1,14 @@
 :root {
-  --primary-color: #1e3a8a; /* Dark blue */
-  --primary-light: #3b82f6; /* Lighter blue */
-  --text-primary: #1e293b; /* Slate 800 */
-  --text-secondary: #64748b; /* Slate 500 */
-  --bg-color: #f8fafc; /* Slate 50 */
+  --primary-color: #1e3a8a;
+  --primary-light: #3b82f6;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --bg-color: #f8fafc;
   --white: #ffffff;
+  --transition-all: all 0.3s ease;
+  --border-radius: 15px;
+  --box-shadow-hover: 0 7px 14px rgba(30, 58, 138, 0.3);
+  --box-shadow-card: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -82,15 +86,19 @@ button {
 .mt-1 {
   margin-top: 0.5rem;
 }
+
 .mt-2 {
   margin-top: 1rem;
 }
+
 .mt-3 {
   margin-top: 1.5rem;
 }
+
 .mt-4 {
   margin-top: 2rem;
 }
+
 .mt-5 {
   margin-top: 3rem;
 }
@@ -98,15 +106,19 @@ button {
 .mb-1 {
   margin-bottom: 0.5rem;
 }
+
 .mb-2 {
   margin-bottom: 1rem;
 }
+
 .mb-3 {
   margin-bottom: 1.5rem;
 }
+
 .mb-4 {
   margin-bottom: 2rem;
 }
+
 .mb-5 {
   margin-bottom: 3rem;
 }

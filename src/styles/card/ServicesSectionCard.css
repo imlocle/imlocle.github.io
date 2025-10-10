@@ -1,15 +1,16 @@
-.skill-card {
+.service-sec-card {
+  align-items: flex-start;
   background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: var(--transition-all);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-card);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  padding: 2rem;
+  text-align: left;
+  transition: var(--transition-all);
 }
 
-.skill-icon {
+.service-sec-icon {
   font-size: 2.5rem;
   color: #1e3a8a;
   margin-bottom: 1rem;
@@ -18,13 +19,13 @@
   text-align: center;
 }
 
-.skill-card h3 {
+.service-sec-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #1e3a8a;
 }
 
-.skill-card p {
+.service-sec-card p {
   color: #64748b;
   line-height: 1.6;
   margin-bottom: 2rem;

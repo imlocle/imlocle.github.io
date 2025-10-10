@@ -2,13 +2,14 @@ import { motion } from 'framer-motion';
 import '../styles/About.css';
 import profilePhoto from '../assets/loc_headshot.jpg';
 import SkillCategory from '../components/SkillCategory';
-import { POSITION_TITLE } from '../utils/constants';
+import { POSITION_TITLE, SKILLS } from '../utils/constants';
 import { useLocation } from 'react-router-dom';
 import Title from '../components/page/Title';
 import Cta from '../components/Cta';
 
 const About = () => {
   const { pathname } = useLocation();
+
   return (
     <div className="page-container">
       <Title pathname={pathname} title="About Me" />
@@ -96,31 +97,13 @@ const About = () => {
       >
         <h2 className="section-title">Technical Skills</h2>
         <div className="skills-container">
-          <SkillCategory
-            category="Languages"
-            skills={['Python', 'TypeScript', 'JavaScript', 'C#']}
-          />
-          <SkillCategory
-            category="AI & Machine Learning"
-            skills={['AWS Bedrock', 'LLMs', 'AI Chatbots', 'AI Agents']}
-          />
-          <SkillCategory
-            category="Infrastructure"
-            skills={[
-              'AWS CloudFormation',
-              'Serverless Framework',
-              'Serverless Stack',
-              'Terraform',
-            ]}
-          />
-          <SkillCategory
-            category="APIs & Frameworks"
-            skills={['AWS API Gateway', 'FastAPI', 'Flask', '.NET']}
-          />
-          <SkillCategory
-            category="Databases"
-            skills={['AWS DynamoDB', 'MongoDB', 'NoSQL', 'SQL']}
-          />
+          {SKILLS.map(category => (
+            <SkillCategory
+              key={category.title}
+              category={category.title}
+              skills={category.skills}
+            />
+          ))}
         </div>
       </motion.div>
       <Cta />

@@ -4,12 +4,13 @@
   gap: 2rem;
 }
 
+
 .portfolio-card {
   background: var(--white);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 2rem;
   transition: var(--transform-all);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--box-shadow-card);
   flex-direction: column;
   align-items: flex-start;
   display: flex;
@@ -17,7 +18,7 @@
 
 .portfolio-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .portfolio-image-container {
@@ -43,18 +44,18 @@
 
 .portfolio-title {
   font-size: 1.5rem;
-  color: #1e293b;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 .portfolio-description {
-  color: #475569;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
 .portfolio-outcomes {
-  color: #0c4a6e;
+  color: var(--text-primary);
   font-weight: 500;
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -68,10 +69,10 @@
 }
 
 .tech-tag {
-  background: #e0f2fe;
+  background: #bae6fd;
   color: #0369a1;
   padding: 0.25rem 0.5rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -95,12 +96,12 @@
 }
 
 .app-store-badge {
-  transition: var(--transform-all);
+  transition: var(--transition-all);
 }
 
 .app-store-badge:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);
+  box-shadow: var(--box-shadow-hover);
 }
 
 @media (max-width: 768px) {

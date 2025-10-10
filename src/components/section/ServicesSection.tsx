@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import SkillCard from '../SkillCard';
-import { FaBrain, FaCloud } from 'react-icons/fa';
+import ServicesSectionCard from '../card/ServicesSectionCard';
 import '../../styles/section/ServicesSection.css';
-import { FaGear } from 'react-icons/fa6';
+import { SERVICES_SECTION } from '../../utils/constants';
 
 const ServicesSection = () => {
+
   return (
     <motion.section
       className="services-section"
@@ -15,30 +15,17 @@ const ServicesSection = () => {
     >
       <h2 className="section-title">Services</h2>
       <div className="services-grid">
-        <SkillCard
-          icon={FaBrain}
-          title="AI Product Integration"
-          description="I build scalable AI-powered backend systems for startups."
-          link="/services#ai-product-integration"
-          linkText="Learn More ->"
-          buttonClassName="arrow-link"
-        />
-        <SkillCard
-          icon={FaCloud}
-          title="Backend MVP in 2 weeks"
-          description="Fast, production-ready AWS backend architecture for startups. Serverless, scalable, and cost-efficient."
-          link="/services#backend-mvp-in-2-weeks"
-          linkText="Learn More ->"
-          buttonClassName="arrow-link"
-        />
-        <SkillCard
-          icon={FaGear}
-          title="Cloud Modernization"
-          description="Refactor or migrate existing infrastructure to modern serverless solutions for better performance and lower costs."
-          link="/services#cloud-modernization"
-          linkText="Learn More ->"
-          buttonClassName="arrow-link"
-        />
+        {SERVICES_SECTION.map(service => (
+          <ServicesSectionCard
+            key={service.id}
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            link={service.link}
+            linkText={service.linkText}
+            buttonClassName={service.buttonClassName}
+          />
+        ))}
       </div>
     </motion.section>
   );

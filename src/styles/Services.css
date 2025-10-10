@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   transition: var(--transform-all);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--box-shadow-card);
 }
 
 .service-card:hover {
