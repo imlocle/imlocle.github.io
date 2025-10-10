@@ -6,10 +6,10 @@ const Cta = () => {
   return (
     <motion.div
       className="cta"
-      whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
     >
       <h2>🚀 Let's Build Something Together</h2>
