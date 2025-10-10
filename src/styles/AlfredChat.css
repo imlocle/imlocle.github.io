@@ -9,22 +9,21 @@
 
 /* Floating toggle button */
 .chat-toggle {
-  background: #1e3a8a;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 12px 18px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: var(--box-shadow-card);
+  transition: var(--transition-all);
 }
 
 .chat-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow-hover);
+  background-color: var(--primary-light);
 }
 
 /* Overlay - sits directly under the chat window but above the page */
@@ -68,9 +67,9 @@
 
 /* Chat window sits on top of overlay */
 .chat-window {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-card);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -80,7 +79,7 @@
 
 /* Header + close button */
 .chat-header {
-  background: #1e3a8a;
+  background-color: var(--primary-color);
   color: white;
   padding: 12px 14px;
   display: flex;
@@ -94,6 +93,11 @@
   color: white;
   font-size: 18px;
   cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--primary-light);
+  transition: var(--transition-all);
 }
 
 /* Messages area */
@@ -181,18 +185,23 @@
   flex: 1;
   border: 1px solid #e6e6e6;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   outline: none;
 }
 
 .chat-input button,
 .send-btn {
-  background: #1e3a8a;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 16px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: var(--primary-light);
+  transition: var(--transition-all);
 }
 
 .loading-dots {
@@ -203,7 +212,7 @@
   background-color: #f3f4f6;
   /* gray-100 */
   padding: 8px 12px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
 }
 
 .loading-dots span {
@@ -225,6 +234,7 @@
 }
 
 @keyframes loadingBounce {
+
   0%,
   80%,
   100% {

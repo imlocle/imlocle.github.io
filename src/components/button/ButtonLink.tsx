@@ -4,7 +4,7 @@ import '../../styles/button/ButtonLink.css';
 const ButtonLink = ({
   link,
   text,
-  className = 'button-link',
+  className = 'primary-button',
 }: {
   link: string;
   text: string;

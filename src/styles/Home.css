@@ -78,23 +78,6 @@
   margin-top: 1rem;
 }
 
-.primary-button {
-  background-color: #1e3a8a;
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
-}
-
-.primary-button:hover {
-  background-color: #1e40af;
-  transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(30, 58, 138, 0.3);
-}
-
 .scroll-indicator {
   display: flex;
   flex-direction: column;
@@ -120,6 +103,7 @@
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -187,24 +171,6 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
-}
-
-.company-logo {
-  background-color: white;
-  border-radius: 10px;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.company-logo img {
-  max-width: 100%;
-  max-height: 80px;
-  object-fit: contain;
-  display: block;
 }
 
 @media (max-width: 1024px) {

@@ -27,16 +27,6 @@ const Contact = () => {
           </p>
 
           <div className="contact-details">
-            {/* <div className="contact-item">
-              <h3>Email</h3>
-              <p>your.email@example.com</p>
-            </div>
-            
-            <div className="contact-item">
-              <h3>Location</h3>
-              <p>San Francisco, CA</p>
-            </div> */}
-
             <div className="contact-item">
               <h3>Social</h3>
               <div className="social-links">
@@ -60,15 +50,7 @@ const Contact = () => {
             </div>
           </div>
         </motion.div>
-
-        <motion.div
-          className="contact-form-wrapper"
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          <ContactForm />
-        </motion.div>
+        <ContactForm />
       </div>
     </div>
   );

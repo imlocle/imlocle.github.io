@@ -1,0 +1,35 @@
+.service-sec-card {
+  align-items: flex-start;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-card);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  transition: var(--transition-all);
+}
+
+.service-sec-icon {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+
+.service-sec-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+}
+
+.service-sec-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
