@@ -1,47 +1,27 @@
 import { motion } from 'framer-motion';
-import neptuneLogo from '../../assets/neptune-logo.svg';
-import llLogo from '../../assets/ll-logo.png';
-import alfredLogo from '../../assets/alfred-logo.png';
 import '../../styles/section/ProjectPreviewSection.css';
 import ButtonLink from '../button/ButtonLink';
-
-const projects = [
-  {
-    id: 1,
-    title: 'Neptune - Be Yourself',
-    description:
-      'A video-based social media platform for artists, entertainers, and dreamers.',
-    image: neptuneLogo,
-    link: 'https://www.theneptuneapp.com/',
-  },
-  {
-    id: 2,
-    title: 'Portfolio Website',
-    description: 'My personal portfolio website that you are viewing now.',
-    image: llLogo,
-    link: 'https://github.com/imlocle/imlocle.github.io',
-  },
-  {
-    id: 3,
-    title: 'Alfred - AI Chatbot',
-    description: 'An AI chatbot using AWS Bedrock and Python.',
-    image: alfredLogo,
-    link: 'https://github.com/imlocle/alfred-chatbot',
-  },
-];
+import { PROJECTS_SECTION } from '../../utils/constants';
 
 const ProjectsPreviewSection = () => {
   return (
-    <section className="projects-preview">
+    <motion.section
+      className="projects-preview"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <h2 className="section-title">Featured Projects</h2>
       <div className="projects-preview-grid">
-        {projects.map((project, index) => (
+        {PROJECTS_SECTION.map((project, index) => (
           <motion.div
             key={project.id}
             className="preview-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
             <img
@@ -59,7 +39,7 @@ const ProjectsPreviewSection = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
