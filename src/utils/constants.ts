@@ -1,5 +1,3 @@
-import { FaBrain, FaCloud } from 'react-icons/fa';
-import { FaGear } from 'react-icons/fa6';
 import type { Project } from '../models/interfaces';
 import neptuneLogo from '../assets/neptune-logo.svg';
 import llLogo from '../assets/ll-logo.png';
