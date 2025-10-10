@@ -2,6 +2,8 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import '../styles/ContactForm.css';
 import { VITE_WEB3FORMS_ACCESS_KEY } from '../config';
+import { motion } from 'framer-motion';
+import { WEB3FORMS_API_URL } from '../utils/constants';
 
 interface FormData {
   name: string;
@@ -59,7 +61,7 @@ const ContactForm = () => {
       setIsSubmitting(true);
       setSubmitError(null);
 
-      fetch('https://api.web3forms.com/submit', {
+      fetch(WEB3FORMS_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +97,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-container">
+    <motion.div
+      className="contact-form-container"
+      animate={{ x: 0, opacity: 1 }}
+      initial={{ x: 50, opacity: 0 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+    >
       <h2 className="contact-title">Get In Touch</h2>
       <p className="contact-description">
         Have a question or want to work together? Fill out the form below and
@@ -164,7 +171,7 @@ const ContactForm = () => {
           </form>
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 
