@@ -4,7 +4,6 @@ import '../../styles/section/ServicesSection.css';
 import { SERVICES_SECTION } from '../../utils/constants';
 
 const ServicesSection = () => {
-
   return (
     <motion.section
       className="services-section"
