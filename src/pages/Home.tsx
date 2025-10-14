@@ -9,7 +9,7 @@ import { POSITION_TITLE } from '../utils/constants';
 import CompanyCard from '../components/card/CompanyCard';
 import ServicesSection from '../components/section/ServicesSection';
 import ButtonLink from '../components/button/ButtonLink';
-import Cta from '../components/Cta';
+import CtaSection from '../components/section/CtaSection';
 import ProjectPreviewSection from '../components/section/ProjectPreviewSection';
 
 const Home = () => {
@@ -115,7 +115,7 @@ const Home = () => {
             alt="Wayvia"
           />
         </div>
-        <Cta />
+        <CtaSection />
       </motion.section>
     </div>
   );

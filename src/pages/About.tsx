@@ -5,7 +5,7 @@ import SkillCategory from '../components/SkillCategory';
 import { POSITION_TITLE, SKILLS } from '../utils/constants';
 import { useLocation } from 'react-router-dom';
 import Title from '../components/page/Title';
-import Cta from '../components/Cta';
+import CtaSection from '../components/section/CtaSection';
 
 const About = () => {
   const { pathname } = useLocation();
@@ -106,7 +106,7 @@ const About = () => {
           ))}
         </div>
       </motion.div>
-      <Cta />
+      <CtaSection />
     </div>
   );
 };

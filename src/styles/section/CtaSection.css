@@ -1,4 +1,4 @@
-.cta {
+.cta-section {
   text-align: center;
   margin-top: 5rem;
   padding: 3rem 1.5rem;
@@ -11,13 +11,13 @@
   box-shadow: var(--box-shadow-card);
 }
 
-.cta h2 {
+.cta-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
-.cta p {
+.cta-section p {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 1.5rem auto;

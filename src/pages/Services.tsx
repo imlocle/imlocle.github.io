@@ -1,9 +1,9 @@
 import { useLocation } from 'react-router-dom';
 import Title from '../components/page/Title';
 import '../styles/Services.css';
-import Cta from '../components/Cta';
 import ServicesCard from '../components/card/ServicesCard';
 import { SERVICES } from '../utils/constants';
+import CtaSection from '../components/section/CtaSection';
 
 const Services = () => {
   const { pathname } = useLocation();
@@ -22,7 +22,7 @@ const Services = () => {
           />
         ))}
       </div>
-      <Cta />
+      <CtaSection />
     </div>
   );
 };

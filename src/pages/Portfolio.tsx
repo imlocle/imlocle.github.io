@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Title from '../components/page/Title';
 import ButtonLink from '../components/button/ButtonLink';
 import downloadOnAppStore from '../assets/download-on-the-app-store.svg';
-import Cta from '../components/Cta';
+import CtaSection from '../components/section/CtaSection';
 import { PROJECTS } from '../utils/constants';
 
 const Portfolio = () => {
@@ -72,7 +72,7 @@ const Portfolio = () => {
         ))}
       </div>
 
-      <Cta />
+      <CtaSection />
     </div>
   );
 };

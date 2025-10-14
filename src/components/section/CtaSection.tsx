@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import ButtonLink from './button/ButtonLink';
-import '../styles/Cta.css';
+import ButtonLink from '../button/ButtonLink';
+import '../../styles/section/CtaSection.css';
 
-const Cta = () => {
+const CtaSection = () => {
   return (
     <motion.div
-      className="cta"
+      className="cta-section"
       initial={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
       whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
@@ -22,4 +22,4 @@ const Cta = () => {
   );
 };
 
-export default Cta;
+export default CtaSection;
