@@ -14,3 +14,39 @@
   margin: 0 auto;
   padding: 5rem 2rem;
 }
+
+.title-card {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  margin-bottom: 1em;
+}
+
+.description-card {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-link:hover {
+  color: var(--primary-light);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}

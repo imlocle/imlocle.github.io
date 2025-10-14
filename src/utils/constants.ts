@@ -6,6 +6,7 @@ import alfredLogo from '../assets/alfred-logo.png';
 export const GITHUB_LINK = 'https://github.com/imlocle';
 export const LINKEDIN_LINK = 'https://linkedin.com/in/imlocle';
 export const WEB3FORMS_API_URL = 'https://api.web3forms.com/submit';
+export const CALENDLY_URL = 'https://calendly.com/loc-le/30-min-meeting';
 
 export const POSITION_TITLE = 'Backend Cloud Engineer';
 export const ALFRED_GREETINGS = [
@@ -17,7 +18,6 @@ export const ALFRED_GREETINGS = [
   "Welcome. I am Alfred, at your service. Feel free to inquire about Mr. Loc Le's work, skills, or interests.",
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
-
 
 // ABOUT PAGE
 
@@ -97,8 +97,7 @@ export const PROJECTS: Project[] = [
     technologies: ['AWS SAM', 'Python', 'TypeScript', 'Node.js', 'Terraform'],
     image: neptuneLogo,
     link: 'https://www.theneptuneapp.com/',
-    appStore:
-      'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
+    appStore: 'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
   },
   {
     id: 2,
