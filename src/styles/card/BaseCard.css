@@ -1,0 +1,60 @@
+.base-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-card);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: left;
+    transition: var(--transition-all);
+}
+
+.base-card-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+.base-card-image {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}
+
+.base-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.base-card-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.base-card-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.base-card-highlight {
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.base-card-highlight::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-light);
+    font-weight: 500;
+}

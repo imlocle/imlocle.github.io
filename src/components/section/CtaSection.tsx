@@ -4,7 +4,7 @@ import '../../styles/section/CtaSection.css';
 
 const CtaSection = () => {
   return (
-    <motion.div
+    <motion.section
       className="cta-section"
       initial={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
@@ -18,7 +18,7 @@ const CtaSection = () => {
         I can help bring your vision to life with speed and reliability.
       </p>
       <ButtonLink link="/contact" text="Book a Call" />
-    </motion.div>
+    </motion.section>
   );
 };
 

@@ -65,6 +65,7 @@
 }
 
 @media (max-width: 768px) {
+
   .primary-button,
   .secondary-button {
     padding: 0.6rem 1.5rem;

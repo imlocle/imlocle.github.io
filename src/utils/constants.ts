@@ -1,4 +1,3 @@
-import type { Project } from '../models/interfaces';
 import neptuneLogo from '../assets/neptune-logo.svg';
 import llLogo from '../assets/ll-logo.png';
 import alfredLogo from '../assets/alfred-logo.png';
@@ -86,7 +85,7 @@ export const SERVICES = [
 
 // PORTFOLIO PAGE
 
-export const PROJECTS: Project[] = [
+export const PROJECTS = [
   {
     id: 1,
     title: 'Neptune - Be Yourself',
@@ -165,20 +164,26 @@ export const PROJECTS_SECTION = [
     description:
       'A video-based social media platform for artists, entertainers, and dreamers.',
     image: neptuneLogo,
-    link: 'https://www.theneptuneapp.com/',
+    link: '/portfolio',
+    linkText: 'Learn More ->',
+    buttonClassName: 'arrow-link',
   },
   {
     id: 2,
     title: 'Portfolio Website',
     description: 'My personal portfolio website that you are viewing now.',
     image: llLogo,
-    link: 'https://github.com/imlocle/imlocle.github.io',
+    link: '/portfolio',
+    linkText: 'Learn More ->',
+    buttonClassName: 'arrow-link',
   },
   {
     id: 3,
     title: 'Alfred - AI Chatbot',
     description: 'An AI chatbot using AWS Bedrock and Python.',
     image: alfredLogo,
-    link: 'https://github.com/imlocle/alfred-chatbot',
+    link: '/portfolio',
+    linkText: 'Learn More ->',
+    buttonClassName: 'arrow-link',
   },
 ];

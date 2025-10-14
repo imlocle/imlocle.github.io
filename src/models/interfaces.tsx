@@ -1,10 +1,15 @@
-export interface Project {
+export interface Card {
   id: number;
   title: string;
   description: string;
-  outcomes?: string;
-  technologies: string[];
+
+  appStore?: string;
+  buttonClassName?: string;
+  highlights?: string[];
+  icon?: string;
   image?: string;
   link?: string;
-  appStore?: string;
+  linkText?: string;
+  outcomes?: string;
+  technologies: string[];
 }
