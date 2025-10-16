@@ -1,57 +1,19 @@
-.services-list {
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-.service-card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-card);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  transition: var(--transform-all);
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on tablets */
+  }
 }
 
-.service-icon {
-  font-size: 2.8rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  align-self: center;
-}
-
-.service-title {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-.service-description {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.service-highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.service-highlights li {
-  padding-left: 1.2rem;
-  position: relative;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.service-highlights li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--primary-light);
-  font-weight: 500;
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    /* 1 column on mobile */
+  }
 }

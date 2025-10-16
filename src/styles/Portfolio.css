@@ -4,102 +4,10 @@
   gap: 2rem;
 }
 
-.portfolio-card {
-  background: var(--white);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  transition: var(--transform-all);
-  box-shadow: var(--box-shadow-card);
-  flex-direction: column;
-  align-items: flex-start;
-  display: flex;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--box-shadow-hover);
-}
-
-.portfolio-image-container {
-  width: 100%;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.portfolio-image {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.portfolio-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
-.portfolio-title {
-  font-size: 1.6rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.portfolio-description {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.portfolio-outcomes {
-  color: var(--text-primary);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.portfolio-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-  background: #bae6fd;
-  color: #0369a1;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--border-radius);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.portfolio-links {
-  /* ensures buttons are always at the bottom */
-  margin-top: auto;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.portfolio-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.portfolio-buttons button,
-.portfolio-buttons a img {
-  vertical-align: middle;
-}
-
-.app-store-badge {
-  transition: var(--transition-all);
-}
-
-.app-store-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--box-shadow-hover);
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
