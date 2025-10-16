@@ -5,11 +5,15 @@ import raxLogo from '../assets/rax-logo-2020.svg';
 import neptuneLogo from '../assets/neptune-logo2.png';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
-import { POSITION_TITLE, PROJECTS_SECTION, SERVICES_SECTION } from '../utils/constants';
+import {
+  POSITION_TITLE,
+  PROJECTS_SECTION,
+  SERVICES_SECTION,
+} from '../utils/constants';
 import CompanyCard from '../components/card/CompanyCard';
 import ButtonLink from '../components/button/ButtonLink';
 import CtaSection from '../components/section/CtaSection';
-import BaseSectionGrid from '../components/section/BaseSectionGrid';
+import PreviewSectionGrid from '../components/section/PreviewSectionGrid';
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -81,8 +85,8 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <BaseSectionGrid title="Services" cards={SERVICES_SECTION} />
-      <BaseSectionGrid title="Featured Projects" cards={PROJECTS_SECTION} />
+      <PreviewSectionGrid title="Services" cards={SERVICES_SECTION} />
+      <PreviewSectionGrid title="Featured Projects" cards={PROJECTS_SECTION} />
 
       <motion.section
         className="companies-section"
