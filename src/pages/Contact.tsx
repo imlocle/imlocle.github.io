@@ -29,9 +29,9 @@ const Contact = () => {
             Whether you have a project in mind, a question about my work, or
             just want to say hello, I'd love to hear from you.
           </p>
-          <p className='card-description'>
-            Fill out the form on the right to send an email,
-            or schedule a 30 minute meeting with me, using the Calendly button below.
+          <p className="card-description">
+            Fill out the form on the right to send an email, or schedule a 30
+            minute meeting with me, using the Calendly button below.
           </p>
           <div className="contact-details">
             <div className="contact-item">

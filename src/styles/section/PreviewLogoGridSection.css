@@ -1,14 +1,11 @@
 .preview-logo-section {
-  padding: 5rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-bottom: 5rem;
 }
 
 .preview-logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
 }
 
 @media (max-width: 1024px) {

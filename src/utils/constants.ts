@@ -5,7 +5,7 @@ import alfredLogo from '../assets/alfred-logo.png';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
-import pisyncLogo from '../assets/pisync_logo.png'
+import pisyncLogo from '../assets/pisync_logo.png';
 import type { IMainCard, IPreviewCard } from '../models/interfaces';
 
 export const GITHUB_LINK = 'https://github.com/imlocle';
@@ -136,7 +136,15 @@ export const PROJECTS: IMainCard[] = [
       'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP). After successful transfers, files are automatically moved to the Trash for seamless cleanup.',
     outcomes:
       'Developed a reliable file synchronization and cleanup system with a layered architecture using watchdog for real-time monitoring, subprocess for secure SCP transfers, and send2trash for safe file removal. Designed to streamline home media management with minimal manual intervention.',
-    technologies: ['Python', 'Watchdog', 'SCP/SSH', 'Send2Trash', 'Raspberry Pi', 'macOS', 'Automation'],
+    technologies: [
+      'Python',
+      'Watchdog',
+      'SCP/SSH',
+      'Send2Trash',
+      'Raspberry Pi',
+      'macOS',
+      'Automation',
+    ],
     image: pisyncLogo,
     link: 'https://github.com/imlocle/file-sync-to-pi',
   },
