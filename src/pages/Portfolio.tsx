@@ -11,22 +11,22 @@ const Portfolio = () => {
   return (
     <div className="page-container">
       <Title pathname={pathname} title="Portfolio" />
-
-      <div className="portfolio-grid">
-        {PROJECTS.map((project, index) => (
-          <MainCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            outcomes={project.outcomes}
-            link={project.link}
-            appStore={project.appStore}
-            technologies={project.technologies}
-          />
-        ))}
-      </div>
-
+      <section className="portfolio-section">
+        <div className="portfolio-grid">
+          {PROJECTS.map((project, index) => (
+            <MainCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              outcomes={project.outcomes}
+              link={project.link}
+              appStore={project.appStore}
+              technologies={project.technologies}
+            />
+          ))}
+        </div>
+      </section>
       <CtaSection />
     </div>
   );

@@ -7,7 +7,7 @@
   --white: #ffffff;
   --transition-all: all 0.3s ease;
   --border-radius: 15px;
-  --box-shadow-hover: 0 7px 14px rgba(30, 58, 138, 0.3);
+  --box-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
   --box-shadow-card: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -72,13 +72,6 @@ button {
   font-family: inherit;
 }
 
-/* Utility classes */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -121,11 +114,4 @@ button {
 
 .mb-5 {
   margin-bottom: 3rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
 }

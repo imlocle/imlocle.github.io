@@ -1,3 +1,7 @@
+.services-section {
+  padding-bottom: 5rem;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -7,13 +11,11 @@
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on tablets */
   }
 }
 
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
-    /* 1 column on mobile */
   }
 }

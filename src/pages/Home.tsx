@@ -1,19 +1,16 @@
 import { motion } from 'framer-motion';
 import '../styles/Home.css';
 import { useLocation } from 'react-router-dom';
-import raxLogo from '../assets/rax-logo-2020.svg';
-import neptuneLogo from '../assets/neptune-logo2.png';
-import mdsLogo from '../assets/mds.png';
-import wayviaLogo from '../assets/wayvia-logo.svg';
 import {
+  COMPANIES_WORKED,
   POSITION_TITLE,
   PROJECTS_SECTION,
   SERVICES_SECTION,
 } from '../utils/constants';
-import CompanyCard from '../components/card/CompanyCard';
 import ButtonLink from '../components/button/ButtonLink';
 import CtaSection from '../components/section/CtaSection';
 import PreviewSectionGrid from '../components/section/PreviewSectionGrid';
+import PreviewLogoGridSection from '../components/section/PreviewLogoGridSection';
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -84,42 +81,18 @@ const Home = () => {
           <div className="arrow-down"></div>
         </motion.div>
       </div>
-
-      <PreviewSectionGrid title="Services" cards={SERVICES_SECTION} />
-      <PreviewSectionGrid title="Featured Projects" cards={PROJECTS_SECTION} />
-
-      <motion.section
-        className="companies-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <h2 className="section-title">Who I've Worked With</h2>
-        <div className="companies-grid">
-          <CompanyCard
-            link="https://www.theneptuneapp.com/"
-            imgLogo={neptuneLogo}
-            alt="The Neptune App"
-          />
-          <CompanyCard
-            link="https://www.rackspace.com/"
-            imgLogo={raxLogo}
-            alt="Rackspace Technology"
-          />
-          <CompanyCard
-            link="https://www.methoddatascience.com/"
-            imgLogo={mdsLogo}
-            alt="Method Data Science"
-          />
-          <CompanyCard
-            link="https://www.wayvia.com/"
-            imgLogo={wayviaLogo}
-            alt="Wayvia"
-          />
-        </div>
+      <div className="page-container">
+        <PreviewSectionGrid title="Services" cards={SERVICES_SECTION} />
+        <PreviewSectionGrid
+          title="Featured Projects"
+          cards={PROJECTS_SECTION}
+        />
+        <PreviewLogoGridSection
+          title="Who I've Worked With"
+          cards={COMPANIES_WORKED}
+        />
         <CtaSection />
-      </motion.section>
+      </div>
     </div>
   );
 };
