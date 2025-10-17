@@ -5,13 +5,15 @@ const ButtonLink = ({
   link,
   text,
   className = 'primary-button',
+  target = ''
 }: {
   link: string;
   text: string;
   className?: string;
+  target?: string;
 }) => {
   return (
-    <Link to={link} className={className}>
+    <Link to={link} className={className} target={target}>
       {text}
     </Link>
   );

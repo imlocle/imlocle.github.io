@@ -1,23 +1,22 @@
-.cta {
-  text-align: center;
-  margin-top: 5rem;
-  padding: 3rem 1.5rem;
+.cta-section {
   background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-  color: var(--text-primary);
   border-radius: var(--border-radius);
-  max-width: 100%;
+  box-shadow: var(--box-shadow-card);
+  color: var(--text-primary);
   margin-left: auto;
   margin-right: auto;
-  box-shadow: var(--box-shadow-card);
+  max-width: 100%;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
 
-.cta h2 {
+.cta-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
-.cta p {
+.cta-section p {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 1.5rem auto;

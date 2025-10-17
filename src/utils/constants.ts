@@ -1,11 +1,18 @@
-import type { Project } from '../models/interfaces';
 import neptuneLogo from '../assets/neptune-logo.svg';
+import neptuneLogo2 from '../assets/neptune-logo2.png';
 import llLogo from '../assets/ll-logo.png';
 import alfredLogo from '../assets/alfred-logo.png';
+import raxLogo from '../assets/rax-logo-2020.svg';
+import mdsLogo from '../assets/mds.png';
+import wayviaLogo from '../assets/wayvia-logo.svg';
+import pisyncLogo from '../assets/pisync_logo.png'
+import type { IMainCard, IPreviewCard } from '../models/interfaces';
 
 export const GITHUB_LINK = 'https://github.com/imlocle';
 export const LINKEDIN_LINK = 'https://linkedin.com/in/imlocle';
 export const WEB3FORMS_API_URL = 'https://api.web3forms.com/submit';
+export const CALENDLY_URL = 'https://calendly.com/loc-le/30-min-meeting';
+export const NEPTUNE_URL = 'https://www.theneptuneapp.com/';
 
 export const POSITION_TITLE = 'Backend Cloud Engineer';
 export const ALFRED_GREETINGS = [
@@ -17,7 +24,6 @@ export const ALFRED_GREETINGS = [
   "Welcome. I am Alfred, at your service. Feel free to inquire about Mr. Loc Le's work, skills, or interests.",
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
-
 
 // ABOUT PAGE
 
@@ -51,8 +57,9 @@ export const SKILLS = [
 
 // SERVICES PAGE
 
-export const SERVICES = [
+export const SERVICES: IMainCard[] = [
   {
+    id: 1,
     icon: '🧠',
     title: 'AI Product Integration',
     description: `Integrate powerful AI models into your existing product or build new intelligent features from scratch. I specialize in backend orchestration for AI services like OpenAI, Anthropic, and custom ML models.`,
@@ -63,6 +70,7 @@ export const SERVICES = [
     ],
   },
   {
+    id: 2,
     icon: '🚀',
     title: 'Backend MVP in Weeks',
     description: `Need to validate your startup fast? I build production-grade AWS backend systems that are scalable, serverless, and cost-efficient — ready for launch in just a few weeks.`,
@@ -73,6 +81,7 @@ export const SERVICES = [
     ],
   },
   {
+    id: 3,
     icon: '☁️',
     title: 'Cloud Modernization',
     description: `Migrate or refactor existing infrastructure to modern serverless solutions. Reduce costs, improve reliability, and simplify maintenance without interrupting your existing operations.`,
@@ -86,7 +95,7 @@ export const SERVICES = [
 
 // PORTFOLIO PAGE
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: IMainCard[] = [
   {
     id: 1,
     title: 'Neptune - Be Yourself',
@@ -96,9 +105,8 @@ export const PROJECTS: Project[] = [
       'Designed and deployed a scalable AWS backend capable of handling millions of video uploads daily, improving system reliability and performance.',
     technologies: ['AWS SAM', 'Python', 'TypeScript', 'Node.js', 'Terraform'],
     image: neptuneLogo,
-    link: 'https://www.theneptuneapp.com/',
-    appStore:
-      'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
+    link: NEPTUNE_URL,
+    appStore: 'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
   },
   {
     id: 2,
@@ -121,65 +129,85 @@ export const PROJECTS: Project[] = [
     image: alfredLogo,
     link: 'https://github.com/imlocle/alfred-chatbot',
   },
+  {
+    id: 4,
+    title: 'PiSync: Automated Media Transfer and File Cleanup System',
+    description:
+      'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP). After successful transfers, files are automatically moved to the Trash for seamless cleanup.',
+    outcomes:
+      'Developed a reliable file synchronization and cleanup system with a layered architecture using watchdog for real-time monitoring, subprocess for secure SCP transfers, and send2trash for safe file removal. Designed to streamline home media management with minimal manual intervention.',
+    technologies: ['Python', 'Watchdog', 'SCP/SSH', 'Send2Trash', 'Raspberry Pi', 'macOS', 'Automation'],
+    image: pisyncLogo,
+    link: 'https://github.com/imlocle/file-sync-to-pi',
+  },
 ];
 
-// SERVICES SECTION
+// HOME PAGE
 
-export const SERVICES_SECTION = [
+export const SERVICES_SECTION: IPreviewCard[] = [
   {
-    id: 1,
     icon: '🧠',
     title: 'AI Product Integration',
     description: 'I build scalable AI-powered backend systems for startups.',
     link: '/services#ai-product-integration',
-    linkText: 'Learn More ->',
-    buttonClassName: 'arrow-link',
   },
   {
-    id: 2,
     icon: '🚀',
     title: 'Backend MVP in Weeks',
     description:
       'Fast, production-ready AWS backend architecture for startups. Serverless, scalable, and cost-efficient.',
     link: '/services#backend-mvp-in-2-weeks',
-    linkText: 'Learn More ->',
-    buttonClassName: 'arrow-link',
   },
   {
-    id: 3,
     icon: '☁️',
     title: 'Cloud Modernization',
     description:
       'Refactor or migrate existing infrastructure to modern serverless solutions for better performance and lower costs.',
     link: '/services#cloud-modernization',
-    linkText: 'Learn More ->',
-    buttonClassName: 'arrow-link',
   },
 ];
 
-// PROJECT SECTION
-
-export const PROJECTS_SECTION = [
+export const PROJECTS_SECTION: IPreviewCard[] = [
   {
-    id: 1,
     title: 'Neptune - Be Yourself',
     description:
       'A video-based social media platform for artists, entertainers, and dreamers.',
     image: neptuneLogo,
-    link: 'https://www.theneptuneapp.com/',
+    link: '/portfolio',
   },
   {
-    id: 2,
     title: 'Portfolio Website',
     description: 'My personal portfolio website that you are viewing now.',
     image: llLogo,
-    link: 'https://github.com/imlocle/imlocle.github.io',
+    link: '/portfolio',
   },
   {
-    id: 3,
     title: 'Alfred - AI Chatbot',
     description: 'An AI chatbot using AWS Bedrock and Python.',
     image: alfredLogo,
-    link: 'https://github.com/imlocle/alfred-chatbot',
+    link: '/portfolio',
+  },
+];
+
+export const COMPANIES_WORKED = [
+  {
+    alt: 'The Neptune App',
+    imageLogo: neptuneLogo2,
+    link: NEPTUNE_URL,
+  },
+  {
+    alt: 'Rackspace Technology',
+    imageLogo: raxLogo,
+    link: 'https://www.rackspace.com/',
+  },
+  {
+    alt: 'Method Data Science',
+    imageLogo: mdsLogo,
+    link: 'https://www.methoddatascience.com/',
+  },
+  {
+    alt: 'Wayvia',
+    imageLogo: wayviaLogo,
+    link: 'https://www.wayvia.com/',
   },
 ];
