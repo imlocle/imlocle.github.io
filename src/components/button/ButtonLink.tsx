@@ -5,7 +5,7 @@ const ButtonLink = ({
   link,
   text,
   className = 'primary-button',
-  target = ''
+  target = '',
 }: {
   link: string;
   text: string;

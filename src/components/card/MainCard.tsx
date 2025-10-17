@@ -67,7 +67,7 @@ const MainCard = ({
         {link && (
           <div className="main-card-links">
             <div className="main-card-buttons">
-              <ButtonLink link={link} text="View Project" target='_blank' />
+              <ButtonLink link={link} text="View Project" target="_blank" />
               {appStore && (
                 <a href={appStore} target="_blank" rel="noopener noreferrer">
                   <img
