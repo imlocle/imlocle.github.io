@@ -8,16 +8,12 @@ const PreviewCard = ({
   icon,
   image,
   link,
-  linkText,
-  buttonClassName = 'primary-button',
 }: {
   title: string;
   description: string;
   icon?: string;
   image?: string;
   link?: string;
-  linkText?: string;
-  buttonClassName?: string;
 }) => {
   return (
     <motion.div
@@ -31,10 +27,10 @@ const PreviewCard = ({
       {image && <img src={image} alt={title} className="preview-card-image" />}
       {icon && <div className="preview-card-icon">{icon}</div>}
       <div className="preview-card-content">
-        <h2 className="preview-card-title">{title}</h2>
-        <p className="preview-card-description">{description}</p>
-        {link && linkText && (
-          <ButtonLink link={link} text={linkText} className={buttonClassName} />
+        <h2 className="card-title">{title}</h2>
+        <p className="card-description">{description}</p>
+        {link && (
+          <ButtonLink link={link} text="Learn More ->" className="arrow-link" />
         )}
       </div>
     </motion.div>

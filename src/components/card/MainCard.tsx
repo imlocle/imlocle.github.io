@@ -29,44 +29,45 @@ const MainCard = ({
   return (
     <motion.div
       className="main-card"
+      key={key}
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: key * 0.1 }}
       whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      {icon && <div className="main-icon">{icon}</div>}
+      {icon && <div className="main-card-icon">{icon}</div>}
       {image && (
-        <div className="main-image-container">
-          <img src={image} alt={title} className="main-image" />
+        <div className="main-card-image-container">
+          <img src={image} alt={title} className="main-card-image" />
         </div>
       )}
-      <div className="main-content">
-        <h2 className="main-title">{title}</h2>
-        <p className="main-description">{description}</p>
-        {outcomes && <p className="main-outcomes">💡 {outcomes}</p>}
+      <div className="main-card-content">
+        <h2 className="card-title">{title}</h2>
+        <p className="card-description">{description}</p>
+        {outcomes && <p className="main-card-outcomes">💡 {outcomes}</p>}
         {highlights && (
-          <ul className="main-highlights">
+          <ul className="main-card-highlights">
             {highlights.map((highlight, i) => (
-              <li key={i} className="main-highlight">
+              <li key={i} className="main-card-highlight">
                 {highlight}
               </li>
             ))}
           </ul>
         )}
         {technologies && (
-          <ul className="main-technologies">
+          <ul className="main-card-technologies">
             {technologies.map((technology, i) => (
-              <span key={i} className="main-technology">
+              <span key={i} className="main-card-technology">
                 {technology}
               </span>
             ))}
           </ul>
         )}
         {link && (
-          <div className="main-links">
-            <div className="main-buttons">
-              <ButtonLink link={link} text="View Project" />
+          <div className="main-card-links">
+            <div className="main-card-buttons">
+              <ButtonLink link={link} text="View Project" target='_blank' />
               {appStore && (
                 <a href={appStore} target="_blank" rel="noopener noreferrer">
                   <img

@@ -1,14 +1,13 @@
 .cta-section {
-  text-align: center;
-  margin-top: 5rem;
-  padding: 3rem 1.5rem;
   background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-  color: var(--text-primary);
   border-radius: var(--border-radius);
-  max-width: 100%;
+  box-shadow: var(--box-shadow-card);
+  color: var(--text-primary);
   margin-left: auto;
   margin-right: auto;
-  box-shadow: var(--box-shadow-card);
+  max-width: 100%;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
 
 .cta-section h2 {

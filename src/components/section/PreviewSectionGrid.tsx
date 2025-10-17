@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import '../../styles/section/PreviewSectionGrid.css';
 import PreviewCard from '../card/PreviewCard';
+import type { IPreviewCard } from '../../models/interfaces';
 
 const PreviewSectionGrid = ({
-  cards,
   title,
+  cards,
 }: {
-  cards: any[];
-  title?: string;
+  title: string;
+  cards: IPreviewCard[];
 }) => {
   return (
     <motion.section
@@ -17,18 +18,16 @@ const PreviewSectionGrid = ({
       transition={{ duration: 0.8 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      {title && <h2 className="preview-section-title">{title}</h2>}
+      <h2 className="section-title">{title}</h2>
       <div className="preview-grid">
-        {cards.map(service => (
+        {cards.map((service, i) => (
           <PreviewCard
-            key={service.id}
+            key={i}
             image={service.image}
             icon={service.icon}
             title={service.title}
             description={service.description}
             link={service.link}
-            linkText={service.linkText}
-            buttonClassName={service.buttonClassName}
           />
         ))}
       </div>

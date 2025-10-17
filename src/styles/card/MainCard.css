@@ -9,7 +9,12 @@
   transition: var(--transform-all);
 }
 
-.main-icon {
+.main-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.main-card-icon {
   align-self: center;
   color: var(--primary-color);
   font-size: 3rem;
@@ -18,7 +23,7 @@
   width: 100%;
 }
 
-.main-image-container {
+.main-card-image-container {
   width: 100%;
   height: 160px;
   display: flex;
@@ -26,45 +31,32 @@
   margin-bottom: 2rem;
 }
 
-.main-image {
+.main-card-image {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
 
-.main-content {
-  background-color: var(--white);
+.main-card-content {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
-.main-title {
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.main-description {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.main-outcomes {
+.main-card-outcomes {
   color: var(--text-primary);
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
-.main-highlights {
+.main-card-highlights {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.main-highlight {
+.main-card-highlight {
   padding-left: 1.2rem;
   position: relative;
   margin-bottom: 0.5rem;
@@ -72,7 +64,7 @@
   font-weight: 500;
 }
 
-.main-highlight::before {
+.main-card-highlight::before {
   content: '•';
   position: absolute;
   left: 0;
@@ -80,14 +72,14 @@
   font-weight: 500;
 }
 
-.main-technologies {
+.main-card-technologies {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.main-technology {
+.main-card-technology {
   background: #bae6fd;
   color: #0369a1;
   padding: 0.25rem 0.5rem;
@@ -96,20 +88,20 @@
   font-weight: 500;
 }
 
-.main-links {
+.main-card-links {
   /* ensures buttons are always at the bottom */
   margin-top: auto;
   display: flex;
   gap: 0.5rem;
 }
 
-.main-buttons {
+.main-card-buttons {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.main-buttons button,
-.main-buttons a img {
+.main-card-buttons button,
+.main-card-buttons a img {
   vertical-align: middle;
 }

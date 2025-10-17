@@ -104,7 +104,7 @@ const ContactForm = () => {
       transition={{ delay: 0.3, duration: 0.8 }}
     >
       <h2 className="contact-title">Get In Touch</h2>
-      <p className="description-card">
+      <p className="card-description">
         Have a question or want to work together? Fill out the form below and
         I'll get back to you as soon as possible.
       </p>

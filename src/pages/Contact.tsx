@@ -25,30 +25,35 @@ const Contact = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <h2 className="contact-title">Let's Talk</h2>
-          <p className="description-card">
+          <p className="card-description">
             Whether you have a project in mind, a question about my work, or
-            just want to say hello, I'd love to hear from you. Fill out the form
-            or reach out directly through the contact information below.
+            just want to say hello, I'd love to hear from you.
           </p>
-          <div className="contact-item">
-            <h3>Social</h3>
-            <div className="social-links">
-              <a
-                href={GITHUB_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-              >
-                <FaGithub className="social-icon" /> GitHub
-              </a>
-              <a
-                href={LINKEDIN_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-              >
-                <FaLinkedin className="social-icon" /> LinkedIn
-              </a>
+          <p className='card-description'>
+            Fill out the form on the right to send an email,
+            or schedule a 30 minute meeting with me, using the Calendly button below.
+          </p>
+          <div className="contact-details">
+            <div className="contact-item">
+              <h3>Socials:</h3>
+              <div className="social-links">
+                <a
+                  href={GITHUB_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FaGithub className="social-icon" /> GitHub
+                </a>
+                <a
+                  href={LINKEDIN_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FaLinkedin className="social-icon" /> LinkedIn
+                </a>
+              </div>
             </div>
           </div>
           <div>
