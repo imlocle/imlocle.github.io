@@ -1,11 +1,12 @@
 .preview-section {
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 .preview-grid {
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
 }
 
 @media (max-width: 1024px) {
@@ -15,6 +16,10 @@
 }
 
 @media (max-width: 768px) {
+  .preview-section {
+    padding-bottom: 5rem;
+  }
+
   .preview-grid {
     grid-template-columns: 1fr;
   }
