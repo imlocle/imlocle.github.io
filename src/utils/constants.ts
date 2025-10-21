@@ -110,27 +110,6 @@ export const PROJECTS: IMainCard[] = [
   },
   {
     id: 2,
-    title: 'Portfolio Website',
-    description: 'My personal portfolio website that you are viewing now.',
-    outcomes:
-      'Built a fully responsive React + Vite site with AI-powered project previews, enabling clients to quickly understand my consulting capabilities.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Vite', 'GenAI', 'TRAE'],
-    image: llLogo,
-    link: 'https://github.com/imlocle/imlocle.github.io',
-  },
-  {
-    id: 3,
-    title: 'Alfred - AI Chatbot',
-    description:
-      'An AI chatbot using AWS Bedrock and Python that answers questions about me.',
-    outcomes:
-      'Built a fully functional AI chatbot using AWS Bedrock, implementing a custom rate limiter to efficiently handle multiple users and ensure stable performance.',
-    technologies: ['AWS Bedrock', 'Lambda', 'Python', 'S3', 'Terraform'],
-    image: alfredLogo,
-    link: 'https://github.com/imlocle/alfred-chatbot',
-  },
-  {
-    id: 4,
     title: 'PiSync: Automated Media Transfer and File Cleanup System',
     description:
       'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP). After successful transfers, files are automatically moved to the Trash for seamless cleanup.',
@@ -146,7 +125,28 @@ export const PROJECTS: IMainCard[] = [
       'Automation',
     ],
     image: pisyncLogo,
-    link: 'https://github.com/imlocle/file-sync-to-pi',
+    link: 'https://github.com/imlocle/pisync',
+  },
+  {
+    id: 3,
+    title: 'Alfred - AI Chatbot',
+    description:
+      'An AI chatbot using AWS Bedrock and Python that answers questions about me.',
+    outcomes:
+      'Built a fully functional AI chatbot using AWS Bedrock, implementing a custom rate limiter to efficiently handle multiple users and ensure stable performance.',
+    technologies: ['AWS Bedrock', 'Lambda', 'Python', 'S3', 'Terraform'],
+    image: alfredLogo,
+    link: 'https://github.com/imlocle/alfred-chatbot',
+  },
+  {
+    id: 4,
+    title: 'Portfolio Website',
+    description: 'My personal portfolio website that you are viewing now.',
+    outcomes:
+      'Built a fully responsive React + Vite site with AI-powered project previews, enabling clients to quickly understand my consulting capabilities.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Vite', 'GenAI', 'TRAE'],
+    image: llLogo,
+    link: 'https://github.com/imlocle/imlocle.github.io',
   },
 ];
 
@@ -184,9 +184,9 @@ export const PROJECTS_SECTION: IPreviewCard[] = [
     link: '/portfolio',
   },
   {
-    title: 'Portfolio Website',
-    description: 'My personal portfolio website that you are viewing now.',
-    image: llLogo,
+    title: 'PiSync: Automated Media Transfer and File Cleanup System',
+    description: 'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP).',
+    image: pisyncLogo,
     link: '/portfolio',
   },
   {
