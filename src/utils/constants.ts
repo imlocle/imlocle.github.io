@@ -2,6 +2,7 @@ import neptuneLogo from '../assets/neptune-logo.svg';
 import neptuneLogo2 from '../assets/neptune-logo2.png';
 import llLogo from '../assets/ll-logo.png';
 import alfredLogo from '../assets/alfred-logo.png';
+import stockTrackerLogo from '../assets/stock-tracker-logo.png';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
@@ -100,9 +101,9 @@ export const PROJECTS: IMainCard[] = [
     id: 1,
     title: 'Neptune - Be Yourself',
     description:
-      'A video-based social media platform for artists, entertainers, and dreamers.',
+      'A creator-first social media platform offering customizable feeds, ghost metrics (hidden likes/followers), and monetization tools to empower emerging artists and entertainers.',
     outcomes:
-      'Designed and deployed a scalable AWS backend capable of handling millions of video uploads daily, improving system reliability and performance.',
+      'Engineered a robust AWS-based backend infrastructure capable of ingesting and processing millions of video uploads per day; enabled creator monetization workflows and custom feed logic, increasing system throughput and reliability by X% while supporting creator-centric controls over visibility and algorithmic routing.',
     technologies: ['AWS SAM', 'Python', 'TypeScript', 'Node.js', 'Terraform'],
     image: neptuneLogo,
     link: NEPTUNE_URL,
@@ -131,19 +132,39 @@ export const PROJECTS: IMainCard[] = [
     id: 3,
     title: 'Alfred - AI Chatbot',
     description:
-      'An AI chatbot using AWS Bedrock and Python that answers questions about me.',
+      'A conversational AI assistant built with AWS Bedrock and Python to handle inquiries about me and my consulting services, automatically guiding users from curiosity to booking a call.',
     outcomes:
-      'Built a fully functional AI chatbot using AWS Bedrock, implementing a custom rate limiter to efficiently handle multiple users and ensure stable performance.',
+      'Deployed a serverless architecture featuring AWS Lambda, S3, Bedrock, and a custom rate-limiter to support multiple concurrent users; integrated natural-language intent detection that triggers booking flows, streamlining client outreach and automating initial conversations for consultancy engagements.',
     technologies: ['AWS Bedrock', 'Lambda', 'Python', 'S3', 'Terraform'],
     image: alfredLogo,
     link: 'https://github.com/imlocle/alfred-chatbot',
   },
   {
     id: 4,
-    title: 'Portfolio Website',
-    description: 'My personal portfolio website that you are viewing now.',
+    title: 'Stock Tracker',
+    description:
+      'Stock Tracker is a full-stack web application that provides real-time and historical stock market data powered by the Alpha Vantage API. Built with a FastAPI backend and a Next.js (React) frontend, it delivers a modern, responsive user experience with an emphasis on performance, scalability, and clean data visualization.',
     outcomes:
-      'Built a fully responsive React + Vite site with AI-powered project previews, enabling clients to quickly understand my consulting capabilities.',
+      'Developed a performant, cloud-ready stock analysis platform capable of fetching and caching live financial data. Implemented pagination, historical trend charting, and responsive UI design for accessibility across devices. Strengthened API design and data handling using FastAPI and async Python patterns, achieving efficient real-time data rendering in the frontend.',
+    technologies: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Python',
+      'FastAPI',
+      'Alpha Vantage API',
+      'Uvicorn',
+    ],
+    image: stockTrackerLogo,
+    link: 'https://github.com/imlocle/stock-tracker',
+  },
+  {
+    id: 5,
+    title: 'Portfolio Website',
+    description:
+      'My professional site showcasing consulting expertise in backend cloud engineering & AI, project case-studies, and service-offerings for startups and creators.',
+    outcomes:
+      'Built a fully responsive React + Vite application with AI-powered project previews, service-to-lead conversion elements, and a deployable cloud infrastructure; improved lead engagement by providing a seamless experience connecting visitors to consulting services and bookings.',
     technologies: ['React', 'TypeScript', 'Node.js', 'Vite', 'GenAI', 'TRAE'],
     image: llLogo,
     link: 'https://github.com/imlocle/imlocle.github.io',
@@ -185,7 +206,8 @@ export const PROJECTS_SECTION: IPreviewCard[] = [
   },
   {
     title: 'PiSync: Automated Media Transfer and File Cleanup System',
-    description: 'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP).',
+    description:
+      'Automation tool that continuously monitors a local directory and transfers Movies and TV Shows to a Raspberry Pi 4 over SSH (SCP).',
     image: pisyncLogo,
     link: '/portfolio',
   },
