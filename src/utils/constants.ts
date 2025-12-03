@@ -5,7 +5,6 @@ import neptuneLogo from '../assets/neptune-logo.svg';
 import neptuneLogo2 from '../assets/neptune-logo2.png';
 import llLogo from '../assets/ll-logo.png';
 import alfredLogo from '../assets/alfred-logo.png';
-import stockTrackerLogo from '../assets/stock-tracker-logo.png';
 import raxLogo from '../assets/rax-logo-2020.svg';
 import mdsLogo from '../assets/mds.png';
 import wayviaLogo from '../assets/wayvia-logo.svg';
