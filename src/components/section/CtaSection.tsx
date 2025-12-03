@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import ButtonLink from '../button/ButtonLink';
 import '../../styles/section/CtaSection.css';
+import { CALENDLY_URL } from '../../utils/constants';
 
 const CtaSection = () => {
   return (
@@ -17,7 +18,7 @@ const CtaSection = () => {
         Whether you need a fast MVP, AI integration, or a full cloud migration —
         I can help bring your vision to life with speed and reliability.
       </p>
-      <ButtonLink link="/contact" text="Book a Call" />
+      <ButtonLink link={CALENDLY_URL} text="Book a Call" target="_blank" />
     </motion.section>
   );
 };
