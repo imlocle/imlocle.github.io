@@ -186,24 +186,6 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
   {
     id: 5,
     title: 'Portfolio Website',
-    description: 'My personal portfolio website that you are viewing now.',
-    outcomes:
-      'Developed a performant, cloud-ready stock analysis platform capable of fetching and caching live financial data. Implemented pagination, historical trend charting, and responsive UI design for accessibility across devices. Strengthened API design and data handling using FastAPI and async Python patterns, achieving efficient real-time data rendering in the frontend.',
-    technologies: [
-      'React',
-      'Next.js',
-      'Node.js',
-      'Python',
-      'FastAPI',
-      'Alpha Vantage API',
-      'Uvicorn',
-    ],
-    image: stockTrackerLogo,
-    link: 'https://github.com/imlocle/stock-tracker',
-  },
-  {
-    id: 5,
-    title: 'Portfolio Website',
     description:
       'My professional site showcasing consulting expertise in backend cloud engineering & AI, project case-studies, and service-offerings for startups and creators.',
     outcomes:
