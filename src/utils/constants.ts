@@ -99,6 +99,17 @@ export const SERVICES: IMainCard[] = [
 export const CLIENT_PROJECTS: IMainCard[] = [
   {
     id: 1,
+    title: 'Hachiko Sushi House',
+    description:
+      'A modern, lightweight website for a local sushi restaurant to showcase their menu, hours, and location. Designed for clarity, speed, and mobile usability to help new customers quickly explore the restaurant’s offerings.',
+    outcomes:
+      'Delivered a fully optimized static site using Cloudflare and GitHub Pages, achieving fast load times and near-zero hosting costs. Enhanced user engagement through clean UI, intuitive navigation, and responsive design tailored for local small business visibility.',
+    technologies: ['Cloudflare', 'GitHub Pages', 'React', 'Vite'],
+    image: hachikoLogo,
+    link: 'https://hachikosushihouse.com/',
+  },
+  {
+    id: 2,
     title: 'Neptune - Be Yourself',
     description:
       'A next-generation video-based social platform empowering artists, entertainers, and creators to share their work authentically. Neptune focuses on high-quality video storytelling with a simple and engaging user experience.',
@@ -108,17 +119,6 @@ export const CLIENT_PROJECTS: IMainCard[] = [
     image: neptuneLogo,
     link: 'https://www.theneptuneapp.com/',
     appStore: 'https://apps.apple.com/us/app/neptune-be-yourself/id6745182224',
-  },
-  {
-    id: 2,
-    title: 'Hachiko Sushi House',
-    description:
-      'A modern, lightweight website for a local sushi restaurant to showcase their menu, hours, and location. Designed for clarity, speed, and mobile usability to help new customers quickly explore the restaurant’s offerings.',
-    outcomes:
-      'Delivered a fully optimized static site using Cloudflare and GitHub Pages, achieving fast load times and near-zero hosting costs. Enhanced user engagement through clean UI, intuitive navigation, and responsive design tailored for local small business visibility.',
-    technologies: ['Cloudflare', 'GitHub Pages', 'React', 'Vite'],
-    image: hachikoLogo,
-    link: 'https://hachikosushihouse.com/',
   },
 ];
 
@@ -230,7 +230,7 @@ export const PROJECTS_SECTION: IPreviewCard[] = [
   {
     title: 'Code Query',
     description:
-      'This project implements a Python command-line interface (CLI) to answer questions about a local codebase using the OpenAI API.',
+      'A Python CLI tool that uses a Retrieval-Augmented Generation (RAG) pipeline to answer questions about a local codebase using the OpenAI API.',
     image: codeQueryLogo,
     link: '/work/technical',
   },
