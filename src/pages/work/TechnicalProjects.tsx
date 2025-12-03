@@ -1,19 +1,18 @@
-import '../styles/Portfolio.css';
 import { useLocation } from 'react-router-dom';
-import Title from '../components/page/Title';
-import CtaSection from '../components/section/CtaSection';
-import { PROJECTS } from '../utils/constants';
-import MainCard from '../components/card/MainCard';
+import Title from '../../components/page/Title';
+import { TECHNICAL_PROJECTS } from '../../utils/constants';
+import MainCard from '../../components/card/MainCard';
+import '../../styles/Portfolio.css';
+import CtaSection from '../../components/section/CtaSection';
 
-const Portfolio = () => {
+const TechnicalProjects = () => {
   const { pathname } = useLocation();
-
   return (
     <div className="page-container">
-      <Title pathname={pathname} title="Portfolio" />
+      <Title pathname={pathname} title="Technical Projects" />
       <section className="portfolio-section">
         <div className="portfolio-grid">
-          {PROJECTS.map((project, index) => (
+          {TECHNICAL_PROJECTS.map((project, index) => (
             <MainCard
               key={index}
               title={project.title}
@@ -32,4 +31,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default TechnicalProjects;

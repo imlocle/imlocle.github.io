@@ -12,8 +12,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Loc Le</h3>
           <p className="footer-description">
-            Building Tomorrow's Cloud Solutions Today. Expert Backend
-            Engineering & Consulting.
+            Building tomorrow's Cloud Solutions today.
           </p>
         </div>
 
@@ -25,9 +24,6 @@ const Footer = () => {
             </Link>
             <Link to="/services" className="footer-link">
               Services
-            </Link>
-            <Link to="/portfolio" className="footer-link">
-              Portfolio
             </Link>
             <Link to="/contact" className="footer-link">
               Contact

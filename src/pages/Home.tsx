@@ -14,6 +14,7 @@ import PreviewLogoGridSection from '../components/section/PreviewLogoGridSection
 
 const Home = () => {
   const { pathname } = useLocation();
+
   return (
     <div className="home-container">
       <div className="hero-container">
@@ -63,7 +64,7 @@ const Home = () => {
               className="highlight-primary-button"
             />
             <ButtonLink
-              link="/portfolio"
+              link="/work/technical"
               text="View My Work"
               className="highlight-secondary-button"
             />
