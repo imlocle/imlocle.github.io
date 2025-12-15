@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import '../../styles/button/ButtonLink.css';
+import { Link } from "react-router-dom";
+import "../../styles/button/ButtonLink.css";
 
 const ButtonLink = ({
   link,
   text,
-  className = 'primary-button',
-  target = '',
+  className = "primary-button",
+  target = "",
 }: {
   link: string;
   text: string;

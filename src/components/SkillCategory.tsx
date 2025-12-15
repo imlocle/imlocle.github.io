@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const SkillCategory = ({
   category,
@@ -11,7 +11,7 @@ const SkillCategory = ({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
+      whileHover={{ y: -10, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)" }}
       transition={{ duration: 0.5, delay: 0.2 }}
       viewport={{ once: true }}
     >

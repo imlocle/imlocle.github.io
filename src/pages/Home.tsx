@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import '../styles/Home.css';
-import { useLocation } from 'react-router-dom';
+import { motion } from "framer-motion";
+import "../styles/Home.css";
+import { useLocation } from "react-router-dom";
 import {
   COMPANIES_WORKED,
   POSITION_TITLE,
-  PROJECTS_SECTION,
-  SERVICES_SECTION,
-} from '../utils/constants';
-import ButtonLink from '../components/button/ButtonLink';
-import CtaSection from '../components/section/CtaSection';
-import PreviewSectionGrid from '../components/section/PreviewSectionGrid';
-import PreviewLogoGridSection from '../components/section/PreviewLogoGridSection';
+  PREVIEW_PROJECTS,
+  PREVIEW_SERVICES,
+} from "../utils/constants";
+import ButtonLink from "../components/button/ButtonLink";
+import CtaSection from "../components/section/CtaSection";
+import PreviewSectionGrid from "../components/section/PreviewSectionGrid";
+import PreviewLogoGridSection from "../components/section/PreviewLogoGridSection";
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -83,10 +83,10 @@ const Home = () => {
         </motion.div>
       </div>
       <div className="page-container">
-        <PreviewSectionGrid title="Services" cards={SERVICES_SECTION} />
+        <PreviewSectionGrid title="Services" cards={PREVIEW_SERVICES} />
         <PreviewSectionGrid
           title="Featured Projects"
-          cards={PROJECTS_SECTION}
+          cards={PREVIEW_PROJECTS}
         />
         <PreviewLogoGridSection
           title="Who I've Worked With"

@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
-import '../styles/About.css';
-import profilePhoto from '../assets/loc_headshot.jpg';
-import SkillCategory from '../components/SkillCategory';
-import { POSITION_TITLE, SKILLS } from '../utils/constants';
-import { useLocation } from 'react-router-dom';
-import Title from '../components/page/Title';
-import CtaSection from '../components/section/CtaSection';
+import { motion } from "framer-motion";
+import "../styles/About.css";
+import profilePhoto from "../assets/loc_headshot.jpg";
+import SkillCategory from "../components/SkillCategory";
+import { POSITION_TITLE, SKILLS } from "../utils/constants";
+import { useLocation } from "react-router-dom";
+import Title from "../components/page/Title";
+import CtaSection from "../components/section/CtaSection";
 
 const About = () => {
   const { pathname } = useLocation();
@@ -36,76 +36,82 @@ const About = () => {
         >
           <h2>{POSITION_TITLE}</h2>
           <p>
-            My journey into technology began in Japan, while I was teaching
-            English. My brother suggested coding as a balance of logic and
-            creativity, and it clicked instantly. I've always been a problem
-            solver—whether through dance (Poppin', Lockin', Hip-Hop, even
+            My journey into technology began in <strong>Japan</strong>, while I
+            was teaching English. My brother suggested coding as a{" "}
+            <strong>balance of logic and creativity</strong>, and it clicked
+            instantly. I've always been a <strong>problem solver</strong>
+            —whether through dance (Poppin', Lockin', Hip-Hop, even
             impersonating Michael Jackson), filmmaking after college, or my
-            teenage dream of becoming a detective. Though my parents discouraged
-            law enforcement due to their wartime experiences as Vietnamese
-            immigrants, I found a love for uncovering hidden truths in a
-            different way—through History, which I studied at UC Santa Cruz.
+            teenage dream of becoming a detective.
           </p>
           <p>
-            My first programming language was Python, and one of my earliest
-            projects was a small app that used Yelp's API to track restaurants I
-            had tried or wanted to try. That curiosity led me to Coding Dojo,
-            where I learned Python, JavaScript, and Ruby in three months. It was
-            there that I realized: technology is an endless learning process,
-            and I'd never grow bored.
+            Although my parents discouraged law enforcement due to their wartime
+            experiences as Vietnamese immigrants, that curiosity never
+            disappeared. Instead, it evolved into what I now call an{" "}
+            <strong>
+              <em>“Academic Detective”</em>
+            </strong>
+            —someone driven to uncover hidden patterns, question assumptions,
+            and piece together complex narratives. This mindset ultimately led
+            me to study <strong>History at UC Santa Cruz</strong>, where I
+            learned how to investigate, analyze, and synthesize information with
+            rigor and curiosity.
           </p>
           <p>
-            My career started at PriceSpider in Technical Operations, where I
-            learned C# on the job since it wasn't part of my bootcamp
-            background. Around the same time, I was a teaching assistant for UC
-            Irvine's Extension program, working with Beau Walker to help launch
-            Method Data Science. Balancing both roles sharpened my adaptability
-            and built a strong foundation in data.
+            My first programming language was <strong>Python</strong>, and one
+            of my earliest projects was a small app that used Yelp's API to
+            track restaurants I had tried or wanted to try. That curiosity led
+            me to <strong>Coding Dojo</strong>, where I learned{" "}
+            <strong>Python, JavaScript, and Ruby</strong> in three months. It
+            was there that I realized: technology is an endless learning
+            process, and I'd never grow bored.
           </p>
           <p>
-            Later, at Rackspace, I had a mentor who guided me into cloud
-            engineering and taught me through patience and analogy-driven
-            explanations—an approach that matched my learning style perfectly. I
-            discovered that I learn best by reverse engineering systems,
-            breaking them down, and then building them back up. That mindset
-            continues to guide how I design, build, and troubleshoot today.
+            My career started at <strong>PriceSpider</strong> in Technical
+            Operations, where I learned <strong>C#</strong> on the job since it
+            wasn't part of my bootcamp background. Around the same time, I was a
+            teaching assistant for{" "}
+            <strong>UC Irvine's Extension Program</strong>, working with{" "}
+            <strong>Beau Walker</strong> to help launch
+            <strong>Method Data Science</strong>. Balancing both roles sharpened
+            my adaptability and built a strong foundation in data.
           </p>
           <p>
-            These days, my focus is backend engineering, cloud systems, and
-            AI/automation projects. I love working on tools that overlap with my
-            hobbies, like sim racing, but I'm also driven by the dream of
+            Later, at <strong>Rackspace</strong>, I had a mentor who guided me
+            into <strong>cloud engineering</strong> and taught me through
+            patience and <strong>analogy-driven explanations</strong>—an
+            approach that matched my learning style perfectly. I discovered that
+            I learn best by{" "}
+            <strong>
+              reverse engineering systems, breaking them down, and then building
+              them back up
+            </strong>
+            . That mindset continues to guide how I design, build, and
+            troubleshoot today.
+          </p>
+          <p>
+            These days, my focus is{" "}
+            <strong>
+              backend engineering, cloud systems, and AI/automation
+            </strong>{" "}
+            projects. I love working on tools that overlap with my hobbies, like{" "}
+            <strong>sim racing</strong>, but I'm also driven by the dream of
             building something that creates a positive impact in the world.
           </p>
           <p>
-            Beyond work, I'm curious and adventurous. I've studied abroad in
-            Vietnam, taught and bartended in Japan, and traveled through Cuba,
-            France, the Netherlands, and Switzerland. I'm fluent in Vietnamese,
-            conversational in Japanese, and love immersing myself in new
-            cultures. To balance my technical side, I practice mindfulness and
-            meditation—habits rooted in my Buddhist upbringing that help me stay
-            grounded, creative, and always eager to learn.
+            Beyond work, I'm curious and adventurous.{" "}
+            <strong>
+              I've studied abroad in Vietnam, taught and bartended in Japan, and
+              traveled through Cuba, France, the Netherlands, and Switzerland
+            </strong>
+            . I'm fluent in Vietnamese, conversational in Japanese, and love
+            immersing myself in new cultures. To balance my technical side, I
+            practice <strong>mindfulness and meditation</strong>—habits rooted
+            in my Buddhist upbringing that help me stay{" "}
+            <strong>grounded, creative, and always eager to learn</strong>.
           </p>
         </motion.div>
       </div>
-
-      <motion.div
-        className="skills-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="section-title">Technical Skills</h2>
-        <div className="skills-container">
-          {SKILLS.map(category => (
-            <SkillCategory
-              key={category.title}
-              category={category.title}
-              skills={category.skills}
-            />
-          ))}
-        </div>
-      </motion.div>
       <CtaSection />
     </div>
   );
