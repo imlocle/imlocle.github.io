@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/About.css";
 import profilePhoto from "../assets/loc_headshot.jpg";
-import SkillCategory from "../components/SkillCategory";
-import { POSITION_TITLE, SKILLS } from "../utils/constants";
+import { POSITION_TITLE } from "../utils/constants";
 import { useLocation } from "react-router-dom";
 import Title from "../components/page/Title";
 import CtaSection from "../components/section/CtaSection";
