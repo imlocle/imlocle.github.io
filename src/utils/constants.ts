@@ -64,34 +64,73 @@ export const SERVICES: IMainCard[] = [
   {
     id: 1,
     icon: '🧠',
-    title: 'AI Product Integration',
-    description: `Integrate powerful AI models into your existing product or build new intelligent features from scratch. I specialize in backend orchestration for AI services like OpenAI, Anthropic, and custom ML models.`,
+    title: 'AI & Automation Solutions',
+    description:
+      'Design and integrate intelligent AI-driven features into existing products or build new automation workflows from scratch. Focused on reliable backend orchestration and production readiness.',
     highlights: [
-      'API design & integration',
-      'Model orchestration with LangChain / serverless functions',
-      'Secure prompt handling & caching',
+      'LLM integration (OpenAI, Anthropic, Bedrock)',
+      'Backend orchestration & async workflows',
+      'Prompt design, caching, and rate limiting',
     ],
   },
   {
     id: 2,
     icon: '🚀',
     title: 'Backend MVP in Weeks',
-    description: `Need to validate your startup fast? I build production-grade AWS backend systems that are scalable, serverless, and cost-efficient — ready for launch in just a few weeks.`,
+    description:
+      'Rapidly validate your startup idea with a production-grade backend built for scale. Designed to support real users from day one without overengineering.',
     highlights: [
-      'Serverless AWS architecture',
+      'Serverless AWS architecture (Lambda, API Gateway)',
       'Auth, database, and CI/CD setup',
-      'Ready for your frontend team immediately',
+      'Ready for frontend or mobile teams immediately',
     ],
   },
   {
     id: 3,
     icon: '☁️',
-    title: 'Cloud Modernization',
-    description: `Migrate or refactor existing infrastructure to modern serverless solutions. Reduce costs, improve reliability, and simplify maintenance without interrupting your existing operations.`,
+    title: 'Cloud Architecture & Infrastructure',
+    description:
+      'Modernize or migrate existing systems to cloud-native and serverless architectures to reduce costs, improve reliability, and simplify operations.',
     highlights: [
-      'Lift-and-shift to AWS Lambda / API Gateway',
-      'Performance tuning and monitoring',
-      'Gradual migration strategy to avoid downtime',
+      'AWS serverless & infrastructure as code (Terraform)',
+      'Performance tuning, logging, and monitoring',
+      'Zero-downtime migration strategies',
+    ],
+  },
+  {
+    id: 4,
+    icon: '🛠️',
+    title: 'Product Engineering & Development',
+    description:
+      'End-to-end product engineering for founders and small teams—from idea validation and system design to scalable backend implementation and deployment.',
+    highlights: [
+      'System architecture & API design',
+      'Scalable backend development',
+      'Production deployment & handoff',
+    ],
+  },
+  {
+    id: 5,
+    icon: '🖥️',
+    title: 'Full-Stack Web Development',
+    description:
+      'Build fast, modern, and cost-efficient websites and web applications using a lightweight, cloud-native stack—ideal for small businesses and early-stage startups.',
+    highlights: [
+      'React + Vite frontend development',
+      'Static hosting with near-zero monthly costs',
+      'Responsive design & SEO-friendly structure',
+    ],
+  },
+  {
+    id: 6,
+    icon: '📊',
+    title: 'Data & Analytics Engineering',
+    description:
+      'Design and implement analytics pipelines that turn raw data into actionable insights for product, business, and operational decision-making.',
+    highlights: [
+      'ETL pipelines & API-based data ingestion',
+      'Analytics-ready backend design',
+      'Usage, growth, and performance tracking',
     ],
   },
 ];
@@ -101,7 +140,7 @@ export const CLIENT_PROJECTS: IMainCard[] = [
     id: 1,
     title: 'Hachiko Sushi House',
     description:
-      'A modern, lightweight website for a local sushi restaurant to showcase their menu, hours, and location. Designed for clarity, speed, and mobile usability to help new customers quickly explore the restaurant’s offerings.',
+      "A modern, lightweight website for a local sushi restaurant to showcase their menu, hours, and location. Designed for clarity, speed, and mobile usability to help new customers quickly explore the restaurant's offerings.",
     outcomes:
       'Delivered a fully optimized static site using Cloudflare and GitHub Pages, achieving fast load times and near-zero hosting costs. Enhanced user engagement through clean UI, intuitive navigation, and responsive design tailored for local small business visibility.',
     technologies: ['Cloudflare', 'GitHub Pages', 'React', 'Vite'],
@@ -198,30 +237,30 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
 
 // HOME PAGE
 
-export const SERVICES_SECTION: IPreviewCard[] = [
+export const PREVIEW_SERVICES: IPreviewCard[] = [
   {
     icon: '🧠',
-    title: 'AI Product Integration',
-    description: 'I build scalable AI-powered backend systems for startups.',
-    link: '/services#ai-product-integration',
+    title: 'AI & Automation',
+    description:
+      'Production-ready AI features and automation built on scalable backend systems.',
+    link: '/services#ai-automation',
   },
   {
     icon: '🚀',
-    title: 'Backend MVP in Weeks',
-    description:
-      'Fast, production-ready AWS backend architecture for startups. Serverless, scalable, and cost-efficient.',
-    link: '/services#backend-mvp-in-2-weeks',
+    title: 'Backend MVP',
+    description: 'Launch-ready AWS backends designed to scale from day one.',
+    link: '/services#backend-mvp',
   },
   {
     icon: '☁️',
-    title: 'Cloud Modernization',
+    title: 'Cloud Architecture',
     description:
-      'Refactor or migrate existing infrastructure to modern serverless solutions for better performance and lower costs.',
-    link: '/services#cloud-modernization',
+      'Modern serverless infrastructure that reduces cost and complexity.',
+    link: '/services#cloud-architecture',
   },
 ];
 
-export const PROJECTS_SECTION: IPreviewCard[] = [
+export const PREVIEW_PROJECTS: IPreviewCard[] = [
   {
     title: 'Alfred - AI Chatbot',
     description: 'An AI chatbot using AWS Bedrock and Python.',

@@ -18,7 +18,11 @@ const CtaSection = () => {
         Whether you need a fast MVP, AI integration, or a full cloud migration —
         I can help bring your vision to life with speed and reliability.
       </p>
-      <ButtonLink link={CALENDLY_URL} text="Book a Call" target="_blank" />
+      <ButtonLink
+        link={CALENDLY_URL}
+        text="Book A Consultation"
+        target="_blank"
+      />
     </motion.section>
   );
 };

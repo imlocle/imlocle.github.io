@@ -62,7 +62,7 @@ const Contact = () => {
               onClick={handleCalendly}
               className="submit-button"
             >
-              Schedule a Meeting
+              Book A Consultation
             </button>
           </div>
         </motion.div>
