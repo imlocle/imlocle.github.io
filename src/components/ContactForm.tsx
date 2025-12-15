@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import type { FormEvent } from 'react';
-import '../styles/ContactForm.css';
-import { VITE_WEB3FORMS_ACCESS_KEY } from '../config';
-import { motion } from 'framer-motion';
-import { WEB3FORMS_API_URL } from '../utils/constants';
+import { useState } from "react";
+import type { FormEvent } from "react";
+import "../styles/ContactForm.css";
+import { VITE_WEB3FORMS_ACCESS_KEY } from "../config";
+import { motion } from "framer-motion";
+import { WEB3FORMS_API_URL } from "../utils/constants";
 
 interface FormData {
   name: string;
@@ -13,9 +13,9 @@ interface FormData {
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -27,17 +27,17 @@ const ContactForm = () => {
     const newErrors: Partial<FormData> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = "Message is required";
     }
 
     setErrors(newErrors);
@@ -62,9 +62,9 @@ const ContactForm = () => {
       setSubmitError(null);
 
       fetch(WEB3FORMS_API_URL, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           access_key: VITE_WEB3FORMS_ACCESS_KEY,
@@ -77,7 +77,7 @@ const ContactForm = () => {
           setIsSubmitting(false);
           if (data.success) {
             setSubmitSuccess(true);
-            setFormData({ name: '', email: '', message: '' });
+            setFormData({ name: "", email: "", message: "" });
 
             // Reset success message after 5 seconds
             setTimeout(() => {
@@ -85,13 +85,13 @@ const ContactForm = () => {
             }, 5000);
           } else {
             setSubmitError(
-              data.message || 'An error occurred. Please try again.'
+              data.message || "An error occurred. Please try again."
             );
           }
         })
         .catch(() => {
           setIsSubmitting(false);
-          setSubmitError('An error occurred. Please try again.');
+          setSubmitError("An error occurred. Please try again.");
         });
     }
   };
@@ -125,7 +125,7 @@ const ContactForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={errors.name ? 'error' : ''}
+                className={errors.name ? "error" : ""}
               />
               {errors.name && (
                 <span className="error-message">{errors.name}</span>
@@ -139,7 +139,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={errors.email ? 'error' : ''}
+                className={errors.email ? "error" : ""}
               />
               {errors.email && (
                 <span className="error-message">{errors.email}</span>
@@ -154,19 +154,19 @@ const ContactForm = () => {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className={errors.message ? 'error' : ''}
+                className={errors.message ? "error" : ""}
               />
               {errors.message && (
                 <span className="error-message">{errors.message}</span>
               )}
             </div>
-            <input type="text" name="_honey" style={{ display: 'none' }} />
+            <input type="text" name="_honey" style={{ display: "none" }} />
             <button
               type="submit"
               className="submit-button"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </>

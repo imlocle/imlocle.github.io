@@ -1,9 +1,9 @@
-import { useLocation } from 'react-router-dom';
-import Title from '../../components/page/Title';
-import { CLIENT_PROJECTS } from '../../utils/constants';
-import MainCard from '../../components/card/MainCard';
-import CtaSection from '../../components/section/CtaSection';
-import '../../styles/Portfolio.css';
+import { useLocation } from "react-router-dom";
+import Title from "../../components/page/Title";
+import { CLIENT_PROJECTS } from "../../utils/constants";
+import MainCard from "../../components/card/MainCard";
+import CtaSection from "../../components/section/CtaSection";
+import "../../styles/Portfolio.css";
 
 const ClientProjects = () => {
   const { pathname } = useLocation();

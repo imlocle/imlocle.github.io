@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import ButtonLink from '../button/ButtonLink';
-import '../../styles/card/PreviewCard.css';
+import { motion } from "framer-motion";
+import ButtonLink from "../button/ButtonLink";
+import "../../styles/card/PreviewCard.css";
 
 const PreviewCard = ({
   title,
@@ -20,7 +20,7 @@ const PreviewCard = ({
       className="preview-card"
       initial={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
+      whileHover={{ y: -10, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
     >

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import '../../styles/page/Title.css';
+import { motion } from "framer-motion";
+import "../../styles/page/Title.css";
 
 const Title = ({ pathname, title }: { pathname: string; title: string }) => {
   return (
@@ -21,7 +21,7 @@ const Title = ({ pathname, title }: { pathname: string; title: string }) => {
       <motion.div
         className="title-underline"
         initial={{ width: 0 }}
-        animate={{ width: '80px' }}
+        animate={{ width: "80px" }}
         transition={{ delay: 0.5, duration: 0.8 }}
       />
     </motion.div>

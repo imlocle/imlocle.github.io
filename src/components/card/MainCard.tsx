@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import '../../styles/card/MainCard.css';
-import downloadOnAppStore from '../../assets/download-on-the-app-store.svg';
-import ButtonLink from '../button/ButtonLink';
+import { motion } from "framer-motion";
+import "../../styles/card/MainCard.css";
+import downloadOnAppStore from "../../assets/download-on-the-app-store.svg";
+import ButtonLink from "../button/ButtonLink";
 
 const MainCard = ({
   key,
@@ -32,7 +32,7 @@ const MainCard = ({
       key={key}
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: key * 0.1 }}
-      whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
+      whileHover={{ y: -10, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >

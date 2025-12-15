@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import ContactForm from '../components/ContactForm';
-import '../styles/Contact.css';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from '../utils/constants';
-import { useLocation } from 'react-router-dom';
-import Title from '../components/page/Title';
+import { motion } from "framer-motion";
+import ContactForm from "../components/ContactForm";
+import "../styles/Contact.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "../utils/constants";
+import { useLocation } from "react-router-dom";
+import Title from "../components/page/Title";
 
 const Contact = () => {
   const { pathname } = useLocation();
 
   const handleCalendly = () => {
-    window.open(CALENDLY_URL, '_blank');
+    window.open(CALENDLY_URL, "_blank");
   };
 
   return (

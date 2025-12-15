@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import CompanyCard from '../card/CompanyCard';
-import '../../styles/section/PreviewLogoGridSection.css';
+import { motion } from "framer-motion";
+import CompanyCard from "../card/CompanyCard";
+import "../../styles/section/PreviewLogoGridSection.css";
 
 const PreviewLogoGridSection = ({
   cards,

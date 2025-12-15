@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import '../styles/Home.css';
-import { useLocation } from 'react-router-dom';
+import { motion } from "framer-motion";
+import "../styles/Home.css";
+import { useLocation } from "react-router-dom";
 import {
   COMPANIES_WORKED,
   POSITION_TITLE,
   PREVIEW_PROJECTS,
   PREVIEW_SERVICES,
-} from '../utils/constants';
-import ButtonLink from '../components/button/ButtonLink';
-import CtaSection from '../components/section/CtaSection';
-import PreviewSectionGrid from '../components/section/PreviewSectionGrid';
-import PreviewLogoGridSection from '../components/section/PreviewLogoGridSection';
+} from "../utils/constants";
+import ButtonLink from "../components/button/ButtonLink";
+import CtaSection from "../components/section/CtaSection";
+import PreviewSectionGrid from "../components/section/PreviewSectionGrid";
+import PreviewLogoGridSection from "../components/section/PreviewLogoGridSection";
 
 const Home = () => {
   const { pathname } = useLocation();

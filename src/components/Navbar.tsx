@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import '../styles/Navbar.css';
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +14,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   //** Navbar Click Outside Handler */
@@ -28,14 +28,14 @@ const Navbar = () => {
         setWorkOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const isActive = (pathPrefix: string) => pathname.startsWith(pathPrefix);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} ref={navbarRef}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link
           to="/"
@@ -50,7 +50,7 @@ const Navbar = () => {
 
         {/* Hamburger Icon */}
         <div
-          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span></span>
@@ -58,10 +58,10 @@ const Navbar = () => {
           <span></span>
         </div>
 
-        <div className={`navbar-links ${menuOpen ? 'mobile-open' : ''}`}>
+        <div className={`navbar-links ${menuOpen ? "mobile-open" : ""}`}>
           <Link
             to="/about"
-            className={`nav-link ${isActive('/about') ? 'active' : ''}`}
+            className={`nav-link ${isActive("/about") ? "active" : ""}`}
             onClick={() => {
               setMenuOpen(false);
               setWorkOpen(false);
@@ -72,7 +72,7 @@ const Navbar = () => {
 
           <Link
             to="/services"
-            className={`nav-link ${isActive('/services') ? 'active' : ''}`}
+            className={`nav-link ${isActive("/services") ? "active" : ""}`}
             onClick={() => {
               setMenuOpen(false);
               setWorkOpen(false);
@@ -89,7 +89,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`nav-link dropdown-toggle ${
-                isActive('/work') ? 'active' : ''
+                isActive("/work") ? "active" : ""
               }`}
               onClick={() => setWorkOpen(prev => !prev)}
             >
@@ -101,7 +101,7 @@ const Navbar = () => {
                 <Link
                   to="/work/client"
                   className={`dropdown-item ${
-                    isActive('/work/client') ? 'active' : ''
+                    isActive("/work/client") ? "active" : ""
                   }`}
                   onClick={() => {
                     setMenuOpen(false);
@@ -113,7 +113,7 @@ const Navbar = () => {
                 <Link
                   to="/work/technical"
                   className={`dropdown-item ${
-                    isActive('/work/technical') ? 'active' : ''
+                    isActive("/work/technical") ? "active" : ""
                   }`}
                   onClick={() => {
                     setMenuOpen(false);

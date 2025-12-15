@@ -1,10 +1,10 @@
-import { useLocation } from 'react-router-dom';
-import Title from '../components/page/Title';
-import '../styles/Services.css';
-import { SERVICES } from '../utils/constants';
-import CtaSection from '../components/section/CtaSection';
-import MainCard from '../components/card/MainCard';
-import { motion } from 'framer-motion';
+import { useLocation } from "react-router-dom";
+import Title from "../components/page/Title";
+import "../styles/Services.css";
+import { SERVICES } from "../utils/constants";
+import CtaSection from "../components/section/CtaSection";
+import MainCard from "../components/card/MainCard";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const { pathname } = useLocation();

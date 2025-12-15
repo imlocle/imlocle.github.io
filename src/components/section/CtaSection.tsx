@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import ButtonLink from '../button/ButtonLink';
-import '../../styles/section/CtaSection.css';
-import { CALENDLY_URL } from '../../utils/constants';
+import { motion } from "framer-motion";
+import ButtonLink from "../button/ButtonLink";
+import "../../styles/section/CtaSection.css";
+import { CALENDLY_URL } from "../../utils/constants";
 
 const CtaSection = () => {
   return (
@@ -9,7 +9,7 @@ const CtaSection = () => {
       className="cta-section"
       initial={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -10, boxShadow: 'var(--box-shadow-hover)' }}
+      whileHover={{ y: -10, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
     >
