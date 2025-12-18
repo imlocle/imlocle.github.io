@@ -9,7 +9,7 @@ import raxLogo from "../assets/rax-logo-2020.svg";
 import mdsLogo from "../assets/mds.png";
 import wayviaLogo from "../assets/wayvia-logo.svg";
 import pisyncLogo from "../assets/pisync_logo.png";
-import type { IMainCard, IPreviewCard } from "../models/interfaces";
+import type { IMainCard, IPreviewCard, IPricingCard } from "../models/interfaces";
 
 export const GITHUB_LINK = "https://github.com/imlocle";
 export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
@@ -32,7 +32,7 @@ const AI_AUTOMATION = "ai-automation"
 const BACKEND_MVP = "backend-mvp"
 const CLOUD_ARCHITECTURE = "cloud-architecture"
 
-// SERVICES PAGE
+/* ---------- Services Page ---------- */
 
 export const SERVICES: IMainCard[] = [
   {
@@ -90,6 +90,35 @@ export const SERVICES: IMainCard[] = [
   },
 ];
 
+export const PRICING_CARDS: IPricingCard[] = [
+  {
+    title: "MVP Core",
+    price: "2,500",
+    bestFor: "Validate Fast",
+    details: ["API endpoints", "Auth + Roles", "Database Setup", "AWS Deployment", "Docs + Handoff"]
+  },
+  {
+    title: "MVP + AI",
+    price: "3,500",
+    bestFor: "AI Features",
+    details: ["Everything in MVP Core", "LLM Integration", "Guardrails + Caching", "Cost Controls"],
+    isFeatured: true
+  },
+  {
+    title: "MVP Core",
+    price: "4,000",
+    bestFor: "Ongoing Help",
+    details: ["Everything in MVP Core", "30 Days Support", "Small Improvements + Fixes", "Priority Responses"]
+  },
+]
+
+export const SERVICE_TIMELINE = [
+  { day: "Day 1", title: "Scope lock + plan", body: "We define endpoints, auth, database choices, and success criteria." },
+  { day: "Days 2-7", title: "Build core backend", body: "API + auth + DB + deployment foundation. You get updates as we go." },
+  { day: "Days 8-12", title: "Hardening", body: "Edge cases, logging, basic monitoring, performance, docs." },
+  { day: "Days 13-14", title: "Handoff", body: "Documentation, examples, and a clean “next steps” plan." },
+]
+
 
 export const CLIENT_PROJECTS: IMainCard[] = [
   {
@@ -117,6 +146,7 @@ export const CLIENT_PROJECTS: IMainCard[] = [
   },
 ];
 
+/* ---------- Work Page ---------- */
 
 export const TECHNICAL_PROJECTS: IMainCard[] = [
   {
@@ -177,7 +207,7 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
 ];
 
 
-// HOME PAGE
+/* ---------- Home Page ---------- */
 
 export const PREVIEW_SERVICES: IPreviewCard[] = [
   {

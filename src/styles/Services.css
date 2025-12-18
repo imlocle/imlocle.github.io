@@ -75,63 +75,8 @@
   gap: 1.25rem;
 }
 
-.pricing-card {
-  background: var(--white);
-  border-radius: 18px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: var(--box-shadow-card);
-  padding: 1.5rem;
-}
-
-.pricing-card.featured {
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  box-shadow: 0 22px 60px rgba(30, 58, 138, 0.16);
-  transform: translateY(-4px);
-}
-
-.pricing-top h4 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--text-primary);
-}
-
-.price {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  margin: 0.4rem 0;
-}
-
-.pricing-note {
-  color: var(--text-secondary);
-  margin: 0 0 1rem 0;
-}
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pricing-card li {
-  padding-left: 1.2rem;
-  position: relative;
-  margin-bottom: 0.55rem;
-  color: var(--text-primary);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.pricing-card li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--primary-light);
-  font-weight: 900;
-}
-
 #pricing {
-  scroll-margin-top: 96px; /* tweak to match your navbar height */
+  scroll-margin-top: 96px;
 }
 
 /* ---------- Timeline ---------- */

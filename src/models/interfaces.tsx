@@ -21,3 +21,11 @@ export interface IMainCard {
   link?: string;
   appStore?: string;
 }
+
+export interface IPricingCard {
+  title: string,
+  price: string,
+  bestFor: string,
+  details: string[]
+  isFeatured?: boolean
+}
