@@ -35,7 +35,9 @@ const Home = () => {
               transition={{ delay: 0.15, duration: 0.6 }}
             >
               <div className="hero-badge-row">
-                <span className="hero-badge">Taking on limited client work</span>
+                <span className="hero-badge">
+                  Taking on limited client work
+                </span>
                 <span className="hero-badge subtle">Las Vegas • Remote</span>
               </div>
 
@@ -128,7 +130,10 @@ const Home = () => {
 
       <div className="page-container">
         <PreviewSectionGrid title="Services" cards={PREVIEW_SERVICES} />
-        <PreviewSectionGrid title="Featured Projects" cards={PREVIEW_PROJECTS} />
+        <PreviewSectionGrid
+          title="Featured Projects"
+          cards={PREVIEW_PROJECTS}
+        />
         <PreviewLogoGridSection
           title="Who I've Worked With"
           cards={COMPANIES_WORKED}

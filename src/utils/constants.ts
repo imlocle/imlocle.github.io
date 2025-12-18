@@ -9,7 +9,11 @@ import raxLogo from "../assets/rax-logo-2020.svg";
 import mdsLogo from "../assets/mds.png";
 import wayviaLogo from "../assets/wayvia-logo.svg";
 import pisyncLogo from "../assets/pisync_logo.png";
-import type { IMainCard, IPreviewCard, IPricingCard } from "../models/interfaces";
+import type {
+  IMainCard,
+  IPreviewCard,
+  IPricingCard,
+} from "../models/interfaces";
 
 export const GITHUB_LINK = "https://github.com/imlocle";
 export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
@@ -28,9 +32,9 @@ export const ALFRED_GREETINGS = [
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
 
-const AI_AUTOMATION = "ai-automation"
-const BACKEND_MVP = "backend-mvp"
-const CLOUD_ARCHITECTURE = "cloud-architecture"
+const AI_AUTOMATION = "ai-automation";
+const BACKEND_MVP = "backend-mvp";
+const CLOUD_ARCHITECTURE = "cloud-architecture";
 
 /* ---------- Services Page ---------- */
 
@@ -50,7 +54,14 @@ export const SERVICES: IMainCard[] = [
       "Deployed on AWS with logs/monitoring basics",
       "Docs + examples + next-steps plan",
     ],
-    technologies: ["AWS", "Lambda", "API Gateway", "DynamoDB/Postgres", "Cognito/JWT", "Terraform/SAM"],
+    technologies: [
+      "AWS",
+      "Lambda",
+      "API Gateway",
+      "DynamoDB/Postgres",
+      "Cognito/JWT",
+      "Terraform/SAM",
+    ],
     link: "/contact",
     ctaLabel: "Book a Free Build Call",
   },
@@ -95,30 +106,61 @@ export const PRICING_CARDS: IPricingCard[] = [
     title: "MVP Core",
     price: "2,500",
     bestFor: "Validate Fast",
-    details: ["API endpoints", "Auth + Roles", "Database Setup", "AWS Deployment", "Docs + Handoff"]
+    details: [
+      "API endpoints",
+      "Auth + Roles",
+      "Database Setup",
+      "AWS Deployment",
+      "Docs + Handoff",
+    ],
   },
   {
     title: "MVP + AI",
     price: "3,500",
     bestFor: "AI Features",
-    details: ["Everything in MVP Core", "LLM Integration", "Guardrails + Caching", "Cost Controls"],
-    isFeatured: true
+    details: [
+      "Everything in MVP Core",
+      "LLM Integration",
+      "Guardrails + Caching",
+      "Cost Controls",
+    ],
+    isFeatured: true,
   },
   {
     title: "MVP Core",
     price: "4,000",
     bestFor: "Ongoing Help",
-    details: ["Everything in MVP Core", "30 Days Support", "Small Improvements + Fixes", "Priority Responses"]
+    details: [
+      "Everything in MVP Core",
+      "30 Days Support",
+      "Small Improvements + Fixes",
+      "Priority Responses",
+    ],
   },
-]
+];
 
 export const SERVICE_TIMELINE = [
-  { day: "Day 1", title: "Scope lock + plan", body: "We define endpoints, auth, database choices, and success criteria." },
-  { day: "Days 2-7", title: "Build core backend", body: "API + auth + DB + deployment foundation. You get updates as we go." },
-  { day: "Days 8-12", title: "Hardening", body: "Edge cases, logging, basic monitoring, performance, docs." },
-  { day: "Days 13-14", title: "Handoff", body: "Documentation, examples, and a clean “next steps” plan." },
-]
-
+  {
+    day: "Day 1",
+    title: "Scope lock + plan",
+    body: "We define endpoints, auth, database choices, and success criteria.",
+  },
+  {
+    day: "Days 2-7",
+    title: "Build core backend",
+    body: "API + auth + DB + deployment foundation. You get updates as we go.",
+  },
+  {
+    day: "Days 8-12",
+    title: "Hardening",
+    body: "Edge cases, logging, basic monitoring, performance, docs.",
+  },
+  {
+    day: "Days 13-14",
+    title: "Handoff",
+    body: "Documentation, examples, and a clean “next steps” plan.",
+  },
+];
 
 export const CLIENT_PROJECTS: IMainCard[] = [
   {
@@ -178,7 +220,13 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Automation system that monitors a folder, securely transfers files to a Raspberry Pi via SSH/SCP, then cleans up completed files.",
     outcomes:
       "Eliminated manual file handling with reliable background transfers, a layered architecture, and safe cleanup workflows.",
-    technologies: ["Python", "Watchdog", "SCP/SSH", "Send2Trash", "Raspberry Pi"],
+    technologies: [
+      "Python",
+      "Watchdog",
+      "SCP/SSH",
+      "Send2Trash",
+      "Raspberry Pi",
+    ],
     image: pisyncLogo,
     link: "https://github.com/imlocle/pisync",
   },
@@ -206,7 +254,6 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
   },
 ];
 
-
 /* ---------- Home Page ---------- */
 
 export const PREVIEW_SERVICES: IPreviewCard[] = [
@@ -233,7 +280,6 @@ export const PREVIEW_SERVICES: IPreviewCard[] = [
   },
 ];
 
-
 export const PREVIEW_PROJECTS: IPreviewCard[] = [
   {
     title: "Alfred — AI Chatbot",
@@ -254,7 +300,6 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
     link: "/work/client#neptune",
   },
 ];
-
 
 export const COMPANIES_WORKED = [
   {

@@ -17,8 +17,8 @@ const ClientProjects = () => {
       <section className="work-hero">
         <h2>Proof I can ship</h2>
         <p>
-          Selected projects where I delivered real outcomes—fast launches, stable deployments,
-          and scalable backends.
+          Selected projects where I delivered real outcomes—fast launches,
+          stable deployments, and scalable backends.
         </p>
         <div className="work-hero-ctas">
           <ButtonLink
@@ -40,7 +40,7 @@ const ClientProjects = () => {
           {CLIENT_PROJECTS.map((project, index) => (
             <MainCard
               key={String(project.id)}
-              id={String(project.id)} 
+              id={String(project.id)}
               index={index}
               title={project.title}
               description={project.description}

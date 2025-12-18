@@ -8,7 +8,12 @@ import ButtonLink from "../components/button/ButtonLink";
 import CtaSection from "../components/section/CtaSection";
 
 import "../styles/Services.css";
-import { CALENDLY_URL, SERVICES, PRICING_CARDS, SERVICE_TIMELINE } from "../utils/constants";
+import {
+  CALENDLY_URL,
+  SERVICES,
+  PRICING_CARDS,
+  SERVICE_TIMELINE,
+} from "../utils/constants";
 import PricingCard from "../components/card/PricingCard";
 import { containerStagger, fadeUp } from "../utils/motionVariants";
 
@@ -41,7 +46,8 @@ const Services = () => {
       >
         <h2 className="services-hero-title">Backend MVP in 14 Days</h2>
         <p className="services-hero-subtitle">
-          Clear scope. Fast delivery. Production-ready AWS backend with docs and handoff.
+          Clear scope. Fast delivery. Production-ready AWS backend with docs and
+          handoff.
         </p>
 
         <div className="services-hero-ctas">
@@ -53,7 +59,10 @@ const Services = () => {
           />
 
           {/* Link so hash updates consistently */}
-          <Link className="services-hero-link" to={{ pathname: "/services", hash: "#pricing" }}>
+          <Link
+            className="services-hero-link"
+            to={{ pathname: "/services", hash: "#pricing" }}
+          >
             See pricing ↓
           </Link>
         </div>
@@ -74,8 +83,14 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
-          {PRICING_CARDS.map((pricing) => (
-            <PricingCard title={pricing.title} price={pricing.price} bestFor={pricing.bestFor} details={pricing.details} isFeatured={pricing.isFeatured}/>
+          {PRICING_CARDS.map(pricing => (
+            <PricingCard
+              title={pricing.title}
+              price={pricing.price}
+              bestFor={pricing.bestFor}
+              details={pricing.details}
+              isFeatured={pricing.isFeatured}
+            />
           ))}
         </motion.div>
       </section>
@@ -91,8 +106,13 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
-          {SERVICE_TIMELINE.map((item) => (
-            <motion.div key={item.day} className="timeline-item" variants={fadeUp} transition={{ duration: 0.5 }}>
+          {SERVICE_TIMELINE.map(item => (
+            <motion.div
+              key={item.day}
+              className="timeline-item"
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+            >
               <div className="timeline-day">{item.day}</div>
               <div className="timeline-body">
                 <strong>{item.title}</strong>
@@ -113,7 +133,11 @@ const Services = () => {
       >
         <div className="services-list">
           {SERVICES.map((service, i) => (
-            <motion.div key={service.id} variants={fadeUp} transition={{ duration: 0.45 }}>
+            <motion.div
+              key={service.id}
+              variants={fadeUp}
+              transition={{ duration: 0.45 }}
+            >
               <MainCard
                 index={i}
                 id={String(service.id)}

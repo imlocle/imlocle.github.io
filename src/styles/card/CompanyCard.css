@@ -10,7 +10,7 @@
   padding: 2rem;
 
   /* 🔑 KEY FIX */
-  height: 140px;              /* consistent card height */
+  height: 140px; /* consistent card height */
   width: 100%;
 
   transition: var(--transition-all);

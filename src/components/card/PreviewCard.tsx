@@ -41,7 +41,11 @@ const PreviewCard = ({
 
         {link && (
           <div className="preview-card-footer">
-            <ButtonLink link={link} text="See details →" className="arrow-link" />
+            <ButtonLink
+              link={link}
+              text="See details →"
+              className="arrow-link"
+            />
           </div>
         )}
       </div>

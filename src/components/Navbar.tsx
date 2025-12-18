@@ -150,7 +150,6 @@ const Navbar = () => {
           >
             Contact
           </Link>
-
         </div>
       </div>
     </nav>

@@ -15,11 +15,14 @@ const CtaSection = () => {
     >
       <h2>Let's ship your backend in 14 days</h2>
       <p>
-        Book a free 30-minute build call. I'll map the backend you need, give you a clear
-        timeline, and tell you the exact next steps—no pressure.
+        Book a free 30-minute build call. I'll map the backend you need, give
+        you a clear timeline, and tell you the exact next steps—no pressure.
       </p>
-      <ButtonLink link={CALENDLY_URL} text="Book a Free Build Call" target="_blank" />
-
+      <ButtonLink
+        link={CALENDLY_URL}
+        text="Book a Free Build Call"
+        target="_blank"
+      />
     </motion.section>
   );
 };

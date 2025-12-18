@@ -5,8 +5,16 @@
   color: var(--text-primary);
 
   background:
-    radial-gradient(900px 520px at 20% 15%, rgba(255, 255, 255, 0.65), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(
+      900px 520px at 20% 15%,
+      rgba(255, 255, 255, 0.65),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 85% 30%,
+      rgba(59, 130, 246, 0.12),
+      transparent 55%
+    ),
     linear-gradient(180deg, var(--bg-color) 0%, rgba(224, 242, 254, 0.55) 100%);
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }

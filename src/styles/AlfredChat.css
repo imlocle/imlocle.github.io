@@ -104,11 +104,7 @@
    Header
    ========================= */
 .chat-header {
-  background: linear-gradient(
-    180deg,
-    var(--brand-900),
-    var(--brand-600)
-  );
+  background: linear-gradient(180deg, var(--brand-900), var(--brand-600));
   color: white;
   padding: 12px 14px;
   display: flex;
@@ -185,8 +181,16 @@
 
   /* subtle background texture */
   background:
-    radial-gradient(700px 280px at 10% 0%, rgba(59, 130, 246, 0.08), transparent 55%),
-    radial-gradient(700px 280px at 90% 0%, rgba(30, 58, 138, 0.06), transparent 55%);
+    radial-gradient(
+      700px 280px at 10% 0%,
+      rgba(59, 130, 246, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      700px 280px at 90% 0%,
+      rgba(30, 58, 138, 0.06),
+      transparent 55%
+    );
 }
 
 /* message row */

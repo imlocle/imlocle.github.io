@@ -62,7 +62,10 @@
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
   margin-top: 0.5rem;
   min-height: 48px;
 }
@@ -83,7 +86,6 @@
   transform: none;
   box-shadow: none;
 }
-
 
 .success-message {
   animation: fadeIn 0.5s ease-in-out;

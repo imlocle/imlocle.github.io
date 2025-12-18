@@ -12,7 +12,7 @@
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.10);
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.1);
 }
 
 .profile-photo {

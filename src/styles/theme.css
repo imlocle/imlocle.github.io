@@ -25,12 +25,12 @@
   --bg: #f8fafc;
 
   /* Surfaces */
-  --surface: rgba(255, 255, 255, 0.78);      /* glass */
-  --surface-2: rgba(255, 255, 255, 0.62);    /* lighter glass */
+  --surface: rgba(255, 255, 255, 0.78); /* glass */
+  --surface-2: rgba(255, 255, 255, 0.62); /* lighter glass */
   --surface-solid: #ffffff;
 
   /* Borders */
-  --border: rgba(15, 23, 42, 0.10);
+  --border: rgba(15, 23, 42, 0.1);
   --border-strong: rgba(15, 23, 42, 0.16);
 
   /* Effects */
@@ -48,19 +48,35 @@
 
   /* Gradients (used in hero/footer/sections) */
   --gradient-hero:
-    radial-gradient(900px 520px at 20% 15%, rgba(255, 255, 255, 0.7), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(59, 130, 246, 0.14), transparent 55%),
+    radial-gradient(
+      900px 520px at 20% 15%,
+      rgba(255, 255, 255, 0.7),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 85% 30%,
+      rgba(59, 130, 246, 0.14),
+      transparent 55%
+    ),
     linear-gradient(180deg, #f8fafc 0%, #eef2ff 50%, #e0f2fe 100%);
 
-  --gradient-soft:
-    linear-gradient(135deg, rgba(59, 130, 246, 0.10), rgba(59, 130, 246, 0.18));
+  --gradient-soft: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(59, 130, 246, 0.18)
+  );
 
   /* Focus / accessibility */
   --focus-ring: 0 0 0 4px rgba(59, 130, 246, 0.22);
 
   /* Navbar tokens */
   --nav-bg: rgba(255, 255, 255, 0.72);
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.55); /* more transparent when scrolling */
+  --nav-bg-scrolled: rgba(
+    255,
+    255,
+    255,
+    0.55
+  ); /* more transparent when scrolling */
   --nav-border: rgba(15, 23, 42, 0.08);
   --nav-blur: blur(10px);
 
@@ -69,7 +85,7 @@
   --btn-primary-bg-hover: var(--brand-600);
   --btn-primary-text: #ffffff;
 
-  --btn-secondary-bg: rgba(255, 255, 255, 0.70);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.7);
   --btn-secondary-border: rgba(15, 23, 42, 0.18);
   --btn-secondary-text: var(--text-800);
 

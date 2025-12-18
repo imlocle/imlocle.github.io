@@ -17,8 +17,8 @@ const TechnicalProjects = () => {
       <section className="work-hero">
         <h2>Backend + AI engineering samples</h2>
         <p>
-          Systems work that maps directly to shipping MVP backends: APIs, auth, orchestration,
-          and AI integrations.
+          Systems work that maps directly to shipping MVP backends: APIs, auth,
+          orchestration, and AI integrations.
         </p>
         <div className="work-hero-ctas">
           <ButtonLink

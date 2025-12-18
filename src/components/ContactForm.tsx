@@ -105,10 +105,9 @@ const ContactForm = () => {
     >
       <h2 className="contact-title">Send a quick message</h2>
       <p className="card-description">
-        Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with
-        a recommended scope and next steps.
+        Tell me what you're building and what you need (API, auth, database,
+        AWS). I'll reply with a recommended scope and next steps.
       </p>
-
 
       {submitSuccess ? (
         <div className="success-message">

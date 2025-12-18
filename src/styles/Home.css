@@ -22,8 +22,16 @@
   align-items: center;
 
   background:
-    radial-gradient(900px 520px at 20% 15%, rgba(255, 255, 255, 0.7), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(59, 130, 246, 0.14), transparent 55%),
+    radial-gradient(
+      900px 520px at 20% 15%,
+      rgba(255, 255, 255, 0.7),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 85% 30%,
+      rgba(59, 130, 246, 0.14),
+      transparent 55%
+    ),
     linear-gradient(180deg, #f8fafc 0%, #eef2ff 50%, #e0f2fe 100%);
   overflow: hidden;
 }
@@ -32,7 +40,11 @@
   content: "";
   position: absolute;
   inset: -180px;
-  background: radial-gradient(circle at 60% 30%, rgba(30, 58, 138, 0.10), transparent 55%);
+  background: radial-gradient(
+    circle at 60% 30%,
+    rgba(30, 58, 138, 0.1),
+    transparent 55%
+  );
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
@@ -48,7 +60,7 @@
   z-index: 1;
 }
 
-/* Center the hero card inside the constrained container */
+/* Center hero card */
 .hero-section {
   width: 100%;
   display: flex;
@@ -59,7 +71,6 @@
 .hero-card {
   width: 100%;
   max-width: 100%;
-
   text-align: center;
 
   background: rgba(255, 255, 255, 0.72);
@@ -74,7 +85,7 @@
   padding: 2.6rem 3rem;
 }
 
-
+/* ---------- Badges ---------- */
 .hero-badge-row {
   display: flex;
   gap: 0.6rem;
@@ -94,10 +105,11 @@
 
 .hero-badge.subtle {
   background: rgba(15, 23, 42, 0.06);
-  border: 1px solid rgba(15, 23, 42, 0.10);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   color: #334155;
 }
 
+/* ---------- Title ---------- */
 .hero-title {
   font-size: 3.15rem;
   margin: 0 0 0.9rem 0;
@@ -118,15 +130,14 @@
   position: absolute;
   left: -0.06em;
   right: -0.06em;
-
-  bottom: -0.10em;
+  bottom: -0.12em;
   height: 0.22em;
-
   background: rgba(59, 130, 246, 0.22);
   z-index: -1;
   border-radius: 6px;
 }
 
+/* ---------- Subtitle ---------- */
 .hero-subtitle {
   font-size: 1.25rem;
   max-width: 760px;
@@ -135,6 +146,7 @@
   line-height: 1.7;
 }
 
+/* ---------- Value Points ---------- */
 .hero-points {
   width: 100%;
   max-width: 760px;
@@ -181,43 +193,7 @@
   margin-top: 0.2rem;
 }
 
-.highlight-primary-button,
-.highlight-secondary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.85rem 1.1rem;
-  border-radius: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  min-height: 48px;
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.highlight-primary-button {
-  background: #1e3a8a;
-  color: white;
-  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.22);
-}
-
-.highlight-primary-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 40px rgba(30, 58, 138, 0.28);
-}
-
-.highlight-secondary-button {
-  background: rgba(255, 255, 255, 0.8);
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.18);
-}
-
-.highlight-secondary-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
-}
-
+/* ---------- Tech Line ---------- */
 .hero-tech {
   margin-top: 1.25rem;
   font-size: 0.95rem;
@@ -228,7 +204,7 @@
 /* ---------- Scroll Indicator ---------- */
 .scroll-indicator {
   position: absolute;
-  bottom: 22px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -238,13 +214,14 @@
 
   cursor: pointer;
   z-index: 2;
-  opacity: 0.95;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .scroll-indicator p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #64748b;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .arrow-down {
@@ -256,15 +233,26 @@
   animation: bounce 2s infinite;
 }
 
+/* Hide scroll indicator on short viewports */
+@media (max-height: 720px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) rotate(45deg);
   }
   40% {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
   60% {
-    transform: translateY(5px) rotate(45deg);
+    transform: translateY(4px) rotate(45deg);
   }
 }
 
@@ -275,7 +263,11 @@
   right: 0;
   bottom: 0;
   height: 70px;
-  background: linear-gradient(to bottom, rgba(248, 250, 252, 0), rgba(248, 250, 252, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0),
+    rgba(248, 250, 252, 1)
+  );
   z-index: 1;
 }
 
@@ -304,5 +296,10 @@
     width: 100%;
     max-width: 420px;
     margin: 0.4rem auto 0 auto;
+  }
+
+  /* Also hide scroll indicator on mobile */
+  .scroll-indicator {
+    display: none;
   }
 }

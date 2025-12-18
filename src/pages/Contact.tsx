@@ -24,12 +24,15 @@ const Contact = () => {
           <h2 className="contact-card-title">Fastest way to work together</h2>
 
           <p className="card-description">
-            Book a <strong>free 30-minute build call</strong>. I’ll map the backend you
-            need (APIs, auth, database, AWS deployment) and give you a clear 14-day plan.
+            Book a <strong>free 30-minute build call</strong>. I’ll map the
+            backend you need (APIs, auth, database, AWS deployment) and give you
+            a clear 14-day plan.
           </p>
 
           <div className="contact-callout">
-            <div className="contact-callout-title">On the call, you’ll get:</div>
+            <div className="contact-callout-title">
+              On the call, you’ll get:
+            </div>
             <ul className="contact-bullets">
               <li>A clear scope (what we will/won’t build)</li>
               <li>Architecture + tech choices (AWS, DB, auth)</li>
@@ -45,11 +48,11 @@ const Contact = () => {
               target="_blank"
             />
             <Link
-            className="contact-link"
-            to={{ pathname: "/contact", hash: "#message" }}
-          >
-            Prefer email? Send a message →
-          </Link>
+              className="contact-link"
+              to={{ pathname: "/contact", hash: "#message" }}
+            >
+              Prefer email? Send a message →
+            </Link>
           </div>
 
           <div className="contact-divider" />
@@ -81,8 +84,8 @@ const Contact = () => {
         <section id="message" className="contact-card contact-card--form">
           <h2 className="contact-card-title">Send a quick message</h2>
           <p className="contact-card-subtitle">
-            Tell me what you're building and what you need (API, auth, database, AWS). I&apos;ll reply
-            with a recommended scope and next steps.
+            Tell me what you're building and what you need (API, auth, database,
+            AWS). I&apos;ll reply with a recommended scope and next steps.
           </p>
           <ContactForm />
         </section>

@@ -11,7 +11,7 @@ export interface IMainCard {
   id: string | number;
   title: string;
   description: string;
-  
+
   ctaLabel?: string;
   highlights?: string[];
   icon?: string;
@@ -23,9 +23,9 @@ export interface IMainCard {
 }
 
 export interface IPricingCard {
-  title: string,
-  price: string,
-  bestFor: string,
-  details: string[]
-  isFeatured?: boolean
+  title: string;
+  price: string;
+  bestFor: string;
+  details: string[];
+  isFeatured?: boolean;
 }

@@ -1,4 +1,9 @@
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 
 import About from "./pages/About";
@@ -23,7 +28,7 @@ function ScrollManager() {
 
   useEffect(() => {
     const raw = window.location.hash; // ex: "#/services#pricing"
-    const parts = raw.split("#");     // ["", "/services", "pricing"]
+    const parts = raw.split("#"); // ["", "/services", "pricing"]
 
     const anchor = parts.length >= 3 ? parts[2] : "";
 
