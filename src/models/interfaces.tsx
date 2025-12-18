@@ -8,10 +8,11 @@ export interface IPreviewCard {
 }
 
 export interface IMainCard {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
 
+  ctaLabel?: string;
   highlights?: string[];
   icon?: string;
   outcomes?: string;
@@ -19,4 +20,18 @@ export interface IMainCard {
   image?: string;
   link?: string;
   appStore?: string;
+}
+
+export interface IPricingCard {
+  title: string;
+  price: string;
+  bestFor: string;
+  details: string[];
+  isFeatured?: boolean;
+}
+
+export interface ICompanyCard {
+  alt: string;
+  imageLogo: string;
+  link: string;
 }

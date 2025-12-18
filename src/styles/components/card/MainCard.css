@@ -1,0 +1,200 @@
+/* =========================
+   MainCard (List Layout)
+   - Designed for 1-per-row cards (Work/Services)
+   - On wide screens: media left, content right
+   ========================= */
+
+.main-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1.4rem;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.08);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.main-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(59, 130, 246, 0.22);
+  box-shadow: 0 26px 80px rgba(2, 6, 23, 0.12);
+}
+
+/* Left media area (image or icon) */
+.main-card-media {
+  width: 100%;
+}
+
+.main-card-image-container {
+  width: 100%;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.main-card-image {
+  max-height: 75%;
+  max-width: 80%;
+  object-fit: contain;
+  opacity: 0.98;
+}
+
+.main-card-icon {
+  width: 100%;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2.2rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Content column */
+.main-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.9rem;
+}
+
+.main-card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.main-card-description {
+  color: var(--text-secondary);
+  margin: 0.35rem 0 0 0;
+  line-height: 1.65;
+}
+
+/* Outcomes callout */
+.main-card-outcomes {
+  margin: 0;
+  padding: 0.85rem 0.9rem;
+  border-radius: 16px;
+
+  color: #0f172a;
+  font-weight: 650;
+  line-height: 1.55;
+
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+}
+
+/* Highlights */
+.main-card-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.main-card-highlight {
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--text-primary);
+  font-weight: 550;
+  line-height: 1.55;
+}
+
+.main-card-highlight::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: rgba(59, 130, 246, 0.95);
+  font-weight: 900;
+}
+
+/* Footer: tech + CTA */
+.main-card-footer {
+  margin-top: 0.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.main-card-technologies {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.main-card-technology {
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+/* Buttons row */
+.main-card-links {
+  display: flex;
+}
+
+.main-card-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.main-card-buttons a img {
+  vertical-align: middle;
+}
+
+/* =========================
+   Wide screens: horizontal layout
+   ========================= */
+@media (min-width: 860px) {
+  .main-card {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .main-card-media {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+
+  .main-card-image-container,
+  .main-card-icon {
+    height: 100%;
+    min-height: 140px;
+  }
+
+  .main-card-content {
+    flex: 1;
+  }
+}

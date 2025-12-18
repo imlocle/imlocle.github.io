@@ -1,0 +1,100 @@
+/* Base button system */
+.btn,
+.primary-button,
+.highlight-primary-button,
+.highlight-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 14px;
+
+  padding: 0.85rem 1.1rem;
+  min-height: 48px;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Default primary */
+.btn-primary,
+.primary-button,
+.highlight-primary-button {
+  background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%);
+  color: var(--white);
+  /* border: 1px solid rgba(15, 23, 42, 0.12); */
+  box-shadow: 0 14px 34px rgba(30, 58, 138, 0.22);
+}
+
+/* Secondary */
+.btn-secondary,
+.highlight-secondary-button {
+  background: rgba(255, 255, 255, 0.75);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.08);
+}
+
+/* Hover / focus */
+.btn:hover,
+.primary-button:hover,
+.highlight-primary-button:hover,
+.highlight-secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover,
+.primary-button:hover,
+.highlight-primary-button:hover {
+  box-shadow: 0 18px 44px rgba(30, 58, 138, 0.28);
+  filter: saturate(1.02);
+}
+
+.btn-secondary:hover,
+.highlight-secondary-button:hover {
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.12);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+/* Keyboard accessibility */
+.btn:focus-visible,
+.primary-button:focus-visible,
+.highlight-primary-button:focus-visible,
+.highlight-secondary-button:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 3px;
+}
+
+/* Optional: subtle "arrow link" stays simple */
+.arrow-link {
+  color: #0ea5e9;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.arrow-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile sizing */
+@media (max-width: 768px) {
+  .btn,
+  .primary-button,
+  .highlight-primary-button,
+  .highlight-secondary-button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.98rem;
+  }
+}

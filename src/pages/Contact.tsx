@@ -1,72 +1,96 @@
 import { motion } from "framer-motion";
-import ContactForm from "../components/ContactForm";
-import "../styles/Contact.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "../utils/constants";
-import { useLocation } from "react-router-dom";
-import Title from "../components/page/Title";
+import { Link, useLocation } from "react-router-dom";
+
+import "@styles/pages/Contact.css";
+import ButtonLink from "@components/button/ButtonLink";
+import ContactForm from "@components/form/ContactForm";
+import Title from "@components/page/Title";
+import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
   const { pathname } = useLocation();
 
-  const handleCalendly = () => {
-    window.open(CALENDLY_URL, "_blank");
-  };
-
   return (
     <div id="contact" className="page-container">
-      <Title pathname={pathname} title="Contact Me" />
+      <Title pathname={pathname} title="Book a Free Build Call" />
 
-      <div className="contact-content">
-        <motion.div
-          className="connect-section"
-          initial={{ x: -50, opacity: 0 }}
+      <div className="contact-grid">
+        <motion.section
+          className="contact-card"
+          initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{ delay: 0.15, duration: 0.6 }}
         >
-          <h2 className="contact-title">Let's Talk</h2>
+          <h2 className="contact-card-title">Fastest way to work together</h2>
+
           <p className="card-description">
-            Whether you have a project in mind, a question about my work, or
-            just want to say hello, I'd love to hear from you.
+            Book a <strong>free 30-minute build call</strong>. I’ll map the
+            backend you need (APIs, auth, database, AWS deployment) and give you
+            a clear 14-day plan.
           </p>
-          <p className="card-description">
-            Fill out the form on the right to send an email, or schedule a 30
-            minute meeting with me, using the Calendly button below.
-          </p>
-          <div className="contact-details">
-            <div className="contact-item">
-              <h3>Socials:</h3>
-              <div className="social-links">
-                <a
-                  href={GITHUB_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <FaGithub className="social-icon" /> GitHub
-                </a>
-                <a
-                  href={LINKEDIN_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <FaLinkedin className="social-icon" /> LinkedIn
-                </a>
-              </div>
+
+          <div className="contact-callout">
+            <div className="contact-callout-title">
+              On the call, you’ll get:
+            </div>
+            <ul className="contact-bullets">
+              <li>A clear scope (what we will/won’t build)</li>
+              <li>Architecture + tech choices (AWS, DB, auth)</li>
+              <li>Timeline + next steps to ship</li>
+            </ul>
+          </div>
+
+          <div className="contact-actions">
+            <ButtonLink
+              link={CALENDLY_URL}
+              text="Book a Free 30-Min Build Call"
+              className="highlight-primary-button"
+              target="_blank"
+            />
+            <Link
+              className="contact-link"
+              to={{ pathname: "/contact", hash: "#message" }}
+            >
+              Prefer email? Send a message →
+            </Link>
+          </div>
+
+          <div className="contact-divider" />
+
+          <div className="contact-socials">
+            <h3 className="contact-socials-title">Socials</h3>
+            <div className="social-links">
+              <a
+                href={GITHUB_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaGithub className="social-icon" /> GitHub
+              </a>
+              <a
+                href={LINKEDIN_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaLinkedin className="social-icon" /> LinkedIn
+              </a>
             </div>
           </div>
-          <div>
-            <button
-              type="submit"
-              onClick={handleCalendly}
-              className="submit-button"
-            >
-              Book A Consultation
-            </button>
-          </div>
-        </motion.div>
-        <ContactForm />
+        </motion.section>
+
+        {/* Right column: make it a true card too so both columns align */}
+        <section id="message" className="contact-card contact-card--form">
+          <h2 className="contact-card-title">Send a quick message</h2>
+          <p className="contact-card-subtitle">
+            {
+              "Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
+            }
+          </p>
+          <ContactForm />
+        </section>
       </div>
     </div>
   );
