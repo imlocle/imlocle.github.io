@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import "../styles/Home.css";
 import { useLocation } from "react-router-dom";
+import "../styles/Home.css";
+
 import {
+  CALENDLY_URL,
   COMPANIES_WORKED,
-  POSITION_TITLE,
   PREVIEW_PROJECTS,
   PREVIEW_SERVICES,
 } from "../utils/constants";
+
 import ButtonLink from "../components/button/ButtonLink";
 import CtaSection from "../components/section/CtaSection";
 import PreviewSectionGrid from "../components/section/PreviewSectionGrid";
@@ -17,77 +19,116 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="hero-container">
-        <motion.div
-          key={pathname}
-          className="hero-section"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            className="hero-title"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Hi, I'm <span className="highlight">Loc Le</span>
-          </motion.h1>
-
-          <motion.h2
-            className="position-title"
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            {POSITION_TITLE}
-          </motion.h2>
-
-          <motion.p
-            className="hero-subtitle"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            I build scalable AI-powered backend systems for startups.
-          </motion.p>
-
+      <section className="hero-container" aria-label="Homepage hero">
+        <div className="hero-inner">
           <motion.div
-            className="cta-buttons"
+            key={pathname}
+            className="hero-section"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <ButtonLink
-              link="/contact"
-              text="🚀 Let's Build Together"
-              className="highlight-primary-button"
-            />
-            <ButtonLink
-              link="/work/technical"
-              text="View My Work"
-              className="highlight-secondary-button"
-            />
+            <motion.div
+              className="hero-card"
+              initial={{ y: 12, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+            >
+              <div className="hero-badge-row">
+                <span className="hero-badge">Taking on limited client work</span>
+                <span className="hero-badge subtle">Las Vegas • Remote</span>
+              </div>
+
+              <motion.h1
+                className="hero-title"
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.22, duration: 0.6 }}
+              >
+                Ship your <span className="highlight">backend MVP</span> in{" "}
+                <span className="highlight">14 days</span>
+              </motion.h1>
+
+              <motion.p
+                className="hero-subtitle"
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                I build APIs, auth, databases, and AWS deployments—fast, secure,
+                and easy to hand off.
+              </motion.p>
+
+              <div className="hero-points" role="list">
+                <div className="hero-point" role="listitem">
+                  <span className="dot" aria-hidden="true" />
+                  <span>
+                    <strong>Production-ready stack:</strong> AWS serverless,
+                    clean architecture, CI-friendly setup.
+                  </span>
+                </div>
+
+                <div className="hero-point" role="listitem">
+                  <span className="dot" aria-hidden="true" />
+                  <span>
+                    <strong>Core features:</strong> Auth, roles, API endpoints,
+                    DB schema + migrations.
+                  </span>
+                </div>
+
+                <div className="hero-point" role="listitem">
+                  <span className="dot" aria-hidden="true" />
+                  <span>
+                    <strong>Handoff that doesn't hurt:</strong> docs, examples,
+                    and a “next steps” plan.
+                  </span>
+                </div>
+              </div>
+
+              <motion.div
+                className="cta-buttons"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.38, duration: 0.6 }}
+              >
+                <ButtonLink
+                  link={CALENDLY_URL}
+                  text="Book a Free Build Call"
+                  className="highlight-primary-button"
+                  target="_blank"
+                />
+
+                <ButtonLink
+                  link="/services#pricing"
+                  text="See Pricing & Timeline"
+                  className="highlight-secondary-button"
+                />
+              </motion.div>
+
+              <div className="hero-tech">
+                AWS • Python • TypeScript • Serverless APIs • Auth • Databases
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
 
         <motion.div
           className="scroll-indicator"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          whileHover={{ y: 10 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          whileHover={{ y: 6 }}
         >
-          <p>Scroll Down</p>
-          <div className="arrow-down"></div>
+          <p>Scroll</p>
+          <div className="arrow-down" />
         </motion.div>
-      </div>
+
+        <div className="hero-fade-divider" aria-hidden="true" />
+      </section>
+
       <div className="page-container">
         <PreviewSectionGrid title="Services" cards={PREVIEW_SERVICES} />
-        <PreviewSectionGrid
-          title="Featured Projects"
-          cards={PREVIEW_PROJECTS}
-        />
+        <PreviewSectionGrid title="Featured Projects" cards={PREVIEW_PROJECTS} />
         <PreviewLogoGridSection
           title="Who I've Worked With"
           cards={COMPANIES_WORKED}

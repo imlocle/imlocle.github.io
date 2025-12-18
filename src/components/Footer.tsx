@@ -8,54 +8,62 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-section">
-          <h3 className="footer-title">Loc Le</h3>
-          <p className="footer-description">
-            Building tomorrow's Cloud Solutions today.
-          </p>
-        </div>
+      <div className="footer-inner">
+        <div className="footer-container">
+          {/* Brand */}
+          <div className="footer-section footer-brand">
+            <h3 className="footer-title">Loc Le</h3>
+            <p className="footer-description">
+              Backend cloud + AI engineering for startups — fast MVPs, reliable infrastructure, clean handoff.
+            </p>
+          </div>
 
-        <div className="footer-section">
-          <h3 className="footer-title">Quick Links</h3>
-          <div className="footer-links">
-            <Link to="/about" className="footer-link">
-              About
-            </Link>
-            <Link to="/services" className="footer-link">
-              Services
-            </Link>
-            <Link to="/contact" className="footer-link">
-              Contact
-            </Link>
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h3 className="footer-title">Quick Links</h3>
+            <div className="footer-links">
+              <Link to="/about" className="footer-link">About</Link>
+              <Link to="/services" className="footer-link">Services</Link>
+              <Link to="/contact" className="footer-link">Contact</Link>
+            </div>
+          </div>
+
+          {/* Work */}
+          <div className="footer-section">
+            <h3 className="footer-title">Work</h3>
+            <div className="footer-links">
+              <Link to="/work/client" className="footer-link">Client Projects</Link>
+              <Link to="/work/technical" className="footer-link">Technical Projects</Link>
+            </div>
+          </div>
+
+          {/* Connect */}
+          <div className="footer-section">
+            <h3 className="footer-title">Connect</h3>
+            <div className="social-links">
+              <a
+                href={GITHUB_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaGithub className="social-icon" /> GitHub
+              </a>
+              <a
+                href={LINKEDIN_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaLinkedin className="social-icon" /> LinkedIn
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="footer-section">
-          <h3 className="footer-title">Connect</h3>
-          <div className="social-links">
-            <a
-              href={GITHUB_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FaGithub className="social-icon" /> GitHub
-            </a>
-            <a
-              href={LINKEDIN_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FaLinkedin className="social-icon" /> LinkedIn
-            </a>
-          </div>
+        <div className="footer-bottom">
+          <p>© {currentYear} Loc Le. All rights reserved.</p>
         </div>
-      </div>
-
-      <div className="footer-bottom">
-        <p>© {currentYear} Loc Le. All rights reserved.</p>
       </div>
     </footer>
   );

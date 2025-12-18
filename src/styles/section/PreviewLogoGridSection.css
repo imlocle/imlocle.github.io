@@ -4,20 +4,19 @@
 
 .preview-logo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
 }
 
 @media (max-width: 1024px) {
   .preview-logo-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on tablets */
   }
 }
 
 @media (max-width: 768px) {
   .preview-logo-grid {
     grid-template-columns: 1fr;
-    /* 1 column on mobile */
   }
 }

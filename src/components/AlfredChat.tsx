@@ -119,7 +119,13 @@ const AlfredChat: React.FC = () => {
           >
             <div className="chat-window">
               <div className="chat-header">
-                <span>Alfred</span>
+                <div className="chat-header-left">
+                  <span className="chat-title">Alfred</span>
+                  <span className="chat-subtitle">
+                    AI assistant • <a href="/#about">Built by Loc Le</a>
+                  </span>
+                </div>
+
                 <button
                   className="close-btn"
                   onClick={toggleChat}

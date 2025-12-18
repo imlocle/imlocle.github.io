@@ -1,15 +1,9 @@
-:root {
-  --primary-color: #1e3a8a;
-  --primary-light: #3b82f6;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --bg-color: #f8fafc;
-  --white: #ffffff;
-  --transition-all: all 0.3s ease;
-  --border-radius: 15px;
-  --box-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --box-shadow-card: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
+/* Load theme tokens first */
+@import "./styles/theme.css";
+
+/* =========================
+   Base / Reset
+   ========================= */
 
 * {
   margin: 0;
@@ -37,29 +31,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   color: var(--text-primary);
   background-color: var(--bg-color);
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
-  transition: color 0.3s ease;
+  color: var(--brand-600);
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--primary-light);
+  color: var(--brand-500);
 }
 
 img {
@@ -72,46 +62,17 @@ button {
   font-family: inherit;
 }
 
-.text-center {
-  text-align: center;
-}
+/* Keep these utils here (global helpers) */
+.text-center { text-align: center; }
 
-.mt-1 {
-  margin-top: 0.5rem;
-}
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
 
-.mt-2 {
-  margin-top: 1rem;
-}
-
-.mt-3 {
-  margin-top: 1.5rem;
-}
-
-.mt-4 {
-  margin-top: 2rem;
-}
-
-.mt-5 {
-  margin-top: 3rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 1rem;
-}
-
-.mb-3 {
-  margin-bottom: 1.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 2rem;
-}
-
-.mb-5 {
-  margin-bottom: 3rem;
-}
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }

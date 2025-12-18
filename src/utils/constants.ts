@@ -28,197 +28,138 @@ export const ALFRED_GREETINGS = [
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
 
-// ABOUT PAGE
-
-export const SKILLS = [
-  {
-    title: "Languages",
-    skills: ["Python", "TypeScript", "JavaScript", "C#"],
-  },
-  {
-    title: "AI & Machine Learning",
-    skills: ["AWS Bedrock", "LLMs", "AI Chatbots", "AI Agents"],
-  },
-  {
-    title: "Infrastructure",
-    skills: [
-      "AWS Cloudformation",
-      "Terraform",
-      "Serverless Framework",
-      "Serverless Stack",
-    ],
-  },
-  {
-    title: "APIs & Frameworks",
-    skills: ["AWS API Gateway", "FastAPI", "Flask", ".NET"],
-  },
-  {
-    title: "Databases",
-    skills: ["AWS DynamoDB", "MongoDB", "NoSQL", "SQL"],
-  },
-];
+const AI_AUTOMATION = "ai-automation"
+const BACKEND_MVP = "backend-mvp"
+const CLOUD_ARCHITECTURE = "cloud-architecture"
 
 // SERVICES PAGE
 
 export const SERVICES: IMainCard[] = [
   {
-    id: 1,
-    icon: "🧠",
-    title: "AI & Automation Solutions",
+    id: BACKEND_MVP,
+    icon: "⚡",
+    title: "Backend MVP in 14 Days",
     description:
-      "Design and integrate intelligent AI-driven features into existing products or build new automation workflows from scratch. Focused on reliable backend orchestration and production readiness.",
+      "A production-ready backend you can ship with confidence: API, auth, database, and AWS deployment—built fast with clean docs and a smooth handoff.",
+    outcomes:
+      "You leave with a deployed backend + documentation so your frontend can move immediately.",
     highlights: [
-      "LLM integration (OpenAI, Anthropic, Bedrock)",
-      "Backend orchestration & async workflows",
-      "Prompt design, caching, and rate limiting",
+      "Kickoff call + scope lock (no endless revisions)",
+      "APIs + Auth (Cognito/JWT) + Roles",
+      "Database design (DynamoDB or Postgres) + migrations where needed",
+      "Deployed on AWS with logs/monitoring basics",
+      "Docs + examples + next-steps plan",
     ],
+    technologies: ["AWS", "Lambda", "API Gateway", "DynamoDB/Postgres", "Cognito/JWT", "Terraform/SAM"],
+    link: "/contact",
+    ctaLabel: "Book a Free Build Call",
   },
   {
-    id: 2,
-    icon: "🚀",
-    title: "Backend MVP in Weeks",
+    id: AI_AUTOMATION,
+    icon: "🤖",
+    title: "AI Features That Ship",
     description:
-      "Rapidly validate your startup idea with a production-grade backend built for scale. Designed to support real users from day one without overengineering.",
+      "Add real AI to your product—chat, recommendations, summarization, automation—without turning your backend into a fragile science project.",
+    outcomes:
+      "AI features integrated safely with guardrails, caching, and costs under control.",
     highlights: [
-      "Serverless AWS architecture (Lambda, API Gateway)",
-      "Auth, database, and CI/CD setup",
-      "Ready for frontend or mobile teams immediately",
+      "LLM integration (OpenAI / Anthropic / Bedrock)",
+      "Prompt + tool orchestration patterns",
+      "Caching, rate limits, and cost controls",
     ],
+    technologies: ["Bedrock", "OpenAI", "Anthropic", "Queues/Async", "Caching"],
+    link: "/contact",
+    ctaLabel: "Discuss an AI Feature",
   },
   {
-    id: 3,
+    id: CLOUD_ARCHITECTURE,
     icon: "☁️",
-    title: "Cloud Architecture & Infrastructure",
+    title: "Fix My AWS (Cost + Reliability)",
     description:
-      "Modernize or migrate existing systems to cloud-native and serverless architectures to reduce costs, improve reliability, and simplify operations.",
+      "If AWS bills are climbing or deployments are flaky, I'll stabilize your system and reduce waste—without a full rewrite.",
+    outcomes:
+      "Lower cloud spend + fewer incidents + a clearer architecture you can maintain.",
     highlights: [
-      "AWS serverless & infrastructure as code (Terraform)",
-      "Performance tuning, logging, and monitoring",
-      "Zero-downtime migration strategies",
+      "Cost review + quick wins (top offenders first)",
+      "Logging/monitoring improvements",
+      "Infrastructure cleanup (IaC, permissions, environments)",
     ],
-  },
-  {
-    id: 4,
-    icon: "🛠️",
-    title: "Product Engineering & Development",
-    description:
-      "End-to-end product engineering for founders and small teams—from idea validation and system design to scalable backend implementation and deployment.",
-    highlights: [
-      "System architecture & API design",
-      "Scalable backend development",
-      "Production deployment & handoff",
-    ],
-  },
-  {
-    id: 5,
-    icon: "🖥️",
-    title: "Full-Stack Web Development",
-    description:
-      "Build fast, modern, and cost-efficient websites and web applications using a lightweight, cloud-native stack—ideal for small businesses and early-stage startups.",
-    highlights: [
-      "React + Vite frontend development",
-      "Static hosting with near-zero monthly costs",
-      "Responsive design & SEO-friendly structure",
-    ],
-  },
-  {
-    id: 6,
-    icon: "📊",
-    title: "Data & Analytics Engineering",
-    description:
-      "Design and implement analytics pipelines that turn raw data into actionable insights for product, business, and operational decision-making.",
-    highlights: [
-      "ETL pipelines & API-based data ingestion",
-      "Analytics-ready backend design",
-      "Usage, growth, and performance tracking",
-    ],
+    technologies: ["AWS", "Terraform", "CloudWatch", "IAM", "CI/CD"],
+    link: "/contact",
+    ctaLabel: "Review My AWS Setup",
   },
 ];
 
+
 export const CLIENT_PROJECTS: IMainCard[] = [
   {
-    id: 1,
-    title: "Hachiko Sushi House",
+    id: "neptune",
+    title: "Neptune — Video Social Platform",
     description:
-      "A modern, lightweight website for a local sushi restaurant to showcase their menu, hours, and location. Designed for clarity, speed, and mobile usability to help new customers quickly explore the restaurant's offerings.",
+      "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
     outcomes:
-      "Delivered a fully optimized static site using Cloudflare and GitHub Pages, achieving fast load times and near-zero hosting costs. Enhanced user engagement through clean UI, intuitive navigation, and responsive design tailored for local small business visibility.",
-    technologies: ["Cloudflare", "GitHub Pages", "React", "Vite"],
-    image: hachikoLogo,
-    link: "https://hachikosushihouse.com/",
-  },
-  {
-    id: 2,
-    title: "Neptune - Be Yourself",
-    description:
-      "A next-generation video-based social platform empowering artists, entertainers, and creators to share their work authentically. Neptune focuses on high-quality video storytelling with a simple and engaging user experience.",
-    outcomes:
-      "Architected and deployed a highly scalable AWS backend capable of supporting massive daily video uploads and real-time user activity. Improved system reliability, reduced infrastructure overhead, and enabled Neptune to scale rapidly as user adoption grew.",
+      "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
     technologies: ["AWS SAM", "Python", "TypeScript", "Node.js", "Terraform"],
     image: neptuneLogo,
     link: "https://www.theneptuneapp.com/",
     appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
   },
+  {
+    id: "hachiko",
+    title: "Hachiko Sushi House — Small Business Website",
+    description:
+      "Designed and shipped a fast, mobile-first restaurant website to showcase menu, hours, and location with a clean UX that drives calls and visits.",
+    outcomes:
+      "Shipped a lightweight static site with near-zero hosting costs and fast load performance, improving the customer experience and local business visibility.",
+    technologies: ["GitHub Pages", "React", "Vite"],
+    image: hachikoLogo,
+    link: "https://hachikosushihouse.com/",
+  },
 ];
+
 
 export const TECHNICAL_PROJECTS: IMainCard[] = [
   {
-    id: 1,
-    title: "Alfred - AI Chatbot",
+    id: "alfred",
+    title: "Alfred — AI Chatbot (AWS Bedrock)",
     description:
-      "An AI chatbot using AWS Bedrock and Python that answers questions about me.",
+      "Production-style AI chatbot backend using AWS Bedrock + Lambda, designed for reliability and multiple users.",
     outcomes:
-      "Built a fully functional AI chatbot using AWS Bedrock, implementing a custom rate limiter to efficiently handle multiple users and ensure stable performance.",
+      "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
     technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
     image: alfredLogo,
     link: "https://github.com/imlocle/alfred-chatbot",
   },
   {
-    id: 2,
-    title: "Code Query",
+    id: "codequery",
+    title: "Code Query — RAG for Local Codebases",
     description:
-      "A Python CLI tool that uses a Retrieval-Augmented Generation (RAG) pipeline to answer questions about a local codebase. It scans source files, generates embeddings, retrieves relevant code snippets, and uses the OpenAI API to provide accurate, context-aware answers.",
+      "Python CLI that indexes a codebase, generates embeddings, retrieves relevant snippets, and answers questions using the OpenAI API.",
     outcomes:
-      "Enhanced developer productivity by enabling fast code discovery and automated explanations, reducing time spent searching through large codebases.",
+      "Speeds up debugging and onboarding by turning large codebases into a searchable assistant for explanations and code discovery.",
     technologies: ["Python", "OpenAI"],
     image: codeQueryLogo,
     link: "https://github.com/imlocle/code-query",
   },
   {
     id: 3,
-    title: "PiSync: Automated Media Transfer and File Cleanup System",
+    title: "PiSync — Automated File Transfer + Cleanup",
     description:
-      "An automated media-transfer system that monitors a local directory, securely sends files to a Raspberry Pi via SCP, and performs automatic cleanup by moving completed files to Trash. Designed with a layered architecture for reliability and maintainability.",
+      "Automation system that monitors a folder, securely transfers files to a Raspberry Pi via SSH/SCP, then cleans up completed files.",
     outcomes:
-      "Delivered a hands-free media management workflow with real-time file monitoring, secure transfers, and automated cleanup—eliminating manual file handling and streamlining home media organization.",
-    technologies: [
-      "Python",
-      "Watchdog",
-      "SCP/SSH",
-      "Send2Trash",
-      "Raspberry Pi",
-      "macOS",
-      "Automation",
-    ],
+      "Eliminated manual file handling with reliable background transfers, a layered architecture, and safe cleanup workflows.",
+    technologies: ["Python", "Watchdog", "SCP/SSH", "Send2Trash", "Raspberry Pi"],
     image: pisyncLogo,
     link: "https://github.com/imlocle/pisync",
   },
   {
     id: 4,
-    title: "Stock Tracker",
+    title: "Stock Tracker — Full-Stack Data App",
     description:
-      "A full-stack web application that provides real-time and historical stock market data for 15 companies using the Alpha Vantage API.",
+      "Full-stack app that pulls market data and displays real-time + historical charts for multiple companies.",
     outcomes:
-      "Built a stock tracker web application that offers real-time stock data and historical analysis, enabling users to make informed investment decisions.",
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "FastAPI",
-      "Python",
-      "Alpha Vantage API",
-    ],
+      "Delivered a working product demonstrating API integration, backend routing, and data visualization patterns.",
+    technologies: ["React", "Next.js", "TypeScript", "FastAPI", "Python"],
     image: stockTrackerLogo,
     link: "https://github.com/imlocle/stock-tracker",
   },
@@ -226,62 +167,64 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
     id: 5,
     title: "Portfolio Website",
     description:
-      "My professional site showcasing consulting expertise in backend cloud engineering & AI, project case-studies, and service-offerings for startups and creators.",
+      "My consulting site focused on backend MVP delivery, pricing, and case-study style proof.",
     outcomes:
-      "Built a fully responsive React + Vite application with AI-powered project previews, service-to-lead conversion elements, and a deployable cloud infrastructure; improved lead engagement by providing a seamless experience connecting visitors to consulting services and bookings.",
-    technologies: ["React", "TypeScript", "Node.js", "Vite", "GenAI", "TRAE"],
+      "Built a conversion-focused site that routes visitors into a simple funnel: Services → Pricing → Book Call.",
+    technologies: ["React", "TypeScript", "Vite"],
     image: llLogo,
     link: "https://github.com/imlocle/imlocle.github.io",
   },
 ];
 
+
 // HOME PAGE
 
 export const PREVIEW_SERVICES: IPreviewCard[] = [
   {
-    icon: "🧠",
-    title: "AI & Automation",
+    icon: "⚡",
+    title: "Backend MVP in 14 Days",
     description:
-      "Production-ready AI features and automation built on scalable backend systems.",
-    link: "/services#ai-automation",
+      "APIs + Auth + Database + AWS deployment — production-ready with clean docs and handoff.",
+    link: `/services#${BACKEND_MVP}`,
   },
   {
-    icon: "🚀",
-    title: "Backend MVP",
-    description: "Launch-ready AWS backends designed to scale from day one.",
-    link: "/services#backend-mvp",
+    icon: "🤖",
+    title: "AI Features That Ship",
+    description:
+      "Add AI chat, recommendations, or automation on top of your product — safely and maintainably.",
+    link: `/services#${AI_AUTOMATION}`,
   },
   {
     icon: "☁️",
-    title: "Cloud Architecture",
+    title: "Fix My AWS (Cost + Reliability)",
     description:
-      "Modern serverless infrastructure that reduces cost and complexity.",
-    link: "/services#cloud-architecture",
+      "Reduce cloud spend, stabilize deployments, and clean up architecture without a full rewrite.",
+    link: `/services#${CLOUD_ARCHITECTURE}`,
   },
 ];
 
+
 export const PREVIEW_PROJECTS: IPreviewCard[] = [
   {
-    title: "Alfred - AI Chatbot",
-    description: "An AI chatbot using AWS Bedrock and Python.",
+    title: "Alfred — AI Chatbot",
+    description: "Serverless AI chatbot backend on AWS Bedrock.",
     image: alfredLogo,
-    link: "/work/technical",
+    link: "/work/technical#alfred",
   },
   {
     title: "Code Query",
-    description:
-      "A Python CLI tool that uses a Retrieval-Augmented Generation (RAG) pipeline to answer questions about a local codebase using the OpenAI API.",
+    description: "RAG CLI that answers questions about your codebase.",
     image: codeQueryLogo,
-    link: "/work/technical",
+    link: "/work/technical#codequery",
   },
   {
-    title: "Neptune - Be Yourself",
-    description:
-      "A video-based social media platform for artists, entertainers, and dreamers.",
+    title: "Neptune — Video Social App",
+    description: "Scalable AWS backend for a video-first platform.",
     image: neptuneLogo,
-    link: "/work/client",
+    link: "/work/client#neptune",
   },
 ];
+
 
 export const COMPANIES_WORKED = [
   {

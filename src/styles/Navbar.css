@@ -1,39 +1,73 @@
+/* =========================
+   Navbar (glass + theme tokens)
+   ========================= */
+
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: var(--transition-all);
+
+  /* Slightly solid at top for readability */
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
+  transition:
+    background 0.25s ease,
+    backdrop-filter 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
+/* ✅ More transparent while scrolling */
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  border-bottom-color: rgba(15, 23, 42, 0.05);
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+
+  transition: padding 0.25s ease;
 }
 
+/* Slightly tighter when scrolled */
+.navbar.scrolled .navbar-container {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+/* Logo row */
 .navbar-logo {
-  text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
+/* Links */
 .navbar-links {
   display: flex;
   gap: 2rem;
@@ -42,18 +76,18 @@
 
 .nav-link {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 1rem;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .nav-link:hover {
-  color: var(--primary-light);
+  color: var(--brand-600);
 }
 
 .nav-link::after {
@@ -63,41 +97,20 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: var(--primary-light);
-  transition: width 0.3s ease;
+  background-color: var(--brand-500);
+  transition: width 0.25s ease;
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Active link: always show underline + highlight text */
 .nav-link.active {
-  color: var(--primary-light);
+  color: var(--brand-600);
 }
 
 .nav-link.active::after {
   width: 100%;
-}
-
-/* CTA link */
-.cta-link {
-  padding: 0.4rem 1rem;
-  background-color: var(--primary-light);
-  color: white !important;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: var(--transition-all);
-  position: relative;
-}
-
-.cta-link::after {
-  content: none;
-}
-
-.cta-link:hover {
-  background-color: var(--primary-color);
-  text-decoration: none;
 }
 
 .nav-dropdown {
@@ -110,48 +123,77 @@
   gap: 0.25rem;
 }
 
+/* CTA button in nav */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.6rem 0.95rem;
+  border-radius: 12px;
+
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+
+  background: linear-gradient(180deg, var(--brand-900) 0%, var(--brand-600) 100%);
+  /* border: 1px solid rgba(15, 23, 42, 0.12); */
+  box-shadow: 0 14px 34px rgba(30, 58, 138, 0.18);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 44px rgba(30, 58, 138, 0.24);
+  filter: saturate(1.02);
+  color: #fff;
+}
+
+/* Dropdown */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.4rem);
+  top: calc(100% + 0.45rem);
   left: 0;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0;
-  min-width: 190px;
   z-index: 1100;
+
+  min-width: 200px;
+  padding: 0.5rem 0;
+
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.10);
 }
 
 .dropdown-item {
   display: block;
-  padding: 0.7rem 1rem;
+  padding: 0.75rem 1rem;
+
   text-decoration: none;
-  color: #1e3a8a;
+  color: var(--text-primary);
   font-size: 0.95rem;
-  position: relative;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  font-weight: 600;
+
+  transition: background 0.18s ease, color 0.18s ease;
 }
 
-/* No underline line effect on dropdown items using ::after */
 .dropdown-item::after {
   content: none;
 }
 
 .dropdown-item:hover {
-  background-color: #eff6ff;
-  color: #1d4ed8;
+  background: rgba(59, 130, 246, 0.10);
+  color: var(--brand-600);
 }
 
-/* Active dropdown item */
 .dropdown-item.active {
-  background-color: #dbeafe;
-  color: #1d4ed8;
-  font-weight: 600;
+  background: rgba(59, 130, 246, 0.14);
+  color: var(--brand-600);
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -164,7 +206,7 @@
 .hamburger span {
   display: block;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--text-primary);
   border-radius: 2px;
   transition: var(--transition-all);
 }
@@ -181,13 +223,14 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .navbar-container {
     padding: 1rem;
   }
 
   .logo-text {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .navbar-links {
@@ -195,28 +238,35 @@
     top: 100%;
     left: 0;
     width: 100%;
+
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.97);
     gap: 0;
+
     overflow: hidden;
     max-height: 0;
+
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
     transition: max-height 0.3s ease;
   }
 
   .navbar-links.mobile-open {
-    max-height: 500px;
+    max-height: 520px;
     padding: 0.5rem 0 1rem;
   }
 
   .nav-link {
+    width: 100%;
     padding: 0.9rem 1.5rem;
     font-size: 0.95rem;
-    width: 100%;
   }
 
-  .cta-link {
-    margin: 0.3rem 1.5rem 0.5rem;
+  .nav-cta {
+    margin: 0.4rem 1.5rem;
     text-align: center;
+    width: calc(100% - 3rem);
   }
 
   .hamburger {
@@ -232,7 +282,9 @@
     box-shadow: none;
     padding: 0;
     margin-top: 0;
-    background-color: transparent;
+    border: none;
+    background: transparent;
+    backdrop-filter: none;
   }
 
   .dropdown-item {

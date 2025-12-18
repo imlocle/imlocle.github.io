@@ -1,18 +1,24 @@
 .company-logo-card {
+  display: flex;
   align-items: center;
+  justify-content: center;
+
   background-color: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-card);
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
+
   padding: 2rem;
+
+  /* 🔑 KEY FIX */
+  height: 140px;              /* consistent card height */
+  width: 100%;
+
   transition: var(--transition-all);
 }
 
 .company-logo-card img {
   display: block;
-  max-height: 80px;
+  max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }

@@ -13,16 +13,13 @@ const CtaSection = () => {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
     >
-      <h2>🚀 Let's Build Something Together</h2>
+      <h2>Let's ship your backend in 14 days</h2>
       <p>
-        Whether you need a fast MVP, AI integration, or a full cloud migration —
-        I can help bring your vision to life with speed and reliability.
+        Book a free 30-minute build call. I'll map the backend you need, give you a clear
+        timeline, and tell you the exact next steps—no pressure.
       </p>
-      <ButtonLink
-        link={CALENDLY_URL}
-        text="Book A Consultation"
-        target="_blank"
-      />
+      <ButtonLink link={CALENDLY_URL} text="Book a Free Build Call" target="_blank" />
+
     </motion.section>
   );
 };

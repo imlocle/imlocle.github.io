@@ -1,3 +1,7 @@
+/* =========================
+   App layout + shared patterns
+   ========================= */
+
 .app {
   display: flex;
   flex-direction: column;
@@ -15,11 +19,12 @@
   padding: 5rem 1rem;
 }
 
+/* Shared section title */
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: var(--text-800);
   position: relative;
 }
 
@@ -28,12 +33,14 @@
   position: absolute;
   width: 80px;
   height: 4px;
-  background-color: #3b82f6;
+  background-color: var(--brand-500);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 999px;
 }
 
+/* Shared card typography */
 .card-title {
   color: var(--primary-color);
   font-size: 1.5rem;
@@ -46,6 +53,7 @@
   margin-bottom: 2rem;
 }
 
+/* Social links */
 .social-links {
   display: flex;
   flex-direction: column;
@@ -53,23 +61,23 @@
 }
 
 .social-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: var(--brand-600);
+  transition: color 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .social-link:hover {
-  color: var(--primary-light);
+  color: var(--brand-500);
 }
 
 .social-icon {
   font-size: 1.2rem;
-  color: var(--primary-color);
+  color: var(--brand-600);
 }
 
+/* App Store badge hover */
 .app-store-button {
   transition: var(--transition-all);
 }

@@ -1,0 +1,90 @@
+/* =========================
+   THEME TOKENS (global)
+   Put ONLY design tokens here:
+   colors, radii, shadows, transitions, spacing
+   ========================= */
+
+:root {
+  /* Brand */
+  --brand-900: #1e3a8a; /* deep indigo */
+  --brand-700: #1d4ed8;
+  --brand-600: #2563eb; /* primary button / links */
+  --brand-500: #3b82f6; /* hover / accents */
+  --brand-400: #60a5fa;
+  --brand-100: rgba(59, 130, 246, 0.14);
+  --brand-50: rgba(59, 130, 246, 0.08);
+
+  /* Neutrals */
+  --text-900: #0b1220;
+  --text-800: #0f172a;
+  --text-700: #172554;
+  --text-600: #334155;
+  --text-500: #475569;
+  --text-400: #64748b;
+
+  --bg: #f8fafc;
+
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.78);      /* glass */
+  --surface-2: rgba(255, 255, 255, 0.62);    /* lighter glass */
+  --surface-solid: #ffffff;
+
+  /* Borders */
+  --border: rgba(15, 23, 42, 0.10);
+  --border-strong: rgba(15, 23, 42, 0.16);
+
+  /* Effects */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  --shadow-card: 0 18px 55px rgba(2, 6, 23, 0.08);
+  --shadow-hover: 0 26px 80px rgba(2, 6, 23, 0.12);
+  --shadow-soft: 0 10px 30px rgba(2, 6, 23, 0.08);
+
+  --transition: all 0.2s ease;
+
+  /* Gradients (used in hero/footer/sections) */
+  --gradient-hero:
+    radial-gradient(900px 520px at 20% 15%, rgba(255, 255, 255, 0.7), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(59, 130, 246, 0.14), transparent 55%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 50%, #e0f2fe 100%);
+
+  --gradient-soft:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.10), rgba(59, 130, 246, 0.18));
+
+  /* Focus / accessibility */
+  --focus-ring: 0 0 0 4px rgba(59, 130, 246, 0.22);
+
+  /* Navbar tokens */
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.55); /* more transparent when scrolling */
+  --nav-border: rgba(15, 23, 42, 0.08);
+  --nav-blur: blur(10px);
+
+  /* Buttons */
+  --btn-primary-bg: var(--brand-900);
+  --btn-primary-bg-hover: var(--brand-600);
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-bg: rgba(255, 255, 255, 0.70);
+  --btn-secondary-border: rgba(15, 23, 42, 0.18);
+  --btn-secondary-text: var(--text-800);
+
+  /* Typography helpers */
+  --letter-tight: -0.02em;
+
+  /* Backwards-compat (so existing code keeps working) */
+  --primary-color: var(--brand-900);
+  --primary-light: var(--brand-500);
+  --text-primary: var(--text-800);
+  --text-secondary: var(--text-400);
+  --bg-color: var(--bg);
+  --white: var(--surface-solid);
+  --border-radius: var(--radius-md);
+  --box-shadow-card: var(--shadow-card);
+  --box-shadow-hover: var(--shadow-hover);
+  --transition-all: var(--transition);
+}

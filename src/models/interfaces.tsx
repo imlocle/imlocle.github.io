@@ -8,10 +8,11 @@ export interface IPreviewCard {
 }
 
 export interface IMainCard {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
-
+  
+  ctaLabel?: string;
   highlights?: string[];
   icon?: string;
   outcomes?: string;

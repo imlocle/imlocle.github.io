@@ -1,4 +1,6 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -8,13 +10,46 @@ import TechnicalProjects from "./pages/work/TechnicalProjects";
 import AlfredChat from "./components/AlfredChat";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ScrollToTop from "./utils/ScrollToTop";
 import "./App.css";
+
+/**
+ * HashRouter uses window.location.hash for routing (e.g. "#/services").
+ * For in-page anchors, we support a SECOND hash:
+ *   "#/services#pricing"  -> scroll to element with id="pricing"
+ *   "#/work/client#neptune" -> scroll to id="neptune"
+ */
+function ScrollManager() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const raw = window.location.hash; // ex: "#/services#pricing"
+    const parts = raw.split("#");     // ["", "/services", "pricing"]
+
+    const anchor = parts.length >= 3 ? parts[2] : "";
+
+    // If we have an anchor, scroll to it after paint.
+    if (anchor) {
+      requestAnimationFrame(() => {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      return;
+    }
+
+    // Otherwise, normal route change => scroll to top.
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [location.pathname, location.search]);
+
+  return null;
+}
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollManager />
+
       <div className="app">
         <Navbar />
         <main className="main-content">

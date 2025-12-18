@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
+import { CALENDLY_URL } from "../utils/constants";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,14 +38,12 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`} ref={navbarRef}>
       <div className="navbar-container">
-        <Link
-          to="/"
-          className="navbar-logo"
-          onClick={() => {
-            setMenuOpen(false);
-            setWorkOpen(false);
-          }}
-        >
+        <Link to="/" className="navbar-logo">
+          <img
+            src="/ll-logo.png"
+            alt="Loc Le logo"
+            className="navbar-logo-img"
+          />
           <span className="logo-text">Loc Le</span>
         </Link>
 
@@ -126,9 +125,24 @@ const Navbar = () => {
             )}
           </div>
 
+          {/* Primary CTA: Book Call (Calendly) */}
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+            onClick={() => {
+              setMenuOpen(false);
+              setWorkOpen(false);
+            }}
+          >
+            Book Call
+          </a>
+
+          {/* Secondary: Contact page (email form) */}
           <Link
             to="/contact"
-            className="nav-link cta-link"
+            className={`nav-link ${isActive("/contact") ? "active" : ""}`}
             onClick={() => {
               setMenuOpen(false);
               setWorkOpen(false);
@@ -136,6 +150,7 @@ const Navbar = () => {
           >
             Contact
           </Link>
+
         </div>
       </div>
     </nav>
