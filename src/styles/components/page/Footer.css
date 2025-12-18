@@ -1,0 +1,119 @@
+/* Footer matches your "premium glass" theme */
+.footer {
+  margin-top: 4rem;
+  padding: 0;
+  color: var(--text-primary);
+
+  background:
+    radial-gradient(
+      900px 520px at 20% 15%,
+      rgba(255, 255, 255, 0.65),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 85% 30%,
+      rgba(59, 130, 246, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--bg-color) 0%, rgba(224, 242, 254, 0.55) 100%);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.footer-inner {
+  max-width: clamp(800px, 90%, 1200px); /* align with page-container */
+  margin: 0 auto;
+  padding: 3rem 1rem 1.25rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-section {
+  min-width: 0;
+}
+
+.footer-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.footer-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 44px;
+  height: 2px;
+  background-color: rgba(59, 130, 246, 0.85);
+  border-radius: 999px;
+}
+
+.footer-description {
+  margin-top: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 42ch;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-all);
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+  transform: translateX(2px);
+}
+
+/* Footer bottom line */
+.footer-bottom {
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-description {
+    max-width: 60ch;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 2.25rem 1rem 1.25rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .footer-description {
+    max-width: 65ch;
+  }
+}

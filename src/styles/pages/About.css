@@ -1,0 +1,168 @@
+.about-content {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2.25rem;
+  margin-bottom: 3.5rem;
+  align-items: start;
+}
+
+/* Left card */
+.about-image-card {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.1);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image-meta {
+  padding: 1.1rem 1.1rem 1.25rem;
+}
+
+.about-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.about-role {
+  margin-top: 0.2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.about-location {
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Right content */
+.about-text h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.about-lead {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: #334155;
+  font-size: 1.08rem;
+}
+
+.about-proof {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.about-proof-item {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.9);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14);
+  flex: 0 0 auto;
+}
+
+.about-ctas {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+}
+
+/* How I work section */
+.about-workstyle {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: var(--box-shadow-card);
+  margin-bottom: 1.25rem;
+}
+
+.about-workstyle h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.about-workstyle ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-workstyle li strong {
+  color: var(--text-primary);
+}
+
+/* Collapsible story */
+.about-story {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: 0.9rem 1.1rem;
+}
+
+.about-story summary {
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--primary-color);
+  list-style: none;
+}
+
+.about-story summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-story-body {
+  margin-top: 0.9rem;
+}
+
+.about-story-body p {
+  margin-bottom: 1.05rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    height: 360px;
+  }
+
+  .about-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

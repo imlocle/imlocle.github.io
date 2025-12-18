@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import ButtonLink from "../button/ButtonLink";
-import "../../styles/card/PreviewCard.css";
+
+import "@styles/components/card/PreviewCard.css";
+import ButtonLink from "@components/button/ButtonLink";
 
 const PreviewCard = ({
   title,
@@ -18,19 +19,35 @@ const PreviewCard = ({
   return (
     <motion.div
       className="preview-card"
-      initial={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -10, boxShadow: "var(--box-shadow-hover)" }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 18 }}
+      transition={{ duration: 0.45 }}
+      whileHover={{ y: -6, boxShadow: "var(--box-shadow-hover)" }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      {image && <img src={image} alt={title} className="preview-card-image" />}
-      {icon && <div className="preview-card-icon">{icon}</div>}
+      {(image || icon) && (
+        <div className="preview-card-top">
+          {image && (
+            <div className="preview-card-image-wrap">
+              <img src={image} alt={title} className="preview-card-image" />
+            </div>
+          )}
+          {icon && <div className="preview-card-icon">{icon}</div>}
+        </div>
+      )}
+
       <div className="preview-card-content">
-        <h2 className="card-title">{title}</h2>
-        <p className="card-description">{description}</p>
+        <h3 className="preview-card-title">{title}</h3>
+        <p className="preview-card-description">{description}</p>
+
         {link && (
-          <ButtonLink link={link} text="Learn More ->" className="arrow-link" />
+          <div className="preview-card-footer">
+            <ButtonLink
+              link={link}
+              text="See details →"
+              className="arrow-link"
+            />
+          </div>
         )}
       </div>
     </motion.div>

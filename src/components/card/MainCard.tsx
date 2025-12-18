@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import "../../styles/card/MainCard.css";
-import downloadOnAppStore from "../../assets/download-on-the-app-store.svg";
+
+import "@styles/components/card/MainCard.css";
+import downloadOnAppStore from "@assets/download-on-the-app-store.svg";
 import ButtonLink from "../button/ButtonLink";
 
 const MainCard = ({
-  key,
+  index = 0,
+  id,
   title,
   description,
   icon,
@@ -12,10 +14,12 @@ const MainCard = ({
   highlights,
   outcomes,
   link,
+  ctaLabel,
   appStore,
   technologies,
 }: {
-  key: number;
+  index?: number;
+  id?: string;
   title: string;
   description: string;
   icon?: string;
@@ -23,30 +27,40 @@ const MainCard = ({
   highlights?: string[];
   outcomes?: string;
   link?: string;
+  ctaLabel?: string;
   appStore?: string;
   technologies?: string[];
 }) => {
   return (
-    <motion.div
+    <motion.article
+      id={id}
       className="main-card"
-      key={key}
-      initial={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: key * 0.1 }}
-      whileHover={{ y: -10, boxShadow: "var(--box-shadow-hover)" }}
+      initial={{ opacity: 0, y: 24 }}
+      transition={{ duration: 0.5, delay: index * 0.06 }}
+      whileHover={{ y: -6, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      {icon && <div className="main-card-icon">{icon}</div>}
-      {image && (
-        <div className="main-card-image-container">
-          <img src={image} alt={title} className="main-card-image" />
+      {(image || icon) && (
+        <div className="main-card-media">
+          {image && (
+            <div className="main-card-image-container">
+              <img src={image} alt={title} className="main-card-image" />
+            </div>
+          )}
+          {!image && icon && <div className="main-card-icon">{icon}</div>}
         </div>
       )}
+
       <div className="main-card-content">
-        <h2 className="card-title">{title}</h2>
-        <p className="card-description">{description}</p>
+        <header className="main-card-header">
+          <h2 className="main-card-title">{title}</h2>
+          <p className="main-card-description">{description}</p>
+        </header>
+
         {outcomes && <p className="main-card-outcomes">💡 {outcomes}</p>}
-        {highlights && (
+
+        {highlights && highlights.length > 0 && (
           <ul className="main-card-highlights">
             {highlights.map((highlight, i) => (
               <li key={i} className="main-card-highlight">
@@ -55,33 +69,41 @@ const MainCard = ({
             ))}
           </ul>
         )}
-        {technologies && (
-          <ul className="main-card-technologies">
-            {technologies.map((technology, i) => (
-              <span key={i} className="main-card-technology">
-                {technology}
-              </span>
-            ))}
-          </ul>
-        )}
-        {link && (
-          <div className="main-card-links">
-            <div className="main-card-buttons">
-              <ButtonLink link={link} text="View Project" target="_blank" />
-              {appStore && (
-                <a href={appStore} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={downloadOnAppStore}
-                    alt="Download on App Store"
-                    className="app-store-button"
-                  />
-                </a>
-              )}
+
+        <footer className="main-card-footer">
+          {technologies && technologies.length > 0 && (
+            <ul className="main-card-technologies">
+              {technologies.map((technology, i) => (
+                <li key={i} className="main-card-technology">
+                  {technology}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {link && (
+            <div className="main-card-links">
+              <div className="main-card-buttons">
+                <ButtonLink
+                  link={link}
+                  text={ctaLabel || "View Project"}
+                  target="_blank"
+                />
+                {appStore && (
+                  <a href={appStore} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={downloadOnAppStore}
+                      alt="Download on App Store"
+                      className="app-store-button"
+                    />
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </footer>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

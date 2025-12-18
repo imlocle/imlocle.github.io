@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "../../styles/page/Title.css";
+import "@styles/components/page/Title.css";
 
 const Title = ({ pathname, title }: { pathname: string; title: string }) => {
   return (
