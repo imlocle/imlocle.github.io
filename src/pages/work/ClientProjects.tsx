@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
-import Title from "../../components/page/Title";
-import { CLIENT_PROJECTS } from "../../utils/constants";
-import MainCard from "../../components/card/MainCard";
-import CtaSection from "../../components/section/CtaSection";
-import "../../styles/Portfolio.css";
-import ButtonLink from "../../components/button/ButtonLink";
-import { CALENDLY_URL } from "../../utils/constants";
+
+import "@styles/pages/Portfolio.css";
+import ButtonLink from "@components/button/ButtonLink";
+import MainCard from "@components/card/MainCard";
+import Title from "@components/page/Title";
+import CtaSection from "@components/section/CtaSection";
+import { CALENDLY_URL, CLIENT_PROJECTS } from "@utils/constants";
 
 const ClientProjects = () => {
   const { pathname } = useLocation();

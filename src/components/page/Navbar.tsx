@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../styles/Navbar.css";
-import { CALENDLY_URL } from "../utils/constants";
+
+import "@styles/components/page/Navbar.css";
+import { CALENDLY_URL } from "@utils/constants";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

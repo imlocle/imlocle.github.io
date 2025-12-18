@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import "../../styles/section/PreviewSectionGrid.css";
+import "@styles/components/section/PreviewSectionGrid.css";
 import PreviewCard from "../card/PreviewCard";
-import type { IPreviewCard } from "../../models/interfaces";
+import type { IPreviewCard } from "../@models/interfaces";
 
-const PreviewSectionGrid = ({
+const PreviewGridSection = ({
   title,
   cards,
 }: {
@@ -35,4 +35,4 @@ const PreviewSectionGrid = ({
   );
 };
 
-export default PreviewSectionGrid;
+export default PreviewGridSection;

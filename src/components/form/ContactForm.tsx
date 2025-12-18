@@ -1,9 +1,10 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import "../styles/ContactForm.css";
-import { VITE_WEB3FORMS_ACCESS_KEY } from "../config";
 import { motion } from "framer-motion";
-import { WEB3FORMS_API_URL } from "../utils/constants";
+
+import "@styles/components/form/ContactForm.css";
+import { VITE_WEB3FORMS_ACCESS_KEY } from "../../config";
+import { WEB3FORMS_API_URL } from "@utils/constants";
 
 interface FormData {
   name: string;
@@ -105,13 +106,14 @@ const ContactForm = () => {
     >
       <h2 className="contact-title">Send a quick message</h2>
       <p className="card-description">
-        Tell me what you're building and what you need (API, auth, database,
-        AWS). I'll reply with a recommended scope and next steps.
+        {
+          "Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
+        }
       </p>
 
       {submitSuccess ? (
         <div className="success-message">
-          <p>Thank you for your message! I'll get back to you soon.</p>
+          <p>{"Thank you for your message! I'll get back to you soon."}</p>
         </div>
       ) : (
         <>

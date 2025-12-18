@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { fadeUp } from "../../utils/motionVariants";
+import { fadeUp } from "@utils/motionVariants";
 
-import "../../styles/card/PricingCard.css";
+import "@styles/components/card/PricingCard.css";
 
 const PricingCard = ({
   title,
@@ -29,8 +29,8 @@ const PricingCard = ({
         <p className="pricing-note">Best for: {bestFor}</p>
       </div>
       <ul>
-        {details.map(detail => (
-          <li>{detail}</li>
+        {details.map((detail, i) => (
+          <li key={i}>{detail}</li>
         ))}
       </ul>
     </motion.div>

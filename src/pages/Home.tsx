@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import "../styles/Home.css";
 
+import "@styles/pages/Home.css";
+import ButtonLink from "@components/button/ButtonLink";
+import CtaSection from "@components/section/CtaSection";
+import PreviewGridSection from "@components/section/PreviewGridSection";
+import PreviewLogoGridSection from "@components/section/PreviewLogoGridSection";
 import {
   CALENDLY_URL,
   COMPANIES_WORKED,
   PREVIEW_PROJECTS,
   PREVIEW_SERVICES,
-} from "../utils/constants";
-
-import ButtonLink from "../components/button/ButtonLink";
-import CtaSection from "../components/section/CtaSection";
-import PreviewSectionGrid from "../components/section/PreviewSectionGrid";
-import PreviewLogoGridSection from "../components/section/PreviewLogoGridSection";
+} from "@utils/constants";
 
 const Home = () => {
   const { pathname } = useLocation();
@@ -81,8 +80,8 @@ const Home = () => {
                 <div className="hero-point" role="listitem">
                   <span className="dot" aria-hidden="true" />
                   <span>
-                    <strong>Handoff that doesn't hurt:</strong> docs, examples,
-                    and a “next steps” plan.
+                    <strong>{"Handoff that doesn't hurt:"}</strong> docs,
+                    examples, and a “next steps” plan.
                   </span>
                 </div>
               </div>
@@ -129,8 +128,8 @@ const Home = () => {
       </section>
 
       <div className="page-container">
-        <PreviewSectionGrid title="Services" cards={PREVIEW_SERVICES} />
-        <PreviewSectionGrid
+        <PreviewGridSection title="Services" cards={PREVIEW_SERVICES} />
+        <PreviewGridSection
           title="Featured Projects"
           cards={PREVIEW_PROJECTS}
         />

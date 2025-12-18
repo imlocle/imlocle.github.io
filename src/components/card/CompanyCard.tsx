@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "../../styles/card/CompanyCard.css";
+
+import "@styles/components/card/CompanyCard.css";
 
 const CompanyCard = ({
   link,

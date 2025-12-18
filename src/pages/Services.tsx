@@ -2,20 +2,19 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import Title from "../components/page/Title";
-import MainCard from "../components/card/MainCard";
-import ButtonLink from "../components/button/ButtonLink";
-import CtaSection from "../components/section/CtaSection";
-
-import "../styles/Services.css";
+import "@styles/pages/Services.css";
+import PricingCard from "@components/card/PricingCard";
+import MainCard from "@components/card/MainCard";
+import ButtonLink from "@components/button/ButtonLink";
+import Title from "@components/page/Title";
+import CtaSection from "@components/section/CtaSection";
 import {
   CALENDLY_URL,
   SERVICES,
   PRICING_CARDS,
   SERVICE_TIMELINE,
-} from "../utils/constants";
-import PricingCard from "../components/card/PricingCard";
-import { containerStagger, fadeUp } from "../utils/motionVariants";
+} from "@utils/constants";
+import { containerStagger, fadeUp } from "@utils/motionVariants";
 
 const Services = () => {
   const { pathname, hash } = useLocation();
@@ -83,8 +82,9 @@ const Services = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
-          {PRICING_CARDS.map(pricing => (
+          {PRICING_CARDS.map((pricing, i) => (
             <PricingCard
+              key={i}
               title={pricing.title}
               price={pricing.price}
               bestFor={pricing.bestFor}

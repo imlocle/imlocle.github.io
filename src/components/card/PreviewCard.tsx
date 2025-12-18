@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import ButtonLink from "../button/ButtonLink";
-import "../../styles/card/PreviewCard.css";
+
+import "@styles/components/card/PreviewCard.css";
+import ButtonLink from "@components/button/ButtonLink";
 
 const PreviewCard = ({
   title,

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../styles/AlfredChat.css";
 import ReactMarkdown from "react-markdown";
-import alfredLogo from "../assets/alfred-logo.png";
 import sanitizeHtml from "sanitize-html";
-import { VITE_API_URL } from "../config";
-import { ALFRED_GREETINGS } from "../utils/constants";
+
+import "@styles/components/page/AlfredChat.css";
+import alfredLogo from "@assets/alfred-logo.png";
+import { VITE_API_URL } from "../../config";
+import { ALFRED_GREETINGS } from "@utils/constants";
 
 interface Message {
   role: "user" | "assistant";

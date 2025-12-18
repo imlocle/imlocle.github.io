@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
-import Title from "../../components/page/Title";
-import { TECHNICAL_PROJECTS } from "../../utils/constants";
-import MainCard from "../../components/card/MainCard";
-import "../../styles/Portfolio.css";
-import CtaSection from "../../components/section/CtaSection";
-import ButtonLink from "../../components/button/ButtonLink";
-import { CALENDLY_URL } from "../../utils/constants";
+
+import "@styles/pages/Portfolio.css";
+import ButtonLink from "@components/button/ButtonLink";
+import MainCard from "@components/card/MainCard";
+import Title from "@components/page/Title";
+import CtaSection from "@components/section/CtaSection";
+import { TECHNICAL_PROJECTS, CALENDLY_URL } from "@utils/constants";
 
 const TechnicalProjects = () => {
   const { pathname } = useLocation();

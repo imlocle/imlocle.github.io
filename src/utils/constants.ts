@@ -1,19 +1,20 @@
-import codeQueryLogo from "../assets/code-query-logo.png";
-import stockTrackerLogo from "../assets/stock-tracker-logo.png";
-import hachikoLogo from "../assets/hachiko_logo.png";
-import neptuneLogo from "../assets/neptune-logo.svg";
-import neptuneLogo2 from "../assets/neptune-logo2.png";
-import llLogo from "../assets/ll-logo.png";
-import alfredLogo from "../assets/alfred-logo.png";
-import raxLogo from "../assets/rax-logo-2020.svg";
-import mdsLogo from "../assets/mds.png";
-import wayviaLogo from "../assets/wayvia-logo.svg";
-import pisyncLogo from "../assets/pisync_logo.png";
+import codeQueryLogo from "@assets/code-query-logo.png";
+import stockTrackerLogo from "@assets/stock-tracker-logo.png";
+import hachikoLogo from "@assets/hachiko_logo.png";
+import neptuneLogo from "@assets/neptune-logo.svg";
+import neptuneLogo2 from "@assets/neptune-logo2.png";
+import llLogo from "@assets/ll-logo.png";
+import alfredLogo from "@assets/alfred-logo.png";
+import raxLogo from "@assets/rax-logo-2020.svg";
+import mdsLogo from "@assets/mds.png";
+import wayviaLogo from "@assets/wayvia-logo.svg";
+import pisyncLogo from "@assets/pisync_logo.png";
 import type {
+  ICompanyCard,
   IMainCard,
   IPreviewCard,
   IPricingCard,
-} from "../models/interfaces";
+} from "@models/interfaces";
 
 export const GITHUB_LINK = "https://github.com/imlocle";
 export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
@@ -301,7 +302,7 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
   },
 ];
 
-export const COMPANIES_WORKED = [
+export const COMPANIES_WORKED: ICompanyCard[] = [
   {
     alt: "Method Data Science",
     imageLogo: mdsLogo,

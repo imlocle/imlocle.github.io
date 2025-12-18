@@ -6,15 +6,15 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react";
 
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import ClientProjects from "./pages/work/ClientProjects";
-import TechnicalProjects from "./pages/work/TechnicalProjects";
-import AlfredChat from "./components/AlfredChat";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import About from "@pages/About";
+import Contact from "@pages/Contact";
+import Home from "@pages/Home";
+import Services from "@pages/Services";
+import ClientProjects from "@pages/work/ClientProjects";
+import TechnicalProjects from "@pages/work/TechnicalProjects";
+import AlfredChat from "@components/page/AlfredChat";
+import Navbar from "@components/page/Navbar";
+import Footer from "@components/page/Footer";
 import "./App.css";
 
 /**

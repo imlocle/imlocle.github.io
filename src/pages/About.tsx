@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import "../styles/About.css";
-import profilePhoto from "../assets/loc_headshot.jpg";
+import "@styles/pages/About.css";
+import profilePhoto from "@assets/loc_headshot.jpg";
 import { useLocation } from "react-router-dom";
-import Title from "../components/page/Title";
-import CtaSection from "../components/section/CtaSection";
-import ButtonLink from "../components/button/ButtonLink";
-import { CALENDLY_URL } from "../utils/constants";
+import Title from "@components/page/Title";
+import CtaSection from "@components/section/CtaSection";
+import ButtonLink from "@components/button/ButtonLink";
+import { CALENDLY_URL } from "@utils/constants";
 
 const About = () => {
   const { pathname } = useLocation();
@@ -42,9 +42,11 @@ const About = () => {
           <h2>I build production-ready backends for startups</h2>
 
           <p className="about-lead">
-            If you're building a product and backend is slowing you down, I can
-            ship your <strong>API + auth + database + AWS deployment</strong>{" "}
-            fast—with clean docs and a smooth handoff.
+            {
+              "If you're building a product and backend is slowing you down, I can ship your "
+            }
+            <strong>API + auth + database + AWS deployment</strong> fast—with
+            clean docs and a smooth handoff.
           </p>
 
           <div className="about-proof">
@@ -89,8 +91,8 @@ const About = () => {
             <h3>How I work</h3>
             <ul>
               <li>
-                <strong>Day 1:</strong> scope lock + plan (you always know what
-                you're getting)
+                <strong>Day 1:</strong>
+                {" scope lock + plan (you always know what you're getting)"}
               </li>
               <li>
                 <strong>Days 2-12:</strong> build + harden (API, auth, DB,
@@ -109,8 +111,9 @@ const About = () => {
               <p>
                 My journey into technology began in <strong>Japan</strong>,
                 while I was teaching English. My brother suggested coding as a{" "}
-                <strong>balance of logic and creativity</strong>, and it clicked
-                instantly. I've always been a <strong>problem solver</strong>
+                <strong>balance of logic and creativity</strong>
+                {", and it clicked instantly. I've always been a "}
+                <strong>problem solver</strong>
                 —through dance, filmmaking, and a teenage dream of becoming a
                 detective.
               </p>
@@ -141,15 +144,16 @@ const About = () => {
                   backend engineering, cloud systems, and AI/automation
                 </strong>
                 . I love building tools that overlap with my hobbies (like{" "}
-                <strong>sim racing</strong>), and I'm driven by building things
-                that create a positive impact.
+                <strong>sim racing</strong>)
+                {
+                  ", and I'm driven by building things that create a positive impact."
+                }
               </p>
 
               <p>
-                Outside of work, I've studied abroad in Vietnam, taught and
-                bartended in Japan, and traveled through multiple countries. I'm
-                fluent in Vietnamese, conversational in Japanese, and I practice
-                mindfulness to stay grounded and focused.
+                {
+                  "Outside of work, I've studied abroad in Vietnam, taught and bartended in Japan, and traveled through multiple countries. I'm fluent in Vietnamese, conversational in Japanese, and I practice mindfulness to stay grounded and focused."
+                }
               </p>
             </div>
           </details>

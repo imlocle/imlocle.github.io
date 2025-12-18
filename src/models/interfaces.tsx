@@ -29,3 +29,9 @@ export interface IPricingCard {
   details: string[];
   isFeatured?: boolean;
 }
+
+export interface ICompanyCard {
+  alt: string;
+  imageLogo: string;
+  link: string;
+}

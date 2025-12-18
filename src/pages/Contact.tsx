@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import ContactForm from "../components/ContactForm";
-import "../styles/Contact.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "../utils/constants";
 import { Link, useLocation } from "react-router-dom";
-import Title from "../components/page/Title";
-import ButtonLink from "../components/button/ButtonLink";
+
+import "@styles/pages/Contact.css";
+import ButtonLink from "@components/button/ButtonLink";
+import ContactForm from "@components/form/ContactForm";
+import Title from "@components/page/Title";
+import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
   const { pathname } = useLocation();
@@ -84,8 +85,9 @@ const Contact = () => {
         <section id="message" className="contact-card contact-card--form">
           <h2 className="contact-card-title">Send a quick message</h2>
           <p className="contact-card-subtitle">
-            Tell me what you're building and what you need (API, auth, database,
-            AWS). I&apos;ll reply with a recommended scope and next steps.
+            {
+              "Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
+            }
           </p>
           <ContactForm />
         </section>
