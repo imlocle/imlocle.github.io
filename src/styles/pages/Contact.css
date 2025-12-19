@@ -86,12 +86,21 @@
 }
 
 .contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: 700;
   color: var(--primary-color);
+  text-decoration: none;
 }
 
 .contact-link:hover {
   color: var(--primary-light);
+}
+
+.contact-link-arrow::before {
+  content: "→";
+  transition: transform 0.2s ease;
 }
 
 /* Divider + socials */
@@ -112,6 +121,10 @@
   gap: 0.25rem;
 }
 
+#message {
+  scroll-margin-top: 90px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .contact-grid {
@@ -120,5 +133,11 @@
 
   .contact-card {
     padding: 1.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-link-arrow::before {
+    content: "↓";
   }
 }
