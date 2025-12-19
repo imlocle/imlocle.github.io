@@ -57,7 +57,6 @@ const Services = () => {
             className="highlight-primary-button"
           />
 
-          {/* Link so hash updates consistently */}
           <Link
             className="services-hero-link"
             to={{ pathname: "/services", hash: "#pricing" }}
