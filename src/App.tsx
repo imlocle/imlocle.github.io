@@ -1,16 +1,17 @@
+import { useEffect } from "react";
 import {
   HashRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
-import { useEffect } from "react";
 
 import About from "@pages/About";
 import Contact from "@pages/Contact";
 import Home from "@pages/Home";
 import Services from "@pages/Services";
 import ClientProjects from "@pages/work/ClientProjects";
+import NeptuneCaseStudy from "@pages/work/NeptuneCaseStudy";
 import TechnicalProjects from "@pages/work/TechnicalProjects";
 import AlfredChat from "@components/page/AlfredChat";
 import Navbar from "@components/page/Navbar";
@@ -54,7 +55,6 @@ function App() {
   return (
     <Router>
       <ScrollManager />
-
       <div className="app">
         <Navbar />
         <main className="main-content">
@@ -63,6 +63,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/work/client" element={<ClientProjects />} />
+            <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
             <Route path="/work/technical" element={<TechnicalProjects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

@@ -33,6 +33,22 @@ export const ALFRED_GREETINGS = [
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
 
+export const NEPTUNE_TECHNOLOGIES = [
+  "AWS SAM",
+  "TypeScript",
+  "Cognito",
+  "DynamoDB",
+  "SQS",
+  "S3",
+  "AWS Rekognition",
+  "Terraform",
+  "Python",
+  "Parquet",
+  "Athena",
+  "CloudWatch",
+  "Cloudflare",
+];
+
 const AI_AUTOMATION = "ai-automation";
 const BACKEND_MVP = "backend-mvp";
 const CLOUD_ARCHITECTURE = "cloud-architecture";
@@ -171,10 +187,12 @@ export const CLIENT_PROJECTS: IMainCard[] = [
       "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
     outcomes:
       "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
-    technologies: ["AWS SAM", "Python", "TypeScript", "Node.js", "Terraform"],
+    technologies: NEPTUNE_TECHNOLOGIES,
     image: neptuneLogo,
-    link: "https://www.theneptuneapp.com/",
+    link: "/work/client/neptune",
+    ctaLabel: "View Case Study",
     appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
+    target: "_self",
   },
   {
     id: "hachiko",
@@ -298,7 +316,7 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
     title: "Neptune — Video Social App",
     description: "Scalable AWS backend for a video-first platform.",
     image: neptuneLogo,
-    link: "/work/client#neptune",
+    link: "/work/client/neptune",
   },
 ];
 
