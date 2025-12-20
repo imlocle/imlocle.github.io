@@ -47,9 +47,10 @@ const ClientProjects = () => {
               image={project.image}
               outcomes={project.outcomes}
               link={project.link}
-              ctaLabel="View Live"
+              ctaLabel={project.ctaLabel}
               appStore={project.appStore}
               technologies={project.technologies}
+              target={project.target}
             />
           ))}
         </div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import "@styles/components/card/MainCard.css";
 import downloadOnAppStore from "@assets/download-on-the-app-store.svg";
-import ButtonLink from "../button/ButtonLink";
+import ButtonLink from "@components/button/ButtonLink";
 
 type MainCardProps = {
   index?: number;
@@ -18,7 +18,7 @@ type MainCardProps = {
   appStore?: string;
   technologies?: string[];
   target?: "_blank" | "_self";
-}
+};
 
 const MainCard = ({
   index = 0,

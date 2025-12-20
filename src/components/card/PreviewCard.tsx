@@ -3,19 +3,21 @@ import { motion } from "framer-motion";
 import "@styles/components/card/PreviewCard.css";
 import ButtonLink from "@components/button/ButtonLink";
 
+type PreviewCardProps = {
+  title: string;
+  description: string;
+  icon?: string;
+  image?: string;
+  link?: string;
+};
+
 const PreviewCard = ({
   title,
   description,
   icon,
   image,
   link,
-}: {
-  title: string;
-  description: string;
-  icon?: string;
-  image?: string;
-  link?: string;
-}) => {
+}: PreviewCardProps) => {
   return (
     <motion.div
       className="preview-card"

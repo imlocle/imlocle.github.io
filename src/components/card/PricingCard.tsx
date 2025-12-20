@@ -3,19 +3,21 @@ import { fadeUp } from "@utils/motionVariants";
 
 import "@styles/components/card/PricingCard.css";
 
+type PricingCardProps = {
+  title: string;
+  price: string;
+  bestFor: string;
+  details: string[];
+  isFeatured?: boolean;
+};
+
 const PricingCard = ({
   title,
   price,
   bestFor,
   details,
   isFeatured = false,
-}: {
-  title: string;
-  price: string;
-  bestFor: string;
-  details: string[];
-  isFeatured?: boolean;
-}) => {
+}: PricingCardProps) => {
   return (
     <motion.div
       className={isFeatured ? "pricing-card featured" : "pricing-card"}

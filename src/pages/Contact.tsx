@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 import "@styles/pages/Contact.css";
 import ButtonLink from "@components/button/ButtonLink";

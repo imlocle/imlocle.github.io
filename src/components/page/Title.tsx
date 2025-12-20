@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import "@styles/components/page/Title.css";
 
-const Title = ({ pathname, title }: { pathname: string; title: string }) => {
+type TitleProps = {
+  pathname: string;
+  title: string;
+};
+
+const Title = ({ pathname, title }: TitleProps) => {
   return (
     <motion.div
       key={pathname}
