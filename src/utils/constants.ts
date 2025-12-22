@@ -49,6 +49,20 @@ export const NEPTUNE_TECHNOLOGIES = [
   "Cloudflare",
 ];
 
+export const ALFRED_TECHNOLOGIES = [
+  "AWS Bedrock",
+  "Nova (Foundation Model)",
+  "Python",
+  "AWS Lambda",
+  "API Gateway",
+  "DynamoDB",
+  "Terraform",
+  "Prompt Engineering",
+  "LLM Guardrails",
+  "IP-based Rate Limiting",
+  "Serverless Architecture",
+];
+
 const AI_AUTOMATION = "ai-automation";
 const BACKEND_MVP = "backend-mvp";
 const CLOUD_ARCHITECTURE = "cloud-architecture";
@@ -217,9 +231,11 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Production-style AI chatbot backend using AWS Bedrock + Lambda, designed for reliability and multiple users.",
     outcomes:
       "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
-    technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
+    technologies: ALFRED_TECHNOLOGIES,
     image: alfredLogo,
-    link: "https://github.com/imlocle/alfred-chatbot",
+    link: "/work/technical/alfred",
+    ctaLabel: "View Case Study",
+    target: "_self",
   },
   {
     id: "codequery",
@@ -304,7 +320,7 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
     title: "Alfred — AI Chatbot",
     description: "Serverless AI chatbot backend on AWS Bedrock.",
     image: alfredLogo,
-    link: "/work/technical#alfred",
+    link: "/work/technical/alfred",
   },
   {
     title: "Code Query",
