@@ -6,7 +6,7 @@ import "@styles/pages/Services.css";
 import PricingCard from "@components/card/PricingCard";
 import MainCard from "@components/card/MainCard";
 import ButtonLink from "@components/button/ButtonLink";
-import Title from "@components/page/Title";
+import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
 import {
   CALENDLY_URL,
@@ -33,7 +33,7 @@ const Services = () => {
 
   return (
     <div className="page-container">
-      <Title pathname={pathname} title="Services" />
+      <TitleHeader pathname={pathname} title="Services" />
 
       {/* Sales Intro */}
       <motion.section

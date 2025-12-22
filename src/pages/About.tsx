@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc_headshot.jpg";
 import { useLocation } from "react-router-dom";
-import Title from "@components/page/Title";
+import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
 import ButtonLink from "@components/button/ButtonLink";
 import { CALENDLY_URL } from "@utils/constants";
@@ -12,7 +12,7 @@ const About = () => {
 
   return (
     <div className="page-container">
-      <Title pathname={pathname} title="About" />
+      <TitleHeader pathname={pathname} title="About" />
 
       <div className="about-content">
         <motion.div

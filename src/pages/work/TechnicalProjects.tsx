@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "@styles/pages/Portfolio.css";
 import ButtonLink from "@components/button/ButtonLink";
 import MainCard from "@components/card/MainCard";
-import Title from "@components/page/Title";
+import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
 import { TECHNICAL_PROJECTS, CALENDLY_URL } from "@utils/constants";
 
@@ -12,7 +12,7 @@ const TechnicalProjects = () => {
 
   return (
     <div className="page-container">
-      <Title pathname={pathname} title="Technical Work" />
+      <TitleHeader pathname={pathname} title="Technical Work" />
 
       <section className="work-hero">
         <h2>Backend + AI engineering samples</h2>
@@ -47,7 +47,7 @@ const TechnicalProjects = () => {
               image={project.image}
               outcomes={project.outcomes}
               link={project.link}
-              ctaLabel="View Repo"
+              ctaLabel={project.ctaLabel}
               appStore={project.appStore}
               technologies={project.technologies}
             />

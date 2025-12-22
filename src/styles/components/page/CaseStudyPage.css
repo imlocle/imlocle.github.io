@@ -2,10 +2,6 @@
    Case Study Page
    ========================= */
 
-/* .case-page {
-  padding: 2.5rem 0 5rem;
-} */
-
 /* HERO */
 .case-hero {
   background: var(--surface);
@@ -77,6 +73,7 @@
 /* Layout grid */
 .case-grid {
   margin-top: 1.6rem;
+  margin-bottom: 4rem;
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 1.25rem;

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "@styles/pages/Portfolio.css";
 import ButtonLink from "@components/button/ButtonLink";
 import MainCard from "@components/card/MainCard";
-import Title from "@components/page/Title";
+import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
 import { CALENDLY_URL, CLIENT_PROJECTS } from "@utils/constants";
 
@@ -12,7 +12,7 @@ const ClientProjects = () => {
 
   return (
     <div className="page-container">
-      <Title pathname={pathname} title="Client Work" />
+      <TitleHeader pathname={pathname} title="Client Work" />
 
       <section className="work-hero">
         <h2>Proof I can ship</h2>

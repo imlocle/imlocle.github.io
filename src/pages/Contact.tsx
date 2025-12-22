@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import "@styles/pages/Contact.css";
 import ButtonLink from "@components/button/ButtonLink";
 import ContactForm from "@components/form/ContactForm";
-import Title from "@components/page/Title";
+import TitleHeader from "@/components/header/TitleHeader";
 import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
@@ -26,7 +26,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className="page-container">
-      <Title pathname={pathname} title="Book a Free Build Call" />
+      <TitleHeader pathname={pathname} title="Book a Free Build Call" />
 
       <div className="contact-grid">
         <motion.section
