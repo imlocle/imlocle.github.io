@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
-import "@styles/components/page/Title.css";
+import "@styles/components/header/TitleHeader.css";
 
-const Title = ({ pathname, title }: { pathname: string; title: string }) => {
+type TitleHeaderProps = {
+  title: string;
+  pathname: string;
+};
+
+const TitleHeader = ({ pathname, title }: TitleHeaderProps) => {
   return (
     <motion.div
       key={pathname}
@@ -28,4 +33,4 @@ const Title = ({ pathname, title }: { pathname: string; title: string }) => {
   );
 };
 
-export default Title;
+export default TitleHeader;

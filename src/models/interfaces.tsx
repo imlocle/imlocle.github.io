@@ -20,6 +20,7 @@ export interface IMainCard {
   image?: string;
   link?: string;
   appStore?: string;
+  target?: "_blank" | "_self";
 }
 
 export interface IPricingCard {

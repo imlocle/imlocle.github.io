@@ -2,7 +2,23 @@ import { motion } from "framer-motion";
 
 import "@styles/components/card/MainCard.css";
 import downloadOnAppStore from "@assets/download-on-the-app-store.svg";
-import ButtonLink from "../button/ButtonLink";
+import ButtonLink from "@components/button/ButtonLink";
+
+type MainCardProps = {
+  index?: number;
+  id?: string;
+  title: string;
+  description: string;
+  icon?: string;
+  image?: string;
+  highlights?: string[];
+  outcomes?: string;
+  link?: string;
+  ctaLabel?: string;
+  appStore?: string;
+  technologies?: string[];
+  target?: "_blank" | "_self";
+};
 
 const MainCard = ({
   index = 0,
@@ -17,20 +33,8 @@ const MainCard = ({
   ctaLabel,
   appStore,
   technologies,
-}: {
-  index?: number;
-  id?: string;
-  title: string;
-  description: string;
-  icon?: string;
-  image?: string;
-  highlights?: string[];
-  outcomes?: string;
-  link?: string;
-  ctaLabel?: string;
-  appStore?: string;
-  technologies?: string[];
-}) => {
+  target,
+}: MainCardProps) => {
   return (
     <motion.article
       id={id}
@@ -87,7 +91,7 @@ const MainCard = ({
                 <ButtonLink
                   link={link}
                   text={ctaLabel || "View Project"}
-                  target="_blank"
+                  target={target}
                 />
                 {appStore && (
                   <a href={appStore} target="_blank" rel="noopener noreferrer">

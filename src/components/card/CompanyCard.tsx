@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 
 import "@styles/components/card/CompanyCard.css";
 
-const CompanyCard = ({
-  link,
-  imgLogo,
-  alt,
-}: {
+type CompanyCardProps = {
   link: string;
   imgLogo: string;
   alt: string;
-}) => {
+};
+
+const CompanyCard = ({ link, imgLogo, alt }: CompanyCardProps) => {
   return (
     <Link to={link} target="_blank" rel="noopener noreferrer">
       <motion.div

@@ -33,6 +33,36 @@ export const ALFRED_GREETINGS = [
   "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
 ];
 
+export const NEPTUNE_TECHNOLOGIES = [
+  "AWS SAM",
+  "TypeScript",
+  "Cognito",
+  "DynamoDB",
+  "SQS",
+  "S3",
+  "AWS Rekognition",
+  "Terraform",
+  "Python",
+  "Parquet",
+  "Athena",
+  "CloudWatch",
+  "Cloudflare",
+];
+
+export const ALFRED_TECHNOLOGIES = [
+  "AWS Bedrock",
+  "Nova (Foundation Model)",
+  "Python",
+  "AWS Lambda",
+  "API Gateway",
+  "DynamoDB",
+  "Terraform",
+  "Prompt Engineering",
+  "LLM Guardrails",
+  "IP-based Rate Limiting",
+  "Serverless Architecture",
+];
+
 const AI_AUTOMATION = "ai-automation";
 const BACKEND_MVP = "backend-mvp";
 const CLOUD_ARCHITECTURE = "cloud-architecture";
@@ -171,10 +201,12 @@ export const CLIENT_PROJECTS: IMainCard[] = [
       "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
     outcomes:
       "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
-    technologies: ["AWS SAM", "Python", "TypeScript", "Node.js", "Terraform"],
+    technologies: NEPTUNE_TECHNOLOGIES,
     image: neptuneLogo,
-    link: "https://www.theneptuneapp.com/",
+    link: "/work/client/neptune",
+    ctaLabel: "View Case Study",
     appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
+    target: "_self",
   },
   {
     id: "hachiko",
@@ -199,9 +231,11 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Production-style AI chatbot backend using AWS Bedrock + Lambda, designed for reliability and multiple users.",
     outcomes:
       "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
-    technologies: ["AWS Bedrock", "Lambda", "Python", "S3", "Terraform"],
+    technologies: ALFRED_TECHNOLOGIES,
     image: alfredLogo,
-    link: "https://github.com/imlocle/alfred-chatbot",
+    link: "/work/technical/alfred",
+    ctaLabel: "View Case Study",
+    target: "_self",
   },
   {
     id: "codequery",
@@ -286,7 +320,7 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
     title: "Alfred — AI Chatbot",
     description: "Serverless AI chatbot backend on AWS Bedrock.",
     image: alfredLogo,
-    link: "/work/technical#alfred",
+    link: "/work/technical/alfred",
   },
   {
     title: "Code Query",
@@ -298,7 +332,7 @@ export const PREVIEW_PROJECTS: IPreviewCard[] = [
     title: "Neptune — Video Social App",
     description: "Scalable AWS backend for a video-first platform.",
     image: neptuneLogo,
-    link: "/work/client#neptune",
+    link: "/work/client/neptune",
   },
 ];
 
