@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import CompanyCard from "../card/CompanyCard";
 import "@styles/components/section/PreviewLogoGridSection.css";
-import type { ICompanyCard } from "@/models/interfaces";
+import type { CompanyCardData } from "@/models/card";
 
 const PreviewLogoGridSection = ({
   cards,
   title,
 }: {
-  cards: ICompanyCard[];
+  cards: CompanyCardData[];
   title: string;
 }) => {
   return (

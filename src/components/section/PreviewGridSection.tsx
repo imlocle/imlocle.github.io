@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import "@styles/components/section/PreviewSectionGrid.css";
 import PreviewCard from "@components/card/PreviewCard";
-import type { IPreviewCard } from "@models/interfaces";
+import type { PreviewCardData } from "@/models/card";
 
 const PreviewGridSection = ({
   title,
   cards,
 }: {
   title: string;
-  cards: IPreviewCard[];
+  cards: PreviewCardData[];
 }) => {
   return (
     <motion.section

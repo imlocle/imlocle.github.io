@@ -1,7 +1,49 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import { NEPTUNE_TECHNOLOGIES } from "@utils/constants";
+import neptuneLogo from "@assets/neptune-logo.svg";
+import neptuneLogo2 from "@assets/neptune-logo2.png";
+import type { CompanyCardData, MainCardData, PreviewCardData } from "@/models/card";
 
-export const neptuneConfig: CaseStudyConfig = {
+export const NEPTUNE_URL = "https://www.theneptuneapp.com/";
+export const NEPTUNE_TITLE = "Neptune - Video Social Platform";
+export const NEPTUNE_TECHNOLOGIES = [
+  "AWS SAM",
+  "TypeScript",
+  "Cognito",
+  "DynamoDB",
+  "SQS",
+  "S3",
+  "AWS Rekognition",
+  "Terraform",
+  "Python",
+  "Parquet",
+  "Athena",
+  "CloudWatch",
+  "Cloudflare",
+];
+
+export const NEPTUNE_MAIN_CARD: MainCardData = {
+  id: "neptune",
+  title: NEPTUNE_TITLE,
+  description:
+    "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
+  outcomes:
+    "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
+  technologies: NEPTUNE_TECHNOLOGIES,
+  image: neptuneLogo,
+  link: "/work/client/neptune",
+  ctaLabel: "View Case Study",
+  appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
+  target: "_self",
+};
+
+export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
+  title: NEPTUNE_TITLE,
+  description: "Scalable AWS backend for a video-first platform.",
+  image: neptuneLogo,
+  link: "/work/client/neptune",
+};
+
+export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: "Neptune Case Study",
 
   heroTopline: "Client Project • Backend Rebuild",
@@ -87,4 +129,10 @@ export const neptuneConfig: CaseStudyConfig = {
     "Add architecture diagrams, pipeline screenshots, and a short “before vs after” section with measurable reliability/cost improvements.",
 
   showCta: true,
+};
+
+export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
+  alt: NEPTUNE_TITLE,
+  imageLogo: neptuneLogo2,
+  link: NEPTUNE_URL,
 };

@@ -1,4 +1,4 @@
-export interface IPreviewCard {
+export type PreviewCardData = {
   title: string;
   description: string;
   link: string;
@@ -7,7 +7,7 @@ export interface IPreviewCard {
   image?: string;
 }
 
-export interface IMainCard {
+export type MainCardData = {
   id: string | number;
   title: string;
   description: string;
@@ -23,7 +23,7 @@ export interface IMainCard {
   target?: "_blank" | "_self";
 }
 
-export interface IPricingCard {
+export type PricingCardData = {
   title: string;
   price: string;
   bestFor: string;
@@ -31,7 +31,7 @@ export interface IPricingCard {
   isFeatured?: boolean;
 }
 
-export interface ICompanyCard {
+export type CompanyCardData = {
   alt: string;
   imageLogo: string;
   link: string;

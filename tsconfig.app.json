@@ -21,10 +21,11 @@
       "@/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@models/*": ["src/models/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
-      "@models/*": ["src/models/*"],
     },
 
     /* Linting */
