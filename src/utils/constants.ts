@@ -1,67 +1,28 @@
 import codeQueryLogo from "@assets/code-query-logo.png";
 import stockTrackerLogo from "@assets/stock-tracker-logo.png";
 import hachikoLogo from "@assets/hachiko_logo.png";
-import neptuneLogo from "@assets/neptune-logo.svg";
-import neptuneLogo2 from "@assets/neptune-logo2.png";
 import llLogo from "@assets/ll-logo.png";
-import alfredLogo from "@assets/alfred-logo.png";
 import raxLogo from "@assets/rax-logo-2020.svg";
 import mdsLogo from "@assets/mds.png";
 import wayviaLogo from "@assets/wayvia-logo.svg";
 import pisyncLogo from "@assets/pisync_logo.png";
 import type {
-  ICompanyCard,
-  IMainCard,
-  IPreviewCard,
-  IPricingCard,
-} from "@models/interfaces";
+  CompanyCardData,
+  MainCardData,
+  PreviewCardData,
+  PricingCardData,
+} from "@models/card";
+import {
+  NEPTUNE_MAIN_CARD,
+  NEPTUNE_PREVIEW_CARD,
+  NEPTUNE_COMPANY_CARD,
+} from "@data/neptune";
+import { ALFRED_MAIN_CARD, ALFRED_PREVIEW_CARD } from "@data/alfred";
 
 export const GITHUB_LINK = "https://github.com/imlocle";
 export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
 export const WEB3FORMS_API_URL = "https://api.web3forms.com/submit";
 export const CALENDLY_URL = "https://calendly.com/loc-le/30-min-meeting";
-export const NEPTUNE_URL = "https://www.theneptuneapp.com/";
-
-export const POSITION_TITLE = "Backend Cloud Engineer";
-export const ALFRED_GREETINGS = [
-  "Good day. I am Alfred, Mr. Loc Le's trusted AI butler. How may I be of service to you today?",
-  "Ah, welcome. I'm Alfred, Mr. Loc Le's ever-prepared AI butler. Ask away, and I shall do my best to assist.",
-  "Greetings! I'm Alfred, Loc's AI butler. I know all about his experience, projects, and interests. What would you like to know?",
-  "Hello there. I'm Alfred, Mr. Loc Le's AI butler. I'm here to answer any questions you may have about him. How may I assist you?",
-  "A pleasure to make your acquaintance. I'm Alfred, Mr. Loc Le's loyal AI butler. How might I help today?",
-  "Welcome. I am Alfred, at your service. Feel free to inquire about Mr. Loc Le's work, skills, or interests.",
-  "Salutations. Alfred here — Mr. Loc Le's digital butler. How may I lend my assistance?",
-];
-
-export const NEPTUNE_TECHNOLOGIES = [
-  "AWS SAM",
-  "TypeScript",
-  "Cognito",
-  "DynamoDB",
-  "SQS",
-  "S3",
-  "AWS Rekognition",
-  "Terraform",
-  "Python",
-  "Parquet",
-  "Athena",
-  "CloudWatch",
-  "Cloudflare",
-];
-
-export const ALFRED_TECHNOLOGIES = [
-  "AWS Bedrock",
-  "Nova (Foundation Model)",
-  "Python",
-  "AWS Lambda",
-  "API Gateway",
-  "DynamoDB",
-  "Terraform",
-  "Prompt Engineering",
-  "LLM Guardrails",
-  "IP-based Rate Limiting",
-  "Serverless Architecture",
-];
 
 const AI_AUTOMATION = "ai-automation";
 const BACKEND_MVP = "backend-mvp";
@@ -69,7 +30,7 @@ const CLOUD_ARCHITECTURE = "cloud-architecture";
 
 /* ---------- Services Page ---------- */
 
-export const SERVICES: IMainCard[] = [
+export const SERVICES: MainCardData[] = [
   {
     id: BACKEND_MVP,
     icon: "⚡",
@@ -132,7 +93,7 @@ export const SERVICES: IMainCard[] = [
   },
 ];
 
-export const PRICING_CARDS: IPricingCard[] = [
+export const PRICING_CARDS: PricingCardData[] = [
   {
     title: "MVP Core",
     price: "2,500",
@@ -193,21 +154,10 @@ export const SERVICE_TIMELINE = [
   },
 ];
 
-export const CLIENT_PROJECTS: IMainCard[] = [
-  {
-    id: "neptune",
-    title: "Neptune — Video Social Platform",
-    description:
-      "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
-    outcomes:
-      "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
-    technologies: NEPTUNE_TECHNOLOGIES,
-    image: neptuneLogo,
-    link: "/work/client/neptune",
-    ctaLabel: "View Case Study",
-    appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
-    target: "_self",
-  },
+/* ---------- Work Page ---------- */
+
+export const CLIENT_PROJECTS: MainCardData[] = [
+  NEPTUNE_MAIN_CARD,
   {
     id: "hachiko",
     title: "Hachiko Sushi House — Small Business Website",
@@ -221,22 +171,8 @@ export const CLIENT_PROJECTS: IMainCard[] = [
   },
 ];
 
-/* ---------- Work Page ---------- */
-
-export const TECHNICAL_PROJECTS: IMainCard[] = [
-  {
-    id: "alfred",
-    title: "Alfred — AI Chatbot (AWS Bedrock)",
-    description:
-      "Production-style AI chatbot backend using AWS Bedrock + Lambda, designed for reliability and multiple users.",
-    outcomes:
-      "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
-    technologies: ALFRED_TECHNOLOGIES,
-    image: alfredLogo,
-    link: "/work/technical/alfred",
-    ctaLabel: "View Case Study",
-    target: "_self",
-  },
+export const TECHNICAL_PROJECTS: MainCardData[] = [
+  ALFRED_MAIN_CARD,
   {
     id: "codequery",
     title: "Code Query — RAG for Local Codebases",
@@ -246,10 +182,11 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Speeds up debugging and onboarding by turning large codebases into a searchable assistant for explanations and code discovery.",
     technologies: ["Python", "OpenAI"],
     image: codeQueryLogo,
+    ctaLabel: "View Repo",
     link: "https://github.com/imlocle/code-query",
   },
   {
-    id: 3,
+    id: "pisync",
     title: "PiSync — Automated File Transfer + Cleanup",
     description:
       "Automation system that monitors a folder, securely transfers files to a Raspberry Pi via SSH/SCP, then cleans up completed files.",
@@ -263,10 +200,11 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Raspberry Pi",
     ],
     image: pisyncLogo,
+    ctaLabel: "View Repo",
     link: "https://github.com/imlocle/pisync",
   },
   {
-    id: 4,
+    id: "stock-tracker",
     title: "Stock Tracker — Full-Stack Data App",
     description:
       "Full-stack app that pulls market data and displays real-time + historical charts for multiple companies.",
@@ -274,24 +212,26 @@ export const TECHNICAL_PROJECTS: IMainCard[] = [
       "Delivered a working product demonstrating API integration, backend routing, and data visualization patterns.",
     technologies: ["React", "Next.js", "TypeScript", "FastAPI", "Python"],
     image: stockTrackerLogo,
+    ctaLabel: "View Repo",
     link: "https://github.com/imlocle/stock-tracker",
   },
   {
-    id: 5,
-    title: "Portfolio Website",
+    id: "imlocle",
+    title: "imlocle.com — Backend Consulting & Case Study Platform",
     description:
-      "My consulting site focused on backend MVP delivery, pricing, and case-study style proof.",
+      "A services-focused engineering site built to showcase real production systems, backend case studies, and a clear path to booking work.",
     outcomes:
-      "Built a conversion-focused site that routes visitors into a simple funnel: Services → Pricing → Book Call.",
-    technologies: ["React", "TypeScript", "Vite"],
+      "Designed a conversion-oriented funnel that guides visitors from services and proof (case studies) to pricing and booking a call—without feeling like a traditional portfolio.",
+    technologies: ["React", "TypeScript", "Vite", "GitHub Pages"],
     image: llLogo,
+    ctaLabel: "View Repo",
     link: "https://github.com/imlocle/imlocle.github.io",
   },
 ];
 
 /* ---------- Home Page ---------- */
 
-export const PREVIEW_SERVICES: IPreviewCard[] = [
+export const PREVIEW_SERVICES: PreviewCardData[] = [
   {
     icon: "⚡",
     title: "Backend MVP in 14 Days",
@@ -315,38 +255,24 @@ export const PREVIEW_SERVICES: IPreviewCard[] = [
   },
 ];
 
-export const PREVIEW_PROJECTS: IPreviewCard[] = [
-  {
-    title: "Alfred — AI Chatbot",
-    description: "Serverless AI chatbot backend on AWS Bedrock.",
-    image: alfredLogo,
-    link: "/work/technical/alfred",
-  },
+export const PREVIEW_PROJECTS: PreviewCardData[] = [
+  ALFRED_PREVIEW_CARD,
   {
     title: "Code Query",
     description: "RAG CLI that answers questions about your codebase.",
     image: codeQueryLogo,
     link: "/work/technical#codequery",
   },
-  {
-    title: "Neptune — Video Social App",
-    description: "Scalable AWS backend for a video-first platform.",
-    image: neptuneLogo,
-    link: "/work/client/neptune",
-  },
+  NEPTUNE_PREVIEW_CARD,
 ];
 
-export const COMPANIES_WORKED: ICompanyCard[] = [
+export const COMPANIES_WORKED: CompanyCardData[] = [
   {
     alt: "Method Data Science",
     imageLogo: mdsLogo,
     link: "https://www.methoddatascience.com/",
   },
-  {
-    alt: "The Neptune App",
-    imageLogo: neptuneLogo2,
-    link: NEPTUNE_URL,
-  },
+  NEPTUNE_COMPANY_CARD,
   {
     alt: "Rackspace Technology",
     imageLogo: raxLogo,

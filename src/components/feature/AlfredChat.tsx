@@ -5,7 +5,7 @@ import sanitizeHtml from "sanitize-html";
 import "@styles/components/page/AlfredChat.css";
 import alfredLogo from "@assets/alfred-logo.png";
 import { VITE_API_URL } from "../../config";
-import { ALFRED_GREETINGS } from "@utils/constants";
+import { ALFRED_GREETINGS } from "@/data/alfred";
 
 interface Message {
   role: "user" | "assistant";
