@@ -1,5 +1,5 @@
 /* Load theme tokens first */
-@import "./styles/theme.css";
+@import "@styles/theme.css";
 
 /* =========================
    Base / Reset

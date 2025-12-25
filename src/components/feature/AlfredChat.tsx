@@ -4,8 +4,8 @@ import sanitizeHtml from "sanitize-html";
 
 import "@styles/components/feature/AlfredChat.css";
 import alfredLogo from "@assets/alfred-logo.png";
-import { VITE_API_URL } from "../../config";
-import { ALFRED_GREETINGS } from "@/data/alfred";
+import { VITE_API_URL } from "@config/config";
+import { ALFRED_GREETINGS } from "@data/alfred";
 
 interface Message {
   role: "user" | "assistant";
@@ -99,7 +99,8 @@ const AlfredChat: React.FC = () => {
           onClick={toggleChat}
           aria-label="Open chat with Alfred"
         >
-          💬 Chat with Alfred
+          <img className="chat-toggle-logo" src={alfredLogo} alt="Alfred" />
+          Chat with Alfred
         </button>
       )}
 
@@ -123,7 +124,8 @@ const AlfredChat: React.FC = () => {
                 <div className="chat-header-left">
                   <span className="chat-title">Alfred</span>
                   <span className="chat-subtitle">
-                    AI assistant • <a href="/#about">Built by Loc Le</a>
+                    <a href="/#work/technical/alfred">AI Assistant</a> •{" "}
+                    <a href="/#about">Built by Loc Le</a>
                   </span>
                 </div>
 

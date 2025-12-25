@@ -11,13 +11,13 @@ import Contact from "@pages/Contact";
 import Home from "@pages/Home";
 import Services from "@pages/Services";
 import ClientProjects from "@pages/work/ClientProjects";
-import AlfredCaseStudy from "./pages/work/caseStudies/AlfredCaseStudy";
+import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
 import TechnicalProjects from "@pages/work/TechnicalProjects";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
-import "./App.css";
+import "@/App.css";
 
 /**
  * HashRouter uses window.location.hash for routing (e.g. "#/services").

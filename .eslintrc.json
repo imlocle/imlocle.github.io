@@ -50,13 +50,14 @@
           ["^react", "^react-dom"],
           ["^@?\\w"],
           [
+            "^@assets",
             "^@components",
+            "^@config",
+            "^@data",
+            "^@models",
             "^@pages",
             "^@styles",
-            "^@utils",
-            "^@hooks",
-            "^@assets",
-            "^@config"
+            "^@utils"
           ],
           ["^\\.\\.(?!/?$)", "^\\.\\./?$", "^\\./(?=.*/)", "^\\.(?!/?$)", "^\\./?$"],
           ["^.+\\.css$"]

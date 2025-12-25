@@ -33,7 +33,6 @@ const ButtonLink = ({
     );
   }
 
-  // Hash-only link (same page): "#pricing"
   if (link.startsWith("#")) {
     return (
       <a
@@ -53,7 +52,6 @@ const ButtonLink = ({
     );
   }
 
-  // Internal route (with or without hash)
   return (
     <Link to={link} className={className} target={target}>
       {text}

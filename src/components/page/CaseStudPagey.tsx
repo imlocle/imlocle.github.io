@@ -45,7 +45,6 @@ const CaseStudyPage = ({ config, children }: CaseStudyPageProps) => {
 
         <CaseStudySidebar
           technologies={config.technologies}
-          nextStepsTitle={config.nextStepsTitle}
           nextStepsBody={config.nextStepsBody}
         />
       </div>

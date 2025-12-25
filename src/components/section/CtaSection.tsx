@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import "@styles/components/section/CtaSection.css";
-import ButtonLink from "../button/ButtonLink";
+import ButtonLink from "@components/button/ButtonLink";
 import { CALENDLY_URL } from "@utils/constants";
 
 const CtaSection = () => {
