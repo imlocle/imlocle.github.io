@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+
 import "@styles/components/section/PreviewSectionGrid.css";
 import PreviewCard from "@components/card/PreviewCard";
-import type { PreviewCardData } from "@/models/card";
+import type { PreviewCardData } from "@models/card";
 
 const PreviewGridSection = ({
   title,

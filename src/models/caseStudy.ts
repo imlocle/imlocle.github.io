@@ -20,8 +20,6 @@ export type CaseStudyConfig = {
   sections: CaseStudySection[];
 
   technologies: string[];
-
-  nextStepsTitle?: string;
   nextStepsBody: string;
 
   showCta?: boolean;

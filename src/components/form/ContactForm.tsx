@@ -3,7 +3,7 @@ import type { FormEvent } from "react";
 import { motion } from "framer-motion";
 
 import "@styles/components/form/ContactForm.css";
-import { VITE_WEB3FORMS_ACCESS_KEY } from "../../config";
+import { VITE_WEB3FORMS_ACCESS_KEY } from "@config/config";
 import { WEB3FORMS_API_URL } from "@utils/constants";
 
 interface FormData {

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import "@styles/components/page/Navbar.css";
+import "@styles/components/bar/Navbar.css";
 import { CALENDLY_URL } from "@utils/constants";
 
 const Navbar = () => {

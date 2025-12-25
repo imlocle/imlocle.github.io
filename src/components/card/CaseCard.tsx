@@ -1,8 +1,11 @@
+import "@styles/components/card/CaseCard.css";
+
 type CaseCardProps = {
   title: string;
   callout?: string;
   description?: string;
   highlights?: string[];
+  chips?: string[];
 };
 
 const CaseCard = ({
@@ -10,8 +13,10 @@ const CaseCard = ({
   callout,
   description,
   highlights,
+  chips,
 }: CaseCardProps) => {
   const hasHighlights = Boolean(highlights?.length);
+  const hasChips = Boolean(chips?.length);
 
   return (
     <section className="case-card">
@@ -31,6 +36,16 @@ const CaseCard = ({
             <li key={item}>{item}</li>
           ))}
         </ul>
+      )}
+
+      {hasChips && (
+        <div className="case-chips">
+          {chips!.map(chip => (
+            <span className="case-chip" key={chip}>
+              {chip}
+            </span>
+          ))}
+        </div>
       )}
     </section>
   );
