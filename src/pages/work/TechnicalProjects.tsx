@@ -12,7 +12,7 @@ const TechnicalProjects = () => {
 
   return (
     <div className="page-container">
-      <TitleHeader pathname={pathname} title="Technical Work" />
+      <TitleHeader pathname={pathname} title="Technical Projects" />
 
       <section className="work-hero">
         <h2>Backend + AI engineering samples</h2>

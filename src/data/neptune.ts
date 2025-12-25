@@ -1,7 +1,7 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
 import neptuneLogo from "@assets/neptune-logo.svg";
 import neptuneLogo2 from "@assets/neptune-logo2.png";
-import type { CompanyCardData, MainCardData, PreviewCardData } from "@/models/card";
+import type { CompanyCardData, MainCardData, PreviewCardData } from "@models/card";
 
 export const NEPTUNE_URL = "https://www.theneptuneapp.com/";
 export const NEPTUNE_TITLE = "Neptune - Video Social Platform";

@@ -12,7 +12,7 @@ const ClientProjects = () => {
 
   return (
     <div className="page-container">
-      <TitleHeader pathname={pathname} title="Client Work" />
+      <TitleHeader pathname={pathname} title="Client Projects" />
 
       <section className="work-hero">
         <h2>Proof I can ship</h2>

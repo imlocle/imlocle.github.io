@@ -24,8 +24,6 @@ export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
 export const WEB3FORMS_API_URL = "https://api.web3forms.com/submit";
 export const CALENDLY_URL = "https://calendly.com/loc-le/30-min-meeting";
 
-export const POSITION_TITLE = "Backend Cloud Engineer";
-
 const AI_AUTOMATION = "ai-automation";
 const BACKEND_MVP = "backend-mvp";
 const CLOUD_ARCHITECTURE = "cloud-architecture";

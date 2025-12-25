@@ -1,6 +1,6 @@
 import alfredLogo from "@assets/alfred-logo.png";
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type { MainCardData, PreviewCardData } from "@/models/card";
+import type { MainCardData, PreviewCardData } from "@models/card";
 
 export const ALFRED_GREETINGS = [
   "Good day. I am Alfred, Mr. Loc Le's trusted AI butler. How may I be of service to you today?",
