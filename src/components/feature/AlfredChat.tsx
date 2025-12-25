@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import sanitizeHtml from "sanitize-html";
 
-import "@styles/components/page/AlfredChat.css";
+import "@styles/components/feature/AlfredChat.css";
 import alfredLogo from "@assets/alfred-logo.png";
 import { VITE_API_URL } from "../../config";
 import { ALFRED_GREETINGS } from "@/data/alfred";
