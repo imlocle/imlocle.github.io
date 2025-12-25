@@ -138,7 +138,7 @@ export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: ALFRED_TECHNOLOGIES,
 
   nextStepsBody:
-  "Introduce streaming responses, via Bedrock's Invoke Model with Response Stream, for better chat UX, add multi-model routing, enhance observability, and optionally enable Anthropic support to compare LLM behavior under identical guardrails.",
+    "Introduce streaming responses, via Bedrock's Invoke Model with Response Stream, for better chat UX, add multi-model routing, enhance observability, and optionally enable Anthropic support to compare LLM behavior under identical guardrails.",
 
   showCta: true,
 };

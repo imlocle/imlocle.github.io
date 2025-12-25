@@ -5,7 +5,7 @@ export type PreviewCardData = {
 
   icon?: string;
   image?: string;
-}
+};
 
 export type MainCardData = {
   id: string | number;
@@ -21,7 +21,7 @@ export type MainCardData = {
   link?: string;
   appStore?: string;
   target?: "_blank" | "_self";
-}
+};
 
 export type PricingCardData = {
   title: string;
@@ -29,10 +29,10 @@ export type PricingCardData = {
   bestFor: string;
   details: string[];
   isFeatured?: boolean;
-}
+};
 
 export type CompanyCardData = {
   alt: string;
   imageLogo: string;
   link: string;
-}
+};
