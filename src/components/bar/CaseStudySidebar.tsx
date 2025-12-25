@@ -6,10 +6,7 @@ type Props = {
   nextStepsBody: string;
 };
 
-const CaseStudySidebar = ({
-  technologies,
-  nextStepsBody,
-}: Props) => {
+const CaseStudySidebar = ({ technologies, nextStepsBody }: Props) => {
   return (
     <aside className="case-sidebar" aria-label="Case study sidebar">
       <CaseCard title="Technologies" chips={technologies} />
