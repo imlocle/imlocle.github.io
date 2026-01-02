@@ -1,4 +1,4 @@
-import codeQueryLogo from "@assets/code-query-logo.png";
+import codeIntelPlatformLogo from "@assets/code-intel-platform-logo.png";
 import stockTrackerLogo from "@assets/stock-tracker-logo.png";
 import hachikoLogo from "@assets/hachiko_logo.png";
 import llLogo from "@assets/ll-logo.png";
@@ -174,14 +174,14 @@ export const CLIENT_PROJECTS: MainCardData[] = [
 export const TECHNICAL_PROJECTS: MainCardData[] = [
   ALFRED_MAIN_CARD,
   {
-    id: "codequery",
-    title: "Code Query — RAG for Local Codebases",
+    id: "code-intelligence-platform",
+    title: "Code Intelligence Platform — RAG for Local Codebases",
     description:
       "Python CLI that indexes a codebase, generates embeddings, retrieves relevant snippets, and answers questions using the OpenAI API.",
     outcomes:
       "Speeds up debugging and onboarding by turning large codebases into a searchable assistant for explanations and code discovery.",
     technologies: ["Python", "OpenAI"],
-    image: codeQueryLogo,
+    image: codeIntelPlatformLogo,
     ctaLabel: "View Repo",
     link: "https://github.com/imlocle/code-query",
   },
@@ -258,10 +258,10 @@ export const PREVIEW_SERVICES: PreviewCardData[] = [
 export const PREVIEW_PROJECTS: PreviewCardData[] = [
   ALFRED_PREVIEW_CARD,
   {
-    title: "Code Query",
+    title: "Code Intelligence Platform",
     description: "RAG CLI that answers questions about your codebase.",
-    image: codeQueryLogo,
-    link: "/work/technical#codequery",
+    image: codeIntelPlatformLogo,
+    link: "/work/technical#code-intelligence-platform",
   },
   NEPTUNE_PREVIEW_CARD,
 ];
