@@ -12,6 +12,7 @@ import Home from "@pages/Home";
 import Services from "@pages/Services";
 import ClientProjects from "@pages/work/ClientProjects";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
+import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
 import TechnicalProjects from "@pages/work/TechnicalProjects";
 import AlfredChat from "@components/feature/AlfredChat";
@@ -69,6 +70,10 @@ function App() {
             <Route
               path="/work/technical/alfred"
               element={<AlfredCaseStudy />}
+            />
+            <Route
+              path="/work/technical/code-intelligence"
+              element={<CodeIntelligenceCaseStudy />}
             />
             <Route path="/contact" element={<Contact />} />
           </Routes>

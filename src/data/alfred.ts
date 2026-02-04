@@ -13,6 +13,8 @@ export const ALFRED_GREETINGS = [
 ];
 
 export const ALFRED_TITLE = "Alfred — AI Assistant Platform";
+export const ALFRED_CASE_STUDY_PATH = "/work/technical/alfred";
+
 export const ALFRED_TECHNOLOGIES = [
   "AWS Bedrock",
   "Nova (Foundation Model)",
@@ -36,7 +38,7 @@ export const ALFRED_MAIN_CARD: MainCardData = {
     "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
   technologies: ALFRED_TECHNOLOGIES,
   image: alfredLogo,
-  link: "/work/technical/alfred",
+  link: ALFRED_CASE_STUDY_PATH,
   ctaLabel: "View Case Study",
   target: "_self",
 };
@@ -46,16 +48,16 @@ export const ALFRED_PREVIEW_CARD: PreviewCardData = {
   description:
     "Production AI assistant with strict guardrails and low-cost AWS infrastructure.",
   image: alfredLogo,
-  link: "/work/technical/alfred",
+  link: ALFRED_CASE_STUDY_PATH,
 };
 
 export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${ALFRED_TITLE}: Case Study`,
 
-  heroTopline: "Technical Project • AI Assistant",
-  heroTitle: ALFRED_TITLE,
+  heroTopline: "Technical Project • LLM Systems Engineering",
+  heroTitle: "Alfred — Building a Constrained LLM System in Production",
   heroSubtitle:
-    "A production-ready, constrained AI assistant built with AWS Bedrock and Terraform to demonstrate real-world LLM guardrails, rate limiting, and cost-aware infrastructure.",
+    "Implemented a secure, production-ready LLM system using AWS Bedrock, Terraform, and serverless infrastructure, emphasizing guardrails, request throttling, cost controls, and deterministic system behavior.",
 
   stats: [
     { label: "LLM", value: "AWS Bedrock (Nova)" },

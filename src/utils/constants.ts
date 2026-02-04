@@ -1,4 +1,3 @@
-import codeIntelPlatformLogo from "@assets/code-intel-platform-logo.png";
 import stockTrackerLogo from "@assets/stock-tracker-logo.png";
 import hachikoLogo from "@assets/hachiko_logo.png";
 import llLogo from "@assets/ll-logo.png";
@@ -18,6 +17,10 @@ import {
   NEPTUNE_COMPANY_CARD,
 } from "@data/neptune";
 import { ALFRED_MAIN_CARD, ALFRED_PREVIEW_CARD } from "@data/alfred";
+import {
+  CODE_INTELLIGENCE_MAIN_CARD,
+  CODE_INTELLIGENCE_PREVIEW_CARD,
+} from "@data/codeIntelligence";
 
 export const GITHUB_LINK = "https://github.com/imlocle";
 export const LINKEDIN_LINK = "https://linkedin.com/in/imlocle";
@@ -173,18 +176,7 @@ export const CLIENT_PROJECTS: MainCardData[] = [
 
 export const TECHNICAL_PROJECTS: MainCardData[] = [
   ALFRED_MAIN_CARD,
-  {
-    id: "code-intelligence-platform",
-    title: "Code Intelligence Platform — RAG for Local Codebases",
-    description:
-      "Python CLI that indexes a codebase, generates embeddings, retrieves relevant snippets, and answers questions using the OpenAI API.",
-    outcomes:
-      "Speeds up debugging and onboarding by turning large codebases into a searchable assistant for explanations and code discovery.",
-    technologies: ["Python", "OpenAI"],
-    image: codeIntelPlatformLogo,
-    ctaLabel: "View Repo",
-    link: "https://github.com/imlocle/code-query",
-  },
+  CODE_INTELLIGENCE_MAIN_CARD,
   {
     id: "pisync",
     title: "PiSync — Automated File Transfer + Cleanup",
@@ -257,12 +249,7 @@ export const PREVIEW_SERVICES: PreviewCardData[] = [
 
 export const PREVIEW_PROJECTS: PreviewCardData[] = [
   ALFRED_PREVIEW_CARD,
-  {
-    title: "Code Intelligence Platform",
-    description: "RAG CLI that answers questions about your codebase.",
-    image: codeIntelPlatformLogo,
-    link: "/work/technical#code-intelligence-platform",
-  },
+  CODE_INTELLIGENCE_PREVIEW_CARD,
   NEPTUNE_PREVIEW_CARD,
 ];
 

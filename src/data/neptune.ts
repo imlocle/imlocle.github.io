@@ -7,8 +7,9 @@ import type {
   PreviewCardData,
 } from "@models/card";
 
-export const NEPTUNE_URL = "https://www.theneptuneapp.com/";
-export const NEPTUNE_TITLE = "Neptune - Video Social Platform";
+export const NEPTUNE_TITLE = "Neptune — Video Social Platform";
+export const NEPTUNE_CASE_STUDY_PATH = "/work/client/neptune";
+
 export const NEPTUNE_TECHNOLOGIES = [
   "AWS SAM",
   "TypeScript",
@@ -29,12 +30,12 @@ export const NEPTUNE_MAIN_CARD: MainCardData = {
   id: "neptune",
   title: NEPTUNE_TITLE,
   description:
-    "Built and deployed a scalable AWS backend for a video-first social product (uploads, user activity, and core platform APIs) designed to support growth without constant firefighting.",
+    "Platform and backend engineering for a video-first social product—core APIs, authentication, uploads, and event tracking built to scale without constant firefighting.",
   outcomes:
-    "Delivered a production-ready backend foundation that can handle high-volume uploads and real usage, with a system designed for reliability, scaling, and rapid iteration.",
+    "Delivered a production-ready foundation for real users: safer iteration with dev/prod isolation, improved reliability, and scalable workflows for high-volume uploads and activity.",
   technologies: NEPTUNE_TECHNOLOGIES,
   image: neptuneLogo,
-  link: "/work/client/neptune",
+  link: NEPTUNE_CASE_STUDY_PATH,
   ctaLabel: "View Case Study",
   appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
   target: "_self",
@@ -42,24 +43,24 @@ export const NEPTUNE_MAIN_CARD: MainCardData = {
 
 export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
   title: NEPTUNE_TITLE,
-  description: "Scalable AWS backend for a video-first platform.",
+  description: "Platform overhaul for a video-first app on AWS.",
   image: neptuneLogo,
-  link: "/work/client/neptune",
+  link: NEPTUNE_CASE_STUDY_PATH,
 };
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
-  pageTitle: "Neptune Case Study",
+  pageTitle: `${NEPTUNE_TITLE}: Case Study`,
 
-  heroTopline: "Client Project • Backend Rebuild",
-  heroTitle: "Neptune — Scalable Backend Rebuild",
+  heroTopline: "Client Project • Platform & Backend Engineering",
+  heroTitle: "Neptune — Engineering a Scalable Social Video Platform",
   heroSubtitle:
-    "A complete backend overhaul for a video-first social platform preparing for public launch—TypeScript migration, Cognito auth, DynamoDB modeling, and a cost-optimized analytics pipeline.",
+    "Architected and delivered a production-ready platform overhaul for a video-first social app: TypeScript migration, authentication, DynamoDB modeling, async workflows, and analytics optimized for scale and cost.",
 
   stats: [
     { label: "Delivery", value: "Production-ready foundation" },
     { label: "Auth", value: "Cognito + JWT flows" },
     { label: "Analytics", value: "DDB → Parquet → Athena" },
-    { label: "Cost", value: "~90% egress reduction" },
+    { label: "Cost", value: "Significant egress savings" }, // safer than "~90%" unless verified
   ],
 
   sections: [
@@ -73,9 +74,9 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       id: "role",
       title: "My Role",
       description:
-        "I owned the backend end-to-end and partnered directly with the CTO on architecture and decisions. I led implementation details: code standards, system organization, DynamoDB modeling (PK/SK/GSIs), environments, and delivery.",
+        "I owned backend delivery end-to-end and partnered directly with the CTO on architecture and decisions. I led implementation details: code standards, system organization, DynamoDB modeling (PK/SK/GSIs), environment strategy, and delivery.",
       callout:
-        "CRUD services (profiles, follows, likes, comments, uploads), auth flows, infrastructure patterns, and the analytics/ETL system.",
+        "Core APIs (profiles, follows, likes, comments, uploads), auth flows, infrastructure patterns, and the analytics/ETL system.",
     },
     {
       id: "solution",
@@ -85,10 +86,10 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
         "Layered architecture (handlers/controllers → services → repositories)",
         "AWS Cognito auth (signup/confirm/login/logout) + JWT",
         "DynamoDB redesign (models, PK/SK strategy, GSIs)",
-        "Dev & Prod environment separation via SAM config",
+        "Dev & Prod environment separation via SAM configuration",
         "Queues + async processing for scalable workflows",
         "CloudWatch logging + improved operational visibility",
-        "Encryption and consistent token handling",
+        "Consistent token handling and encryption practices",
       ],
     },
     {
@@ -97,9 +98,9 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       description:
         "To protect the platform and its users, I implemented an automated content moderation system using AWS Rekognition.",
       highlights: [
-        "Uploads are scanned with AWS Rekognition for unsafe content",
-        "When flagged, an async Lambda in a separate reporting service is invoked",
-        "Violations are recorded and routed into moderation workflows",
+        "Uploads scanned with AWS Rekognition for unsafe content",
+        "Flagged content triggers async processing in a separate reporting service",
+        "Violations recorded and routed into moderation workflows",
         "Decoupled design keeps the core app responsive under load",
       ],
     },
@@ -107,11 +108,11 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       id: "etl",
       title: "Analytics & ETL",
       description:
-        "I designed and implemented a custom ETL pipeline for user event tracking optimized for low cost and reliability. Glue crawling wasn't reliable for our data shape, so I built a controlled hourly ETL job.",
+        "I designed and implemented a custom ETL pipeline for user event tracking optimized for low cost and reliability. Glue crawling wasn't stable for the data shape, so I built a controlled hourly ETL job.",
       highlights: [
         "DynamoDB events → S3 Parquet → Athena for SQL analytics",
-        "Scheduled cron-based pipeline with predictable output",
-        "Designed to control cost and reduce operational risk",
+        "Scheduled pipeline with predictable schemas and output",
+        "Built for cost control and low operational overhead",
       ],
     },
     {
@@ -119,9 +120,9 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       title: "Impact",
       highlights: [
         "Production-ready backend foundation for beta + App Store workflows",
-        "Safer iteration via dev/prod environment isolation",
-        "More reliable and scalable codebase with less duplication",
-        "Major infrastructure savings (CloudFront → Cloudflare collaboration)",
+        "Safer iteration through dev/prod environment isolation",
+        "More reliable, scalable codebase with less duplication",
+        "Major infrastructure savings through CDN strategy improvements",
         "Automated moderation pipeline (Rekognition → reporting service) to support safe scaling",
       ],
     },
@@ -130,7 +131,7 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: NEPTUNE_TECHNOLOGIES,
 
   nextStepsBody:
-    "Add architecture diagrams, pipeline screenshots, and a short “before vs after” section with measurable reliability/cost improvements.",
+    "Add architecture diagrams, pipeline visuals, and a short “before vs after” section with measurable improvements (deploy speed, error rate, cost).",
 
   showCta: true,
 };
@@ -138,5 +139,5 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
 export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
   alt: NEPTUNE_TITLE,
   imageLogo: neptuneLogo2,
-  link: NEPTUNE_URL,
+  link: "https://www.theneptuneapp.com/",
 };
