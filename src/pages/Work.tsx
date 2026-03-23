@@ -111,9 +111,13 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      {project.image && (
+      {project.image ? (
         <div className="project-image">
           <img src={project.image} alt={project.name} />
+        </div>
+      ) : (
+        <div className="project-image project-image--empty">
+          <span>📦</span>
         </div>
       )}
 

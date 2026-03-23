@@ -14,8 +14,7 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 className="footer-title">Loc Le</h3>
             <p className="footer-description">
-              Backend cloud + AI engineering for startups — fast MVPs, reliable
-              infrastructure, clean handoff.
+              Senior Backend Engineer specializing in cloud infrastructure, serverless architectures, and AI platform development.
             </p>
           </div>
 

@@ -3,11 +3,17 @@ import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import "@styles/pages/Home.css";
+import PreviewGridSection from "@components/section/PreviewGridSection";
 import { getFeaturedProjects } from "../data/projects";
 import mediumPosts from "../data/medium-posts.json";
 
 const Home = () => {
-  const featuredProjects = getFeaturedProjects().slice(0, 3);
+  const featuredProjects = getFeaturedProjects().slice(0, 3).map((project) => ({
+    title: project.name,
+    description: project.tagline,
+    image: project.image,
+    link: project.links?.caseStudy || "/work",
+  }));
   const recentPosts = mediumPosts.slice(0, 3);
 
   return (
@@ -77,78 +83,14 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="bento-section">
-        <div className="section-header">
-          <h2 className="section-title">Featured Work</h2>
-          <p className="section-subtitle">
-            Production systems, open source projects, and technical experiments
-          </p>
-        </div>
-
-        <div className="home-featured-grid">
-          {featuredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="home-project-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {project.image && (
-                <div className="project-image">
-                  <img src={project.image} alt={project.name} />
-                </div>
-              )}
-              <div className="project-content">
-                <h3 className="project-title">{project.name}</h3>
-                <p className="project-description">{project.tagline}</p>
-                <div className="project-tags">
-                  {project.metrics?.slice(0, 3).map((metric, i) => (
-                    <span key={i} className="project-tag">{metric}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  {project.links?.caseStudy && (
-                    <Link
-                      to={project.links.caseStudy}
-                      className="project-link"
-                    >
-                      <FiArrowRight /> Case Study
-                    </Link>
-                  )}
-                  {project.links?.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FiGithub /> Code
-                    </a>
-                  )}
-                  {project.links?.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FiArrowRight /> Live
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
+      <div className="page-container">
+        <PreviewGridSection title="Featured Work" cards={featuredProjects} />
         <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
           <Link to="/work" className="btn-secondary">
             View All Projects <FiArrowRight />
           </Link>
         </div>
-      </section>
+      </div>
 
       {/* Recent Writing */}
       <section className="bento-section">

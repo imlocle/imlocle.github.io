@@ -22,6 +22,12 @@
   backdrop-filter: blur(10px);
 
   padding: 2rem;
+  transition: all var(--transition-base);
+}
+
+.contact-card:hover {
+  border-color: var(--border-accent);
+  transform: translateX(4px);
 }
 
 /* Titles */

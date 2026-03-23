@@ -155,11 +155,13 @@ const About = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              {exp.logo && (
-                <div className="timeline-logo">
+              <div className="timeline-logo">
+                {exp.logo ? (
                   <img src={exp.logo} alt={exp.company} />
-                </div>
-              )}
+                ) : (
+                  <span>💼</span>
+                )}
+              </div>
               <div className="timeline-content">
                 <div className="timeline-header">
                   <div>
