@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import "@styles/pages/Home.css";
 import CtaSection from "@components/section/CtaSection";
 import alfredLogo from "@assets/alfred-logo.png";
+import { useChat } from "@context/ChatContext";
 
 const Home = () => {
+  const { openChat } = useChat();
   const motionVariants = {
     container: {
       hidden: { opacity: 0 },
@@ -243,9 +245,9 @@ const Home = () => {
             </div>
 
             <div className="case-study-links">
-              <a href="https://imlocle.com?chat=true" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <button onClick={openChat} className="btn-primary">
                 Try Alfred Live <FiArrowRight />
-              </a>
+              </button>
               <Link to="/work/technical/alfred" className="btn-secondary">
                 View Full Case Study
               </Link>

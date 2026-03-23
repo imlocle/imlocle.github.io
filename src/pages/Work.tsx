@@ -5,6 +5,7 @@ import { FiGithub, FiExternalLink, FiFileText } from 'react-icons/fi';
 
 import { PROJECTS, type Project } from '../data/projects';
 import '@styles/pages/Work.css';
+import { useChat } from '@context/ChatContext';
 
 type FilterType = 'all' | 'production' | 'opensource' | 'client';
 
@@ -104,6 +105,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => {
+  const { openChat } = useChat();
+
   return (
     <motion.div
       className={`project-card ${featured ? 'featured-card' : ''}`}
@@ -192,14 +195,23 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
               </a>
             )}
             {project.links.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-              >
-                <FiExternalLink /> Live
-              </a>
+              project.id === 'alfred-ai-assistant' ? (
+                <button
+                  onClick={openChat}
+                  className="project-link"
+                >
+                  <FiExternalLink /> Live
+                </button>
+              ) : (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  <FiExternalLink /> Live
+                </a>
+              )
             )}
           </div>
         )}

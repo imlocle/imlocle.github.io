@@ -12,9 +12,10 @@ import type { CaseStudyConfig } from "@models/caseStudy";
 type CaseStudyPageProps = {
   config: CaseStudyConfig;
   children?: React.ReactNode;
+  onTryLive?: () => void;
 };
 
-const CaseStudyPage = ({ config, children }: CaseStudyPageProps) => {
+const CaseStudyPage = ({ config, children, onTryLive }: CaseStudyPageProps) => {
   const { pathname } = useLocation();
 
   return (
@@ -27,6 +28,7 @@ const CaseStudyPage = ({ config, children }: CaseStudyPageProps) => {
         subtitle={config.heroSubtitle}
         stats={config.stats}
         projectLinks={config.projectLinks}
+        onTryLive={onTryLive}
       />
 
       <div className="case-grid">

@@ -91,6 +91,8 @@
   text-decoration: none;
   transition: all var(--transition-base);
   border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
 }
 
 .project-link-btn:hover {

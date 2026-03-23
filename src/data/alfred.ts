@@ -21,6 +21,7 @@ export const ALFRED_TECHNOLOGIES = [
   "Python",
   "AWS Lambda",
   "API Gateway",
+  "RAG",
   "DynamoDB",
   "Terraform",
   "Prompt Engineering",
