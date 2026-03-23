@@ -13,7 +13,7 @@
   max-width: 1400px;
   margin: 0 auto var(--space-2xl);
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: var(--space-2xl);
   align-items: start;
 }
@@ -26,6 +26,7 @@
   text-align: center;
   position: sticky;
   top: var(--space-xl);
+  height: fit-content;
 }
 
 .profile-photo {

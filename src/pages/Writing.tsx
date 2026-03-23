@@ -3,6 +3,7 @@ import { FiExternalLink, FiCalendar } from 'react-icons/fi';
 
 import mediumPosts from '../data/medium-posts.json';
 import '@styles/pages/Writing.css';
+import TitleHeader from '@/components/header/TitleHeader';
 
 interface MediumPost {
   title: string;
@@ -19,19 +20,10 @@ const Writing = () => {
 
   return (
     <div className="writing-container">
-      <section className="writing-hero">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="writing-title">Technical Writing</h1>
-          <p className="writing-subtitle">
-            Thoughts on system architecture, cloud infrastructure, AI engineering, and lessons learned
-            from building production systems.
-          </p>
-        </motion.div>
-      </section>
+      <TitleHeader
+        title="Technical Writing"
+        subtitle="Thoughts on system architecture, cloud infrastructure, AI engineering, and lessons learned from building production systems."
+      />
 
       <section className="posts-section">
         <div className="posts-header">

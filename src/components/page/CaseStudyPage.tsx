@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 import "@styles/components/page/CaseStudyPage.css";
 import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
@@ -16,11 +14,9 @@ type CaseStudyPageProps = {
 };
 
 const CaseStudyPage = ({ config, children, onTryLive }: CaseStudyPageProps) => {
-  const { pathname } = useLocation();
-
   return (
     <div className="page-container">
-      <TitleHeader pathname={pathname} title={config.pageTitle} />
+      <TitleHeader title={config.pageTitle} subtitle={config.pageSubtitle} />
 
       <CaseStudyHeader
         topline={config.heroTopline}

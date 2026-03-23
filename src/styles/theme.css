@@ -14,6 +14,8 @@
   --text-primary: #ffffff;
   --text-secondary: #a1a1a1;
   --text-tertiary: #6b6b6b;
+  --text-600: var(--text-secondary);
+  --white: #ffffff;
   
   /* Accent - Modern Blue */
   --accent-primary: #3b82f6;
@@ -39,6 +41,8 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+  --shadow-card: var(--shadow-md);
+  --shadow-hover: var(--shadow-lg);
   
   /* Radius */
   --radius-sm: 8px;
@@ -81,8 +85,6 @@
   --z-sticky: 1100;
   --z-fixed: 1200;
   --z-modal: 1300;
-  --z-popover: 1400;
-  --z-tooltip: 1500;
 }
 
 /* Global Styles */

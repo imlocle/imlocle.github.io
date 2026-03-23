@@ -1,5 +1,5 @@
 .contact-form-container {
-  background-color: var(--white);
+  background-color: var(--bg-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-card);
   margin: 0 auto;

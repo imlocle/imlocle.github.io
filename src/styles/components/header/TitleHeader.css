@@ -1,30 +1,21 @@
-.title-header {
+.header-hero {
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl);
   text-align: center;
-  margin-bottom: 2.5rem;
 }
 
-.title {
-  font-size: 2.2rem;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+.header-title {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.title-underline {
-  height: 4px;
-  width: 80px;
-  margin: 0 auto;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--primary-light),
-    var(--primary-color)
-  );
-  opacity: 0.95;
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 1.9rem;
-  }
+.header-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
 }

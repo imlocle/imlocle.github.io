@@ -25,6 +25,7 @@ export const PISYNC_PREVIEW_CARD: PreviewCardData = {
 
 export const PISYNC_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${PISYNC_TITLE}: Case Study`,
+  pageSubtitle: "Desktop application with modern UI for automated media transfers to Raspberry Pi using clean architecture and protocol-based design.",
 
   heroTopline: "Open Source Project • Desktop Application",
   heroTitle: "PiSync — Building a Modern Desktop Media Transfer System",

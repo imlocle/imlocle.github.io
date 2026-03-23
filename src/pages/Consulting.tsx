@@ -1,25 +1,16 @@
-import { motion } from 'framer-motion';
 import { FiCheck, FiX } from 'react-icons/fi';
 
 import '@styles/pages/Consulting.css';
 import CtaSection from '@/components/section/CtaSection';
+import TitleHeader from '@/components/header/TitleHeader';
 
 const Consulting = () => {
   return (
     <div className="consulting-container">
-      <section className="consulting-hero">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="consulting-title">Consulting</h1>
-          <p className="consulting-subtitle">
-            I occasionally take on strategic consulting projects that align with my expertise in
-            backend systems, cloud architecture, and AI platforms.
-          </p>
-        </motion.div>
-      </section>
+      <TitleHeader
+        title="Consulting"
+        subtitle="I occasionally take on strategic consulting projects that align with my expertise in backend systems, cloud architecture, and AI platforms."
+      />
 
       {/* Availability Status */}
       <section className="availability-section">

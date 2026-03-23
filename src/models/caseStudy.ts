@@ -19,6 +19,7 @@ export type ProjectLink = {
 
 export type CaseStudyConfig = {
   pageTitle: string;
+  pageSubtitle: string;
   heroTopline: string;
   heroTitle: string;
   heroSubtitle: string;

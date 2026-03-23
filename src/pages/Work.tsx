@@ -6,6 +6,7 @@ import { FiGithub, FiExternalLink, FiFileText } from 'react-icons/fi';
 import { PROJECTS, type Project } from '../data/projects';
 import '@styles/pages/Work.css';
 import { useChat } from '@context/ChatContext';
+import TitleHeader from '@/components/header/TitleHeader';
 
 type FilterType = 'all' | 'production' | 'opensource' | 'client';
 
@@ -21,19 +22,10 @@ const Work = () => {
 
   return (
     <div className="work-container">
-      <section className="work-hero">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="work-title">Technical Work</h1>
-          <p className="work-subtitle">
-            Production systems, open source projects, and client work spanning backend architecture,
-            cloud infrastructure, and AI platforms.
-          </p>
-        </motion.div>
-      </section>
+      <TitleHeader
+        title="Technical Work"
+        subtitle="Production systems, open source projects, and client work spanning backend architecture, cloud infrastructure, and AI platforms."
+      />
 
       {/* Featured Projects */}
       <section className="featured-section">

@@ -4,11 +4,17 @@ import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc_headshot.jpg";
 import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "../data/experience";
 import CtaSection from "@/components/section/CtaSection";
+import TitleHeader from "@/components/header/TitleHeader";
 
 const About = () => {
   return (
     <div className="about-container">
-      {/* Hero Section */}
+      <TitleHeader
+        title="About"
+        subtitle="Backend engineer, cloud architect, and AI systems enthusiast with 8+ years building production-scale systems."
+      />
+
+      {/* Hero Section with Profile Card */}
       <motion.section
         className="about-hero"
         initial={{ opacity: 0, y: 20 }}

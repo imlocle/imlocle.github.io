@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
     name: 'Self-Growth Backend',
     tagline: 'Production-ready serverless backend for personal development tracking',
     description: 'Comprehensive SaaS backend supporting habits, todos, blog posts, and multi-user households with analytics. Built with 37 Lambda functions, single-table DynamoDB design, and complete API documentation.',
-    category: 'production',
+    category: 'opensource',
     featured: true,
     status: 'ongoing',
     metrics: [

@@ -67,6 +67,7 @@ export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${NEPTUNE_TITLE}: Case Study`,
+  pageSubtitle: "Cloud-native SaaS platform supporting 10K+ users with serverless architecture, AI integration, and analytics pipelines.",
 
   heroTopline: "Production System • Senior Backend Lead",
   heroTitle: "Neptune App — Building a Serverless SaaS Platform at Scale",

@@ -10,7 +10,7 @@ import TitleHeader from "@/components/header/TitleHeader";
 import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
-  const { pathname, hash } = useLocation();
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (!hash) return;
@@ -26,7 +26,10 @@ const Contact = () => {
 
   return (
     <div id="contact" className="page-container">
-      <TitleHeader pathname={pathname} title="Book a Free Build Call" />
+      <TitleHeader
+        title="Contact"
+        subtitle="Let's discuss your backend, cloud, or AI project. Book a call or send a message!"
+      />
 
       <div className="contact-grid">
         <motion.section
