@@ -4,7 +4,7 @@ import { useChat } from "@context/ChatContext";
 
 const AlfredCaseStudy = () => {
   const { openChat } = useChat();
-  
+
   return (
     <CaseStudyPage config={ALFRED_CASE_STUDY_CONFIG} onTryLive={openChat} />
   );

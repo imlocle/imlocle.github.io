@@ -54,7 +54,8 @@ export const ALFRED_PREVIEW_CARD: PreviewCardData = {
 
 export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${ALFRED_TITLE}: Case Study`,
-  pageSubtitle: "Production-ready LLM system with strict guardrails, cost optimization, and serverless infrastructure.",
+  pageSubtitle:
+    "Production-ready LLM system with strict guardrails, cost optimization, and serverless infrastructure.",
 
   heroTopline: "Technical Project • LLM Systems Engineering",
   heroTitle: "Alfred — Building a Constrained LLM System in Production",
@@ -142,8 +143,8 @@ export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: ALFRED_TECHNOLOGIES,
 
   projectLinks: {
-    github: 'https://github.com/imlocle/alfred-ai-assistant',
-    live: 'https://imlocle.com?chat=true',
+    github: "https://github.com/imlocle/alfred-ai-assistant",
+    live: "https://imlocle.com?chat=true",
   },
 
   nextStepsBody:

@@ -10,7 +10,14 @@ type Props = {
   onTryLive?: () => void;
 };
 
-const CaseStudyHeader = ({ topline, title, subtitle, stats, projectLinks, onTryLive }: Props) => {
+const CaseStudyHeader = ({
+  topline,
+  title,
+  subtitle,
+  stats,
+  projectLinks,
+  onTryLive,
+}: Props) => {
   return (
     <header className="case-hero">
       <div className="case-hero-topline">{topline}</div>
@@ -40,12 +47,9 @@ const CaseStudyHeader = ({ topline, title, subtitle, stats, projectLinks, onTryL
               <FiGithub /> View Code
             </a>
           )}
-          {projectLinks.live && (
-            onTryLive ? (
-              <button
-                onClick={onTryLive}
-                className="project-link-btn"
-              >
+          {projectLinks.live &&
+            (onTryLive ? (
+              <button onClick={onTryLive} className="project-link-btn">
                 <FiExternalLink /> Try Live
               </button>
             ) : (
@@ -57,8 +61,7 @@ const CaseStudyHeader = ({ topline, title, subtitle, stats, projectLinks, onTryL
               >
                 <FiExternalLink /> Try Live
               </a>
-            )
-          )}
+            ))}
           {projectLinks.download && (
             <a
               href={projectLinks.download}

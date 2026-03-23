@@ -1,20 +1,20 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiGithub, FiExternalLink, FiFileText } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
 
-import { PROJECTS, type Project } from '../data/projects';
-import '@styles/pages/Work.css';
-import { useChat } from '@context/ChatContext';
-import TitleHeader from '@/components/header/TitleHeader';
+import { PROJECTS, type Project } from "../data/projects";
+import "@styles/pages/Work.css";
+import { useChat } from "@context/ChatContext";
+import TitleHeader from "@/components/header/TitleHeader";
 
-type FilterType = 'all' | 'production' | 'opensource' | 'client';
+type FilterType = "all" | "production" | "opensource" | "client";
 
 const Work = () => {
-  const [filter, setFilter] = useState<FilterType>('all');
+  const [filter, setFilter] = useState<FilterType>("all");
 
   const filteredProjects = PROJECTS.filter(project => {
-    if (filter === 'all') return true;
+    if (filter === "all") return true;
     return project.category === filter;
   });
 
@@ -32,7 +32,12 @@ const Work = () => {
         <h2 className="section-title">Featured Projects</h2>
         <div className="featured-grid">
           {featuredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} featured />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              featured
+            />
           ))}
         </div>
       </section>
@@ -43,23 +48,23 @@ const Work = () => {
           <h2 className="section-title">All Projects</h2>
           <div className="filter-buttons">
             <FilterButton
-              active={filter === 'all'}
-              onClick={() => setFilter('all')}
+              active={filter === "all"}
+              onClick={() => setFilter("all")}
               label="All"
             />
             <FilterButton
-              active={filter === 'production'}
-              onClick={() => setFilter('production')}
+              active={filter === "production"}
+              onClick={() => setFilter("production")}
               label="Production"
             />
             <FilterButton
-              active={filter === 'opensource'}
-              onClick={() => setFilter('opensource')}
+              active={filter === "opensource"}
+              onClick={() => setFilter("opensource")}
               label="Open Source"
             />
             <FilterButton
-              active={filter === 'client'}
-              onClick={() => setFilter('client')}
+              active={filter === "client"}
+              onClick={() => setFilter("client")}
               label="Client Work"
             />
           </div>
@@ -83,7 +88,7 @@ interface FilterButtonProps {
 
 const FilterButton = ({ active, onClick, label }: FilterButtonProps) => (
   <button
-    className={`filter-button ${active ? 'active' : ''}`}
+    className={`filter-button ${active ? "active" : ""}`}
     onClick={onClick}
   >
     {label}
@@ -96,12 +101,16 @@ interface ProjectCardProps {
   featured?: boolean;
 }
 
-const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => {
+const ProjectCard = ({
+  project,
+  index,
+  featured = false,
+}: ProjectCardProps) => {
   const { openChat } = useChat();
 
   return (
     <motion.div
-      className={`project-card ${featured ? 'featured-card' : ''}`}
+      className={`project-card ${featured ? "featured-card" : ""}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -141,7 +150,9 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
         {project.metrics && project.metrics.length > 0 && (
           <div className="project-metrics">
             {project.metrics.map((metric, i) => (
-              <span key={i} className="metric-badge">{metric}</span>
+              <span key={i} className="metric-badge">
+                {metric}
+              </span>
             ))}
           </div>
         )}
@@ -149,12 +160,11 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
         <div className="project-tech">
           <span className="tech-label">Tech:</span>
           <div className="tech-tags">
-            {project.techStack.slice(0, 5).map((tech, i) => (
-              <span key={i} className="tech-tag">{tech}</span>
+            {project.techStack.map((tech, i) => (
+              <span key={i} className="tech-tag">
+                {tech}
+              </span>
             ))}
-            {project.techStack.length > 5 && (
-              <span className="tech-tag more">+{project.techStack.length - 5}</span>
-            )}
           </div>
         </div>
 
@@ -186,12 +196,9 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 <FiGithub /> GitHub
               </a>
             )}
-            {project.links.live && (
-              project.id === 'alfred-ai-assistant' ? (
-                <button
-                  onClick={openChat}
-                  className="project-link"
-                >
+            {project.links.live &&
+              (project.id === "alfred-ai-assistant" ? (
+                <button onClick={openChat} className="project-link">
                   <FiExternalLink /> Live
                 </button>
               ) : (
@@ -203,8 +210,7 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 >
                   <FiExternalLink /> Live
                 </a>
-              )
-            )}
+              ))}
           </div>
         )}
       </div>

@@ -8,7 +8,11 @@
   font-size: var(--text-5xl);
   font-weight: 700;
   margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, var(--text-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--text-primary),
+    var(--accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

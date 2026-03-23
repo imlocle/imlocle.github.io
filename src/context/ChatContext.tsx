@@ -7,7 +7,9 @@ interface ChatContextType {
   toggleChat: () => void;
 }
 
-export const ChatContext = createContext<ChatContextType | undefined>(undefined);
+export const ChatContext = createContext<ChatContextType | undefined>(
+  undefined
+);
 
 export const ChatProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

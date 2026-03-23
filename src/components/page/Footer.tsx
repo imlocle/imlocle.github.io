@@ -14,7 +14,8 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 className="footer-title">Loc Le</h3>
             <p className="footer-description">
-              Senior Backend Engineer specializing in cloud infrastructure, serverless architectures, and AI platform development.
+              Senior Backend Engineer specializing in cloud infrastructure,
+              serverless architectures, and AI platform development.
             </p>
           </div>
 
@@ -50,7 +51,10 @@ const Footer = () => {
               <Link to="/work/client/neptune" className="footer-link">
                 Neptune App
               </Link>
-              <Link to="/work/technical/code-intelligence" className="footer-link">
+              <Link
+                to="/work/technical/code-intelligence"
+                className="footer-link"
+              >
                 Code Intelligence
               </Link>
             </div>

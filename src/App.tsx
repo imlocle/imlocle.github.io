@@ -70,17 +70,29 @@ function App() {
               <Route path="/consulting" element={<Consulting />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              
+
               {/* Legacy routes - redirect to new structure */}
               <Route path="/services" element={<Consulting />} />
               <Route path="/work/client" element={<Work />} />
               <Route path="/work/technical" element={<Work />} />
-              
+
               {/* Case study routes */}
-              <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
-              <Route path="/work/technical/alfred" element={<AlfredCaseStudy />} />
-              <Route path="/work/technical/code-intelligence" element={<CodeIntelligenceCaseStudy />} />
-              <Route path="/work/technical/pisync" element={<PiSyncCaseStudy />} />
+              <Route
+                path="/work/client/neptune"
+                element={<NeptuneCaseStudy />}
+              />
+              <Route
+                path="/work/technical/alfred"
+                element={<AlfredCaseStudy />}
+              />
+              <Route
+                path="/work/technical/code-intelligence"
+                element={<CodeIntelligenceCaseStudy />}
+              />
+              <Route
+                path="/work/technical/pisync"
+                element={<PiSyncCaseStudy />}
+              />
             </Routes>
           </main>
           <Footer />

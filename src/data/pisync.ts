@@ -25,7 +25,8 @@ export const PISYNC_PREVIEW_CARD: PreviewCardData = {
 
 export const PISYNC_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${PISYNC_TITLE}: Case Study`,
-  pageSubtitle: "Desktop application with modern UI for automated media transfers to Raspberry Pi using clean architecture and protocol-based design.",
+  pageSubtitle:
+    "Desktop application with modern UI for automated media transfers to Raspberry Pi using clean architecture and protocol-based design.",
 
   heroTopline: "Open Source Project • Desktop Application",
   heroTitle: "PiSync — Building a Modern Desktop Media Transfer System",
@@ -107,8 +108,7 @@ export const PISYNC_CASE_STUDY_CONFIG: CaseStudyConfig = {
     {
       id: "challenges",
       title: "Challenges & Solutions",
-      description:
-        "Real-world problems encountered and how they were solved.",
+      description: "Real-world problems encountered and how they were solved.",
       highlights: [
         "Challenge: Detecting incomplete file transfers → Solution: Stability checking (file size doesn't change for 1 second before transfer)",
         "Challenge: SSH connection drops during transfer → Solution: Retry logic with exponential backoff and user-friendly error messages",
@@ -133,7 +133,7 @@ export const PISYNC_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: PISYNC_TECHNOLOGIES,
 
   projectLinks: {
-    github: 'https://github.com/imlocle/pisync',
+    github: "https://github.com/imlocle/pisync",
   },
 
   nextStepsBody:

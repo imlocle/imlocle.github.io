@@ -15,10 +15,14 @@
 }
 
 .contact-cta-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    var(--accent-glow),
+    transparent 70%
+  );
   opacity: 0.5;
 }
 

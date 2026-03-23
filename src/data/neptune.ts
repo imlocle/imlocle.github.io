@@ -1,5 +1,9 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type { MainCardData, PreviewCardData, CompanyCardData } from "@models/card";
+import type {
+  MainCardData,
+  PreviewCardData,
+  CompanyCardData,
+} from "@models/card";
 
 // Note: Neptune logo to be added
 // import neptuneLogo from "@assets/neptune-logo.png";
@@ -67,7 +71,8 @@ export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${NEPTUNE_TITLE}: Case Study`,
-  pageSubtitle: "Cloud-native SaaS platform supporting 10K+ users with serverless architecture, AI integration, and analytics pipelines.",
+  pageSubtitle:
+    "Cloud-native SaaS platform supporting 10K+ users with serverless architecture, AI integration, and analytics pipelines.",
 
   heroTopline: "Production System • Senior Backend Lead",
   heroTitle: "Neptune App — Building a Serverless SaaS Platform at Scale",
@@ -158,7 +163,7 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: NEPTUNE_TECHNOLOGIES,
 
   projectLinks: {
-    live: 'https://www.theneptuneapp.com/',
+    live: "https://www.theneptuneapp.com/",
   },
 
   nextStepsBody:

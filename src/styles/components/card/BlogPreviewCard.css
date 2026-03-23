@@ -99,7 +99,9 @@
   font-weight: 800;
   text-decoration: none;
 
-  transition: transform 0.16s ease, opacity 0.16s ease;
+  transition:
+    transform 0.16s ease,
+    opacity 0.16s ease;
 }
 
 .blog-card:hover .blog-link {

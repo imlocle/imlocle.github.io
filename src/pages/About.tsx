@@ -33,9 +33,10 @@ const About = () => {
           <div className="about-intro">
             <h2>Senior Software Engineer</h2>
             <p className="about-lead">
-              8+ years building scalable backend systems, cloud infrastructure, and AI platforms.
-              Currently leading backend development at Neptune App, supporting 10K+ users with
-              serverless architecture.
+              8+ years building scalable backend systems, cloud infrastructure,
+              and AI platforms. Recently completed Neptune App, a production
+              SaaS platform supporting 10K+ users with serverless architecture.
+              Currently available for consulting engagements.
             </p>
           </div>
 
@@ -105,16 +106,14 @@ const About = () => {
       >
         <h3>Current Focus</h3>
         <div className="current-card">
-          <div className="current-role">
-            <strong>Senior Backend Lead @ Neptune App</strong>
-            <span className="current-period">Nov 2024 - Present</span>
-          </div>
           <p>
-            Building cloud-native SaaS platform with event-driven architecture, analytics
-            pipelines, and scalable APIs. Leading team of 4 engineers.
+            Available for strategic consulting and architectural projects.
+            Specializing in serverless systems, AI/LLM integration, and cost
+            optimization.
           </p>
           <div className="current-tech">
-            TypeScript • AWS Lambda • API Gateway • DynamoDB • Terraform
+            Backend Architecture • Cloud Infrastructure • AI Systems • System
+            Optimization
           </div>
         </div>
       </motion.section>
@@ -184,7 +183,9 @@ const About = () => {
                 </ul>
                 <div className="timeline-tech">
                   {exp.techStack.slice(0, 6).map((tech, i) => (
-                    <span key={i} className="tech-tag">{tech}</span>
+                    <span key={i} className="tech-tag">
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -200,13 +201,14 @@ const About = () => {
           <div className="skill-category">
             <h3>Languages</h3>
             <div className="skill-level">
-              <strong>Expert:</strong> {SKILLS.languages.expert.join(', ')}
+              <strong>Expert:</strong> {SKILLS.languages.expert.join(", ")}
             </div>
             <div className="skill-level">
-              <strong>Proficient:</strong> {SKILLS.languages.proficient.join(', ')}
+              <strong>Proficient:</strong>{" "}
+              {SKILLS.languages.proficient.join(", ")}
             </div>
             <div className="skill-level">
-              <strong>Familiar:</strong> {SKILLS.languages.familiar.join(', ')}
+              <strong>Familiar:</strong> {SKILLS.languages.familiar.join(", ")}
             </div>
           </div>
 
@@ -214,12 +216,16 @@ const About = () => {
             <h3>Backend & APIs</h3>
             <div className="skill-tags">
               {SKILLS.backend.frameworks.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
             <div className="skill-tags">
               {SKILLS.backend.patterns.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
           </div>
@@ -228,12 +234,16 @@ const About = () => {
             <h3>Cloud & Infrastructure</h3>
             <div className="skill-tags">
               {SKILLS.cloud.aws.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
             <div className="skill-tags">
               {SKILLS.cloud.iac.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
           </div>
@@ -242,12 +252,16 @@ const About = () => {
             <h3>AI & Data</h3>
             <div className="skill-tags">
               {SKILLS.ai.llms.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
             <div className="skill-tags">
               {SKILLS.ai.rag.map((item, i) => (
-                <span key={i} className="skill-tag">{item}</span>
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
               ))}
             </div>
           </div>
@@ -259,7 +273,9 @@ const About = () => {
         <div className="additional-grid">
           <div className="additional-card">
             <h3>Education</h3>
-            <p><strong>{EDUCATION.degree}</strong></p>
+            <p>
+              <strong>{EDUCATION.degree}</strong>
+            </p>
             <p>{EDUCATION.school}</p>
             <p className="year">{EDUCATION.year}</p>
           </div>
@@ -276,7 +292,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <CtaSection/>
+      <CtaSection />
     </div>
   );
 };

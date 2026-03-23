@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { FiExternalLink, FiCalendar } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { FiExternalLink, FiCalendar } from "react-icons/fi";
 
-import mediumPosts from '../data/medium-posts.json';
-import '@styles/pages/Writing.css';
-import TitleHeader from '@/components/header/TitleHeader';
+import mediumPosts from "../data/medium-posts.json";
+import "@styles/pages/Writing.css";
+import TitleHeader from "@/components/header/TitleHeader";
 
 interface MediumPost {
   title: string;
@@ -86,10 +86,10 @@ interface PostCardProps {
 const PostCard = ({ post, index }: PostCardProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
@@ -106,16 +106,16 @@ const PostCard = ({ post, index }: PostCardProps) => {
     >
       {post.image && (
         <div className="post-image">
-          <img 
-            src={post.image} 
+          <img
+            src={post.image}
             alt={post.title}
             loading="lazy"
-            onError={(e) => {
+            onError={e => {
               // Hide image container if image fails to load
               const target = e.target as HTMLImageElement;
               const container = target.parentElement;
               if (container) {
-                container.style.display = 'none';
+                container.style.display = "none";
               }
             }}
           />
@@ -123,9 +123,7 @@ const PostCard = ({ post, index }: PostCardProps) => {
       )}
       <div className="post-content">
         <h3 className="post-title">{post.title}</h3>
-        {post.subtitle && (
-          <p className="post-subtitle">{post.subtitle}</p>
-        )}
+        {post.subtitle && <p className="post-subtitle">{post.subtitle}</p>}
         <p className="post-description">{post.description}</p>
         <div className="post-meta">
           <FiCalendar />
@@ -134,7 +132,9 @@ const PostCard = ({ post, index }: PostCardProps) => {
         {post.categories.length > 0 && (
           <div className="post-categories">
             {post.categories.map((category, i) => (
-              <span key={i} className="post-category">{category}</span>
+              <span key={i} className="post-category">
+                {category}
+              </span>
             ))}
           </div>
         )}

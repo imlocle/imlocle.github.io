@@ -7,7 +7,7 @@ import { CALENDLY_URL } from "@utils/constants";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [_workOpen, setWorkOpen] = useState(false);  // Keep for now, used in click handlers
+  const [, setWorkOpen] = useState(false); // Keep for now, used in click handlers
   const { pathname } = useLocation();
 
   const navbarRef = useRef<HTMLDivElement>(null);

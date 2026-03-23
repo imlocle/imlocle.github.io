@@ -6,7 +6,7 @@ import { CALENDLY_URL } from "@utils/constants";
 
 const CtaSection = () => {
   return (
-    <motion.section 
+    <motion.section
       className="contact-cta-section"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -16,12 +16,12 @@ const CtaSection = () => {
       <div className="contact-cta-card">
         <h2 className="cta-title">Let's Talk</h2>
         <p className="cta-text">
-          If you have a challenging backend, cloud, or AI project and think my expertise would be
-          valuable, let's schedule a discovery call.
+          If you have a challenging backend, cloud, or AI project and think my
+          expertise would be valuable, let's schedule a discovery call.
         </p>
         <p className="cta-subtext">
-          Please include: brief project description, technical challenges, timeline, and how you
-          found me.
+          Please include: brief project description, technical challenges,
+          timeline, and how you found me.
         </p>
         <ButtonLink
           link={CALENDLY_URL}

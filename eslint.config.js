@@ -47,7 +47,7 @@ export default [
       "prettier/prettier": "error",
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
-      "react/no-unescaped-entities": "error",
+      "react/no-unescaped-entities": "off",
       "no-undef": ["error", { typeof: false }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",

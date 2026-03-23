@@ -38,7 +38,8 @@ export const CODE_INTELLIGENCE_PREVIEW_CARD: PreviewCardData = {
 
 export const CODE_INTELLIGENCE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${CODE_INTELLIGENCE_TITLE}: Case Study`,
-  pageSubtitle: "RAG-powered developer tool that turns your codebase into a searchable knowledge base for semantic code discovery and understanding.",
+  pageSubtitle:
+    "RAG-powered developer tool that turns your codebase into a searchable knowledge base for semantic code discovery and understanding.",
 
   heroTopline: "Technical Project • AI Developer Tooling",
   heroTitle: "Code Intelligence Platform — AI-Powered Codebase Understanding",

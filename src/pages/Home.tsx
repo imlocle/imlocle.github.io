@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiCode, FiGithub, FiZap, FiTrendingUp } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiCode,
+  FiGithub,
+  FiZap,
+  FiTrendingUp,
+} from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import "@styles/pages/Home.css";
@@ -42,7 +48,7 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="status-dot" />
-            <span>Senior Backend Lead @ Neptune App</span>
+            <span>Senior Software Engineer & System Architect</span>
           </motion.div>
 
           <motion.h1
@@ -62,8 +68,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Senior Software Engineer specializing in backend architecture, cloud infrastructure,
-            and AI platforms. 8+ years building production systems at scale.
+            Senior Software Engineer specializing in backend architecture, cloud
+            infrastructure, and AI platforms. 8+ years building production
+            systems at scale.
           </motion.p>
 
           <motion.div
@@ -151,8 +158,8 @@ const Home = () => {
               </div>
               <h3>Unoptimized Cloud Bills</h3>
               <p>
-                Infrastructure costs spiral out of control. Teams waste 30% on resources they
-                don't need.
+                Infrastructure costs spiral out of control. Teams waste 30% on
+                resources they don't need.
               </p>
             </div>
 
@@ -162,8 +169,8 @@ const Home = () => {
               </div>
               <h3>Architectural Debt</h3>
               <p>
-                Systems built for yesterday's scale. Refactoring feels impossible when you're
-                shipping features.
+                Systems built for yesterday's scale. Refactoring feels
+                impossible when you're shipping features.
               </p>
             </div>
 
@@ -173,15 +180,15 @@ const Home = () => {
               </div>
               <h3>AI Integration Bottleneck</h3>
               <p>
-                LLM integrations fail in production. Costs explode. Safety & reliability
-                become afterthought.
+                LLM integrations fail in production. Costs explode. Safety &
+                reliability become afterthought.
               </p>
             </div>
           </div>
 
           <p className="problem-closing">
-            I help teams over these hurdles. Through proven backend architecture, serverless
-            strategy, and AI system design.
+            I help teams over these hurdles. Through proven backend
+            architecture, serverless strategy, and AI system design.
           </p>
         </motion.div>
       </section>
@@ -211,8 +218,8 @@ const Home = () => {
             <div className="case-study-badge">Production LLM System</div>
             <h3 className="case-study-title">Alfred — AI Assistant</h3>
             <p className="case-study-subtitle">
-              A production-ready AI assistant designed with strict guardrails, cost controls, and
-              serverless infrastructure.
+              A production-ready AI assistant designed with strict guardrails,
+              cost controls, and serverless infrastructure.
             </p>
 
             <div className="case-study-metrics">
@@ -231,9 +238,10 @@ const Home = () => {
             </div>
 
             <p className="case-study-description">
-              This demonstrates real-world system design decisions: How do you build an LLM feature
-              that won't cost you $500/month? How do you ensure it stays on-topic? How do you make
-              it production-ready on day one?
+              This demonstrates real-world system design decisions: How do you
+              build an LLM feature that won't cost you $500/month? How do you
+              ensure it stays on-topic? How do you make it production-ready on
+              day one?
             </p>
 
             <div className="case-study-tech">
@@ -255,7 +263,11 @@ const Home = () => {
           </div>
 
           <div className="case-study-right">
-            <img src={alfredLogo} alt="Alfred AI Assistant" className="case-study-image" />
+            <img
+              src={alfredLogo}
+              alt="Alfred AI Assistant"
+              className="case-study-image"
+            />
           </div>
         </motion.div>
       </section>
@@ -269,7 +281,9 @@ const Home = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">What I Specialize In</h2>
-          <p className="section-subtitle">Domains where deep expertise creates value</p>
+          <p className="section-subtitle">
+            Domains where deep expertise creates value
+          </p>
         </motion.div>
 
         <motion.div
@@ -346,26 +360,34 @@ const Home = () => {
 
           <div className="story-text">
             <p>
-              I started as an <strong>English teacher in Japan</strong>—a problem solver by nature,
-              drawn to logic and creativity in equal measure. That curiosity evolved into an
-              "Academic Detective" mindset: obsessed with patterns, assumptions, and the unseen
-              architecture behind systems.
+              I started as an <strong>English teacher in Japan</strong>—a
+              problem solver by nature, drawn to logic and creativity in equal
+              measure. That curiosity evolved into an &quot;Academic
+              Detective&quot; mindset: obsessed with patterns, assumptions, and
+              the unseen architecture behind systems.
             </p>
 
             <p>
               I moved into software the same way I approached teaching—by asking{" "}
-              <em>Why does this work this way? What breaks it? How would you know?</em>
+              <em>
+                Why does this work this way? What breaks it? How would you know?
+              </em>
             </p>
 
             <p>
-              Eight years later, I've built backend systems at scale, optimized chaos into
-              serverless elegance, and learned that the best engineers solve invisible problems:
-              <strong>cost spirals, scaling cliffs, production failures nobody expected</strong>.
+              Eight years later, I've built backend systems at scale, optimized
+              chaos into serverless elegance, and learned that the best
+              engineers solve invisible problems:
+              <strong>
+                cost spirals, scaling cliffs, production failures nobody
+                expected
+              </strong>
+              .
             </p>
 
             <p>
-              That's where I thrive. Not in shiny features—in the foundation that makes features
-              possible.
+              That's where I thrive. Not in shiny features—in the foundation
+              that makes features possible.
             </p>
 
             <Link to="/about" className="btn-secondary">

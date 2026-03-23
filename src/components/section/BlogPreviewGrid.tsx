@@ -13,7 +13,7 @@ type Props = {
 const BlogPreviewGrid = ({ limit = 3 }: Props) => {
   return (
     <div className="blog-preview-grid">
-      {posts.slice(0, limit).map((p) => (
+      {posts.slice(0, limit).map(p => (
         <BlogPreviewCard
           key={p.link}
           title={p.title}
