@@ -1,20 +1,32 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiArrowRight, FiCode, FiGithub, FiZap, FiTrendingUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import "@styles/pages/Home.css";
-import PreviewGridSection from "@components/section/PreviewGridSection";
-import { getFeaturedProjects } from "../data/projects";
-import mediumPosts from "../data/medium-posts.json";
+import CtaSection from "@components/section/CtaSection";
+import alfredLogo from "@assets/alfred-logo.png";
 
 const Home = () => {
-  const featuredProjects = getFeaturedProjects().slice(0, 3).map((project) => ({
-    title: project.name,
-    description: project.tagline,
-    image: project.image,
-    link: project.links?.caseStudy || "/work",
-  }));
-  const recentPosts = mediumPosts.slice(0, 3);
+  const motionVariants = {
+    container: {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.2,
+          delayChildren: 0.1,
+        },
+      },
+    },
+    item: {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5 },
+      },
+    },
+  };
 
   return (
     <div className="home-container">
@@ -58,11 +70,11 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Link to="/work" className="btn-primary">
-              View My Work <FiArrowRight />
-            </Link>
-            <Link to="/about" className="btn-secondary">
-              About Me
+            <a href="#/contact" className="btn-primary">
+              Book a Strategy Call <FiArrowRight />
+            </a>
+            <Link to="/work" className="btn-secondary">
+              View My Work
             </Link>
           </motion.div>
 
@@ -82,138 +94,288 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <div className="page-container">
-        <PreviewGridSection title="Featured Work" cards={featuredProjects} />
-        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
-          <Link to="/work" className="btn-secondary">
-            View All Projects <FiArrowRight />
-          </Link>
-        </div>
-      </div>
+      {/* Social Proof Section */}
+      <section className="page-container social-proof-section">
+        <motion.div
+          className="social-proof-grid"
+          variants={motionVariants.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div className="proof-card" variants={motionVariants.item}>
+            <div className="proof-metric">10K+</div>
+            <div className="proof-label">Active Users Supported</div>
+            <div className="proof-detail">Neptune App production platform</div>
+          </motion.div>
 
-      {/* Recent Writing */}
-      <section className="bento-section">
-        <div className="section-header">
-          <h2 className="section-title">Recent Writing</h2>
-          <p className="section-subtitle">
-            Thoughts on system architecture, cloud infrastructure, and AI engineering
-          </p>
-        </div>
+          <motion.div className="proof-card" variants={motionVariants.item}>
+            <div className="proof-metric">$1.4M</div>
+            <div className="proof-label">Annual Savings Delivered</div>
+            <div className="proof-detail">Through optimization & scale</div>
+          </motion.div>
 
-        <div className="blog-grid">
-          {recentPosts.map((post, index) => (
-            <motion.a
-              key={index}
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="blog-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="blog-date">
-                {new Date(post.pubDate).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </div>
-              <h3 className="blog-title">{post.title}</h3>
-              {post.subtitle && (
-                <p className="blog-subtitle">{post.subtitle}</p>
-              )}
-              <span className="blog-link">
-                Read on Medium <FiArrowRight />
-              </span>
-            </motion.a>
-          ))}
-        </div>
+          <motion.div className="proof-card" variants={motionVariants.item}>
+            <div className="proof-metric">40%</div>
+            <div className="proof-label">Response Time Improvement</div>
+            <div className="proof-detail">AI-powered systems optimization</div>
+          </motion.div>
 
-        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
-          <Link to="/writing" className="btn-secondary">
-            View All Posts <FiArrowRight />
-          </Link>
-        </div>
+          <motion.div className="proof-card" variants={motionVariants.item}>
+            <div className="proof-metric">8+</div>
+            <div className="proof-label">Years Building Systems</div>
+            <div className="proof-detail">Across backend, cloud & AI</div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Connect Section */}
-      <section className="bento-section">
-        <div className="bento-grid">
-          <motion.div
-            className="bento-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="bento-card-content">
-              <div className="bento-card-icon">
-                <FiGithub />
-              </div>
-              <h3 className="bento-card-title">Open Source</h3>
-              <p className="bento-card-description">
-                Check out my open source projects and contributions on GitHub
-              </p>
-              <a
-                href="https://github.com/imlocle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bento-card-link"
-              >
-                View GitHub <FiArrowRight />
-              </a>
-            </div>
-          </motion.div>
+      {/* The Problem Section */}
+      <section className="page-container problem-section">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">The Challenge Most Companies Face</h2>
+          <p className="section-subtitle">
+            When you're scaling, your backend becomes your biggest battleground.
+          </p>
 
-          <motion.div
-            className="bento-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <div className="bento-card-content">
-              <div className="bento-card-icon">
-                <FiLinkedin />
+          <div className="problem-content">
+            <div className="problem-item">
+              <div className="problem-icon">
+                <FiTrendingUp />
               </div>
-              <h3 className="bento-card-title">Connect</h3>
-              <p className="bento-card-description">
-                Let's connect on LinkedIn and discuss backend architecture
+              <h3>Unoptimized Cloud Bills</h3>
+              <p>
+                Infrastructure costs spiral out of control. Teams waste 30% on resources they
+                don't need.
               </p>
-              <a
-                href="https://linkedin.com/in/imlocle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bento-card-link"
-              >
-                Connect on LinkedIn <FiArrowRight />
-              </a>
             </div>
-          </motion.div>
 
-          <motion.div
-            className="bento-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="bento-card-content">
-              <div className="bento-card-icon">
-                <FiMail />
+            <div className="problem-item">
+              <div className="problem-icon">
+                <FiCode />
               </div>
-              <h3 className="bento-card-title">Get in Touch</h3>
-              <p className="bento-card-description">
-                Interested in working together? Let's talk about your project
+              <h3>Architectural Debt</h3>
+              <p>
+                Systems built for yesterday's scale. Refactoring feels impossible when you're
+                shipping features.
               </p>
-              <Link to="/contact" className="bento-card-link">
-                Send Message <FiArrowRight />
+            </div>
+
+            <div className="problem-item">
+              <div className="problem-icon">
+                <FiZap />
+              </div>
+              <h3>AI Integration Bottleneck</h3>
+              <p>
+                LLM integrations fail in production. Costs explode. Safety & reliability
+                become afterthought.
+              </p>
+            </div>
+          </div>
+
+          <p className="problem-closing">
+            I help teams over these hurdles. Through proven backend architecture, serverless
+            strategy, and AI system design.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Featured Case Study - Alfred */}
+      <section className="page-container featured-case-section">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">See It In Action</h2>
+          <p className="section-subtitle">
+            Here's a live example of production system design thinking
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="case-study-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <div className="case-study-left">
+            <div className="case-study-badge">Production LLM System</div>
+            <h3 className="case-study-title">Alfred — AI Assistant</h3>
+            <p className="case-study-subtitle">
+              A production-ready AI assistant designed with strict guardrails, cost controls, and
+              serverless infrastructure.
+            </p>
+
+            <div className="case-study-metrics">
+              <div className="metric">
+                <div className="metric-value">$0.50-1.00</div>
+                <div className="metric-label">/month for 1K requests</div>
+              </div>
+              <div className="metric">
+                <div className="metric-value">50 req/day</div>
+                <div className="metric-label">Per IP rate limit</div>
+              </div>
+              <div className="metric">
+                <div className="metric-value">1-hour TTL</div>
+                <div className="metric-label">Response caching</div>
+              </div>
+            </div>
+
+            <p className="case-study-description">
+              This demonstrates real-world system design decisions: How do you build an LLM feature
+              that won't cost you $500/month? How do you ensure it stays on-topic? How do you make
+              it production-ready on day one?
+            </p>
+
+            <div className="case-study-tech">
+              <span className="tech-tag">AWS Bedrock</span>
+              <span className="tech-tag">Lambda</span>
+              <span className="tech-tag">DynamoDB</span>
+              <span className="tech-tag">Terraform</span>
+              <span className="tech-tag">LLM Guardrails</span>
+            </div>
+
+            <div className="case-study-links">
+              <a href="https://imlocle.com?chat=true" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Try Alfred Live <FiArrowRight />
+              </a>
+              <Link to="/work/technical/alfred" className="btn-secondary">
+                View Full Case Study
               </Link>
             </div>
+          </div>
+
+          <div className="case-study-right">
+            <img src={alfredLogo} alt="Alfred AI Assistant" className="case-study-image" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Expertise Grid */}
+      <section className="page-container expertise-section">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">What I Specialize In</h2>
+          <p className="section-subtitle">Domains where deep expertise creates value</p>
+        </motion.div>
+
+        <motion.div
+          className="expertise-grid"
+          variants={motionVariants.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div className="expertise-card" variants={motionVariants.item}>
+            <div className="expertise-icon">
+              <FiCode />
+            </div>
+            <h3>Backend Architecture & APIs</h3>
+            <ul>
+              <li>Serverless systems design</li>
+              <li>Scalable API architecture</li>
+              <li>Database design & optimization</li>
+              <li>Auth & authorization patterns</li>
+            </ul>
           </motion.div>
-        </div>
+
+          <motion.div className="expertise-card" variants={motionVariants.item}>
+            <div className="expertise-icon">
+              <FiZap />
+            </div>
+            <h3>Cloud Infrastructure (AWS)</h3>
+            <ul>
+              <li>Lambda-first architecture</li>
+              <li>Infrastructure as Code</li>
+              <li>Cost optimization strategies</li>
+              <li>Migration & modernization</li>
+            </ul>
+          </motion.div>
+
+          <motion.div className="expertise-card" variants={motionVariants.item}>
+            <div className="expertise-icon">
+              <FiTrendingUp />
+            </div>
+            <h3>AI/LLM Integration</h3>
+            <ul>
+              <li>Production LLM systems</li>
+              <li>Guardrails & safety controls</li>
+              <li>RAG & knowledge bases</li>
+              <li>Cost-aware inference</li>
+            </ul>
+          </motion.div>
+
+          <motion.div className="expertise-card" variants={motionVariants.item}>
+            <div className="expertise-icon">
+              <FiGithub />
+            </div>
+            <h3>System Optimization</h3>
+            <ul>
+              <li>Performance tuning</li>
+              <li>Cost reduction initiatives</li>
+              <li>Reliability improvements</li>
+              <li>Technical debt resolution</li>
+            </ul>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Personal Story Section */}
+      <section className="page-container story-section">
+        <motion.div
+          className="story-content"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Why I Build This Way</h2>
+
+          <div className="story-text">
+            <p>
+              I started as an <strong>English teacher in Japan</strong>—a problem solver by nature,
+              drawn to logic and creativity in equal measure. That curiosity evolved into an
+              "Academic Detective" mindset: obsessed with patterns, assumptions, and the unseen
+              architecture behind systems.
+            </p>
+
+            <p>
+              I moved into software the same way I approached teaching—by asking{" "}
+              <em>Why does this work this way? What breaks it? How would you know?</em>
+            </p>
+
+            <p>
+              Eight years later, I've built backend systems at scale, optimized chaos into
+              serverless elegance, and learned that the best engineers solve invisible problems:
+              <strong>cost spirals, scaling cliffs, production failures nobody expected</strong>.
+            </p>
+
+            <p>
+              That's where I thrive. Not in shiny features—in the foundation that makes features
+              possible.
+            </p>
+
+            <Link to="/about" className="btn-secondary">
+              Read My Full Story
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contact-cta">
+        <CtaSection />
       </section>
     </div>
   );

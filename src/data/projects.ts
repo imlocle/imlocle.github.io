@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     image: '/src/assets/alfred-logo.png'
   },
   {
-    id: 'neptune-putterapp',
+    id: 'neptune-app',
     name: 'Neptune App',
     tagline: 'Serverless backend for social video platform',
     description: 'Cloud-native SaaS platform supporting 10K+ iOS users with scalable APIs, real-time data, and analytics. Event-driven architecture with content moderation, social features, ETL pipelines (Jupiter), and AI chatbot integration (Moody).',
@@ -106,7 +106,7 @@ export const PROJECTS: Project[] = [
       live: 'https://www.theneptuneapp.com/',
       caseStudy: '/work/client/neptune'
     },
-    image: '/src/assets/neptune-logo2.png'
+    image: '/src/assets/neptune-logo.svg'
   },
   {
     id: 'code-intelligence-platform',

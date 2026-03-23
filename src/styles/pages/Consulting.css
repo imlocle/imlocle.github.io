@@ -270,60 +270,7 @@
   color: var(--text-primary);
 }
 
-/* Contact CTA Section */
-.contact-cta-section {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.contact-cta-card {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-accent);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-cta-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
-  opacity: 0.5;
-}
-
-.contact-cta-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-title {
-  font-size: var(--text-3xl);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--space-md);
-}
-
-.cta-text {
-  font-size: var(--text-lg);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--space-md);
-}
-
-.cta-subtext {
-  font-size: var(--text-sm);
-  color: var(--text-tertiary);
-  margin-bottom: var(--space-xl);
-}
-
-.response-time {
-  font-size: var(--text-sm);
-  color: var(--text-tertiary);
-  margin-top: var(--space-md);
-}
+/* CTA Styles are now in CtaSection.css */
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -338,13 +285,5 @@
   .services-grid,
   .process-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-cta-card {
-    padding: var(--space-xl) var(--space-md);
-  }
-
-  .cta-title {
-    font-size: var(--text-2xl);
   }
 }

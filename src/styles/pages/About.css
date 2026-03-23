@@ -255,8 +255,9 @@
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: var(--space-lg);
+  align-items: flex-start;
   transition: all var(--transition-base);
 }
 
@@ -266,8 +267,8 @@
 }
 
 .timeline-logo {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background: white;
   border-radius: var(--radius-md);
   display: flex;
@@ -276,12 +277,31 @@
   padding: var(--space-sm);
   flex-shrink: 0;
   font-size: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.timeline-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.timeline-item:hover .timeline-logo::before {
+  opacity: 1;
 }
 
 .timeline-logo img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
 .timeline-content {
@@ -450,48 +470,7 @@
   color: var(--text-tertiary);
 }
 
-/* CTA Section */
-.cta-section {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.cta-card {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-accent);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
-  opacity: 0.5;
-}
-
-.cta-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-card h2 {
-  font-size: var(--text-3xl);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--space-md);
-}
-
-.cta-card p {
-  font-size: var(--text-lg);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-}
+/* CTA Styling is now centralized in CtaSection.css */
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -537,13 +516,5 @@
   .skills-grid,
   .additional-grid {
     grid-template-columns: 1fr;
-  }
-
-  .cta-card {
-    padding: var(--space-xl) var(--space-md);
-  }
-
-  .cta-card h2 {
-    font-size: var(--text-2xl);
   }
 }
