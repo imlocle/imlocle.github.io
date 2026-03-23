@@ -16,7 +16,7 @@
 
 /* Legacy support for old pages */
 .page-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-lg);
 }

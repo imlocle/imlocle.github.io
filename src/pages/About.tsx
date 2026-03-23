@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { FiArrowRight } from "react-icons/fi";
 
 import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc_headshot.jpg";
 import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "../data/experience";
+import CtaSection from "@/components/section/CtaSection";
 
 const About = () => {
   return (
@@ -24,13 +23,69 @@ const About = () => {
           <div className="about-location">Las Vegas • Remote</div>
         </div>
 
-        <div className="about-intro">
-          <h2>Senior Software Engineer</h2>
-          <p className="about-lead">
-            8+ years building scalable backend systems, cloud infrastructure, and AI platforms.
-            Currently leading backend development at Neptune App, supporting 10K+ users with
-            serverless architecture.
-          </p>
+        <div className="about-right-content">
+          <div className="about-intro">
+            <h2>Senior Software Engineer</h2>
+            <p className="about-lead">
+              8+ years building scalable backend systems, cloud infrastructure, and AI platforms.
+              Currently leading backend development at Neptune App, supporting 10K+ users with
+              serverless architecture.
+            </p>
+          </div>
+
+          {/* Personal Story */}
+          <details className="about-story">
+            <summary>Personal Story</summary>
+            <div className="about-story-body">
+              <p>
+                My journey into technology began in <strong>Japan</strong>,
+                while I was teaching English. My brother suggested coding as a{" "}
+                <strong>balance of logic and creativity</strong>
+                {", and it clicked instantly. I've always been a "}
+                <strong>problem solver</strong>
+                —through dance, filmmaking, and a teenage dream of becoming a
+                detective.
+              </p>
+
+              <p>
+                That curiosity evolved into what I call an{" "}
+                <strong>
+                  <em>"Academic Detective"</em>
+                </strong>
+                —driven to uncover patterns, question assumptions, and piece
+                together complex narratives. I studied{" "}
+                <strong>History at UC Santa Cruz</strong>, where I learned how
+                to investigate, analyze, and synthesize information with rigor.
+              </p>
+
+              <p>
+                My first programming language was <strong>Python</strong>. Early
+                projects led me to <strong>Coding Dojo</strong>, where I learned{" "}
+                <strong>Python, JavaScript, and Ruby</strong>. My career started
+                at <strong>PriceSpider</strong>, then deepened at{" "}
+                <strong>Rackspace</strong>, where a mentor helped me grow into{" "}
+                <strong>cloud engineering</strong>.
+              </p>
+
+              <p>
+                These days, my focus is{" "}
+                <strong>
+                  backend engineering, cloud systems, and AI/automation
+                </strong>
+                . I love building tools that overlap with my hobbies (like{" "}
+                <strong>sim racing</strong>)
+                {
+                  ", and I'm driven by building things that create a positive impact."
+                }
+              </p>
+
+              <p>
+                {
+                  "Outside of work, I've studied abroad in Vietnam, taught and bartended in Japan, and traveled through multiple countries. I'm fluent in Vietnamese, conversational in Japanese, and I practice mindfulness to stay grounded and focused."
+                }
+              </p>
+            </div>
+          </details>
         </div>
       </motion.section>
 
@@ -212,81 +267,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Personal Story */}
-      <section className="story-section">
-        <details className="about-story">
-          <summary>Personal Story</summary>
-          <div className="about-story-body">
-            <p>
-              My journey into technology began in <strong>Japan</strong>,
-              while I was teaching English. My brother suggested coding as a{" "}
-              <strong>balance of logic and creativity</strong>
-              {", and it clicked instantly. I've always been a "}
-              <strong>problem solver</strong>
-              —through dance, filmmaking, and a teenage dream of becoming a
-              detective.
-            </p>
-
-            <p>
-              That curiosity evolved into what I call an{" "}
-              <strong>
-                <em>"Academic Detective"</em>
-              </strong>
-              —driven to uncover patterns, question assumptions, and piece
-              together complex narratives. I studied{" "}
-              <strong>History at UC Santa Cruz</strong>, where I learned how
-              to investigate, analyze, and synthesize information with rigor.
-            </p>
-
-            <p>
-              My first programming language was <strong>Python</strong>. Early
-              projects led me to <strong>Coding Dojo</strong>, where I learned{" "}
-              <strong>Python, JavaScript, and Ruby</strong>. My career started
-              at <strong>PriceSpider</strong>, then deepened at{" "}
-              <strong>Rackspace</strong>, where a mentor helped me grow into{" "}
-              <strong>cloud engineering</strong>.
-            </p>
-
-            <p>
-              These days, my focus is{" "}
-              <strong>
-                backend engineering, cloud systems, and AI/automation
-              </strong>
-              . I love building tools that overlap with my hobbies (like{" "}
-              <strong>sim racing</strong>)
-              {
-                ", and I'm driven by building things that create a positive impact."
-              }
-            </p>
-
-            <p>
-              {
-                "Outside of work, I've studied abroad in Vietnam, taught and bartended in Japan, and traveled through multiple countries. I'm fluent in Vietnamese, conversational in Japanese, and I practice mindfulness to stay grounded and focused."
-              }
-            </p>
-          </div>
-        </details>
-      </section>
-
       {/* CTA Section */}
-      <section className="cta-section">
-        <motion.div
-          className="cta-card"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2>Let's Work Together</h2>
-          <p>
-            Interested in discussing backend architecture, cloud infrastructure, or AI platforms?
-            I'm open to consulting opportunities and technical collaborations.
-          </p>
-          <Link to="/consulting" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-xs)' }}>
-            View Consulting Services <FiArrowRight />
-          </Link>
-        </motion.div>
-      </section>
+      <CtaSection/>
     </div>
   );
 };

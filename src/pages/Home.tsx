@@ -109,6 +109,14 @@ const Home = () => {
                   ))}
                 </div>
                 <div className="project-links">
+                  {project.links?.caseStudy && (
+                    <Link
+                      to={project.links.caseStudy}
+                      className="project-link"
+                    >
+                      <FiArrowRight /> Case Study
+                    </Link>
+                  )}
                   {project.links?.github && (
                     <a
                       href={project.links.github}

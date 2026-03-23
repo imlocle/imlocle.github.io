@@ -10,11 +10,11 @@
 
 /* Hero Section */
 .about-hero {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-2xl);
   align-items: start;
 }
 
@@ -22,8 +22,10 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   text-align: center;
+  position: sticky;
+  top: var(--space-xl);
 }
 
 .profile-photo {
@@ -59,6 +61,12 @@
   color: var(--text-tertiary);
 }
 
+.about-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
 .about-intro {
   display: flex;
   flex-direction: column;
@@ -78,9 +86,62 @@
   line-height: 1.6;
 }
 
+/* Personal Story in Hero */
+.about-hero .about-story {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.about-hero .about-story summary {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.about-hero .about-story summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-hero .about-story summary::before {
+  content: "▶";
+  font-size: var(--text-sm);
+  transition: transform var(--transition-base);
+}
+
+.about-hero .about-story[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.about-hero .about-story-body {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.about-hero .about-story-body p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.about-hero .about-story-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-hero .about-story-body strong {
+  color: var(--text-primary);
+}
+
 /* Current Focus */
 .about-current {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -131,7 +192,7 @@
 
 /* Expertise */
 .about-expertise {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -170,7 +231,7 @@
 
 /* Timeline Section */
 .timeline-section {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -301,7 +362,7 @@
 
 /* Skills Section */
 .skills-section {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -354,7 +415,7 @@
 
 /* Additional Section */
 .additional-section {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -387,64 +448,6 @@
 
 .additional-card .year {
   color: var(--text-tertiary);
-}
-
-/* Story Section */
-.story-section {
-  max-width: 900px;
-  margin: 0 auto var(--space-2xl);
-}
-
-.about-story {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-}
-
-.about-story summary {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--text-primary);
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.about-story summary::-webkit-details-marker {
-  display: none;
-}
-
-.about-story summary::before {
-  content: "▶";
-  font-size: var(--text-sm);
-  transition: transform var(--transition-base);
-}
-
-.about-story[open] summary::before {
-  transform: rotate(90deg);
-}
-
-.about-story-body {
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border);
-}
-
-.about-story-body p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--space-md);
-}
-
-.about-story-body p:last-child {
-  margin-bottom: 0;
-}
-
-.about-story-body strong {
-  color: var(--text-primary);
 }
 
 /* CTA Section */
@@ -494,6 +497,17 @@
 @media (max-width: 768px) {
   .about-container {
     padding: var(--space-xl) var(--space-md);
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .about-image-card {
+    position: static;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .about-hero {

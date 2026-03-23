@@ -24,43 +24,7 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  // TIER 1: PRODUCTION SYSTEMS
-  {
-    id: 'self-growth-backend',
-    name: 'Self-Growth Backend',
-    tagline: 'Production-ready serverless backend for personal development tracking',
-    description: 'Comprehensive SaaS backend supporting habits, todos, blog posts, and multi-user households with analytics. Built with 37 Lambda functions, single-table DynamoDB design, and complete API documentation.',
-    category: 'production',
-    featured: true,
-    status: 'completed',
-    metrics: [
-      '37 Lambda functions',
-      'Multi-user households',
-      'Production-ready',
-      'Comprehensive docs'
-    ],
-    techStack: [
-      'Python 3.13',
-      'AWS Lambda',
-      'API Gateway',
-      'DynamoDB',
-      'Cognito',
-      'Terraform',
-      'CloudWatch'
-    ],
-    highlights: [
-      'Layered architecture (Handler → Controller → Service → Repository)',
-      'Single-table DynamoDB design with GSIs',
-      'JWT authentication with Cognito',
-      'Rate limiting and input sanitization',
-      'Habit analytics with streaks and completion rates',
-      'Comprehensive API documentation and integration guides'
-    ],
-    links: {
-      github: 'https://github.com/imlocle/self-growth-backend',
-      docs: '/Users/locle/Desktop/coding/github/self-growth-backend/docs'
-    }
-  },
+  // TIER 1: PRODUCTION SYSTEMS (with case studies first)
   {
     id: 'alfred-ai-assistant',
     name: 'Alfred AI Assistant Platform',
@@ -103,7 +67,7 @@ export const PROJECTS: Project[] = [
     id: 'neptune-putterapp',
     name: 'Neptune App',
     tagline: 'Serverless backend for social video platform',
-    description: 'Cloud-native SaaS platform supporting 10K+ iOS users with scalable APIs, real-time data, and analytics. Event-driven architecture with content moderation and social features.',
+    description: 'Cloud-native SaaS platform supporting 10K+ iOS users with scalable APIs, real-time data, and analytics. Event-driven architecture with content moderation, social features, ETL pipelines (Jupiter), and AI chatbot integration (Moody).',
     role: 'Senior Backend Lead',
     period: 'Nov 2024 - Present',
     category: 'production',
@@ -112,11 +76,12 @@ export const PROJECTS: Project[] = [
     metrics: [
       '10K+ active users',
       'Event-driven architecture',
-      'Multi-environment deployment',
-      'Content moderation'
+      'Analytics ETL pipeline',
+      'AI chatbot integration'
     ],
     techStack: [
       'TypeScript',
+      'Python 3.13',
       'Node.js 20.x',
       'AWS SAM',
       'Lambda',
@@ -124,11 +89,14 @@ export const PROJECTS: Project[] = [
       'DynamoDB',
       'S3',
       'Rekognition',
-      'Cognito'
+      'Cognito',
+      'Bedrock',
+      'Terraform'
     ],
     highlights: [
       'Designed event-driven architecture for video processing',
-      'Implemented analytics pipelines with Jupiter ETL',
+      'Built Jupiter ETL pipeline for analytics data ingestion and Parquet generation',
+      'Implemented Moody AI chatbot using AWS Bedrock Nova Lite',
       'AWS Rekognition integration for content moderation',
       'Social features (follow, comments, votes, engagement)',
       'Guided team of 4 engineers',
@@ -139,6 +107,79 @@ export const PROJECTS: Project[] = [
       caseStudy: '/work/client/neptune'
     },
     image: '/src/assets/neptune-logo2.png'
+  },
+  {
+    id: 'code-intelligence-platform',
+    name: 'Code Intelligence Platform',
+    tagline: 'RAG-based code analysis CLI tool',
+    description: 'Python CLI for analyzing codebases using Retrieval-Augmented Generation with OpenAI. Implements RAG pipeline with embeddings, vector search, and LLM queries.',
+    category: 'opensource',
+    featured: true,
+    status: 'completed',
+    metrics: [
+      'RAG implementation',
+      'CLI tool',
+      'OpenAI integration',
+      'Unit tested'
+    ],
+    techStack: [
+      'Python 3.13',
+      'OpenAI API',
+      'GPT-4o-mini',
+      'Click',
+      'Pydantic',
+      'NumPy',
+      'pytest'
+    ],
+    highlights: [
+      'Scans Python codebases and generates embeddings',
+      'RAG pipeline for code analysis',
+      'Cosine similarity for retrieval',
+      'Progress bars and structured output',
+      'Comprehensive CLI documentation',
+      'Unit tests with mocking'
+    ],
+    links: {
+      github: 'https://github.com/imlocle/code-intelligence-platform',
+      caseStudy: '/work/technical/code-intelligence'
+    },
+    image: '/src/assets/code-intel-platform-logo.png'
+  },
+  {
+    id: 'self-growth-backend',
+    name: 'Self-Growth Backend',
+    tagline: 'Production-ready serverless backend for personal development tracking',
+    description: 'Comprehensive SaaS backend supporting habits, todos, blog posts, and multi-user households with analytics. Built with 37 Lambda functions, single-table DynamoDB design, and complete API documentation.',
+    category: 'production',
+    featured: true,
+    status: 'completed',
+    metrics: [
+      '37 Lambda functions',
+      'Multi-user households',
+      'Production-ready',
+      'Comprehensive docs'
+    ],
+    techStack: [
+      'Python 3.13',
+      'AWS Lambda',
+      'API Gateway',
+      'DynamoDB',
+      'Cognito',
+      'Terraform',
+      'CloudWatch'
+    ],
+    highlights: [
+      'Layered architecture (Handler → Controller → Service → Repository)',
+      'Single-table DynamoDB design with GSIs',
+      'JWT authentication with Cognito',
+      'Rate limiting and input sanitization',
+      'Habit analytics with streaks and completion rates',
+      'Comprehensive API documentation and integration guides'
+    ],
+    links: {
+      github: 'https://github.com/imlocle/self-growth-backend',
+      docs: '/Users/locle/Desktop/coding/github/self-growth-backend/docs'
+    }
   },
 
   // TIER 2: OPEN SOURCE / SPECIALIZED
@@ -176,104 +217,6 @@ export const PROJECTS: Project[] = [
       github: 'https://github.com/imlocle/pisync'
     },
     image: '/src/assets/pisync_logo.png'
-  },
-  {
-    id: 'code-intelligence-platform',
-    name: 'Code Intelligence Platform',
-    tagline: 'RAG-based code analysis CLI tool',
-    description: 'Python CLI for analyzing codebases using Retrieval-Augmented Generation with OpenAI. Implements RAG pipeline with embeddings, vector search, and LLM queries.',
-    category: 'opensource',
-    featured: false,
-    status: 'completed',
-    metrics: [
-      'RAG implementation',
-      'CLI tool',
-      'OpenAI integration',
-      'Unit tested'
-    ],
-    techStack: [
-      'Python 3.13',
-      'OpenAI API',
-      'GPT-4o-mini',
-      'Click',
-      'Pydantic',
-      'NumPy',
-      'pytest'
-    ],
-    highlights: [
-      'Scans Python codebases and generates embeddings',
-      'RAG pipeline for code analysis',
-      'Cosine similarity for retrieval',
-      'Progress bars and structured output',
-      'Comprehensive CLI documentation',
-      'Unit tests with mocking'
-    ],
-    links: {
-      github: 'https://github.com/imlocle/code-intelligence-platform',
-      caseStudy: '/work/technical/code-intelligence'
-    },
-    image: '/src/assets/code-intel-platform-logo.png'
-  },
-  {
-    id: 'jupiter-etl',
-    name: 'Jupiter',
-    tagline: 'ETL pipeline for Neptune App analytics',
-    description: 'Serverless data pipeline for ingesting and analyzing user engagement data. Lambda-based ETL with Parquet file generation and multi-environment deployment.',
-    category: 'production',
-    featured: false,
-    status: 'active',
-    metrics: [
-      'Serverless ETL',
-      'Analytics pipeline',
-      'Parquet generation',
-      'Multi-environment'
-    ],
-    techStack: [
-      'Python 3.13',
-      'AWS Lambda',
-      'Terraform',
-      'Docker',
-      'PyArrow',
-      'Jupyter'
-    ],
-    highlights: [
-      'Analytics data ingestion from Neptune App',
-      'Parquet file generation for analysis',
-      'Lambda-based processing',
-      'Infrastructure as Code with Terraform',
-      'Docker for Lambda layer builds',
-      'Multi-environment deployment (dev/prod)'
-    ]
-  },
-  {
-    id: 'moody-chatbot',
-    name: 'Moody Chatbot Stack',
-    tagline: 'AI chatbot for Neptune App (In Progress)',
-    description: 'AWS Bedrock-powered chatbot for Neptune App using Nova Lite. Similar architecture to Alfred with knowledge base injection and LLM integration.',
-    category: 'production',
-    featured: false,
-    status: 'in-progress',
-    metrics: [
-      'AWS Bedrock',
-      'Nova Lite',
-      'Serverless',
-      'In Progress'
-    ],
-    techStack: [
-      'Python',
-      'AWS Bedrock',
-      'Nova Lite',
-      'Lambda',
-      'S3',
-      'Terraform'
-    ],
-    highlights: [
-      'Knowledge base injection from S3',
-      'LLM integration with AWS Bedrock',
-      'Serverless deployment',
-      'Similar structure to Alfred AI',
-      'Terraform-managed infrastructure'
-    ]
   },
 
   // CLIENT WORK (from previous experience)

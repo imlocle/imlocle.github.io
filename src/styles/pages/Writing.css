@@ -32,7 +32,7 @@
 
 /* Posts Section */
 .posts-section {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto var(--space-2xl);
 }
 
@@ -71,7 +71,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -207,7 +207,7 @@
 
 /* Topics Section */
 .topics-section {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 

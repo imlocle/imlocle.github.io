@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiGithub, FiExternalLink, FiFileText } from 'react-icons/fi';
 
 import { PROJECTS, type Project } from '../data/projects';
@@ -171,6 +172,11 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
 
         {project.links && (
           <div className="project-links">
+            {project.links.caseStudy && (
+              <Link to={project.links.caseStudy} className="project-link">
+                <FiFileText /> Case Study
+              </Link>
+            )}
             {project.links.github && (
               <a
                 href={project.links.github}
@@ -189,11 +195,6 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 className="project-link"
               >
                 <FiExternalLink /> Live
-              </a>
-            )}
-            {project.links.caseStudy && (
-              <a href={project.links.caseStudy} className="project-link">
-                <FiFileText /> Case Study
               </a>
             )}
           </div>

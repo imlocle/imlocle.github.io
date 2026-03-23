@@ -23,11 +23,17 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <div className="footer-links">
+              <Link to="/work" className="footer-link">
+                Work
+              </Link>
+              <Link to="/writing" className="footer-link">
+                Writing
+              </Link>
+              <Link to="/consulting" className="footer-link">
+                Consulting
+              </Link>
               <Link to="/about" className="footer-link">
                 About
-              </Link>
-              <Link to="/services" className="footer-link">
-                Services
               </Link>
               <Link to="/contact" className="footer-link">
                 Contact
@@ -35,15 +41,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Work */}
+          {/* Featured Projects */}
           <div className="footer-section">
-            <h3 className="footer-title">Work</h3>
+            <h3 className="footer-title">Featured Projects</h3>
             <div className="footer-links">
-              <Link to="/work/client" className="footer-link">
-                Client Projects
+              <Link to="/work/technical/alfred" className="footer-link">
+                Alfred AI Assistant
               </Link>
-              <Link to="/work/technical" className="footer-link">
-                Technical Projects
+              <Link to="/work/client/neptune" className="footer-link">
+                Neptune App
+              </Link>
+              <Link to="/work/technical/code-intelligence" className="footer-link">
+                Code Intelligence
               </Link>
             </div>
           </div>
