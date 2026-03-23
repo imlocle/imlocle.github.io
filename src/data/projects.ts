@@ -20,7 +20,7 @@ export interface Project {
     caseStudy?: string;
   };
   image?: string;
-  status?: 'active' | 'completed' | 'in-progress';
+  status?: 'active' | 'completed' | 'in-progress' | 'ongoing';
 }
 
 export const PROJECTS: Project[] = [
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     description: 'Demonstrates real-world GenAI system design with cost optimization, safety guardrails, and infrastructure-as-code. Features rate limiting, response caching, and deterministic behavior.',
     category: 'opensource',
     featured: true,
-    status: 'completed',
+    status: 'ongoing',
     metrics: [
       '$0.50-1.00/month for 1K requests',
       '30-50% cost reduction via caching',
@@ -152,7 +152,7 @@ export const PROJECTS: Project[] = [
     description: 'Comprehensive SaaS backend supporting habits, todos, blog posts, and multi-user households with analytics. Built with 37 Lambda functions, single-table DynamoDB design, and complete API documentation.',
     category: 'production',
     featured: true,
-    status: 'completed',
+    status: 'ongoing',
     metrics: [
       '37 Lambda functions',
       'Multi-user households',
@@ -190,7 +190,7 @@ export const PROJECTS: Project[] = [
     description: 'Modern desktop application with PySide6 featuring automatic file monitoring, dual-pane explorers, drag & drop support, and real-time activity logging. Clean architecture with protocol-based design.',
     category: 'opensource',
     featured: true,
-    status: 'completed',
+    status: 'ongoing',
     metrics: [
       'Desktop GUI application',
       '500+ line dark theme stylesheet',
@@ -214,7 +214,8 @@ export const PROJECTS: Project[] = [
       'Settings management with auto-migration'
     ],
     links: {
-      github: 'https://github.com/imlocle/pisync'
+      github: 'https://github.com/imlocle/pisync',
+      caseStudy: '/work/technical/pisync'
     },
     image: '/src/assets/pisync_logo.png'
   },

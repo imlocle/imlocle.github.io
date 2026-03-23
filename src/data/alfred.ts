@@ -139,6 +139,11 @@ export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
 
   technologies: ALFRED_TECHNOLOGIES,
 
+  projectLinks: {
+    github: 'https://github.com/imlocle/alfred-ai-assistant',
+    live: 'https://imlocle.com?chat=true',
+  },
+
   nextStepsBody:
     "Introduce streaming responses, via Bedrock's Invoke Model with Response Stream, for better chat UX, add multi-model routing, enhance observability, and optionally enable Anthropic support to compare LLM behavior under identical guardrails.",
 

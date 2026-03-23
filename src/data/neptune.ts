@@ -156,6 +156,10 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
 
   technologies: NEPTUNE_TECHNOLOGIES,
 
+  projectLinks: {
+    live: 'https://www.theneptuneapp.com/',
+  },
+
   nextStepsBody:
     "Continue scaling the platform to support growing user base, implement advanced analytics features, optimize costs through caching and query optimization, and expand AI-driven capabilities with LLM integration.",
 

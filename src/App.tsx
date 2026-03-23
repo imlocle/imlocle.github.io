@@ -15,6 +15,7 @@ import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
+import PiSyncCaseStudy from "@pages/work/caseStudies/PiSyncCaseStudy";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
@@ -77,6 +78,7 @@ function App() {
             <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
             <Route path="/work/technical/alfred" element={<AlfredCaseStudy />} />
             <Route path="/work/technical/code-intelligence" element={<CodeIntelligenceCaseStudy />} />
+            <Route path="/work/technical/pisync" element={<PiSyncCaseStudy />} />
           </Routes>
         </main>
         <Footer />

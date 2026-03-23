@@ -26,6 +26,7 @@ const CaseStudyPage = ({ config, children }: CaseStudyPageProps) => {
         title={config.heroTitle}
         subtitle={config.heroSubtitle}
         stats={config.stats}
+        projectLinks={config.projectLinks}
       />
 
       <div className="case-grid">
