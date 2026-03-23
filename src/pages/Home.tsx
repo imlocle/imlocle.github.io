@@ -1,144 +1,270 @@
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import "@styles/pages/Home.css";
-import ButtonLink from "@components/button/ButtonLink";
-import CtaSection from "@components/section/CtaSection";
-import PreviewGridSection from "@components/section/PreviewGridSection";
-import PreviewLogoGridSection from "@components/section/PreviewLogoGridSection";
-import {
-  CALENDLY_URL,
-  COMPANIES_WORKED,
-  PREVIEW_PROJECTS,
-  PREVIEW_SERVICES,
-} from "@utils/constants";
+import { getFeaturedProjects } from "../data/projects";
+import mediumPosts from "../data/medium-posts.json";
 
 const Home = () => {
-  const { pathname } = useLocation();
+  const featuredProjects = getFeaturedProjects().slice(0, 3);
+  const recentPosts = mediumPosts.slice(0, 3);
 
   return (
     <div className="home-container">
-      <section className="hero-container" aria-label="Homepage hero">
-        <div className="hero-inner">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
           <motion.div
-            key={pathname}
-            className="hero-section"
+            className="status-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="status-dot" />
+            <span>Senior Backend Lead @ Neptune App</span>
+          </motion.div>
+
+          <motion.h1
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Building <span className="gradient-text">Scalable Systems</span>
+            <br />
+            with Python & AWS
+          </motion.h1>
+
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Senior Software Engineer specializing in backend architecture, cloud infrastructure,
+            and AI platforms. 8+ years building production systems at scale.
+          </motion.p>
+
+          <motion.div
+            className="hero-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Link to="/work" className="btn-primary">
+              View My Work <FiArrowRight />
+            </Link>
+            <Link to="/about" className="btn-secondary">
+              About Me
+            </Link>
+          </motion.div>
+
+          <motion.div
+            className="tech-stack"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <motion.div
-              className="hero-card"
-              initial={{ y: 12, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-            >
-              <div className="hero-badge-row">
-                <span className="hero-badge">
-                  Taking on limited client work
-                </span>
-                <span className="hero-badge subtle">Las Vegas • Remote</span>
-              </div>
-
-              <motion.h1
-                className="hero-title"
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.22, duration: 0.6 }}
-              >
-                Ship your <span className="highlight">backend MVP</span> in{" "}
-                <span className="highlight">14 days</span>
-              </motion.h1>
-
-              <motion.p
-                className="hero-subtitle"
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-              >
-                I build APIs, auth, databases, and AWS deployments—fast, secure,
-                and easy to hand off.
-              </motion.p>
-
-              <div className="hero-points" role="list">
-                <div className="hero-point" role="listitem">
-                  <span className="dot" aria-hidden="true" />
-                  <span>
-                    <strong>Production-ready stack:</strong> AWS serverless,
-                    clean architecture, CI-friendly setup.
-                  </span>
-                </div>
-
-                <div className="hero-point" role="listitem">
-                  <span className="dot" aria-hidden="true" />
-                  <span>
-                    <strong>Core features:</strong> Auth, roles, API endpoints,
-                    DB schema + migrations.
-                  </span>
-                </div>
-
-                <div className="hero-point" role="listitem">
-                  <span className="dot" aria-hidden="true" />
-                  <span>
-                    <strong>{"Handoff that doesn't hurt:"}</strong> docs,
-                    examples, and a “next steps” plan.
-                  </span>
-                </div>
-              </div>
-
-              <motion.div
-                className="cta-buttons"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.38, duration: 0.6 }}
-              >
-                <ButtonLink
-                  link={CALENDLY_URL}
-                  text="Book a Free Build Call"
-                  className="highlight-primary-button"
-                  target="_blank"
-                />
-
-                <ButtonLink
-                  link="/services#pricing"
-                  text="See Pricing & Timeline"
-                  className="highlight-secondary-button"
-                />
-              </motion.div>
-
-              <div className="hero-tech">
-                AWS • Python • TypeScript • Serverless APIs • Auth • Databases
-              </div>
-            </motion.div>
+            <span className="tech-pill">Python</span>
+            <span className="tech-pill">TypeScript</span>
+            <span className="tech-pill">AWS Lambda</span>
+            <span className="tech-pill">DynamoDB</span>
+            <span className="tech-pill">Terraform</span>
+            <span className="tech-pill">AI/LLM</span>
           </motion.div>
         </div>
-
-        <motion.div
-          className="scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          whileHover={{ y: 6 }}
-        >
-          <p>Scroll</p>
-          <div className="arrow-down" />
-        </motion.div>
-
-        <div className="hero-fade-divider" aria-hidden="true" />
       </section>
 
-      <div className="page-container">
-        <PreviewGridSection title="Services" cards={PREVIEW_SERVICES} />
-        <PreviewGridSection
-          title="Featured Projects"
-          cards={PREVIEW_PROJECTS}
-        />
-        <PreviewLogoGridSection
-          title="Who I've Worked With"
-          cards={COMPANIES_WORKED}
-        />
-        <CtaSection />
-      </div>
+      {/* Featured Projects */}
+      <section className="bento-section">
+        <div className="section-header">
+          <h2 className="section-title">Featured Work</h2>
+          <p className="section-subtitle">
+            Production systems, open source projects, and technical experiments
+          </p>
+        </div>
+
+        <div className="home-featured-grid">
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="home-project-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              {project.image && (
+                <div className="project-image">
+                  <img src={project.image} alt={project.name} />
+                </div>
+              )}
+              <div className="project-content">
+                <h3 className="project-title">{project.name}</h3>
+                <p className="project-description">{project.tagline}</p>
+                <div className="project-tags">
+                  {project.metrics?.slice(0, 3).map((metric, i) => (
+                    <span key={i} className="project-tag">{metric}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  {project.links?.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <FiGithub /> Code
+                    </a>
+                  )}
+                  {project.links?.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <FiArrowRight /> Live
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
+          <Link to="/work" className="btn-secondary">
+            View All Projects <FiArrowRight />
+          </Link>
+        </div>
+      </section>
+
+      {/* Recent Writing */}
+      <section className="bento-section">
+        <div className="section-header">
+          <h2 className="section-title">Recent Writing</h2>
+          <p className="section-subtitle">
+            Thoughts on system architecture, cloud infrastructure, and AI engineering
+          </p>
+        </div>
+
+        <div className="blog-grid">
+          {recentPosts.map((post, index) => (
+            <motion.a
+              key={index}
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="blog-date">
+                {new Date(post.pubDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </div>
+              <h3 className="blog-title">{post.title}</h3>
+              {post.subtitle && (
+                <p className="blog-subtitle">{post.subtitle}</p>
+              )}
+              <span className="blog-link">
+                Read on Medium <FiArrowRight />
+              </span>
+            </motion.a>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
+          <Link to="/writing" className="btn-secondary">
+            View All Posts <FiArrowRight />
+          </Link>
+        </div>
+      </section>
+
+      {/* Connect Section */}
+      <section className="bento-section">
+        <div className="bento-grid">
+          <motion.div
+            className="bento-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="bento-card-content">
+              <div className="bento-card-icon">
+                <FiGithub />
+              </div>
+              <h3 className="bento-card-title">Open Source</h3>
+              <p className="bento-card-description">
+                Check out my open source projects and contributions on GitHub
+              </p>
+              <a
+                href="https://github.com/imlocle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bento-card-link"
+              >
+                View GitHub <FiArrowRight />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="bento-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="bento-card-content">
+              <div className="bento-card-icon">
+                <FiLinkedin />
+              </div>
+              <h3 className="bento-card-title">Connect</h3>
+              <p className="bento-card-description">
+                Let's connect on LinkedIn and discuss backend architecture
+              </p>
+              <a
+                href="https://linkedin.com/in/imlocle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bento-card-link"
+              >
+                Connect on LinkedIn <FiArrowRight />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="bento-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="bento-card-content">
+              <div className="bento-card-icon">
+                <FiMail />
+              </div>
+              <h3 className="bento-card-title">Get in Touch</h3>
+              <p className="bento-card-description">
+                Interested in working together? Let's talk about your project
+              </p>
+              <Link to="/contact" className="bento-card-link">
+                Send Message <FiArrowRight />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

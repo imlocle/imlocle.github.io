@@ -60,6 +60,28 @@ const Navbar = () => {
 
         <div className={`navbar-links ${menuOpen ? "mobile-open" : ""}`}>
           <Link
+            to="/work"
+            className={`nav-link ${isActive("/work") ? "active" : ""}`}
+            onClick={() => {
+              setMenuOpen(false);
+              setWorkOpen(false);
+            }}
+          >
+            Work
+          </Link>
+
+          <Link
+            to="/writing"
+            className={`nav-link ${isActive("/writing") ? "active" : ""}`}
+            onClick={() => {
+              setMenuOpen(false);
+              setWorkOpen(false);
+            }}
+          >
+            Writing
+          </Link>
+
+          <Link
             to="/about"
             className={`nav-link ${isActive("/about") ? "active" : ""}`}
             onClick={() => {
@@ -71,60 +93,15 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to="/services"
-            className={`nav-link ${isActive("/services") ? "active" : ""}`}
+            to="/consulting"
+            className={`nav-link ${isActive("/consulting") ? "active" : ""}`}
             onClick={() => {
               setMenuOpen(false);
               setWorkOpen(false);
             }}
           >
-            Services
+            Consulting
           </Link>
-
-          {/* WORK DROPDOWN */}
-          <div
-            className="nav-dropdown"
-            onMouseEnter={() => !menuOpen && setWorkOpen(true)}
-          >
-            <button
-              type="button"
-              className={`nav-link dropdown-toggle ${
-                isActive("/work") ? "active" : ""
-              }`}
-              onClick={() => setWorkOpen(prev => !prev)}
-            >
-              Work ▾
-            </button>
-
-            {workOpen && (
-              <div className="dropdown-menu">
-                <Link
-                  to="/work/client"
-                  className={`dropdown-item ${
-                    isActive("/work/client") ? "active" : ""
-                  }`}
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setWorkOpen(false);
-                  }}
-                >
-                  Client Projects
-                </Link>
-                <Link
-                  to="/work/technical"
-                  className={`dropdown-item ${
-                    isActive("/work/technical") ? "active" : ""
-                  }`}
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setWorkOpen(false);
-                  }}
-                >
-                  Technical Projects
-                </Link>
-              </div>
-            )}
-          </div>
 
           {/* Primary CTA: Book Call (Calendly) */}
           <a

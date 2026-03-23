@@ -1,166 +1,292 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
+
 import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc_headshot.jpg";
-import { useLocation } from "react-router-dom";
-import TitleHeader from "@/components/header/TitleHeader";
-import CtaSection from "@components/section/CtaSection";
-import ButtonLink from "@components/button/ButtonLink";
-import { CALENDLY_URL } from "@utils/constants";
+import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "../data/experience";
 
 const About = () => {
-  const { pathname } = useLocation();
-
   return (
-    <div className="page-container">
-      <TitleHeader pathname={pathname} title="About" />
+    <div className="about-container">
+      {/* Hero Section */}
+      <motion.section
+        className="about-hero"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="about-image-card">
+          <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
+          <div className="about-name">Loc Le</div>
+          <div className="about-role">Senior Software Engineer</div>
+          <div className="about-subtitle">Backend • Cloud • AI</div>
+          <div className="about-location">Las Vegas • Remote</div>
+        </div>
 
-      <div className="about-content">
-        <motion.div
-          className="about-image-container"
-          initial={{ x: -24, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="about-image-card">
-            <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
-            <div className="about-image-meta">
-              <div className="about-name">Loc Le</div>
-              <div className="about-role">Backend MVP Specialist</div>
-              <div className="about-location">Las Vegas • Remote</div>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="about-text"
-          initial={{ x: 24, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2>I build production-ready backends for startups</h2>
-
+        <div className="about-intro">
+          <h2>Senior Software Engineer</h2>
           <p className="about-lead">
-            {
-              "If you're building a product and backend is slowing you down, I can ship your "
-            }
-            <strong>API + auth + database + AWS deployment</strong> fast—with
-            clean docs and a smooth handoff.
+            8+ years building scalable backend systems, cloud infrastructure, and AI platforms.
+            Currently leading backend development at Neptune App, supporting 10K+ users with
+            serverless architecture.
           </p>
+        </div>
+      </motion.section>
 
-          <div className="about-proof">
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>Speed with structure:</strong> clean architecture,
-                CI-friendly setup, no chaos.
-              </span>
+      {/* Current Focus */}
+      <motion.section
+        className="about-current"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Current Focus</h3>
+        <div className="current-card">
+          <div className="current-role">
+            <strong>Senior Backend Lead @ Neptune App</strong>
+            <span className="current-period">Nov 2024 - Present</span>
+          </div>
+          <p>
+            Building cloud-native SaaS platform with event-driven architecture, analytics
+            pipelines, and scalable APIs. Leading team of 4 engineers.
+          </p>
+          <div className="current-tech">
+            TypeScript • AWS Lambda • API Gateway • DynamoDB • Terraform
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Expertise */}
+      <motion.section
+        className="about-expertise"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Expertise</h3>
+        <div className="expertise-grid">
+          <div className="expertise-item">
+            <strong>Backend Systems</strong>
+            <p>Python, TypeScript, REST APIs, Event-Driven Architecture</p>
+          </div>
+          <div className="expertise-item">
+            <strong>Cloud Infrastructure</strong>
+            <p>AWS Lambda, API Gateway, DynamoDB, S3, Terraform</p>
+          </div>
+          <div className="expertise-item">
+            <strong>AI/LLM Integration</strong>
+            <p>AWS Bedrock, RAG Systems, Prompt Engineering</p>
+          </div>
+          <div className="expertise-item">
+            <strong>Architecture</strong>
+            <p>Serverless, Microservices, Domain-Driven Design</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Professional Timeline */}
+      <section className="timeline-section">
+        <h2 className="section-title">Professional Timeline</h2>
+        <div className="timeline">
+          {EXPERIENCE.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              className="timeline-item"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {exp.logo && (
+                <div className="timeline-logo">
+                  <img src={exp.logo} alt={exp.company} />
+                </div>
+              )}
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <div>
+                    <h3 className="timeline-company">{exp.company}</h3>
+                    <p className="timeline-role">{exp.role}</p>
+                  </div>
+                  <span className="timeline-period">{exp.period}</span>
+                </div>
+                <p className="timeline-description">{exp.description}</p>
+                <ul className="timeline-achievements">
+                  {exp.achievements.slice(0, 3).map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+                <div className="timeline-tech">
+                  {exp.techStack.slice(0, 6).map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Technical Skills */}
+      <section className="skills-section">
+        <h2 className="section-title">Technical Skills</h2>
+        <div className="skills-grid">
+          <div className="skill-category">
+            <h3>Languages</h3>
+            <div className="skill-level">
+              <strong>Expert:</strong> {SKILLS.languages.expert.join(', ')}
             </div>
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>AWS-focused delivery:</strong> serverless, scalable, and
-                cost-aware.
-              </span>
+            <div className="skill-level">
+              <strong>Proficient:</strong> {SKILLS.languages.proficient.join(', ')}
             </div>
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>Founder-friendly:</strong> clear scope, weekly
-                check-ins, zero fluff.
-              </span>
+            <div className="skill-level">
+              <strong>Familiar:</strong> {SKILLS.languages.familiar.join(', ')}
             </div>
           </div>
 
-          <div className="about-ctas">
-            <ButtonLink
-              link={CALENDLY_URL}
-              text="Book a Free Build Call"
-              className="highlight-primary-button"
-              target="_blank"
-            />
-            <ButtonLink
-              link="/services#pricing"
-              text="See Pricing & Timeline"
-              className="highlight-secondary-button"
-            />
-          </div>
-
-          <div className="about-workstyle">
-            <h3>How I work</h3>
-            <ul>
-              <li>
-                <strong>Day 1:</strong>
-                {" scope lock + plan (you always know what you're getting)"}
-              </li>
-              <li>
-                <strong>Days 2-12:</strong> build + harden (API, auth, DB,
-                deploy, logging)
-              </li>
-              <li>
-                <strong>Days 13-14:</strong> docs + handoff (examples + next
-                steps)
-              </li>
-            </ul>
-          </div>
-
-          <details className="about-story">
-            <summary>My story (optional)</summary>
-            <div className="about-story-body">
-              <p>
-                My journey into technology began in <strong>Japan</strong>,
-                while I was teaching English. My brother suggested coding as a{" "}
-                <strong>balance of logic and creativity</strong>
-                {", and it clicked instantly. I've always been a "}
-                <strong>problem solver</strong>
-                —through dance, filmmaking, and a teenage dream of becoming a
-                detective.
-              </p>
-
-              <p>
-                That curiosity evolved into what I call an{" "}
-                <strong>
-                  <em>“Academic Detective”</em>
-                </strong>
-                —driven to uncover patterns, question assumptions, and piece
-                together complex narratives. I studied{" "}
-                <strong>History at UC Santa Cruz</strong>, where I learned how
-                to investigate, analyze, and synthesize information with rigor.
-              </p>
-
-              <p>
-                My first programming language was <strong>Python</strong>. Early
-                projects led me to <strong>Coding Dojo</strong>, where I learned{" "}
-                <strong>Python, JavaScript, and Ruby</strong>. My career started
-                at <strong>PriceSpider</strong>, then deepened at{" "}
-                <strong>Rackspace</strong>, where a mentor helped me grow into{" "}
-                <strong>cloud engineering</strong>.
-              </p>
-
-              <p>
-                These days, my focus is{" "}
-                <strong>
-                  backend engineering, cloud systems, and AI/automation
-                </strong>
-                . I love building tools that overlap with my hobbies (like{" "}
-                <strong>sim racing</strong>)
-                {
-                  ", and I'm driven by building things that create a positive impact."
-                }
-              </p>
-
-              <p>
-                {
-                  "Outside of work, I've studied abroad in Vietnam, taught and bartended in Japan, and traveled through multiple countries. I'm fluent in Vietnamese, conversational in Japanese, and I practice mindfulness to stay grounded and focused."
-                }
-              </p>
+          <div className="skill-category">
+            <h3>Backend & APIs</h3>
+            <div className="skill-tags">
+              {SKILLS.backend.frameworks.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
             </div>
-          </details>
+            <div className="skill-tags">
+              {SKILLS.backend.patterns.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>Cloud & Infrastructure</h3>
+            <div className="skill-tags">
+              {SKILLS.cloud.aws.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
+            </div>
+            <div className="skill-tags">
+              {SKILLS.cloud.iac.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>AI & Data</h3>
+            <div className="skill-tags">
+              {SKILLS.ai.llms.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
+            </div>
+            <div className="skill-tags">
+              {SKILLS.ai.rag.map((item, i) => (
+                <span key={i} className="skill-tag">{item}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Languages */}
+      <section className="additional-section">
+        <div className="additional-grid">
+          <div className="additional-card">
+            <h3>Education</h3>
+            <p><strong>{EDUCATION.degree}</strong></p>
+            <p>{EDUCATION.school}</p>
+            <p className="year">{EDUCATION.year}</p>
+          </div>
+
+          <div className="additional-card">
+            <h3>Languages</h3>
+            {LANGUAGES.map((lang, i) => (
+              <p key={i}>
+                <strong>{lang.language}:</strong> {lang.proficiency}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Story */}
+      <section className="story-section">
+        <details className="about-story">
+          <summary>Personal Story</summary>
+          <div className="about-story-body">
+            <p>
+              My journey into technology began in <strong>Japan</strong>,
+              while I was teaching English. My brother suggested coding as a{" "}
+              <strong>balance of logic and creativity</strong>
+              {", and it clicked instantly. I've always been a "}
+              <strong>problem solver</strong>
+              —through dance, filmmaking, and a teenage dream of becoming a
+              detective.
+            </p>
+
+            <p>
+              That curiosity evolved into what I call an{" "}
+              <strong>
+                <em>"Academic Detective"</em>
+              </strong>
+              —driven to uncover patterns, question assumptions, and piece
+              together complex narratives. I studied{" "}
+              <strong>History at UC Santa Cruz</strong>, where I learned how
+              to investigate, analyze, and synthesize information with rigor.
+            </p>
+
+            <p>
+              My first programming language was <strong>Python</strong>. Early
+              projects led me to <strong>Coding Dojo</strong>, where I learned{" "}
+              <strong>Python, JavaScript, and Ruby</strong>. My career started
+              at <strong>PriceSpider</strong>, then deepened at{" "}
+              <strong>Rackspace</strong>, where a mentor helped me grow into{" "}
+              <strong>cloud engineering</strong>.
+            </p>
+
+            <p>
+              These days, my focus is{" "}
+              <strong>
+                backend engineering, cloud systems, and AI/automation
+              </strong>
+              . I love building tools that overlap with my hobbies (like{" "}
+              <strong>sim racing</strong>)
+              {
+                ", and I'm driven by building things that create a positive impact."
+              }
+            </p>
+
+            <p>
+              {
+                "Outside of work, I've studied abroad in Vietnam, taught and bartended in Japan, and traveled through multiple countries. I'm fluent in Vietnamese, conversational in Japanese, and I practice mindfulness to stay grounded and focused."
+              }
+            </p>
+          </div>
+        </details>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <motion.div
+          className="cta-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>Let's Work Together</h2>
+          <p>
+            Interested in discussing backend architecture, cloud infrastructure, or AI platforms?
+            I'm open to consulting opportunities and technical collaborations.
+          </p>
+          <Link to="/consulting" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-xs)' }}>
+            View Consulting Services <FiArrowRight />
+          </Link>
         </motion.div>
-      </div>
-
-      <CtaSection />
+      </section>
     </div>
   );
 };

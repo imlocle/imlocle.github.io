@@ -9,12 +9,12 @@ import {
 import About from "@pages/About";
 import Contact from "@pages/Contact";
 import Home from "@pages/Home";
-import Services from "@pages/Services";
-import ClientProjects from "@pages/work/ClientProjects";
+import Work from "@pages/Work";
+import Writing from "@pages/Writing";
+import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
-import TechnicalProjects from "@pages/work/TechnicalProjects";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
@@ -62,20 +62,21 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/writing" element={<Writing />} />
+            <Route path="/consulting" element={<Consulting />} />
             <Route path="/about" element={<About />} />
-            <Route path="/work/client" element={<ClientProjects />} />
-            <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
-            <Route path="/work/technical" element={<TechnicalProjects />} />
-            <Route
-              path="/work/technical/alfred"
-              element={<AlfredCaseStudy />}
-            />
-            <Route
-              path="/work/technical/code-intelligence"
-              element={<CodeIntelligenceCaseStudy />}
-            />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Legacy routes - redirect to new structure */}
+            <Route path="/services" element={<Consulting />} />
+            <Route path="/work/client" element={<Work />} />
+            <Route path="/work/technical" element={<Work />} />
+            
+            {/* Case study routes */}
+            <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
+            <Route path="/work/technical/alfred" element={<AlfredCaseStudy />} />
+            <Route path="/work/technical/code-intelligence" element={<CodeIntelligenceCaseStudy />} />
           </Routes>
         </main>
         <Footer />

@@ -1,94 +1,84 @@
 /* =========================
-   App layout + shared patterns
+   App Layout - Modern Dark
    ========================= */
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: var(--bg-primary);
 }
 
 .main-content {
   flex: 1;
-  background-color: var(--bg-color);
+  background: var(--bg-primary);
 }
 
+/* Legacy support for old pages */
 .page-container {
-  max-width: clamp(800px, 90%, 1200px);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 1rem;
+  padding: var(--space-2xl) var(--space-lg);
 }
 
-/* Shared section title */
+/* Shared Utilities */
 .section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--text-800);
-  position: relative;
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
 }
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 4px;
-  background-color: var(--brand-500);
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-}
-
-/* Shared card typography */
 .card-title {
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
 }
 
 .card-description {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-md);
 }
 
-/* Social links */
+/* Social Links */
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: var(--space-sm);
 }
 
 .social-link {
-  color: var(--brand-600);
-  transition: color 0.2s ease;
+  color: var(--accent-secondary);
+  transition: color var(--transition-fast);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-xs);
 }
 
 .social-link:hover {
-  color: var(--brand-500);
+  color: var(--accent-primary);
 }
 
 .social-icon {
-  font-size: 1.2rem;
-  color: var(--brand-600);
+  font-size: var(--text-xl);
+  color: var(--accent-secondary);
 }
 
-/* App Store badge hover */
+/* Buttons */
 .app-store-button {
-  transition: var(--transition-all);
+  transition: all var(--transition-base);
 }
 
 .app-store-button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .card-title {
-    font-size: 1.4rem;
+  .page-container {
+    padding: var(--space-xl) var(--space-md);
   }
 }

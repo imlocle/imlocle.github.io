@@ -1,4 +1,4 @@
-import CaseStudyPage from "@components/page/CaseStudPagey";
+import CaseStudyPage from "@/components/page/CaseStudyPage";
 import { ALFRED_CASE_STUDY_CONFIG } from "@data/alfred";
 
 const AlfredCaseStudy = () => (
