@@ -9,15 +9,21 @@ import {
 import About from "@pages/About";
 import Contact from "@pages/Contact";
 import Home from "@pages/Home";
-import Services from "@pages/Services";
-import ClientProjects from "@pages/work/ClientProjects";
+import Work from "@pages/Work";
+import Writing from "@pages/Writing";
+import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
-import TechnicalProjects from "@pages/work/TechnicalProjects";
+import PiSyncCaseStudy from "@pages/work/caseStudies/PiSyncCaseStudy";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
+import { ChatProvider } from "@context/ChatContext";
+import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
+import { PISYNC_CASE_STUDY_PATH } from "@data/pisync";
+import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
+import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
 import "@/App.css";
 
 /**
@@ -55,33 +61,44 @@ function ScrollManager() {
 
 function App() {
   return (
-    <Router>
-      <ScrollManager />
-      <div className="app">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/work/client" element={<ClientProjects />} />
-            <Route path="/work/client/neptune" element={<NeptuneCaseStudy />} />
-            <Route path="/work/technical" element={<TechnicalProjects />} />
-            <Route
-              path="/work/technical/alfred"
-              element={<AlfredCaseStudy />}
-            />
-            <Route
-              path="/work/technical/code-intelligence"
-              element={<CodeIntelligenceCaseStudy />}
-            />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-        <AlfredChat />
-      </div>
-    </Router>
+    <ChatProvider>
+      <Router>
+        <ScrollManager />
+        <div className="app">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/writing" element={<Writing />} />
+              <Route path="/consulting" element={<Consulting />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+
+              {/* Case study routes */}
+              <Route
+                path={NEPTUNE_CASE_STUDY_PATH}
+                element={<NeptuneCaseStudy />}
+              />
+              <Route
+                path={ALFRED_CASE_STUDY_PATH}
+                element={<AlfredCaseStudy />}
+              />
+              <Route
+                path={CODE_INTELLIGENCE_CASE_STUDY_PATH}
+                element={<CodeIntelligenceCaseStudy />}
+              />
+              <Route
+                path={PISYNC_CASE_STUDY_PATH}
+                element={<PiSyncCaseStudy />}
+              />
+            </Routes>
+          </main>
+          <Footer />
+          <AlfredChat />
+        </div>
+      </Router>
+    </ChatProvider>
   );
 }
 

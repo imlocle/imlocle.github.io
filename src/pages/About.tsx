@@ -1,112 +1,48 @@
 import { motion } from "framer-motion";
+
 import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc_headshot.jpg";
-import { useLocation } from "react-router-dom";
+import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "../data/experience";
+import CtaSection from "@/components/section/CtaSection";
 import TitleHeader from "@/components/header/TitleHeader";
-import CtaSection from "@components/section/CtaSection";
-import ButtonLink from "@components/button/ButtonLink";
-import { CALENDLY_URL } from "@utils/constants";
 
 const About = () => {
-  const { pathname } = useLocation();
-
   return (
-    <div className="page-container">
-      <TitleHeader pathname={pathname} title="About" />
+    <div className="about-container">
+      <TitleHeader
+        title="About"
+        subtitle="Backend engineer, cloud architect, and AI systems enthusiast with 8+ years building production-scale systems."
+      />
 
-      <div className="about-content">
-        <motion.div
-          className="about-image-container"
-          initial={{ x: -24, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="about-image-card">
-            <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
-            <div className="about-image-meta">
-              <div className="about-name">Loc Le</div>
-              <div className="about-role">Backend MVP Specialist</div>
-              <div className="about-location">Las Vegas • Remote</div>
-            </div>
-          </div>
-        </motion.div>
+      {/* Hero Section with Profile Card */}
+      <motion.section
+        className="about-hero"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="about-image-card">
+          <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
+          <div className="about-name">Loc Le</div>
+          <div className="about-role">Senior Software Engineer</div>
+          <div className="about-subtitle">Backend • Cloud • AI</div>
+          <div className="about-location">Las Vegas • Remote</div>
+        </div>
 
-        <motion.div
-          className="about-text"
-          initial={{ x: 24, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2>I build production-ready backends for startups</h2>
-
-          <p className="about-lead">
-            {
-              "If you're building a product and backend is slowing you down, I can ship your "
-            }
-            <strong>API + auth + database + AWS deployment</strong> fast—with
-            clean docs and a smooth handoff.
-          </p>
-
-          <div className="about-proof">
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>Speed with structure:</strong> clean architecture,
-                CI-friendly setup, no chaos.
-              </span>
-            </div>
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>AWS-focused delivery:</strong> serverless, scalable, and
-                cost-aware.
-              </span>
-            </div>
-            <div className="about-proof-item">
-              <span className="dot" />
-              <span>
-                <strong>Founder-friendly:</strong> clear scope, weekly
-                check-ins, zero fluff.
-              </span>
-            </div>
+        <div className="about-right-content">
+          <div className="about-intro">
+            <h2>Senior Software Engineer</h2>
+            <p className="about-lead">
+              8+ years building scalable backend systems, cloud infrastructure,
+              and AI platforms. Recently completed Neptune App, a production
+              SaaS platform supporting 10K+ users with serverless architecture.
+              Currently available for consulting engagements.
+            </p>
           </div>
 
-          <div className="about-ctas">
-            <ButtonLink
-              link={CALENDLY_URL}
-              text="Book a Free Build Call"
-              className="highlight-primary-button"
-              target="_blank"
-            />
-            <ButtonLink
-              link="/services#pricing"
-              text="See Pricing & Timeline"
-              className="highlight-secondary-button"
-            />
-          </div>
-
-          <div className="about-workstyle">
-            <h3>How I work</h3>
-            <ul>
-              <li>
-                <strong>Day 1:</strong>
-                {" scope lock + plan (you always know what you're getting)"}
-              </li>
-              <li>
-                <strong>Days 2-12:</strong> build + harden (API, auth, DB,
-                deploy, logging)
-              </li>
-              <li>
-                <strong>Days 13-14:</strong> docs + handoff (examples + next
-                steps)
-              </li>
-            </ul>
-          </div>
-
+          {/* Personal Story */}
           <details className="about-story">
-            <summary>My story (optional)</summary>
+            <summary>Personal Story</summary>
             <div className="about-story-body">
               <p>
                 My journey into technology began in <strong>Japan</strong>,
@@ -121,7 +57,7 @@ const About = () => {
               <p>
                 That curiosity evolved into what I call an{" "}
                 <strong>
-                  <em>“Academic Detective”</em>
+                  <em>"Academic Detective"</em>
                 </strong>
                 —driven to uncover patterns, question assumptions, and piece
                 together complex narratives. I studied{" "}
@@ -157,9 +93,205 @@ const About = () => {
               </p>
             </div>
           </details>
-        </motion.div>
-      </div>
+        </div>
+      </motion.section>
 
+      {/* Current Focus */}
+      <motion.section
+        className="about-current"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Current Focus</h3>
+        <div className="current-card">
+          <p>
+            Available for strategic consulting and architectural projects.
+            Specializing in serverless systems, AI/LLM integration, and cost
+            optimization.
+          </p>
+          <div className="current-tech">
+            Backend Architecture • Cloud Infrastructure • AI Systems • System
+            Optimization
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Expertise */}
+      <motion.section
+        className="about-expertise"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Expertise</h3>
+        <div className="expertise-grid">
+          <div className="expertise-item">
+            <strong>Backend Systems</strong>
+            <p>Python, TypeScript, REST APIs, Event-Driven Architecture</p>
+          </div>
+          <div className="expertise-item">
+            <strong>Cloud Infrastructure</strong>
+            <p>AWS Lambda, API Gateway, DynamoDB, S3, Terraform</p>
+          </div>
+          <div className="expertise-item">
+            <strong>AI/LLM Integration</strong>
+            <p>AWS Bedrock, RAG Systems, Prompt Engineering</p>
+          </div>
+          <div className="expertise-item">
+            <strong>Architecture</strong>
+            <p>Serverless, Microservices, Domain-Driven Design</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Professional Timeline */}
+      <section className="timeline-section">
+        <h2 className="section-title">Professional Timeline</h2>
+        <div className="timeline">
+          {EXPERIENCE.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              className="timeline-item"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="timeline-logo">
+                {exp.logo ? (
+                  <img src={exp.logo} alt={exp.company} />
+                ) : (
+                  <span>💼</span>
+                )}
+              </div>
+              <div className="timeline-content">
+                <div className="timeline-header">
+                  <div>
+                    <h3 className="timeline-company">{exp.company}</h3>
+                    <p className="timeline-role">{exp.role}</p>
+                  </div>
+                  <span className="timeline-period">{exp.period}</span>
+                </div>
+                <p className="timeline-description">{exp.description}</p>
+                <ul className="timeline-achievements">
+                  {exp.achievements.slice(0, 3).map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+                <div className="timeline-tech">
+                  {exp.techStack.slice(0, 6).map((tech, i) => (
+                    <span key={i} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Technical Skills */}
+      <section className="skills-section">
+        <h2 className="section-title">Technical Skills</h2>
+        <div className="skills-grid">
+          <div className="skill-category">
+            <h3>Languages</h3>
+            <div className="skill-level">
+              <strong>Expert:</strong> {SKILLS.languages.expert.join(", ")}
+            </div>
+            <div className="skill-level">
+              <strong>Proficient:</strong>{" "}
+              {SKILLS.languages.proficient.join(", ")}
+            </div>
+            <div className="skill-level">
+              <strong>Familiar:</strong> {SKILLS.languages.familiar.join(", ")}
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>Backend & APIs</h3>
+            <div className="skill-tags">
+              {SKILLS.backend.frameworks.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="skill-tags">
+              {SKILLS.backend.patterns.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>Cloud & Infrastructure</h3>
+            <div className="skill-tags">
+              {SKILLS.cloud.aws.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="skill-tags">
+              {SKILLS.cloud.iac.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>AI & Data</h3>
+            <div className="skill-tags">
+              {SKILLS.ai.llms.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="skill-tags">
+              {SKILLS.ai.rag.map((item, i) => (
+                <span key={i} className="skill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Languages */}
+      <section className="additional-section">
+        <div className="additional-grid">
+          <div className="additional-card">
+            <h3>Education</h3>
+            <p>
+              <strong>{EDUCATION.degree}</strong>
+            </p>
+            <p>{EDUCATION.school}</p>
+            <p className="year">{EDUCATION.year}</p>
+          </div>
+
+          <div className="additional-card">
+            <h3>Languages</h3>
+            {LANGUAGES.map((lang, i) => (
+              <p key={i}>
+                <strong>{lang.language}:</strong> {lang.proficiency}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <CtaSection />
     </div>
   );

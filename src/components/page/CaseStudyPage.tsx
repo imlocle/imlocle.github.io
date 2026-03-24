@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 import "@styles/components/page/CaseStudyPage.css";
 import TitleHeader from "@/components/header/TitleHeader";
 import CtaSection from "@components/section/CtaSection";
@@ -12,20 +10,21 @@ import type { CaseStudyConfig } from "@models/caseStudy";
 type CaseStudyPageProps = {
   config: CaseStudyConfig;
   children?: React.ReactNode;
+  onTryLive?: () => void;
 };
 
-const CaseStudyPage = ({ config, children }: CaseStudyPageProps) => {
-  const { pathname } = useLocation();
-
+const CaseStudyPage = ({ config, children, onTryLive }: CaseStudyPageProps) => {
   return (
     <div className="page-container">
-      <TitleHeader pathname={pathname} title={config.pageTitle} />
+      <TitleHeader title={config.pageTitle} subtitle={config.pageSubtitle} />
 
       <CaseStudyHeader
         topline={config.heroTopline}
         title={config.heroTitle}
         subtitle={config.heroSubtitle}
         stats={config.stats}
+        projectLinks={config.projectLinks}
+        onTryLive={onTryLive}
       />
 
       <div className="case-grid">

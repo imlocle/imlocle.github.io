@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "@styles/components/page/Footer.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
+import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
+import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
+import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,8 +17,8 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 className="footer-title">Loc Le</h3>
             <p className="footer-description">
-              Backend cloud + AI engineering for startups — fast MVPs, reliable
-              infrastructure, clean handoff.
+              Senior Backend Engineer specializing in cloud infrastructure,
+              serverless architectures, and AI platform development.
             </p>
           </div>
 
@@ -23,11 +26,17 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <div className="footer-links">
+              <Link to="/work" className="footer-link">
+                Work
+              </Link>
+              <Link to="/writing" className="footer-link">
+                Writing
+              </Link>
+              <Link to="/consulting" className="footer-link">
+                Consulting
+              </Link>
               <Link to="/about" className="footer-link">
                 About
-              </Link>
-              <Link to="/services" className="footer-link">
-                Services
               </Link>
               <Link to="/contact" className="footer-link">
                 Contact
@@ -35,15 +44,21 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Work */}
+          {/* Featured Projects */}
           <div className="footer-section">
-            <h3 className="footer-title">Work</h3>
+            <h3 className="footer-title">Featured Projects</h3>
             <div className="footer-links">
-              <Link to="/work/client" className="footer-link">
-                Client Projects
+              <Link to={ALFRED_CASE_STUDY_PATH} className="footer-link">
+                Alfred AI Assistant
               </Link>
-              <Link to="/work/technical" className="footer-link">
-                Technical Projects
+              <Link to={NEPTUNE_CASE_STUDY_PATH} className="footer-link">
+                Neptune App
+              </Link>
+              <Link
+                to={CODE_INTELLIGENCE_CASE_STUDY_PATH}
+                className="footer-link"
+              >
+                Code Intelligence
               </Link>
             </div>
           </div>

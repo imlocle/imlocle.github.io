@@ -13,7 +13,7 @@ export const ALFRED_GREETINGS = [
 ];
 
 export const ALFRED_TITLE = "Alfred — AI Assistant Platform";
-export const ALFRED_CASE_STUDY_PATH = "/work/technical/alfred";
+export const ALFRED_CASE_STUDY_PATH = "/work/case-study/alfred";
 
 export const ALFRED_TECHNOLOGIES = [
   "AWS Bedrock",
@@ -21,6 +21,7 @@ export const ALFRED_TECHNOLOGIES = [
   "Python",
   "AWS Lambda",
   "API Gateway",
+  "RAG",
   "DynamoDB",
   "Terraform",
   "Prompt Engineering",
@@ -53,6 +54,8 @@ export const ALFRED_PREVIEW_CARD: PreviewCardData = {
 
 export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${ALFRED_TITLE}: Case Study`,
+  pageSubtitle:
+    "Production-ready LLM system with strict guardrails, cost optimization, and serverless infrastructure.",
 
   heroTopline: "Technical Project • LLM Systems Engineering",
   heroTitle: "Alfred — Building a Constrained LLM System in Production",
@@ -138,6 +141,11 @@ export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   ],
 
   technologies: ALFRED_TECHNOLOGIES,
+
+  projectLinks: {
+    github: "https://github.com/imlocle/alfred-ai-assistant",
+    live: "https://imlocle.com?chat=true",
+  },
 
   nextStepsBody:
     "Introduce streaming responses, via Bedrock's Invoke Model with Response Stream, for better chat UX, add multi-model routing, enhance observability, and optionally enable Anthropic support to compare LLM behavior under identical guardrails.",

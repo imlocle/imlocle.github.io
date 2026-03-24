@@ -23,14 +23,6 @@ export type MainCardData = {
   target?: "_blank" | "_self";
 };
 
-export type PricingCardData = {
-  title: string;
-  price: string;
-  bestFor: string;
-  details: string[];
-  isFeatured?: boolean;
-};
-
 export type CompanyCardData = {
   alt: string;
   imageLogo: string;

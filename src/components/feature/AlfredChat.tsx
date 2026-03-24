@@ -6,6 +6,7 @@ import "@styles/components/feature/AlfredChat.css";
 import alfredLogo from "@assets/alfred-logo.png";
 import { VITE_API_URL } from "@config/config";
 import { ALFRED_GREETINGS } from "@data/alfred";
+import { useChat } from "@context/ChatContext";
 
 interface Message {
   role: "user" | "assistant";
@@ -13,7 +14,7 @@ interface Message {
 }
 
 const AlfredChat: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggleChat } = useChat();
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -46,8 +47,6 @@ const AlfredChat: React.FC = () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  const toggleChat = () => setIsOpen(prev => !prev);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -98,9 +97,9 @@ const AlfredChat: React.FC = () => {
           className="chat-toggle"
           onClick={toggleChat}
           aria-label="Open chat with Alfred"
+          title="Chat with Alfred"
         >
-          <img className="chat-toggle-logo" src={alfredLogo} alt="Alfred" />
-          Chat with Alfred
+          <img className="chat-toggle-logo" src={alfredLogo} alt="" />
         </button>
       )}
 

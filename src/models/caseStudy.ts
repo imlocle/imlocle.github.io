@@ -11,8 +11,15 @@ export type CaseStudySection = {
   highlights?: string[];
 };
 
+export type ProjectLink = {
+  github?: string;
+  live?: string;
+  download?: string;
+};
+
 export type CaseStudyConfig = {
   pageTitle: string;
+  pageSubtitle: string;
   heroTopline: string;
   heroTitle: string;
   heroSubtitle: string;
@@ -21,6 +28,7 @@ export type CaseStudyConfig = {
 
   technologies: string[];
   nextStepsBody: string;
+  projectLinks?: ProjectLink;
 
   showCta?: boolean;
 };

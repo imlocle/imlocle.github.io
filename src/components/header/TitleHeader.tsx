@@ -3,33 +3,21 @@ import "@styles/components/header/TitleHeader.css";
 
 type TitleHeaderProps = {
   title: string;
-  pathname: string;
+  subtitle: string;
 };
 
-const TitleHeader = ({ pathname, title }: TitleHeaderProps) => {
+const TitleHeader = ({ title, subtitle }: TitleHeaderProps) => {
   return (
-    <motion.div
-      key={pathname}
-      className="title-header"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      <motion.h1
-        className="title"
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-      >
-        {title}
-      </motion.h1>
+    <section className="header-hero">
       <motion.div
-        className="title-underline"
-        initial={{ width: 0 }}
-        animate={{ width: "80px" }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-      />
-    </motion.div>
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="header-title">{title}</h1>
+        <p className="header-subtitle">{subtitle}</p>
+      </motion.div>
+    </section>
   );
 };
 

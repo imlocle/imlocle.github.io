@@ -104,13 +104,6 @@ const ContactForm = () => {
       initial={{ x: 50, opacity: 0 }}
       transition={{ delay: 0.3, duration: 0.8 }}
     >
-      <h2 className="contact-title">Send a quick message</h2>
-      <p className="card-description">
-        {
-          "Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
-        }
-      </p>
-
       {submitSuccess ? (
         <div className="success-message">
           <p>{"Thank you for your message! I'll get back to you soon."}</p>

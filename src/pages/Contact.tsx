@@ -10,7 +10,7 @@ import TitleHeader from "@/components/header/TitleHeader";
 import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
-  const { pathname, hash } = useLocation();
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (!hash) return;
@@ -26,7 +26,10 @@ const Contact = () => {
 
   return (
     <div id="contact" className="page-container">
-      <TitleHeader pathname={pathname} title="Book a Free Build Call" />
+      <TitleHeader
+        title="Contact"
+        subtitle="Let's discuss your backend, cloud, or AI project. Book a call or send a message!"
+      />
 
       <div className="contact-grid">
         <motion.section
@@ -98,10 +101,10 @@ const Contact = () => {
 
         {/* Right column: make it a true card too so both columns align */}
         <section id="message" className="contact-card contact-card--form">
-          <h2 className="contact-card-title">Send a quick message</h2>
+          <h2 className="contact-card-title">Tell me about your project</h2>
           <p className="contact-card-subtitle">
             {
-              "Tell me what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
+              "Share what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
             }
           </p>
           <ContactForm />

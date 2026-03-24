@@ -1,4 +1,4 @@
-import CaseStudyPage from "@components/page/CaseStudPagey";
+import CaseStudyPage from "@/components/page/CaseStudyPage";
 import { NEPTUNE_CASE_STUDY_CONFIG } from "@data/neptune";
 
 const NeptuneCaseStudy = () => (

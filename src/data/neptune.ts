@@ -1,143 +1,171 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import neptuneLogo from "@assets/neptune-logo.svg";
-import neptuneLogo2 from "@assets/neptune-logo2.png";
 import type {
-  CompanyCardData,
   MainCardData,
   PreviewCardData,
+  CompanyCardData,
 } from "@models/card";
+import neptuneLogo from "@assets/neptune-logo.svg";
 
-export const NEPTUNE_TITLE = "Neptune — Video Social Platform";
-export const NEPTUNE_CASE_STUDY_PATH = "/work/client/neptune";
+export const NEPTUNE_TITLE = "Neptune App — Cloud-Native SaaS Platform";
+export const NEPTUNE_CASE_STUDY_PATH = "/work/case-study/neptune";
 
 export const NEPTUNE_TECHNOLOGIES = [
-  "AWS SAM",
   "TypeScript",
-  "Cognito",
+  "Python 3.13",
+  "Node.js 20.x",
+  "AWS Lambda",
+  "API Gateway",
   "DynamoDB",
-  "SQS",
   "S3",
-  "AWS Rekognition",
-  "Terraform",
-  "Python",
-  "Parquet",
-  "Athena",
   "CloudWatch",
-  "Cloudflare",
+  "AWS SAM",
+  "Terraform",
+  "AWS Bedrock",
+  "Nova Lite",
+  "Rekognition",
+  "Cognito",
+  "PyArrow",
+  "Serverless Architecture",
+  "Event-Driven Design",
+  "Analytics Pipelines",
 ];
 
 export const NEPTUNE_MAIN_CARD: MainCardData = {
   id: "neptune",
   title: NEPTUNE_TITLE,
   description:
-    "Platform and backend engineering for a video-first social product—core APIs, authentication, uploads, and event tracking built to scale without constant firefighting.",
+    "Led backend architecture and delivery for a cloud-native SaaS platform supporting 10,000+ active iOS users with scalable serverless APIs, real-time data processing, analytics pipelines (Jupiter ETL), and AI chatbot integration (Moody).",
   outcomes:
-    "Delivered a production-ready foundation for real users: safer iteration with dev/prod isolation, improved reliability, and scalable workflows for high-volume uploads and activity.",
+    "Designed and delivered production-ready serverless backend that scaled to 10K+ users while maintaining high reliability and improving team delivery velocity by ~20%. Built Jupiter ETL for analytics and Moody AI chatbot using AWS Bedrock.",
+  highlights: [
+    "Architected serverless backend using TypeScript, Python, AWS Lambda, and API Gateway",
+    "Built Jupiter ETL pipeline for analytics data ingestion and Parquet generation",
+    "Implemented Moody AI chatbot using AWS Bedrock Nova Lite with knowledge base injection",
+    "Designed scalable data models and analytics pipelines for product insights",
+    "Guided team of 4 engineers through system design and technical planning",
+    "Implemented operational tooling to support AI-driven features",
+    "Translated product requirements into reliable, scalable backend systems",
+  ],
   technologies: NEPTUNE_TECHNOLOGIES,
-  image: neptuneLogo,
+  // image: neptuneLogo,
   link: NEPTUNE_CASE_STUDY_PATH,
   ctaLabel: "View Case Study",
-  appStore: "https://apps.apple.com/us/app/neptune-be-yourself/id6745182224",
   target: "_self",
 };
 
 export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
-  title: NEPTUNE_TITLE,
-  description: "Platform overhaul for a video-first app on AWS.",
-  image: neptuneLogo,
+  title: "Neptune App",
+  description:
+    "Cloud-native SaaS platform serving 10K+ users with serverless architecture.",
+  // image: neptuneLogo,
   link: NEPTUNE_CASE_STUDY_PATH,
+};
+
+export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
+  alt: "Neptune App",
+  imageLogo: neptuneLogo,
+  link: "https://www.theneptuneapp.com/",
 };
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${NEPTUNE_TITLE}: Case Study`,
+  pageSubtitle:
+    "Cloud-native SaaS platform supporting 10K+ users with serverless architecture, AI integration, and analytics pipelines.",
 
-  heroTopline: "Client Project • Platform & Backend Engineering",
-  heroTitle: "Neptune — Engineering a Scalable Social Video Platform",
+  heroTopline: "Production System • Senior Backend Lead",
+  heroTitle: "Neptune App — Building a Serverless SaaS Platform at Scale",
   heroSubtitle:
-    "Architected and delivered a production-ready platform overhaul for a video-first social app: TypeScript migration, authentication, DynamoDB modeling, async workflows, and analytics optimized for scale and cost.",
+    "Led backend architecture and delivery for a cloud-native SaaS platform supporting 10,000+ active iOS users, implementing scalable serverless APIs, event-driven systems, analytics pipelines (Jupiter ETL), and AI chatbot integration (Moody) using TypeScript, Python, and AWS.",
 
   stats: [
-    { label: "Delivery", value: "Production-ready foundation" },
-    { label: "Auth", value: "Cognito + JWT flows" },
-    { label: "Analytics", value: "DDB → Parquet → Athena" },
-    { label: "Cost", value: "Significant egress savings" }, // safer than "~90%" unless verified
+    { label: "Users", value: "10,000+ active iOS users" },
+    { label: "Architecture", value: "Serverless (Lambda + API Gateway)" },
+    { label: "Team", value: "Led 4 engineers" },
+    { label: "Components", value: "Main API + Jupiter ETL + Moody AI" },
   ],
 
   sections: [
     {
-      id: "problem",
-      title: "The Problem",
+      id: "challenge",
+      title: "The Challenge",
       description:
-        "Neptune's backend started as an early prototype: JavaScript-only, no authentication, no dev/prod environments, minimal structure, and repeated code. Scaling and safe iteration were difficult without a rebuild.",
+        "Neptune App needed a scalable, cost-effective backend to support a growing iOS user base while enabling rapid feature development and maintaining high reliability. The system needed to handle real-time data processing, analytics (Jupiter ETL), AI chatbot features (Moody), and support future AI-driven capabilities.",
     },
     {
       id: "role",
       title: "My Role",
       description:
-        "I owned backend delivery end-to-end and partnered directly with the CTO on architecture and decisions. I led implementation details: code standards, system organization, DynamoDB modeling (PK/SK/GSIs), environment strategy, and delivery.",
+        "As Senior Backend Lead, I owned the complete backend architecture and delivery, from system design to deployment and monitoring. This included the main API, Jupiter ETL pipeline, and Moody AI chatbot integration.",
       callout:
-        "Core APIs (profiles, follows, likes, comments, uploads), auth flows, infrastructure patterns, and the analytics/ETL system.",
+        "Full ownership of backend architecture, API design, data modeling, team leadership, operational tooling, and AI integration.",
     },
     {
-      id: "solution",
-      title: "The Solution",
+      id: "architecture",
+      title: "Architecture & Design",
+      description:
+        "Built a serverless-first architecture optimized for scalability, cost-efficiency, and developer velocity with three main components: Main API, Jupiter ETL, and Moody AI Chatbot.",
       highlights: [
-        "JavaScript → TypeScript migration with safer patterns",
-        "Layered architecture (handlers/controllers → services → repositories)",
-        "AWS Cognito auth (signup/confirm/login/logout) + JWT",
-        "DynamoDB redesign (models, PK/SK strategy, GSIs)",
-        "Dev & Prod environment separation via SAM configuration",
-        "Queues + async processing for scalable workflows",
-        "CloudWatch logging + improved operational visibility",
-        "Consistent token handling and encryption practices",
+        "Main API: TypeScript + Node.js 20.x + AWS Lambda + API Gateway for auto-scaling social video platform",
+        "Jupiter ETL: Python 3.13 + Lambda + Terraform for analytics data ingestion and Parquet generation",
+        "Moody AI Chatbot: Python + AWS Bedrock Nova Lite + S3 knowledge base injection",
+        "Data Layer: DynamoDB for high-performance NoSQL storage with single-table design patterns",
+        "Content Moderation: AWS Rekognition integration for automated content safety",
+        "Analytics: Event-driven pipelines for user engagement tracking and product insights",
+        "Infrastructure: AWS SAM + Terraform for infrastructure as code and reproducible deployments",
+        "Monitoring: CloudWatch for logging, metrics, and operational visibility",
       ],
     },
     {
-      id: "moderation",
-      title: "Trust & Safety — Content Moderation",
-      description:
-        "To protect the platform and its users, I implemented an automated content moderation system using AWS Rekognition.",
+      id: "technical-highlights",
+      title: "Technical Highlights",
       highlights: [
-        "Uploads scanned with AWS Rekognition for unsafe content",
-        "Flagged content triggers async processing in a separate reporting service",
-        "Violations recorded and routed into moderation workflows",
-        "Decoupled design keeps the core app responsive under load",
+        "Main API: Event-driven architecture for video processing with social features (follow, comments, votes)",
+        "Jupiter ETL: Serverless data pipeline with PyArrow for Parquet generation and multi-environment deployment",
+        "Moody AI: AWS Bedrock integration with knowledge base injection from S3, similar architecture to Alfred AI",
+        "Designed scalable backend data models and analytics pipelines to support product insights",
+        "Implemented operational tooling for monitoring, debugging, and supporting AI-driven features",
+        "Guided team of 4 engineers through system design, code reviews, and technical planning",
+        "Translated product requirements into reliable, scalable backend systems",
+        "Improved team delivery velocity by approximately 20% through better architecture and processes",
       ],
     },
     {
-      id: "etl",
-      title: "Analytics & ETL",
+      id: "challenges",
+      title: "Key Challenges & Solutions",
       description:
-        "I designed and implemented a custom ETL pipeline for user event tracking optimized for low cost and reliability. Glue crawling wasn't stable for the data shape, so I built a controlled hourly ETL job.",
+        "Building a production system at scale with multiple components requires solving complex technical and organizational challenges.",
       highlights: [
-        "DynamoDB events → S3 Parquet → Athena for SQL analytics",
-        "Scheduled pipeline with predictable schemas and output",
-        "Built for cost control and low operational overhead",
+        "Challenge: Supporting 10K+ users with cost-effective infrastructure → Solution: Serverless architecture with auto-scaling and pay-per-use pricing",
+        "Challenge: Analytics data processing at scale → Solution: Jupiter ETL with Lambda-based processing and Parquet file generation",
+        "Challenge: AI chatbot integration → Solution: Moody using AWS Bedrock Nova Lite with knowledge base injection from S3",
+        "Challenge: Rapid feature development without sacrificing reliability → Solution: Event-driven design with clear service boundaries and comprehensive testing",
+        "Challenge: Team coordination and technical alignment → Solution: Code reviews, technical planning sessions, and clear architecture documentation",
+        "Challenge: Operational visibility across multiple systems → Solution: Structured logging, CloudWatch dashboards, and operational runbooks",
       ],
     },
     {
       id: "impact",
-      title: "Impact",
+      title: "Impact & Results",
       highlights: [
-        "Production-ready backend foundation for beta + App Store workflows",
-        "Safer iteration through dev/prod environment isolation",
-        "More reliable, scalable codebase with less duplication",
-        "Major infrastructure savings through CDN strategy improvements",
-        "Automated moderation pipeline (Rekognition → reporting service) to support safe scaling",
+        "Successfully scaled to 10,000+ active iOS users with high reliability",
+        "Built Jupiter ETL pipeline for analytics data ingestion and Parquet generation",
+        "Implemented Moody AI chatbot using AWS Bedrock for enhanced user experience",
+        "Improved team delivery velocity by ~20% through better architecture and processes",
+        "Enabled product team to ship AI-driven features with backend support",
+        "Maintained cost-effective infrastructure through serverless architecture",
+        "Built foundation for future growth and feature development",
       ],
     },
   ],
 
   technologies: NEPTUNE_TECHNOLOGIES,
 
+  projectLinks: {
+    live: "https://www.theneptuneapp.com/",
+  },
+
   nextStepsBody:
-    "Add architecture diagrams, pipeline visuals, and a short “before vs after” section with measurable improvements (deploy speed, error rate, cost).",
+    "Continue scaling the platform to support growing user base, implement advanced analytics features, optimize costs through caching and query optimization, and expand AI-driven capabilities with LLM integration.",
 
   showCta: true,
-};
-
-export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
-  alt: NEPTUNE_TITLE,
-  imageLogo: neptuneLogo2,
-  link: "https://www.theneptuneapp.com/",
 };
