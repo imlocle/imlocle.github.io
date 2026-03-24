@@ -44,7 +44,7 @@
 }
 
 /* Status Badge */
-.status-badge {
+.home-container .status-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);

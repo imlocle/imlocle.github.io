@@ -5,6 +5,10 @@ import codeIntelLogo from "@assets/code-intel-platform-logo.png";
 import neptuneLogo from "@assets/neptune-logo.svg";
 import raxLogo from "@assets/rax-logo-2020.svg";
 import mdsLogo from "@assets/mds.png";
+import { ALFRED_CASE_STUDY_PATH } from "./alfred";
+import { PISYNC_CASE_STUDY_PATH } from "./pisync";
+import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "./codeIntelligence";
+import { NEPTUNE_CASE_STUDY_PATH } from "./neptune";
 
 export interface Project {
   id: string;
@@ -67,7 +71,7 @@ export const PROJECTS: Project[] = [
     links: {
       github: "https://github.com/imlocle/alfred-ai-assistant",
       live: "https://imlocle.com",
-      caseStudy: "/work/technical/alfred",
+      caseStudy: ALFRED_CASE_STUDY_PATH,
     },
     image: alfredLogo,
   },
@@ -103,7 +107,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       github: "https://github.com/imlocle/pisync",
-      caseStudy: "/work/technical/pisync",
+      caseStudy: PISYNC_CASE_STUDY_PATH,
     },
     image: pisyncLogo,
   },
@@ -141,7 +145,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       github: "https://github.com/imlocle/code-intelligence-platform",
-      caseStudy: "/work/technical/code-intelligence",
+      caseStudy: CODE_INTELLIGENCE_CASE_STUDY_PATH,
     },
     image: codeIntelLogo,
   },
@@ -187,7 +191,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       live: "https://www.theneptuneapp.com/",
-      caseStudy: "/work/client/neptune",
+      caseStudy: NEPTUNE_CASE_STUDY_PATH,
     },
     image: neptuneLogo,
   },

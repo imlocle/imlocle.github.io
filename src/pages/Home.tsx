@@ -12,6 +12,7 @@ import "@styles/pages/Home.css";
 import CtaSection from "@components/section/CtaSection";
 import alfredLogo from "@assets/alfred-logo.png";
 import { useChat } from "@context/ChatContext";
+import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
 
 const Home = () => {
   const { openChat } = useChat();
@@ -257,7 +258,7 @@ const Home = () => {
               <button onClick={openChat} className="btn-primary">
                 Try Alfred Live <FiArrowRight />
               </button>
-              <Link to="/work/technical/alfred" className="btn-secondary">
+              <Link to={ALFRED_CASE_STUDY_PATH} className="btn-secondary">
                 View Full Case Study
               </Link>
             </div>

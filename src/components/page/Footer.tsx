@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "@styles/components/page/Footer.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
+import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
+import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
+import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,14 +48,14 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Featured Projects</h3>
             <div className="footer-links">
-              <Link to="/work/technical/alfred" className="footer-link">
+              <Link to={ALFRED_CASE_STUDY_PATH} className="footer-link">
                 Alfred AI Assistant
               </Link>
-              <Link to="/work/client/neptune" className="footer-link">
+              <Link to={NEPTUNE_CASE_STUDY_PATH} className="footer-link">
                 Neptune App
               </Link>
               <Link
-                to="/work/technical/code-intelligence"
+                to={CODE_INTELLIGENCE_CASE_STUDY_PATH}
                 className="footer-link"
               >
                 Code Intelligence

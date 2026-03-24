@@ -4,7 +4,7 @@ import type { CaseStudyConfig } from "@models/caseStudy";
 
 export const CODE_INTELLIGENCE_TITLE = "Code Intelligence Platform";
 export const CODE_INTELLIGENCE_CASE_STUDY_PATH =
-  "/work/technical/code-intelligence";
+  "/work/case-study/code-intelligence";
 
 export const CODE_INTELLIGENCE_TECHNOLOGIES = [
   "Python",

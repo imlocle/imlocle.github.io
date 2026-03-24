@@ -7,7 +7,7 @@ import type {
 import neptuneLogo from "@assets/neptune-logo.svg";
 
 export const NEPTUNE_TITLE = "Neptune App — Cloud-Native SaaS Platform";
-export const NEPTUNE_CASE_STUDY_PATH = "/work/client/neptune";
+export const NEPTUNE_CASE_STUDY_PATH = "/work/case-study/neptune";
 
 export const NEPTUNE_TECHNOLOGIES = [
   "TypeScript",

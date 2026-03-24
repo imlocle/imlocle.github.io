@@ -13,7 +13,7 @@ export const ALFRED_GREETINGS = [
 ];
 
 export const ALFRED_TITLE = "Alfred — AI Assistant Platform";
-export const ALFRED_CASE_STUDY_PATH = "/work/technical/alfred";
+export const ALFRED_CASE_STUDY_PATH = "/work/case-study/alfred";
 
 export const ALFRED_TECHNOLOGIES = [
   "AWS Bedrock",

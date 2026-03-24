@@ -20,6 +20,10 @@ import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
 import { ChatProvider } from "@context/ChatContext";
+import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
+import { PISYNC_CASE_STUDY_PATH } from "@data/pisync";
+import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
+import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
 import "@/App.css";
 
 /**
@@ -71,26 +75,21 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
 
-              {/* Legacy routes - redirect to new structure */}
-              <Route path="/services" element={<Consulting />} />
-              <Route path="/work/client" element={<Work />} />
-              <Route path="/work/technical" element={<Work />} />
-
               {/* Case study routes */}
               <Route
-                path="/work/client/neptune"
+                path={NEPTUNE_CASE_STUDY_PATH}
                 element={<NeptuneCaseStudy />}
               />
               <Route
-                path="/work/technical/alfred"
+                path={ALFRED_CASE_STUDY_PATH}
                 element={<AlfredCaseStudy />}
               />
               <Route
-                path="/work/technical/code-intelligence"
+                path={CODE_INTELLIGENCE_CASE_STUDY_PATH}
                 element={<CodeIntelligenceCaseStudy />}
               />
               <Route
-                path="/work/technical/pisync"
+                path={PISYNC_CASE_STUDY_PATH}
                 element={<PiSyncCaseStudy />}
               />
             </Routes>

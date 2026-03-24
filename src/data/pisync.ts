@@ -2,7 +2,7 @@ import type { CaseStudyConfig } from "@models/caseStudy";
 import type { PreviewCardData } from "@models/card";
 
 export const PISYNC_TITLE = "PiSync — Media Transfer System";
-export const PISYNC_CASE_STUDY_PATH = "/work/technical/pisync";
+export const PISYNC_CASE_STUDY_PATH = "/work/case-study/pisync";
 
 export const PISYNC_TECHNOLOGIES = [
   "Python 3.9+",
