@@ -1,4 +1,8 @@
 // Professional experience timeline
+import neptuneLogo from "@assets/neptune-logo.svg";
+import raxLogo from "@assets/rax-logo-2020.svg";
+import mdsLogo from "@assets/mds.png";
+import wayvia from "@assets/wayvia-logo.svg";
 
 export interface Experience {
   id: string;
@@ -39,7 +43,7 @@ export const EXPERIENCE: Experience[] = [
       "AWS SAM",
       "Terraform",
     ],
-    logo: "/src/assets/neptune-logo.svg",
+    logo: neptuneLogo,
   },
   {
     id: "rackspace",
@@ -67,7 +71,7 @@ export const EXPERIENCE: Experience[] = [
       "Serverless Framework",
       "React",
     ],
-    logo: "/src/assets/rax-logo-2020.svg",
+    logo: raxLogo,
   },
   {
     id: "method",
@@ -91,7 +95,7 @@ export const EXPERIENCE: Experience[] = [
       "SQL",
       "CRM Integration",
     ],
-    logo: "/src/assets/mds.png",
+    logo: mdsLogo,
   },
   {
     id: "exsilio",
@@ -138,7 +142,7 @@ export const EXPERIENCE: Experience[] = [
       "Web Scraping",
       "Data Processing",
     ],
-    logo: "/src/assets/wayvia-logo.svg",
+    logo: wayvia,
   },
 ];
 

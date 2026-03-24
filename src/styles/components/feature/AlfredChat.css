@@ -36,9 +36,9 @@
 
 .chat-toggle:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(59, 130, 246, 0.4);
-  background: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  box-shadow: var(--shadow-glow);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .chat-toggle:active {

@@ -40,7 +40,7 @@ const Writing = () => {
 
         <div className="posts-grid">
           {posts.map((post, index) => (
-            <PostCard key={index} post={post} index={index} />
+            <PostCard key={post.link} post={post} index={index} />
           ))}
         </div>
       </section>

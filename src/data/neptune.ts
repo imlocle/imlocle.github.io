@@ -4,12 +4,10 @@ import type {
   PreviewCardData,
   CompanyCardData,
 } from "@models/card";
-
-// Note: Neptune logo to be added
-// import neptuneLogo from "@assets/neptune-logo.png";
+import neptuneLogo from "@assets/neptune-logo.svg";
 
 export const NEPTUNE_TITLE = "Neptune App — Cloud-Native SaaS Platform";
-export const NEPTUNE_CASE_STUDY_PATH = "/work/production/neptune";
+export const NEPTUNE_CASE_STUDY_PATH = "/work/client/neptune";
 
 export const NEPTUNE_TECHNOLOGIES = [
   "TypeScript",
@@ -65,7 +63,7 @@ export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
 
 export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
   alt: "Neptune App",
-  imageLogo: "", // To be added
+  imageLogo: neptuneLogo,
   link: "https://www.theneptuneapp.com/",
 };
 

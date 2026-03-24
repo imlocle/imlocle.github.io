@@ -1,4 +1,10 @@
 // Comprehensive project data for portfolio
+import alfredLogo from "@assets/alfred-logo.png";
+import pisyncLogo from "@assets/pisync_logo.png";
+import codeIntelLogo from "@assets/code-intel-platform-logo.png";
+import neptuneLogo from "@assets/neptune-logo.svg";
+import raxLogo from "@assets/rax-logo-2020.svg";
+import mdsLogo from "@assets/mds.png";
 
 export interface Project {
   id: string;
@@ -63,7 +69,7 @@ export const PROJECTS: Project[] = [
       live: "https://imlocle.com",
       caseStudy: "/work/technical/alfred",
     },
-    image: "/src/assets/alfred-logo.png",
+    image: alfredLogo,
   },
   {
     id: "pisync",
@@ -99,7 +105,7 @@ export const PROJECTS: Project[] = [
       github: "https://github.com/imlocle/pisync",
       caseStudy: "/work/technical/pisync",
     },
-    image: "/src/assets/pisync_logo.png",
+    image: pisyncLogo,
   },
   {
     id: "code-intelligence-platform",
@@ -137,7 +143,7 @@ export const PROJECTS: Project[] = [
       github: "https://github.com/imlocle/code-intelligence-platform",
       caseStudy: "/work/technical/code-intelligence",
     },
-    image: "/src/assets/code-intel-platform-logo.png",
+    image: codeIntelLogo,
   },
   {
     id: "neptune-app",
@@ -183,7 +189,7 @@ export const PROJECTS: Project[] = [
       live: "https://www.theneptuneapp.com/",
       caseStudy: "/work/client/neptune",
     },
-    image: "/src/assets/neptune-logo.svg",
+    image: neptuneLogo,
   },
 
   // TIER 2: PERSONAL OPEN SOURCE PROJECTS
@@ -222,7 +228,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       github: "https://github.com/imlocle/self-growth-backend",
-      docs: "/Users/locle/Desktop/coding/github/self-growth-backend/docs",
+      docs: "https://github.com/imlocle/self-growth-backend#readme",
     },
   },
 
@@ -258,7 +264,7 @@ export const PROJECTS: Project[] = [
       "Production deployment at enterprise scale",
       "Cost optimization strategies",
     ],
-    image: "/src/assets/rax-logo-2020.svg",
+    image: raxLogo,
   },
   {
     id: "method-data-science-ml-platform",
@@ -291,7 +297,7 @@ export const PROJECTS: Project[] = [
       "ETL pipeline development",
       "Production ML deployment",
     ],
-    image: "/src/assets/mds.png",
+    image: mdsLogo,
   },
 ];
 
