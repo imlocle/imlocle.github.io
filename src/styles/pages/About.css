@@ -475,9 +475,6 @@
   color: var(--text-tertiary);
 }
 
-/* CTA Styling is now centralized in CtaSection.css */
-
-/* Responsive */
 @media (max-width: 768px) {
   .about-container {
     padding: var(--space-xl) var(--space-md);
@@ -490,18 +487,8 @@
 
   .about-image-card {
     position: static;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  .about-hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-image-card {
-    max-width: 200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
 
   .timeline-item {

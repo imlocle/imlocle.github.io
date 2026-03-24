@@ -1,7 +1,7 @@
 .contact-cta-section {
   max-width: 1400px;
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg);
+  margin: 0 auto var(--space-2xl);
+  padding: 0;
 }
 
 .contact-cta-card {
@@ -57,13 +57,34 @@
   margin-top: var(--space-md);
 }
 
+/* Home page specific - desktop */
+#contact-cta {
+  padding: var(--space-2xl) var(--space-lg);
+  margin: 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .contact-cta-section {
+    padding: 0;
+    margin: var(--space-2xl) 0;
+  }
+
   .contact-cta-card {
     padding: var(--space-xl) var(--space-md);
   }
 
   .cta-title {
     font-size: var(--text-2xl);
+  }
+
+  /* Home page specific - align with home-container padding and add top spacing */
+  #contact-cta {
+    padding: var(--space-2xl) var(--space-md) 0;
+    margin: 0;
+  }
+
+  #contact-cta .contact-cta-card {
+    padding: var(--space-xl) var(--space-md);
   }
 }
