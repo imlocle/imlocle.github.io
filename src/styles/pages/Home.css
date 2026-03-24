@@ -745,7 +745,7 @@
 }
 
 .story-text .btn-secondary {
-  align-self: flex-start;
+  align-self: center;
   margin-top: var(--space-md);
 }
 

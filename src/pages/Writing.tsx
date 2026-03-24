@@ -49,6 +49,10 @@ const Writing = () => {
         <h2 className="section-title">Topics I Write About</h2>
         <div className="topics-grid">
           <TopicCard
+            title="Software Engineering"
+            description="Production systems, technical decisions, and what actually matters in real-world development"
+          />
+          <TopicCard
             title="Career & Job Search"
             description="Reflections on interviews, job searching, and the gap between evaluation and real engineering work"
           />
@@ -57,20 +61,8 @@ const Writing = () => {
             description="Managing ADHD, building systems for focus, and turning challenges into momentum"
           />
           <TopicCard
-            title="Software Engineering"
-            description="Production systems, technical decisions, and what actually matters in real-world development"
-          />
-          <TopicCard
-            title="Philosophy & Society"
-            description="Thoughts on innovation, optimization, technology's direction, and what we're building toward"
-          />
-          <TopicCard
             title="Learning & Adaptation"
             description="How to learn effectively, turn failures into systems, and prepare for what matters"
-          />
-          <TopicCard
-            title="Mental Health & Mindfulness"
-            description="Movement, meditation, discipline, and finding clarity when overthinking takes control"
           />
         </div>
       </section>
