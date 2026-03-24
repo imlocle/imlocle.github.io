@@ -2,18 +2,9 @@ import { motion } from "framer-motion";
 import { FiExternalLink, FiCalendar } from "react-icons/fi";
 
 import mediumPosts from "../data/medium-posts.json";
+import type { MediumPost } from "@models/medium";
 import "@styles/pages/Writing.css";
 import TitleHeader from "@/components/header/TitleHeader";
-
-interface MediumPost {
-  title: string;
-  link: string;
-  pubDate: string;
-  subtitle: string | null;
-  description: string;
-  image: string | null;
-  categories: string[];
-}
 
 const Writing = () => {
   const posts = mediumPosts as MediumPost[];

@@ -97,6 +97,16 @@ async function run() {
 }
 
 run().catch((e) => {
-  console.error(e);
+  // Fail-soft: if the file already exists, just warn and continue
+  // This allows builds to succeed when Medium RSS is unavailable
+  if (fs.existsSync(OUT_PATH)) {
+    console.warn(`⚠ Failed to fetch Medium posts: ${e.message}`);
+    console.warn(`⚠ Using last committed posts from ${OUT_PATH}`);
+    process.exit(0);
+  }
+
+  // If file doesn't exist yet, this is a genuine error
+  console.error(`✗ Failed to fetch Medium posts: ${e.message}`);
+  console.error(`✗ No fallback ${OUT_PATH} available`);
   process.exit(1);
 });

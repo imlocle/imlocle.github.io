@@ -14,7 +14,7 @@
   margin: 0 auto var(--space-2xl);
 }
 
-.section-title {
+.work-container .section-title {
   font-size: var(--text-3xl);
   font-weight: 600;
   margin-bottom: var(--space-xl);

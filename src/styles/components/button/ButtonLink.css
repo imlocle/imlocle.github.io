@@ -28,7 +28,6 @@
 }
 
 /* Default primary */
-.btn-primary,
 .primary-button,
 .highlight-primary-button {
   background: var(--accent-primary);
@@ -36,7 +35,6 @@
 }
 
 /* Secondary */
-.btn-secondary,
 .highlight-secondary-button {
   background: var(--accent-primary);
   color: white;
@@ -51,14 +49,12 @@
   transform: translateY(-1px);
 }
 
-.btn-primary:hover,
 .primary-button:hover,
 .highlight-primary-button:hover {
   background: var(--accent-hover);
   box-shadow: var(--shadow-glow);
 }
 
-.btn-secondary:hover,
 .highlight-secondary-button:hover {
   background: var(--accent-hover);
   box-shadow: var(--shadow-glow);
