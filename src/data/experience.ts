@@ -177,7 +177,7 @@ export const SKILLS = {
 export const EDUCATION = {
   degree: "Bachelor of Arts, History",
   school: "University of California, Santa Cruz",
-  year: "2017",
+  year: "2012",
 };
 
 export const LANGUAGES = [

@@ -21,7 +21,7 @@ const Writing = () => {
   return (
     <div className="writing-container">
       <TitleHeader
-        title="Technical Writing"
+        title="Writing"
         subtitle="Thoughts on system architecture, cloud infrastructure, AI engineering, and lessons learned from building production systems."
       />
 

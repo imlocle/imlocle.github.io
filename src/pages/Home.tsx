@@ -95,9 +95,10 @@ const Home = () => {
           >
             <span className="tech-pill">Python</span>
             <span className="tech-pill">TypeScript</span>
-            <span className="tech-pill">AWS Lambda</span>
+            <span className="tech-pill">AWS</span>
+            <span className="tech-pill">Lambda</span>
             <span className="tech-pill">DynamoDB</span>
-            <span className="tech-pill">Terraform</span>
+            <span className="tech-pill">IaC</span>
             <span className="tech-pill">AI/LLM</span>
           </motion.div>
         </div>

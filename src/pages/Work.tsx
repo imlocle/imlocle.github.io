@@ -23,7 +23,7 @@ const Work = () => {
   return (
     <div className="work-container">
       <TitleHeader
-        title="Technical Work"
+        title="Work"
         subtitle="Production systems, open source projects, and client work spanning backend architecture, cloud infrastructure, and AI platforms."
       />
 
