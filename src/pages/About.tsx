@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 import "@styles/pages/About.css";
-import profilePhoto from "@assets/loc_headshot.jpg";
-import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "../data/experience";
+import profilePhoto from "@assets/loc-headshot.jpg";
+import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "@data/experience";
 import CtaSection from "@/components/section/CtaSection";
 import TitleHeader from "@/components/header/TitleHeader";
 
@@ -34,7 +34,8 @@ const About = () => {
             <h2>Senior Software Engineer</h2>
             <p className="about-lead">
               8+ years building scalable backend systems, cloud infrastructure,
-              and AI platforms. Recently completed Neptune App, a production
+              and AI platforms. Recently built microservices for Envia, a family
+              communication platform, and completed Neptune App, a production
               SaaS platform supporting 10K+ users with serverless architecture.
               Currently available for consulting engagements.
             </p>

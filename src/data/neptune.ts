@@ -64,7 +64,7 @@ export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
 export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
   alt: "Neptune App",
   imageLogo: neptuneLogo,
-  link: "https://www.theneptuneapp.com/",
+  link: "https://www.linkedin.com/company/theneptuneapp/",
 };
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
@@ -160,9 +160,7 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
 
   technologies: NEPTUNE_TECHNOLOGIES,
 
-  projectLinks: {
-    live: "https://www.theneptuneapp.com/",
-  },
+  projectLinks: {},
 
   nextStepsBody:
     "Continue scaling the platform to support growing user base, implement advanced analytics features, optimize costs through caching and query optimization, and expand AI-driven capabilities with LLM integration.",

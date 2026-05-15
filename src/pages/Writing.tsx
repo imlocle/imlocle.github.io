@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FiExternalLink, FiCalendar } from "react-icons/fi";
 
-import mediumPosts from "../data/medium-posts.json";
+import mediumPosts from "@data/medium-posts.json";
 import type { MediumPost } from "@models/medium";
 import "@styles/pages/Writing.css";
 import TitleHeader from "@/components/header/TitleHeader";

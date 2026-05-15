@@ -1,8 +1,10 @@
 // Professional experience timeline
+import enviaLogo from "@assets/envia-logo.jpeg";
 import neptuneLogo from "@assets/neptune-logo.svg";
 import raxLogo from "@assets/rax-logo-2020.svg";
 import mdsLogo from "@assets/mds.png";
 import wayvia from "@assets/wayvia-logo.svg";
+import exsilioLogo from "@assets/exsilio-logo.jpeg";
 
 export interface Experience {
   id: string;
@@ -18,10 +20,38 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: "envia",
+    company: "Envia",
+    role: "Senior Software Engineer (Backend Lead)",
+    period: "Feb 2026 - May 2026",
+    location: "Remote",
+    description:
+      "Restructured and built core backend services for a family communication platform across 7 serverless microservices",
+    achievements: [
+      "Restructured user-api, Ingest, OAuth Forge, custom authorizer, and invitation processing into clean layered architectures",
+      "Designed and implemented Notification Scheduler Sender from scratch (12 Lambda functions, 6 DynamoDB tables, AI nudges)",
+      "Built media processing infrastructure with S3, CloudFront CDN, and presigned URL uploads",
+      "Established event-driven patterns with SQS FIFO queues across all services",
+      "Delivered 80+ Lambda functions across 7 production microservices",
+    ],
+    techStack: [
+      "Python",
+      "TypeScript",
+      "Node.js",
+      "Lambda",
+      "DynamoDB",
+      "MariaDB",
+      "SQS",
+      "Step Functions",
+      "Terraform",
+    ],
+    logo: enviaLogo,
+  },
+  {
     id: "neptune",
     company: "Neptune App",
     role: "Senior Software Engineer (Backend Lead)",
-    period: "2024 - 2026",
+    period: "Nov 2024 - Jan 2026",
     location: "Remote",
     description:
       "Leading backend development for cloud-native SaaS platform supporting 10K+ iOS users",
@@ -49,7 +79,7 @@ export const EXPERIENCE: Experience[] = [
     id: "rackspace",
     company: "Rackspace Technology",
     role: "Software Engineer (Cloud & Backend Systems)",
-    period: "2021 - 2024",
+    period: "Feb 2021 - Nov 2024",
     location: "Remote",
     description: "Built cloud-native backend systems and AI-powered solutions",
     achievements: [
@@ -77,7 +107,7 @@ export const EXPERIENCE: Experience[] = [
     id: "method",
     company: "Method Data Science",
     role: "Software Engineer",
-    period: "2020 - 2021",
+    period: "Mar 2020 - Jan 2021",
     location: "Remote",
     description: "Developed ML pipelines and data infrastructure",
     achievements: [
@@ -101,7 +131,7 @@ export const EXPERIENCE: Experience[] = [
     id: "exsilio",
     company: "Exsilio Solutions",
     role: "Application Developer",
-    period: "2019 - 2020",
+    period: "Apr 2019 - Mar 2020",
     location: "Irvine, CA",
     description: "Built enterprise backend services and integrations",
     achievements: [
@@ -117,12 +147,13 @@ export const EXPERIENCE: Experience[] = [
       "REST APIs",
       "Enterprise Integration",
     ],
+    logo: exsilioLogo,
   },
   {
     id: "wayvia",
     company: "Wayvia (formerly PriceSpider)",
     role: "Software Developer",
-    period: "2017 - 2019",
+    period: "Jan 2017 - Apr 2019",
     location: "Irvine, CA",
     description: "Developed e-commerce monitoring and analytics systems",
     achievements: [

@@ -18,13 +18,13 @@ const Consulting = () => {
           <div className="status-indicator">
             <span className="status-dot active" />
             <span className="status-text">
-              Available: Taking on new projects Q1 2026+
+              Available: Taking on new projects Q2 2026+
             </span>
           </div>
           <div className="status-indicator">
             <span className="status-dot" />
             <span className="status-text">
-              Recent: Neptune App backend (completed Jan 2026)
+              Recent: Envia platform backend (completed May 2026)
             </span>
           </div>
         </div>

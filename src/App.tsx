@@ -15,15 +15,17 @@ import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
-import PiSyncCaseStudy from "@pages/work/caseStudies/PiSyncCaseStudy";
+import ShuttleCaseStudy from "@pages/work/caseStudies/ShuttleCaseStudy";
+import EnviaCaseStudy from "@pages/work/caseStudies/EnviaCaseStudy";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
 import { ChatProvider } from "@context/ChatContext";
 import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
-import { PISYNC_CASE_STUDY_PATH } from "@data/pisync";
+import { SHUTTLE_CASE_STUDY_PATH } from "@data/shuttle";
 import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
 import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
+import { ENVIA_CASE_STUDY_PATH } from "@data/envia";
 import "@/App.css";
 
 /**
@@ -89,8 +91,12 @@ function App() {
                 element={<CodeIntelligenceCaseStudy />}
               />
               <Route
-                path={PISYNC_CASE_STUDY_PATH}
-                element={<PiSyncCaseStudy />}
+                path={SHUTTLE_CASE_STUDY_PATH}
+                element={<ShuttleCaseStudy />}
+              />
+              <Route
+                path={ENVIA_CASE_STUDY_PATH}
+                element={<EnviaCaseStudy />}
               />
             </Routes>
           </main>

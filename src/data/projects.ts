@@ -1,14 +1,16 @@
 // Comprehensive project data for portfolio
 import alfredLogo from "@assets/alfred-logo.png";
-import pisyncLogo from "@assets/pisync_logo.png";
+import shuttleLogo from "@assets/shuttle-logo.png";
 import codeIntelLogo from "@assets/code-intel-platform-logo.png";
 import neptuneLogo from "@assets/neptune-logo.svg";
+import enviaLogo from "@assets/envia-logo.jpeg";
 import raxLogo from "@assets/rax-logo-2020.svg";
 import mdsLogo from "@assets/mds.png";
 import { ALFRED_CASE_STUDY_PATH } from "./alfred";
-import { PISYNC_CASE_STUDY_PATH } from "./pisync";
+import { SHUTTLE_CASE_STUDY_PATH } from "./shuttle";
 import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "./codeIntelligence";
 import { NEPTUNE_CASE_STUDY_PATH } from "./neptune";
+import { ENVIA_CASE_STUDY_PATH } from "./envia";
 
 export interface Project {
   id: string;
@@ -16,7 +18,6 @@ export interface Project {
   tagline: string;
   description: string;
   role?: string;
-  period?: string;
   category: "production" | "opensource" | "client";
   featured: boolean;
   metrics?: string[];
@@ -76,40 +77,40 @@ export const PROJECTS: Project[] = [
     image: alfredLogo,
   },
   {
-    id: "pisync",
-    name: "PiSync",
-    tagline: "Automated media transfer system for macOS to Raspberry Pi",
+    id: "shuttle",
+    name: "Shuttle",
+    tagline: "A file manager for Mac that sends files to connected devices",
     description:
-      "Modern desktop application with PySide6 featuring automatic file monitoring, dual-pane explorers, drag & drop support, and real-time activity logging. Clean architecture with protocol-based design.",
+      "Native macOS desktop application for transferring files to SSH servers, Raspberry Pis, Android phones, tablets, and VR headsets through a clean drag-and-drop interface. Features a remote file explorer, transfer queue with progress tracking, and multi-device management.",
     category: "opensource",
     featured: true,
     status: "ongoing",
     metrics: [
       "Desktop GUI application",
-      "Thread-safe transfers",
-      "Clean architecture",
+      "SSH/SFTP + ADB support",
+      "Multi-device management",
     ],
     techStack: [
-      "Python 3.9+",
+      "Python 3.11+",
       "PySide6",
       "Paramiko (SSH/SFTP)",
-      "Watchdog",
+      "ADB",
       "Pydantic",
       "PyInstaller",
     ],
     highlights: [
-      "Layered architecture (Presentation → Application → Domain → Infrastructure)",
-      "Protocol-based design for testability",
-      "Automatic file monitoring with stability checking",
-      "Modern dark theme UI with real-time progress",
-      "SSH key-based authentication",
-      "Settings management with auto-migration",
+      "Remote file explorer with drag-and-drop uploads from Finder",
+      "Transfer queue with per-file speed, ETA, and progress tracking",
+      "Android USB support via ADB — no MTP needed",
+      "Multi-server profiles with default auto-connect",
+      "Keyboard shortcuts for power-user workflows",
+      "Auto-cleanup: move local files to trash after upload",
     ],
     links: {
-      github: "https://github.com/imlocle/pisync",
-      caseStudy: PISYNC_CASE_STUDY_PATH,
+      github: "https://github.com/imlocle/shuttle",
+      caseStudy: SHUTTLE_CASE_STUDY_PATH,
     },
-    image: pisyncLogo,
+    image: shuttleLogo,
   },
   {
     id: "code-intelligence-platform",
@@ -156,7 +157,6 @@ export const PROJECTS: Project[] = [
     description:
       "Cloud-native SaaS platform supporting 10K+ iOS users with scalable APIs, real-time data, and analytics. Event-driven architecture with content moderation, social features, ETL pipelines (Jupiter), and AI chatbot integration (Moody). Backend completed January 2026 with app live on iOS.",
     role: "Senior Software Engineer (Backend Lead)",
-    period: "2024 - 2026",
     category: "production",
     featured: true,
     status: "completed",
@@ -190,10 +190,52 @@ export const PROJECTS: Project[] = [
       "Improved delivery velocity by ~20%",
     ],
     links: {
-      live: "https://www.theneptuneapp.com/",
       caseStudy: NEPTUNE_CASE_STUDY_PATH,
     },
     image: neptuneLogo,
+  },
+  {
+    id: "envia",
+    name: "Envia",
+    tagline: "Serverless microservices for family communication platform",
+    description:
+      "Restructured and built core backend services across 7 microservices for a family communication platform. Designed notification scheduling with AI nudges, media processing infrastructure, multi-provider OAuth management, and invitation delivery systems.",
+    role: "Senior Software Engineer (Backend Lead)",
+    category: "production",
+    featured: true,
+    status: "completed",
+    metrics: [
+      "7 microservices",
+      "80+ Lambda functions",
+      "Event-driven architecture",
+      "AI-powered notifications",
+    ],
+    techStack: [
+      "Python 3.13",
+      "TypeScript",
+      "Node.js",
+      "AWS Lambda",
+      "DynamoDB",
+      "MariaDB",
+      "SQS FIFO",
+      "Step Functions",
+      "CloudFront",
+      "Terraform",
+      "Bedrock",
+    ],
+    highlights: [
+      "Restructured 5 legacy services into clean layered architectures",
+      "Designed Notification Scheduler Sender from scratch (15 notification types, AI nudges)",
+      "Built media processing with S3 + CloudFront CDN",
+      "Implemented event-driven communication with SQS FIFO across all services",
+      "Multi-provider OAuth (Gmail, Microsoft, Auth0, Apple) with auto-refresh",
+      "Invitation delivery via Step Functions orchestration",
+    ],
+    links: {
+      live: "https://enviatogether.com/",
+      caseStudy: ENVIA_CASE_STUDY_PATH,
+    },
+    image: enviaLogo,
   },
 
   // TIER 2: PERSONAL OPEN SOURCE PROJECTS
@@ -244,7 +286,6 @@ export const PROJECTS: Project[] = [
     description:
       "Client project developed while working at Rackspace Technology. Built production AI chatbot using AWS Bedrock and prompt engineering. Achieved significant performance improvements and cost optimization.",
     role: "Software Engineer (Cloud & Backend Systems)",
-    period: "2021 - 2024",
     category: "client",
     featured: true,
     status: "completed",
@@ -277,7 +318,6 @@ export const PROJECTS: Project[] = [
     description:
       "Client project developed while working at Method Data Science. Built machine learning pipelines for pricing optimization generating $100K+ revenue. Implemented data pipelines and CRM migration improving productivity by 27%.",
     role: "Software Engineer",
-    period: "2020 - 2021",
     category: "client",
     featured: false,
     status: "completed",

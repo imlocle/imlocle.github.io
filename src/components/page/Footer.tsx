@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
 import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
+import { ENVIA_CASE_STUDY_PATH } from "@data/envia";
 import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
 
 const Footer = () => {
@@ -48,6 +49,9 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Featured Projects</h3>
             <div className="footer-links">
+              <Link to={ENVIA_CASE_STUDY_PATH} className="footer-link">
+                Envia
+              </Link>
               <Link to={ALFRED_CASE_STUDY_PATH} className="footer-link">
                 Alfred AI Assistant
               </Link>

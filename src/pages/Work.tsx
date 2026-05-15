@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
 
-import { PROJECTS, type Project } from "../data/projects";
+import { PROJECTS, type Project } from "@data/projects";
 import "@styles/pages/Work.css";
 import { useChat } from "@context/ChatContext";
 import TitleHeader from "@/components/header/TitleHeader";
@@ -138,10 +138,9 @@ const ProjectCard = ({
           )}
         </div>
 
-        {project.role && project.period && (
+        {project.role && (
           <div className="project-meta">
             <span className="project-role">{project.role}</span>
-            <span className="project-period">{project.period}</span>
           </div>
         )}
 
