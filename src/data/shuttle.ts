@@ -64,14 +64,14 @@ export const SHUTTLE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       id: "architecture",
       title: "Architecture",
       description:
-        "Shuttle uses a clean architecture with clear separation between the UI layer, transfer logic, and device communication protocols.",
+        "Shuttle uses a backend abstraction where each connection type (SSH, ADB) implements the same interface (listdir, stat, put, get, rename, mkdir, remove). The explorer UI doesn't know or care which protocol is underneath.",
       highlights: [
-        "Presentation Layer: PySide6 UI with remote file explorer, drag-and-drop, and transfer queue visualization",
-        "Transfer Engine: Queue-based system with speed calculation, ETA, and progress tracking per file",
+        "Presentation Layer: PySide6 UI with remote file explorer, drag-and-drop, transfer queue, and bookmarks",
+        "Transfer Engine: Queue-based system with speed calculation, ETA, retry logic, and persistent history",
+        "Backend Abstraction: Unified interface — new protocols (SMB, WebDAV, S3) can be added without touching the UI",
         "SSH/SFTP Backend: Paramiko-based connections with multi-server management and auto-connect",
-        "ADB Backend: Android device support via USB debugging — no MTP required",
-        "Configuration: JSON-based device profiles stored at ~/.Shuttle/config.json",
-        "Auto-cleanup: Optional move-to-trash after successful upload",
+        "ADB Backend: Android device support via USB debugging — same explorer UI, different transport",
+        "Configuration: JSON-based device profiles stored at ~/.Shuttle/config.json with per-server settings",
       ],
     },
     {
@@ -80,16 +80,16 @@ export const SHUTTLE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       description:
         "Built for daily use with keyboard-driven workflows and a focus on reliability.",
       highlights: [
-        "Remote File Explorer: Browse any SSH server or Android device with full navigation",
-        "Drag-and-Drop Upload: Drop files from Finder directly into the remote explorer",
-        "Transfer Queue: Queue multiple uploads with per-file speed, ETA, and progress bars",
+        "Remote File Explorer: Browse any SSH server or Android device with sortable columns and recursive search",
+        "Drag-and-Drop Upload: Drop files from Finder directly into the remote explorer with duplicate detection",
+        "Transfer Queue: Queue multiple uploads/downloads with per-file speed, ETA, and retry on failure",
+        "Download Support: Pull files back from remote devices with the same queue system",
         "Android USB Support: Connect phones, tablets, and VR headsets via ADB without MTP",
         "Multi-Server Management: Save multiple device profiles with a default for auto-connect",
-        "Recursive Search: Search across subdirectories with Enter key",
-        "Inline Rename: Slow-click to rename files directly in the explorer",
-        "Disk Space Visualization: See how full the remote drive is at a glance",
-        "Auto-Cleanup: Move local files to trash after successful upload",
-        "Keyboard Shortcuts: ⌘+R (refresh), ⌘+N (new folder), ⌘+F (search), ⌘+Delete (delete)",
+        "Bookmarked Folders: Save frequently-used remote paths for one-click navigation",
+        "Transfer History: Persistent log of all transfers with search — never wonder if you already uploaded something",
+        "Disk Space Visualization: Color-coded bar showing remote drive usage at a glance",
+        "Keyboard Shortcuts: ⌘+R (refresh), ⌘+N (new folder), ⌘+F (search), ⌘+Delete (delete), inline rename",
       ],
     },
     {
@@ -139,7 +139,7 @@ export const SHUTTLE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   },
 
   nextStepsBody:
-    "Planned enhancements include content moderation for uploaded media, support for wireless ADB connections, batch rename operations, and a plugin system for custom transfer rules.",
+    "Shuttle's backend abstraction means new connection types can be added without changing the UI. Planned directions include SMB/WebDAV/S3 backends for NAS and cloud storage, a multi-server dashboard with split-pane transfers, post-transfer hooks and plugin system, and macOS-native integrations like a Finder extension and menu bar drop zone.",
 
   showCta: true,
 };

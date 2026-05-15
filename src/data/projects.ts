@@ -99,12 +99,12 @@ export const PROJECTS: Project[] = [
       "PyInstaller",
     ],
     highlights: [
-      "Remote file explorer with drag-and-drop uploads from Finder",
-      "Transfer queue with per-file speed, ETA, and progress tracking",
+      "Backend abstraction — new protocols (SMB, WebDAV, S3) can be added without changing UI",
+      "Transfer queue with speed, ETA, retry, and persistent history",
       "Android USB support via ADB — no MTP needed",
-      "Multi-server profiles with default auto-connect",
+      "Bookmarked folders and recursive search for fast navigation",
+      "Download support with duplicate detection",
       "Keyboard shortcuts for power-user workflows",
-      "Auto-cleanup: move local files to trash after upload",
     ],
     links: {
       github: "https://github.com/imlocle/shuttle",
