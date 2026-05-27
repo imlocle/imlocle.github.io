@@ -15,14 +15,14 @@ import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
-import ShuttleCaseStudy from "@pages/work/caseStudies/ShuttleCaseStudy";
+import FileSlingCaseStudy from "@pages/work/caseStudies/FileSlingCaseStudy";
 import EnviaCaseStudy from "@pages/work/caseStudies/EnviaCaseStudy";
 import AlfredChat from "@components/feature/AlfredChat";
 import Navbar from "@components/bar/Navbar";
 import Footer from "@components/page/Footer";
 import { ChatProvider } from "@context/ChatContext";
 import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
-import { SHUTTLE_CASE_STUDY_PATH } from "@data/shuttle";
+import { FILESLING_CASE_STUDY_PATH } from "@data/filesling";
 import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "@data/codeIntelligence";
 import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
 import { ENVIA_CASE_STUDY_PATH } from "@data/envia";
@@ -91,8 +91,8 @@ function App() {
                 element={<CodeIntelligenceCaseStudy />}
               />
               <Route
-                path={SHUTTLE_CASE_STUDY_PATH}
-                element={<ShuttleCaseStudy />}
+                path={FILESLING_CASE_STUDY_PATH}
+                element={<FileSlingCaseStudy />}
               />
               <Route
                 path={ENVIA_CASE_STUDY_PATH}

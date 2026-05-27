@@ -1,13 +1,13 @@
 // Comprehensive project data for portfolio
 import alfredLogo from "@assets/alfred-logo.png";
-import shuttleLogo from "@assets/shuttle-logo.png";
+import fileslingLogo from "@assets/filesling-logo.png";
 import codeIntelLogo from "@assets/code-intel-platform-logo.png";
 import neptuneLogo from "@assets/neptune-logo.svg";
 import enviaLogo from "@assets/envia-logo.jpeg";
 import raxLogo from "@assets/rax-logo-2020.svg";
 import mdsLogo from "@assets/mds.png";
 import { ALFRED_CASE_STUDY_PATH } from "./alfred";
-import { SHUTTLE_CASE_STUDY_PATH } from "./shuttle";
+import { FILESLING_CASE_STUDY_PATH } from "./filesling";
 import { CODE_INTELLIGENCE_CASE_STUDY_PATH } from "./codeIntelligence";
 import { NEPTUNE_CASE_STUDY_PATH } from "./neptune";
 import { ENVIA_CASE_STUDY_PATH } from "./envia";
@@ -77,18 +77,18 @@ export const PROJECTS: Project[] = [
     image: alfredLogo,
   },
   {
-    id: "shuttle",
-    name: "Shuttle",
+    id: "filesling",
+    name: "FileSling",
     tagline: "A file manager for Mac that sends files to connected devices",
     description:
-      "Native macOS desktop application for transferring files to SSH servers, Raspberry Pis, Android phones, tablets, and VR headsets through a clean drag-and-drop interface. Features a remote file explorer, transfer queue with progress tracking, and multi-device management.",
+      "Native macOS desktop application for transferring files to SSH servers, Raspberry Pis, Android phones, tablets, and VR headsets through a clean drag-and-drop interface. Features auto-reconnect, resilient transfer queue with retry/resume, macOS notifications, and multi-device management. Distributed as a .dmg via GitHub Releases.",
     category: "opensource",
     featured: true,
     status: "ongoing",
     metrics: [
       "Desktop GUI application",
       "SSH/SFTP + ADB support",
-      "Multi-device management",
+      "DMG distribution",
     ],
     techStack: [
       "Python 3.11+",
@@ -100,17 +100,17 @@ export const PROJECTS: Project[] = [
     ],
     highlights: [
       "Backend abstraction — new protocols (SMB, WebDAV, S3) can be added without changing UI",
-      "Transfer queue with speed, ETA, retry, and persistent history",
+      "Resilient transfer queue with auto-retry, resume, and crash recovery",
+      "Auto-reconnect with latency monitoring and health checks",
       "Android USB support via ADB — no MTP needed",
-      "Bookmarked folders and recursive search for fast navigation",
-      "Download support with duplicate detection",
-      "Keyboard shortcuts for power-user workflows",
+      "macOS notifications, Dock badge, and system theme support",
+      "Distributed as signed .dmg via GitHub Actions CI/CD",
     ],
     links: {
-      github: "https://github.com/imlocle/shuttle",
-      caseStudy: SHUTTLE_CASE_STUDY_PATH,
+      github: "https://github.com/imlocle/filesling",
+      caseStudy: FILESLING_CASE_STUDY_PATH,
     },
-    image: shuttleLogo,
+    image: fileslingLogo,
   },
   {
     id: "code-intelligence-platform",

@@ -5,7 +5,7 @@ import { GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
 import { NEPTUNE_CASE_STUDY_PATH } from "@data/neptune";
 import { ENVIA_CASE_STUDY_PATH } from "@data/envia";
-import { SHUTTLE_CASE_STUDY_PATH } from "@/data/shuttle";
+import { FILESLING_CASE_STUDY_PATH } from "@data/filesling";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,10 +59,10 @@ const Footer = () => {
                 Neptune App
               </Link>
               <Link
-                to={SHUTTLE_CASE_STUDY_PATH}
+                to={FILESLING_CASE_STUDY_PATH}
                 className="footer-link"
               >
-                Shuttle
+                FileSling
               </Link>
             </div>
           </div>
