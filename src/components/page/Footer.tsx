@@ -58,10 +58,7 @@ const Footer = () => {
               <Link to={NEPTUNE_CASE_STUDY_PATH} className="footer-link">
                 Neptune App
               </Link>
-              <Link
-                to={FILESLING_CASE_STUDY_PATH}
-                className="footer-link"
-              >
+              <Link to={FILESLING_CASE_STUDY_PATH} className="footer-link">
                 FileSling
               </Link>
             </div>
