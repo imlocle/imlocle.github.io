@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 
 import "@styles/pages/Home.css";
 import CtaSection from "@components/section/CtaSection";
+import IconCard from "@/components/card/IconCard";
+import SectionHeader from "@/components/header/SectionHeader";
+import TagList from "@components/ui/TagList";
 import alfredLogo from "@assets/alfred-logo.png";
 import { useChat } from "@context/ChatContext";
 import { ALFRED_CASE_STUDY_PATH } from "@data/alfred";
@@ -49,7 +52,7 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="status-dot" />
-            <span>Senior Software Engineer & System Architect</span>
+            <span>CTO at Aethra Systems</span>
           </motion.div>
 
           <motion.h1
@@ -58,9 +61,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Building <span className="gradient-text">Scalable Systems</span>
+            Building <span className="gradient-text">Intelligent Systems</span>
             <br />
-            with Python & AWS
+            {/* with Python & AWS */}
           </motion.h1>
 
           <motion.p
@@ -69,9 +72,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Senior Software Engineer specializing in backend architecture, cloud
-            infrastructure, and AI platforms. 8+ years building production
-            systems at scale.
+            CTO & Software Engineer with 8+ years building production backend
+            systems, cloud infrastructure, and AI platforms. Currently leading
+            engineering at Aethra Systems.
           </motion.p>
 
           <motion.div
@@ -80,12 +83,17 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <a href="#/contact" className="btn-primary">
-              Book a Strategy Call <FiArrowRight />
-            </a>
-            <Link to="/work" className="btn-secondary">
-              View My Work
+            <Link to="/work" className="btn-primary">
+              View My Work <FiArrowRight />
             </Link>
+            <a
+              href="https://aethrasystems.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Aethra Systems
+            </a>
           </motion.div>
 
           <motion.div
@@ -94,19 +102,17 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <span className="tech-pill">Python</span>
-            <span className="tech-pill">TypeScript</span>
-            <span className="tech-pill">AWS</span>
-            <span className="tech-pill">Lambda</span>
-            <span className="tech-pill">DynamoDB</span>
-            <span className="tech-pill">IaC</span>
-            <span className="tech-pill">AI/LLM</span>
+            <TagList
+              items={["Python", "TypeScript", "AWS", "Lambda", "DynamoDB", "IaC", "AI/LLM"]}
+              variant="pill"
+            />
           </motion.div>
         </div>
       </section>
 
       {/* Social Proof Section */}
-      <section className="page-container social-proof-section">
+      <section className="social-proof-section">
+        <div className="page-container">
         <motion.div
           className="social-proof-grid"
           variants={motionVariants.container}
@@ -114,103 +120,42 @@ const Home = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div className="proof-card" variants={motionVariants.item}>
+          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
             <div className="proof-metric">10K+</div>
             <div className="proof-label">Active Users Supported</div>
             <div className="proof-detail">Neptune App production platform</div>
           </motion.div>
 
-          <motion.div className="proof-card" variants={motionVariants.item}>
+          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
             <div className="proof-metric">$1.4M</div>
             <div className="proof-label">Annual Savings Delivered</div>
             <div className="proof-detail">Through optimization & scale</div>
           </motion.div>
 
-          <motion.div className="proof-card" variants={motionVariants.item}>
+          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
             <div className="proof-metric">40%</div>
             <div className="proof-label">Response Time Improvement</div>
             <div className="proof-detail">AI-powered systems optimization</div>
           </motion.div>
 
-          <motion.div className="proof-card" variants={motionVariants.item}>
+          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
             <div className="proof-metric">8+</div>
             <div className="proof-label">Years Building Systems</div>
             <div className="proof-detail">Across backend, cloud & AI</div>
           </motion.div>
         </motion.div>
-      </section>
-
-      {/* The Problem Section */}
-      <section className="page-container problem-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">The Challenge Most Companies Face</h2>
-          <p className="section-subtitle">
-            When you're scaling, your backend becomes your biggest battleground.
-          </p>
-
-          <div className="problem-content">
-            <div className="problem-item">
-              <div className="problem-icon">
-                <FiTrendingUp />
-              </div>
-              <h3>Unoptimized Cloud Bills</h3>
-              <p>
-                Infrastructure costs spiral out of control. Teams waste 30% on
-                resources they don't need.
-              </p>
-            </div>
-
-            <div className="problem-item">
-              <div className="problem-icon">
-                <FiCode />
-              </div>
-              <h3>Architectural Debt</h3>
-              <p>
-                Systems built for yesterday's scale. Refactoring feels
-                impossible when you're shipping features.
-              </p>
-            </div>
-
-            <div className="problem-item">
-              <div className="problem-icon">
-                <FiZap />
-              </div>
-              <h3>AI Integration Bottleneck</h3>
-              <p>
-                LLM integrations fail in production. Costs explode. Safety &
-                reliability become afterthought.
-              </p>
-            </div>
-          </div>
-
-          <p className="problem-closing">
-            I help teams over these hurdles. Through proven backend
-            architecture, serverless strategy, and AI system design.
-          </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Featured Case Study - Alfred */}
       <section className="page-container featured-case-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">See It In Action</h2>
-          <p className="section-subtitle">
-            Here's a live example of production system design thinking
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="See It In Action"
+          subtitle="Here's a live example of production system design thinking"
+        />
 
         <motion.div
-          className="case-study-card"
+          className="case-study-card card-hover"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -247,11 +192,10 @@ const Home = () => {
             </p>
 
             <div className="case-study-tech">
-              <span className="tech-tag">AWS Bedrock</span>
-              <span className="tech-tag">Lambda</span>
-              <span className="tech-tag">DynamoDB</span>
-              <span className="tech-tag">Terraform</span>
-              <span className="tech-tag">LLM Guardrails</span>
+              <TagList
+                items={["AWS Bedrock", "Lambda", "DynamoDB", "Terraform", "LLM Guardrails"]}
+                variant="pill"
+              />
             </div>
 
             <div className="case-study-links">
@@ -275,78 +219,56 @@ const Home = () => {
       </section>
 
       {/* Expertise Grid */}
-      <section className="page-container expertise-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">What I Specialize In</h2>
-          <p className="section-subtitle">
-            Domains where deep expertise creates value
-          </p>
-        </motion.div>
+      <section className="expertise-section">
+        <div className="page-container">
+        <SectionHeader
+          title="What I Specialize In"
+          subtitle="Domains where deep expertise creates value"
+        />
 
-        <motion.div
-          className="expertise-grid"
-          variants={motionVariants.container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.div className="expertise-card" variants={motionVariants.item}>
-            <div className="expertise-icon">
-              <FiCode />
-            </div>
-            <h3>Backend Architecture & APIs</h3>
-            <ul>
-              <li>Serverless systems design</li>
-              <li>Scalable API architecture</li>
-              <li>Database design & optimization</li>
-              <li>Auth & authorization patterns</li>
-            </ul>
-          </motion.div>
-
-          <motion.div className="expertise-card" variants={motionVariants.item}>
-            <div className="expertise-icon">
-              <FiZap />
-            </div>
-            <h3>Cloud Infrastructure (AWS)</h3>
-            <ul>
-              <li>Lambda-first architecture</li>
-              <li>Infrastructure as Code</li>
-              <li>Cost optimization strategies</li>
-              <li>Migration & modernization</li>
-            </ul>
-          </motion.div>
-
-          <motion.div className="expertise-card" variants={motionVariants.item}>
-            <div className="expertise-icon">
-              <FiTrendingUp />
-            </div>
-            <h3>AI/LLM Integration</h3>
-            <ul>
-              <li>Production LLM systems</li>
-              <li>Guardrails & safety controls</li>
-              <li>RAG & knowledge bases</li>
-              <li>Cost-aware inference</li>
-            </ul>
-          </motion.div>
-
-          <motion.div className="expertise-card" variants={motionVariants.item}>
-            <div className="expertise-icon">
-              <FiGithub />
-            </div>
-            <h3>System Optimization</h3>
-            <ul>
-              <li>Performance tuning</li>
-              <li>Cost reduction initiatives</li>
-              <li>Reliability improvements</li>
-              <li>Technical debt resolution</li>
-            </ul>
-          </motion.div>
-        </motion.div>
+        <div className="expertise-grid">
+          <IconCard
+            icon={<FiCode />}
+            title="Backend Architecture & APIs"
+            items={[
+              "Serverless systems design",
+              "Scalable API architecture",
+              "Database design & optimization",
+              "Auth & authorization patterns",
+            ]}
+          />
+          <IconCard
+            icon={<FiZap />}
+            title="Cloud Infrastructure (AWS)"
+            items={[
+              "Lambda-first architecture",
+              "Infrastructure as Code",
+              "Cost optimization strategies",
+              "Migration & modernization",
+            ]}
+          />
+          <IconCard
+            icon={<FiTrendingUp />}
+            title="AI/LLM Integration"
+            items={[
+              "Production LLM systems",
+              "Guardrails & safety controls",
+              "RAG & knowledge bases",
+              "Cost-aware inference",
+            ]}
+          />
+          <IconCard
+            icon={<FiGithub />}
+            title="System Optimization"
+            items={[
+              "Performance tuning",
+              "Cost reduction initiatives",
+              "Reliability improvements",
+              "Technical debt resolution",
+            ]}
+          />
+        </div>
+        </div>
       </section>
 
       {/* Personal Story Section */}
@@ -378,8 +300,17 @@ const Home = () => {
 
             <p>
               Eight years later, I've built backend systems at scale, optimized
-              chaos into serverless elegance, and learned that the best
-              engineers solve invisible problems:
+              chaos into serverless elegance, and cofounded{" "}
+              <a
+                href="https://aethrasystems.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--accent-primary)" }}
+              >
+                Aethra Systems
+              </a>{" "}
+              to help other organizations do the same. The best
+              engineers solve invisible problems: 
               <strong>
                 cost spirals, scaling cliffs, production failures nobody
                 expected

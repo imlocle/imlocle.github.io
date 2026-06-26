@@ -20,6 +20,30 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: "aethra",
+    company: "Aethra Systems",
+    role: "CTO & Cofounder",
+    period: "Jun 2026 - Present",
+    location: "Remote",
+    description:
+      "Cofounded a technology consulting firm helping businesses modernize operations through cloud architecture, AI integration, and scalable digital solutions",
+    achievements: [
+      "Designed and built the company's technical delivery infrastructure",
+      "Leading client engagements for operational workflow modernization",
+      "Architecting cloud-native solutions on AWS for enterprise clients",
+      "Building AI-powered automation systems for operational efficiency",
+    ],
+    techStack: [
+      "Python",
+      "TypeScript",
+      "Next.js",
+      "AWS",
+      "Terraform",
+      "AI/LLM",
+      "Serverless",
+    ],
+  },
+  {
     id: "envia",
     company: "Envia",
     role: "Senior Software Engineer (Backend Lead)",
@@ -50,11 +74,11 @@ export const EXPERIENCE: Experience[] = [
   {
     id: "neptune",
     company: "Neptune App",
-    role: "Senior Software Engineer (Backend Lead)",
+    role: "Founding Engineer (Lead Engineer)",
     period: "Nov 2024 - Jan 2026",
     location: "Remote",
     description:
-      "Leading backend development for cloud-native SaaS platform supporting 10K+ iOS users",
+      "Led backend development as a founding engineer for cloud-native SaaS platform supporting 10K+ iOS users",
     achievements: [
       "Designed event-driven serverless architecture",
       "Implemented analytics pipelines for user engagement tracking",
@@ -181,7 +205,7 @@ export const SKILLS = {
   languages: {
     expert: ["Python", "TypeScript"],
     proficient: ["JavaScript", "C#"],
-    familiar: ["Ruby", "SQL"],
+    familiar: ["SQL"],
   },
   backend: {
     frameworks: ["FastAPI", "Flask", "Django", "Express", "ASP.NET"],

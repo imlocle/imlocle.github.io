@@ -18,8 +18,8 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 className="footer-title">Loc Le</h3>
             <p className="footer-description">
-              Senior Backend Engineer specializing in cloud infrastructure,
-              serverless architectures, and AI platform development.
+              CTO & Cofounder at Aethra Systems. Building intelligent systems
+              with cloud architecture, AI, and serverless infrastructure.
             </p>
           </div>
 
@@ -33,15 +33,20 @@ const Footer = () => {
               <Link to="/writing" className="footer-link">
                 Writing
               </Link>
-              <Link to="/consulting" className="footer-link">
-                Consulting
-              </Link>
               <Link to="/about" className="footer-link">
                 About
               </Link>
               <Link to="/contact" className="footer-link">
                 Contact
               </Link>
+              <a
+                href="https://aethrasystems.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                Aethra Systems
+              </a>
             </div>
           </div>
 

@@ -11,7 +11,6 @@ import Contact from "@pages/Contact";
 import Home from "@pages/Home";
 import Work from "@pages/Work";
 import Writing from "@pages/Writing";
-import Consulting from "@pages/Consulting";
 import AlfredCaseStudy from "@pages/work/caseStudies/AlfredCaseStudy";
 import CodeIntelligenceCaseStudy from "@pages/work/caseStudies/CodeIntelligenceCaseStudy";
 import NeptuneCaseStudy from "@pages/work/caseStudies/NeptuneCaseStudy";
@@ -73,7 +72,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/work" element={<Work />} />
               <Route path="/writing" element={<Writing />} />
-              <Route path="/consulting" element={<Consulting />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
 

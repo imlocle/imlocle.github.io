@@ -1,0 +1,54 @@
+.icon-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.icon-card:hover {
+}
+
+.icon-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: 24px;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-md);
+}
+
+.icon-card__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.icon-card__description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.icon-card__list {
+  list-style: none;
+  padding: 0;
+}
+
+.icon-card__list li {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.icon-card__list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: 600;
+}

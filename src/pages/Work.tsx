@@ -1,24 +1,18 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiFileText, FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { PROJECTS, type Project } from "@data/projects";
 import "@styles/pages/Work.css";
 import { useChat } from "@context/ChatContext";
 import TitleHeader from "@/components/header/TitleHeader";
 
-type FilterType = "all" | "production" | "opensource" | "client";
-
 const Work = () => {
-  const [filter, setFilter] = useState<FilterType>("all");
-
-  const filteredProjects = PROJECTS.filter(project => {
-    if (filter === "all") return true;
-    return project.category === filter;
-  });
+  const [showMore, setShowMore] = useState(false);
 
   const featuredProjects = PROJECTS.filter(p => p.featured);
+  const moreProjects = PROJECTS.filter(p => !p.featured);
 
   return (
     <div className="work-container">
@@ -27,9 +21,9 @@ const Work = () => {
         subtitle="Production systems, open source projects, and client work spanning backend architecture, cloud infrastructure, and AI platforms."
       />
 
-      {/* Featured Projects */}
+      {/* Projects */}
       <section className="featured-section">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Projects</h2>
         <div className="featured-grid">
           {featuredProjects.map((project, index) => (
             <ProjectCard
@@ -40,60 +34,38 @@ const Work = () => {
             />
           ))}
         </div>
-      </section>
 
-      {/* All Projects with Filter */}
-      <section className="all-projects-section">
-        <div className="filter-header">
-          <h2 className="section-title">All Projects</h2>
-          <div className="filter-buttons">
-            <FilterButton
-              active={filter === "all"}
-              onClick={() => setFilter("all")}
-              label="All"
-            />
-            <FilterButton
-              active={filter === "production"}
-              onClick={() => setFilter("production")}
-              label="Production"
-            />
-            <FilterButton
-              active={filter === "opensource"}
-              onClick={() => setFilter("opensource")}
-              label="Open Source"
-            />
-            <FilterButton
-              active={filter === "client"}
-              onClick={() => setFilter("client")}
-              label="Client Work"
-            />
-          </div>
-        </div>
-
-        <div className="projects-grid">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+        {moreProjects.length > 0 && (
+          <>
+            {showMore && (
+              <div className="featured-grid more-projects">
+                {moreProjects.map((project, index) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={index}
+                  />
+                ))}
+              </div>
+            )}
+            <div className="show-more-container">
+              <button
+                className="show-more-button"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? (
+                  <>Show Less <FiChevronUp /></>
+                ) : (
+                  <>Show More Projects <FiChevronDown /></>
+                )}
+              </button>
+            </div>
+          </>
+        )}
       </section>
     </div>
   );
 };
-
-interface FilterButtonProps {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-}
-
-const FilterButton = ({ active, onClick, label }: FilterButtonProps) => (
-  <button
-    className={`filter-button ${active ? "active" : ""}`}
-    onClick={onClick}
-  >
-    {label}
-  </button>
-);
 
 interface ProjectCardProps {
   project: Project;
@@ -110,7 +82,7 @@ const ProjectCard = ({
 
   return (
     <motion.div
-      className={`project-card ${featured ? "featured-card" : ""}`}
+      className={`project-card card-hover ${featured ? "featured-card" : ""}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}

@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "@styles/pages/Contact.css";
-import ButtonLink from "@components/button/ButtonLink";
 import ContactForm from "@components/form/ContactForm";
 import TitleHeader from "@/components/header/TitleHeader";
-import { CALENDLY_URL, GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
+import { GITHUB_LINK, LINKEDIN_LINK } from "@utils/constants";
 
 const Contact = () => {
   const { hash } = useLocation();
@@ -28,7 +27,7 @@ const Contact = () => {
     <div id="contact" className="page-container">
       <TitleHeader
         title="Contact"
-        subtitle="Let's discuss your backend, cloud, or AI project. Book a call or send a message!"
+        subtitle="Want to connect, collaborate, or discuss ideas? Send me a message."
       />
 
       <div className="contact-grid">
@@ -38,40 +37,28 @@ const Contact = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.15, duration: 0.6 }}
         >
-          <h2 className="contact-card-title">Fastest way to work together</h2>
+          <h2 className="contact-card-title">Let's Connect</h2>
 
           <p className="card-description">
-            Book a <strong>free 30-minute build call</strong>.
-            {
-              " I'll map the backend you need (APIs, auth, database, AWS deployment) and give you a clear 14-day plan."
-            }
+            I'm always open to conversations about engineering, collaborations,
+            or interesting projects. For business inquiries, head to{" "}
+            <a
+              href="https://aethrasystems.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aethra Systems
+            </a>
+            .
           </p>
 
           <div className="contact-callout">
-            <div className="contact-callout-title">
-              {"On the call, you'll get:"}
-            </div>
+            <div className="contact-callout-title">Reach out about:</div>
             <ul className="contact-bullets">
-              <li>{"A clear scope (what we will/won't build)"}</li>
-              <li>Architecture + tech choices (AWS, DB, auth)</li>
-              <li>Timeline + next steps to ship</li>
+              <li>Collaboration or open source projects</li>
+              <li>Speaking, writing, or community</li>
+              <li>General networking or questions</li>
             </ul>
-          </div>
-
-          <div className="contact-actions">
-            <ButtonLink
-              link={CALENDLY_URL}
-              text="Book a Free 30-Min Build Call"
-              className="highlight-primary-button"
-              target="_blank"
-            />
-            <Link
-              className="contact-link"
-              to={{ pathname: "/contact", hash: "#message" }}
-            >
-              Prefer email? Send a message
-              <span className="contact-link-arrow" aria-hidden="true" />
-            </Link>
           </div>
 
           <div className="contact-divider" />
@@ -101,10 +88,10 @@ const Contact = () => {
 
         {/* Right column: make it a true card too so both columns align */}
         <section id="message" className="contact-card contact-card--form">
-          <h2 className="contact-card-title">Tell me about your project</h2>
+          <h2 className="contact-card-title">Send a Message</h2>
           <p className="contact-card-subtitle">
             {
-              "Share what you're building and what you need (API, auth, database, AWS). I'll reply with a recommended scope and next steps."
+              "Drop me a note — whether it's a question, an idea, or just to say hi. I'll get back to you."
             }
           </p>
           <ContactForm />

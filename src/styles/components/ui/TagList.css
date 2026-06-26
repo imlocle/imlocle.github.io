@@ -1,0 +1,41 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Base tag styles */
+.tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+}
+
+/* Tech variant: blue border + blue text (project tech stacks) */
+.tag--tech {
+  background: var(--accent-glow);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-primary);
+}
+
+/* Skill variant: same as tech (skill tags on About page) */
+.tag--skill {
+  background: var(--accent-glow);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-primary);
+}
+
+/* Pill variant: neutral dark (hero tech stack, case study tags) */
+.tag--pill {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+/* Metric variant: neutral dark (project metrics) */
+.tag--metric {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}

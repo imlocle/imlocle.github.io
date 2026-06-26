@@ -4,6 +4,7 @@ import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc-headshot.jpg";
 import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "@data/experience";
 import CtaSection from "@/components/section/CtaSection";
+import TagList from "@/components/ui/TagList";
 import TitleHeader from "@/components/header/TitleHeader";
 
 const About = () => {
@@ -11,7 +12,7 @@ const About = () => {
     <div className="about-container">
       <TitleHeader
         title="About"
-        subtitle="Backend engineer, cloud architect, and AI systems enthusiast with 8+ years building production-scale systems."
+        subtitle="CTO & Software Engineer with 8+ years building production backend systems, cloud infrastructure, and AI platforms."
       />
 
       {/* Hero Section with Profile Card */}
@@ -21,23 +22,30 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="about-image-card">
+        <div className="about-image-card card-hover">
           <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
           <div className="about-name">Loc Le</div>
-          <div className="about-role">Senior Software Engineer</div>
-          <div className="about-subtitle">Backend • Cloud • AI</div>
+          <div className="about-role">CTO & Cofounder</div>
+          <div className="about-subtitle">Aethra Systems</div>
           <div className="about-location">Las Vegas • Remote</div>
         </div>
 
         <div className="about-right-content">
           <div className="about-intro">
-            <h2>Senior Software Engineer</h2>
+            <h2>CTO & Cofounder, Aethra Systems</h2>
             <p className="about-lead">
               8+ years building scalable backend systems, cloud infrastructure,
-              and AI platforms. Recently built microservices for Envia, a family
-              communication platform, and completed Neptune App, a production
-              SaaS platform supporting 10K+ users with serverless architecture.
-              Currently available for consulting engagements.
+              and AI platforms. Previously led backend at Envia and Neptune App
+              (10K+ users). Now building{" "}
+              <a
+                href="https://aethrasystems.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Aethra Systems
+              </a>
+              , helping businesses modernize through cloud architecture, AI
+              integration, and scalable engineering.
             </p>
           </div>
 
@@ -106,15 +114,22 @@ const About = () => {
         transition={{ duration: 0.6 }}
       >
         <h3>Current Focus</h3>
-        <div className="current-card">
+        <div className="current-card card-hover">
           <p>
-            Available for strategic consulting and architectural projects.
-            Specializing in serverless systems, AI/LLM integration, and cost
-            optimization.
+            Leading engineering at{" "}
+            <a
+              href="https://aethrasystems.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aethra Systems
+            </a>
+            , helping businesses modernize operations through cloud
+            architecture, AI integration, and scalable digital solutions.
           </p>
           <div className="current-tech">
-            Backend Architecture • Cloud Infrastructure • AI Systems • System
-            Optimization
+            Cloud Architecture • AI/LLM Systems • Serverless Infrastructure •
+            System Modernization
           </div>
         </div>
       </motion.section>
@@ -129,19 +144,19 @@ const About = () => {
       >
         <h3>Expertise</h3>
         <div className="expertise-grid">
-          <div className="expertise-item">
+          <div className="expertise-item card-hover">
             <strong>Backend Systems</strong>
             <p>Python, TypeScript, REST APIs, Event-Driven Architecture</p>
           </div>
-          <div className="expertise-item">
+          <div className="expertise-item card-hover">
             <strong>Cloud Infrastructure</strong>
             <p>AWS Lambda, API Gateway, DynamoDB, S3, Terraform</p>
           </div>
-          <div className="expertise-item">
+          <div className="expertise-item card-hover">
             <strong>AI/LLM Integration</strong>
             <p>AWS Bedrock, RAG Systems, Prompt Engineering</p>
           </div>
-          <div className="expertise-item">
+          <div className="expertise-item card-hover">
             <strong>Architecture</strong>
             <p>Serverless, Microservices, Domain-Driven Design</p>
           </div>
@@ -155,7 +170,7 @@ const About = () => {
           {EXPERIENCE.map((exp, index) => (
             <motion.div
               key={exp.id}
-              className="timeline-item"
+              className="timeline-item card-hover"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -182,13 +197,10 @@ const About = () => {
                     <li key={i}>{achievement}</li>
                   ))}
                 </ul>
-                <div className="timeline-tech">
-                  {exp.techStack.slice(0, 6).map((tech, i) => (
-                    <span key={i} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <TagList
+                  items={exp.techStack.slice(0, 6)}
+                  variant="tech"
+                />
               </div>
             </motion.div>
           ))}
@@ -199,72 +211,30 @@ const About = () => {
       <section className="skills-section">
         <h2 className="section-title">Technical Skills</h2>
         <div className="skills-grid">
-          <div className="skill-category">
+          <div className="skill-category card-hover">
             <h3>Languages</h3>
-            <div className="skill-level">
-              <strong>Expert:</strong> {SKILLS.languages.expert.join(", ")}
-            </div>
-            <div className="skill-level">
-              <strong>Proficient:</strong>{" "}
-              {SKILLS.languages.proficient.join(", ")}
-            </div>
-            <div className="skill-level">
-              <strong>Familiar:</strong> {SKILLS.languages.familiar.join(", ")}
-            </div>
+            <TagList
+              items={[...SKILLS.languages.expert, ...SKILLS.languages.proficient, ...SKILLS.languages.familiar]}
+              variant="skill"
+            />
           </div>
 
-          <div className="skill-category">
+          <div className="skill-category card-hover">
             <h3>Backend & APIs</h3>
-            <div className="skill-tags">
-              {SKILLS.backend.frameworks.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-            <div className="skill-tags">
-              {SKILLS.backend.patterns.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
+            <TagList items={SKILLS.backend.frameworks} variant="skill" />
+            <TagList items={SKILLS.backend.patterns} variant="skill" />
           </div>
 
-          <div className="skill-category">
+          <div className="skill-category card-hover">
             <h3>Cloud & Infrastructure</h3>
-            <div className="skill-tags">
-              {SKILLS.cloud.aws.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-            <div className="skill-tags">
-              {SKILLS.cloud.iac.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
+            <TagList items={SKILLS.cloud.aws} variant="skill" />
+            <TagList items={SKILLS.cloud.iac} variant="skill" />
           </div>
 
-          <div className="skill-category">
+          <div className="skill-category card-hover">
             <h3>AI & Data</h3>
-            <div className="skill-tags">
-              {SKILLS.ai.llms.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-            <div className="skill-tags">
-              {SKILLS.ai.rag.map((item, i) => (
-                <span key={i} className="skill-tag">
-                  {item}
-                </span>
-              ))}
-            </div>
+            <TagList items={SKILLS.ai.llms} variant="skill" />
+            <TagList items={SKILLS.ai.rag} variant="skill" />
           </div>
         </div>
       </section>
@@ -272,7 +242,7 @@ const About = () => {
       {/* Education & Languages */}
       <section className="additional-section">
         <div className="additional-grid">
-          <div className="additional-card">
+          <div className="additional-card card-hover">
             <h3>Education</h3>
             <p>
               <strong>{EDUCATION.degree}</strong>
@@ -281,7 +251,7 @@ const About = () => {
             <p className="year">{EDUCATION.year}</p>
           </div>
 
-          <div className="additional-card">
+          <div className="additional-card card-hover">
             <h3>Languages</h3>
             {LANGUAGES.map((lang, i) => (
               <p key={i}>

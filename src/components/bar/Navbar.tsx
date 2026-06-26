@@ -2,23 +2,40 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import "@styles/components/bar/Navbar.css";
-import { CALENDLY_URL } from "@utils/constants";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [, setWorkOpen] = useState(false); // Keep for now, used in click handlers
   const { pathname } = useLocation();
 
   const navbarRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      if (currentScrollY < 100) {
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current + 5) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current - 5) {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Keep navbar visible when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) setHidden(false);
+  }, [menuOpen]);
 
   //** Navbar Click Outside Handler */
   useEffect(() => {
@@ -37,7 +54,7 @@ const Navbar = () => {
   const isActive = (pathPrefix: string) => pathname.startsWith(pathPrefix);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} ref={navbarRef}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${hidden && !menuOpen ? "navbar-hidden" : ""}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img
@@ -92,35 +109,10 @@ const Navbar = () => {
             About
           </Link>
 
-          <Link
-            to="/consulting"
-            className={`nav-link ${isActive("/consulting") ? "active" : ""}`}
-            onClick={() => {
-              setMenuOpen(false);
-              setWorkOpen(false);
-            }}
-          >
-            Consulting
-          </Link>
-
-          {/* Primary CTA: Book Call (Calendly) */}
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-cta"
-            onClick={() => {
-              setMenuOpen(false);
-              setWorkOpen(false);
-            }}
-          >
-            Book Call
-          </a>
-
-          {/* Secondary: Contact page (email form) */}
+          {/* Primary CTA */}
           <Link
             to="/contact"
-            className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+            className="nav-cta"
             onClick={() => {
               setMenuOpen(false);
               setWorkOpen(false);
