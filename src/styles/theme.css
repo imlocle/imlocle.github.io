@@ -127,11 +127,26 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--bg-tertiary);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border-strong);
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    scrollbar-width: none;
+  }
+}
+
+/* Body scroll lock for mobile menu */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* Focus Styles */
@@ -212,8 +227,8 @@ button {
 .btn-primary:hover {
   background: var(--accent-hover);
   color: white;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .btn-secondary {
@@ -233,9 +248,9 @@ button {
 }
 
 .btn-secondary:hover {
-  color: var(--text-primary);
   border-color: var(--border-accent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Shared card hover: lift + soft blue glow */

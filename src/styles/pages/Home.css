@@ -116,12 +116,6 @@
   border: 1px solid transparent;
 }
 
-.home-container .btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
 .home-container .btn-secondary {
   padding: 0.7rem 1.75rem;
   background: var(--bg-elevated);
@@ -131,11 +125,6 @@
   font-weight: 600;
   font-size: var(--text-base);
   transition: all var(--transition-base);
-}
-
-.home-container .btn-secondary:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
 }
 
 /* Tech Stack Pills */
@@ -700,11 +689,6 @@
   background: var(--bg-elevated);
   color: var(--text-primary);
   border: 1px solid var(--border);
-}
-
-.story-section .btn-secondary:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
 }
 
 .story-content {

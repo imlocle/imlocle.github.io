@@ -12,6 +12,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-cta-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
 }
 
 .contact-cta-card::before {
