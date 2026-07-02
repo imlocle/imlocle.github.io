@@ -15,7 +15,7 @@ const About = () => {
     <div className="about-container">
       <TitleHeader
         title="About"
-        subtitle="CTO & Software Engineer with 8+ years building production backend systems, cloud infrastructure, and AI platforms."
+        subtitle="CTO & Co-Founder with 9+ years building production systems, cloud infrastructure, and AI platforms."
       />
 
       {/* Hero Section with Profile Card */}
@@ -37,9 +37,12 @@ const About = () => {
           <div className="about-intro">
             <h2>CTO & Co-Founder, Aethra Systems</h2>
             <p className="about-lead">
-              8+ years building scalable backend systems, cloud infrastructure,
-              and AI platforms. Previously led backend at Envia and Neptune App
-              (10K+ users). Now building{" "}
+              <strong>9+ years</strong> building{" "}
+              <strong>scalable systems</strong>,{" "}
+              <strong>cloud infrastructure</strong>, and{" "}
+              <strong>AI platforms</strong>. Previously led engineering at{" "}
+              <strong>Envia</strong> and{" "}
+              <strong>Neptune App</strong> (10K+ users). Now building{" "}
               <a
                 href="https://aethrasystems.com"
                 target="_blank"

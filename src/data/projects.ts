@@ -197,7 +197,7 @@ export const PROJECTS: Project[] = [
     tagline: "Serverless microservices for family communication platform",
     description:
       "Restructured and built core backend services across 7 microservices for a family communication platform. Designed notification scheduling with AI nudges, media processing infrastructure, multi-provider OAuth management, and invitation delivery systems.",
-    role: "Senior Software Engineer (Backend Lead)",
+    role: "Lead Software Engineer",
     category: "production",
     featured: true,
     status: "completed",
@@ -240,7 +240,7 @@ export const PROJECTS: Project[] = [
     tagline: "Serverless backend for social video platform",
     description:
       "Cloud-native SaaS platform supporting 10K+ iOS users with scalable APIs, real-time data, and analytics. Event-driven architecture with content moderation, social features, ETL pipelines (Jupiter), and AI chatbot integration (Moody). Backend completed January 2026 with app live on iOS.",
-    role: "Senior Software Engineer (Backend Lead)",
+    role: "Founding Engineer (Lead)",
     category: "production",
     featured: true,
     status: "completed",

@@ -53,7 +53,7 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="status-dot" />
-            <span>CTO at Aethra Systems</span>
+            <span>CTO & Co-Founder at Aethra Systems</span>
           </motion.div>
 
           <motion.h1
@@ -73,9 +73,19 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            CTO & Software Engineer with 8+ years building production backend
-            systems, cloud infrastructure, and AI platforms. Currently leading
-            engineering at Aethra Systems.
+            CTO & Co-Founder with <strong>9+ years</strong> building{" "}
+            <strong>production systems</strong>,{" "}
+            <strong>cloud infrastructure</strong>, and{" "}
+            <strong>AI platforms</strong>. Currently leading engineering at{" "}
+            <a
+              href="https://aethrasystems.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--accent-primary)" }}
+            >
+              Aethra Systems
+            </a>
+            .
           </motion.p>
 
           <motion.div
@@ -302,8 +312,9 @@ const Home = () => {
             </p>
 
             <p>
-              Eight years later, I've built backend systems at scale, optimized
-              chaos into serverless elegance, and cofounded{" "}
+              Eight years later, I've built <strong>systems at scale</strong>,
+              optimized chaos into <strong>serverless elegance</strong>, and
+              cofounded{" "}
               <a
                 href="https://aethrasystems.com"
                 target="_blank"
@@ -312,13 +323,9 @@ const Home = () => {
               >
                 Aethra Systems
               </a>{" "}
-              to help other organizations do the same. The best
-              engineers solve invisible problems:{" "}
-              <strong>
-                cost spirals, scaling cliffs, production failures nobody
-                expected
-              </strong>
-              .
+              to help other organizations do the same. The best engineers solve{" "}
+              <strong>invisible problems</strong>: cost spirals, scaling cliffs,
+              production failures nobody expected.
             </p>
 
             <p>

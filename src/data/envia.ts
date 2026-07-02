@@ -70,7 +70,7 @@ export const ENVIA_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageSubtitle:
     "Restructured and built core backend services for a family communication platform across 7 serverless microservices.",
 
-  heroTopline: "Production System • Senior Software Engineer",
+  heroTopline: "Production System • Lead Software Engineer",
   heroTitle: "Envia — Building a Serverless Microservices Platform",
   heroSubtitle:
     "Restructured legacy services and designed new systems for a family communication platform. Built notification scheduling, media processing, OAuth management, and invitation delivery across 7 microservices using Python, TypeScript, and AWS.",
@@ -93,7 +93,7 @@ export const ENVIA_CASE_STUDY_CONFIG: CaseStudyConfig = {
       id: "role",
       title: "My Role",
       description:
-        "As Senior Software Engineer, I restructured existing services (user-api, Ingest, OAuth Forge, custom authorizer, invitation processing) into clean layered architectures, and designed and implemented two new services from scratch (Notification Scheduler Sender and media processing).",
+        "As Lead Software Engineer, I restructured existing services (user-api, Ingest, OAuth Forge, custom authorizer, invitation processing) into clean layered architectures, and designed and implemented two new services from scratch (Notification Scheduler Sender and media processing).",
       callout:
         "Full ownership of backend architecture across 7 services — restructuring legacy code and designing new systems.",
     },

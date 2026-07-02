@@ -24,7 +24,7 @@ export const EXPERIENCE: Experience[] = [
     id: "aethra",
     company: "Aethra Systems",
     role: "CTO & Co-Founder",
-    period: "Jun 2026 - Present",
+    period: "May 2026 - Present",
     location: "Remote",
     description:
       "Cofounded a technology consulting firm helping businesses modernize operations through cloud architecture, AI integration, and scalable digital solutions",
@@ -48,7 +48,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: "envia",
     company: "Envia",
-    role: "Senior Software Engineer (Backend Lead)",
+    role: "Lead Software Engineer",
     period: "Feb 2026 - May 2026",
     location: "Remote",
     description:
@@ -76,7 +76,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: "neptune",
     company: "Neptune App",
-    role: "Founding Engineer (Lead Engineer)",
+    role: "Founding Engineer (Lead)",
     period: "Nov 2024 - Jan 2026",
     location: "Remote",
     description:

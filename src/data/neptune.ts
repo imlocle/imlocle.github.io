@@ -72,7 +72,7 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageSubtitle:
     "Cloud-native SaaS platform supporting 10K+ users with serverless architecture, AI integration, and analytics pipelines.",
 
-  heroTopline: "Production System • Senior Backend Lead",
+  heroTopline: "Production System • Founding Engineer (Lead)",
   heroTitle: "Neptune App — Building a Serverless SaaS Platform at Scale",
   heroSubtitle:
     "Led backend architecture and delivery for a cloud-native SaaS platform supporting 10,000+ active iOS users, implementing scalable serverless APIs, event-driven systems, analytics pipelines (Jupiter ETL), and AI chatbot integration (Moody) using TypeScript, Python, and AWS.",
@@ -95,7 +95,7 @@ export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
       id: "role",
       title: "My Role",
       description:
-        "As Senior Backend Lead, I owned the complete backend architecture and delivery, from system design to deployment and monitoring. This included the main API, Jupiter ETL pipeline, and Moody AI chatbot integration.",
+        "As Founding Engineer (Lead), I owned the complete backend architecture and delivery, from system design to deployment and monitoring. This included the main API, Jupiter ETL pipeline, and Moody AI chatbot integration.",
       callout:
         "Full ownership of backend architecture, API design, data modeling, team leadership, operational tooling, and AI integration.",
     },

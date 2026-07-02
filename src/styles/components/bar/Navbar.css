@@ -10,7 +10,9 @@
   width: calc(100% - 2rem);
   max-width: 1100px;
   z-index: var(--z-sticky);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .navbar.navbar-hidden {
@@ -42,6 +44,19 @@
   gap: var(--space-sm);
   text-decoration: none;
   flex-shrink: 0;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  transition: all var(--transition-base);
+}
+
+.navbar-logo:hover {
+  transform: translateY(-1px);
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: var(--shadow-glow);
+}
+
+.navbar-logo:hover .logo-text {
+  color: var(--accent-primary);
 }
 
 .navbar-logo-img {
