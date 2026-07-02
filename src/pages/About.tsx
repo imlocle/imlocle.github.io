@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { FiCode, FiCloud, FiCpu, FiLayers } from "react-icons/fi";
 
 import "@styles/pages/About.css";
 import profilePhoto from "@assets/loc-headshot.jpg";
-import { EXPERIENCE, SKILLS, EDUCATION, LANGUAGES } from "@data/experience";
+import { EXPERIENCE, SKILLS } from "@data/experience";
 import CtaSection from "@/components/section/CtaSection";
+import IconCard from "@/components/card/IconCard";
+import Reveal from "@/components/ui/Reveal";
 import TagList from "@/components/ui/TagList";
 import TitleHeader from "@/components/header/TitleHeader";
 
@@ -25,14 +28,14 @@ const About = () => {
         <div className="about-image-card card-hover">
           <img src={profilePhoto} alt="Loc Le" className="profile-photo" />
           <div className="about-name">Loc Le</div>
-          <div className="about-role">CTO & Cofounder</div>
+          <div className="about-role">CTO & Co-Founder</div>
           <div className="about-subtitle">Aethra Systems</div>
           <div className="about-location">Las Vegas • Remote</div>
         </div>
 
         <div className="about-right-content">
           <div className="about-intro">
-            <h2>CTO & Cofounder, Aethra Systems</h2>
+            <h2>CTO & Co-Founder, Aethra Systems</h2>
             <p className="about-lead">
               8+ years building scalable backend systems, cloud infrastructure,
               and AI platforms. Previously led backend at Envia and Neptune App
@@ -105,63 +108,58 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Current Focus */}
-      <motion.section
-        className="about-current"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h3>Current Focus</h3>
-        <div className="current-card card-hover">
-          <p>
-            Leading engineering at{" "}
-            <a
-              href="https://aethrasystems.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Aethra Systems
-            </a>
-            , helping businesses modernize operations through cloud
-            architecture, AI integration, and scalable digital solutions.
-          </p>
-          <div className="current-tech">
-            Cloud Architecture • AI/LLM Systems • Serverless Infrastructure •
-            System Modernization
-          </div>
-        </div>
-      </motion.section>
-
       {/* Expertise */}
-      <motion.section
-        className="about-expertise"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h3>Expertise</h3>
-        <div className="expertise-grid">
-          <div className="expertise-item card-hover">
-            <strong>Backend Systems</strong>
-            <p>Python, TypeScript, REST APIs, Event-Driven Architecture</p>
-          </div>
-          <div className="expertise-item card-hover">
-            <strong>Cloud Infrastructure</strong>
-            <p>AWS Lambda, API Gateway, DynamoDB, S3, Terraform</p>
-          </div>
-          <div className="expertise-item card-hover">
-            <strong>AI/LLM Integration</strong>
-            <p>AWS Bedrock, RAG Systems, Prompt Engineering</p>
-          </div>
-          <div className="expertise-item card-hover">
-            <strong>Architecture</strong>
-            <p>Serverless, Microservices, Domain-Driven Design</p>
+      <section className="about-expertise">
+        <div className="about-expertise-inner">
+          <h2 className="section-title">Expertise</h2>
+          <div className="expertise-grid">
+            <Reveal>
+              <IconCard
+                icon={<FiCode />}
+                title="Backend Systems"
+                items={[
+                  "Python, TypeScript, Node.js",
+                  "REST APIs & Event-Driven Architecture",
+                  "Layered service design patterns",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={100}>
+              <IconCard
+                icon={<FiCloud />}
+                title="Cloud Infrastructure"
+                items={[
+                  "AWS Lambda, API Gateway, DynamoDB",
+                  "S3, SQS, Step Functions",
+                  "Terraform & Infrastructure as Code",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={200}>
+              <IconCard
+                icon={<FiCpu />}
+                title="AI/LLM Integration"
+                items={[
+                  "AWS Bedrock & Foundation Models",
+                  "RAG systems & knowledge bases",
+                  "Guardrails & prompt engineering",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={300}>
+              <IconCard
+                icon={<FiLayers />}
+                title="Architecture"
+                items={[
+                  "Serverless & microservices",
+                  "Domain-Driven Design",
+                  "Cost optimization & scalability",
+                ]}
+              />
+            </Reveal>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Professional Timeline */}
       <section className="timeline-section">
@@ -174,7 +172,7 @@ const About = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="timeline-logo">
                 {exp.logo ? (
@@ -211,54 +209,39 @@ const About = () => {
       <section className="skills-section">
         <h2 className="section-title">Technical Skills</h2>
         <div className="skills-grid">
-          <div className="skill-category card-hover">
-            <h3>Languages</h3>
-            <TagList
-              items={[...SKILLS.languages.expert, ...SKILLS.languages.proficient, ...SKILLS.languages.familiar]}
-              variant="skill"
-            />
-          </div>
+          <Reveal>
+            <div className="skill-category card-hover">
+              <h3>Languages</h3>
+              <TagList
+                items={[...SKILLS.languages.expert, ...SKILLS.languages.proficient, ...SKILLS.languages.familiar]}
+                variant="skill"
+              />
+            </div>
+          </Reveal>
 
-          <div className="skill-category card-hover">
-            <h3>Backend & APIs</h3>
-            <TagList items={SKILLS.backend.frameworks} variant="skill" />
-            <TagList items={SKILLS.backend.patterns} variant="skill" />
-          </div>
+          <Reveal delay={100}>
+            <div className="skill-category card-hover">
+              <h3>Backend & APIs</h3>
+              <TagList items={SKILLS.backend.frameworks} variant="skill" />
+              <TagList items={SKILLS.backend.patterns} variant="skill" />
+            </div>
+          </Reveal>
 
-          <div className="skill-category card-hover">
-            <h3>Cloud & Infrastructure</h3>
-            <TagList items={SKILLS.cloud.aws} variant="skill" />
-            <TagList items={SKILLS.cloud.iac} variant="skill" />
-          </div>
+          <Reveal delay={200}>
+            <div className="skill-category card-hover">
+              <h3>Cloud & Infrastructure</h3>
+              <TagList items={SKILLS.cloud.aws} variant="skill" />
+              <TagList items={SKILLS.cloud.iac} variant="skill" />
+            </div>
+          </Reveal>
 
-          <div className="skill-category card-hover">
-            <h3>AI & Data</h3>
-            <TagList items={SKILLS.ai.llms} variant="skill" />
-            <TagList items={SKILLS.ai.rag} variant="skill" />
-          </div>
-        </div>
-      </section>
-
-      {/* Education & Languages */}
-      <section className="additional-section">
-        <div className="additional-grid">
-          <div className="additional-card card-hover">
-            <h3>Education</h3>
-            <p>
-              <strong>{EDUCATION.degree}</strong>
-            </p>
-            <p>{EDUCATION.school}</p>
-            <p className="year">{EDUCATION.year}</p>
-          </div>
-
-          <div className="additional-card card-hover">
-            <h3>Languages</h3>
-            {LANGUAGES.map((lang, i) => (
-              <p key={i}>
-                <strong>{lang.language}:</strong> {lang.proficiency}
-              </p>
-            ))}
-          </div>
+          <Reveal delay={300}>
+            <div className="skill-category card-hover">
+              <h3>AI & Data</h3>
+              <TagList items={SKILLS.ai.llms} variant="skill" />
+              <TagList items={SKILLS.ai.rag} variant="skill" />
+            </div>
+          </Reveal>
         </div>
       </section>
 

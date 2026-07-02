@@ -1,4 +1,5 @@
 // Professional experience timeline
+import aethraLogo from "@assets/aethra-systems-logo.png";
 import enviaLogo from "@assets/envia-logo.jpeg";
 import neptuneLogo from "@assets/neptune-logo.svg";
 import raxLogo from "@assets/rax-logo-2020.svg";
@@ -22,7 +23,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: "aethra",
     company: "Aethra Systems",
-    role: "CTO & Cofounder",
+    role: "CTO & Co-Founder",
     period: "Jun 2026 - Present",
     location: "Remote",
     description:
@@ -42,6 +43,7 @@ export const EXPERIENCE: Experience[] = [
       "AI/LLM",
       "Serverless",
     ],
+    logo: aethraLogo,
   },
   {
     id: "envia",

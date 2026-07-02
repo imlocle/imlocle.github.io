@@ -167,11 +167,12 @@
 
 .post-category {
   font-size: var(--text-xs);
-  color: var(--text-tertiary);
-  background: var(--bg-tertiary);
+  font-family: var(--font-mono);
+  color: var(--accent-secondary);
+  background: var(--accent-glow);
   padding: 4px 12px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent-primary);
 }
 
 .post-link-indicator {
@@ -191,40 +192,45 @@
 
 /* Topics Section */
 .topics-section {
-  max-width: 1400px;
-  margin: 0 auto;
+  background: #f0f2fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: var(--space-2xl) var(--space-lg);
+  margin-left: calc(-1 * var(--space-lg));
+  margin-right: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-2xl);
+}
+
+.topics-section .section-title {
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: var(--space-xl);
 }
 
 .topics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.topic-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  transition: all var(--transition-base);
+.topics-section .icon-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  height: 100%;
 }
 
-.topic-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
+.topics-section .icon-card__title {
+  color: #1a1a2e;
 }
 
-.topic-title {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+.topics-section .icon-card__icon {
+  background: #e6f1ff;
 }
 
-.topic-description {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: 1.6;
+.topics-section .icon-card__list li {
+  color: #3a3d47;
 }
 
 /* Responsive */

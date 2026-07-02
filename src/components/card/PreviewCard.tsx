@@ -25,7 +25,7 @@ const PreviewCard = ({
       transition={{ duration: 0.45 }}
       whileHover={{ y: -6, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
     >
       {(image || icon) && (
         <div className="preview-card-top">

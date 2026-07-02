@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 className="footer-title">Loc Le</h3>
             <p className="footer-description">
-              CTO & Cofounder at Aethra Systems. Building intelligent systems
+              CTO & Co-Founder at Aethra Systems. Building intelligent systems
               with cloud architecture, AI, and serverless infrastructure.
             </p>
           </div>

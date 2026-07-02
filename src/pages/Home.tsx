@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import "@styles/pages/Home.css";
 import CtaSection from "@components/section/CtaSection";
 import IconCard from "@/components/card/IconCard";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/header/SectionHeader";
 import TagList from "@components/ui/TagList";
 import alfredLogo from "@assets/alfred-logo.png";
@@ -118,7 +119,7 @@ const Home = () => {
           variants={motionVariants.container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <motion.div className="proof-card card-hover" variants={motionVariants.item}>
             <div className="proof-metric">10K+</div>
@@ -158,7 +159,7 @@ const Home = () => {
           className="case-study-card card-hover"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <div className="case-study-left">
@@ -227,59 +228,61 @@ const Home = () => {
         />
 
         <div className="expertise-grid">
-          <IconCard
-            icon={<FiCode />}
-            title="Backend Architecture & APIs"
-            items={[
-              "Serverless systems design",
-              "Scalable API architecture",
-              "Database design & optimization",
-              "Auth & authorization patterns",
-            ]}
-          />
-          <IconCard
-            icon={<FiZap />}
-            title="Cloud Infrastructure (AWS)"
-            items={[
-              "Lambda-first architecture",
-              "Infrastructure as Code",
-              "Cost optimization strategies",
-              "Migration & modernization",
-            ]}
-          />
-          <IconCard
-            icon={<FiTrendingUp />}
-            title="AI/LLM Integration"
-            items={[
-              "Production LLM systems",
-              "Guardrails & safety controls",
-              "RAG & knowledge bases",
-              "Cost-aware inference",
-            ]}
-          />
-          <IconCard
-            icon={<FiGithub />}
-            title="System Optimization"
-            items={[
-              "Performance tuning",
-              "Cost reduction initiatives",
-              "Reliability improvements",
-              "Technical debt resolution",
-            ]}
-          />
+          <Reveal>
+            <IconCard
+              icon={<FiCode />}
+              title="Backend Architecture & APIs"
+              items={[
+                "Serverless systems design",
+                "Scalable API architecture",
+                "Database design & optimization",
+                "Auth & authorization patterns",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <IconCard
+              icon={<FiZap />}
+              title="Cloud Infrastructure (AWS)"
+              items={[
+                "Lambda-first architecture",
+                "Infrastructure as Code",
+                "Cost optimization strategies",
+                "Migration & modernization",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={200}>
+            <IconCard
+              icon={<FiTrendingUp />}
+              title="AI/LLM Integration"
+              items={[
+                "Production LLM systems",
+                "Guardrails & safety controls",
+                "RAG & knowledge bases",
+                "Cost-aware inference",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={300}>
+            <IconCard
+              icon={<FiGithub />}
+              title="System Optimization"
+              items={[
+                "Performance tuning",
+                "Cost reduction initiatives",
+                "Reliability improvements",
+                "Technical debt resolution",
+              ]}
+            />
+          </Reveal>
         </div>
         </div>
       </section>
 
       {/* Personal Story Section */}
       <section className="page-container story-section">
-        <motion.div
-          className="story-content"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <Reveal>
           <h2 className="section-title">Why I Build This Way</h2>
 
           <div className="story-text">
@@ -310,7 +313,7 @@ const Home = () => {
                 Aethra Systems
               </a>{" "}
               to help other organizations do the same. The best
-              engineers solve invisible problems: 
+              engineers solve invisible problems:{" "}
               <strong>
                 cost spirals, scaling cliffs, production failures nobody
                 expected
@@ -327,7 +330,7 @@ const Home = () => {
               Read My Full Story
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}

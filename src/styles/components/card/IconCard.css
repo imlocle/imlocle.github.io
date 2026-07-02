@@ -3,6 +3,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
+  height: 100%;
 }
 
 .icon-card:hover {

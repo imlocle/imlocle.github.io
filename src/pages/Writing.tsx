@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { FiExternalLink, FiCalendar } from "react-icons/fi";
+import { FiExternalLink, FiCode, FiBriefcase, FiZap, FiBookOpen } from "react-icons/fi";
 
 import mediumPosts from "@data/medium-posts.json";
 import type { MediumPost } from "@models/medium";
 import "@styles/pages/Writing.css";
+import IconCard from "@/components/card/IconCard";
+import Reveal from "@/components/ui/Reveal";
 import TitleHeader from "@/components/header/TitleHeader";
 
 const Writing = () => {
@@ -15,6 +17,56 @@ const Writing = () => {
         title="Writing"
         subtitle="Thoughts on system architecture, cloud infrastructure, AI engineering, and lessons learned from building production systems."
       />
+
+      <section className="topics-section">
+        <h2 className="section-title">Topics I Write About</h2>
+        <div className="topics-grid">
+          <Reveal>
+            <IconCard
+              icon={<FiCode />}
+              title="Software Engineering"
+              items={[
+                "Production systems & real-world decisions",
+                "Technical architecture patterns",
+                "What actually matters in development",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <IconCard
+              icon={<FiBriefcase />}
+              title="Career & Job Search"
+              items={[
+                "Interview reflections & insights",
+                "Evaluation vs. real engineering",
+                "Navigating the job market",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={200}>
+            <IconCard
+              icon={<FiZap />}
+              title="Personal Growth & ADHD"
+              items={[
+                "Building systems for focus",
+                "Managing ADHD as an engineer",
+                "Turning challenges into momentum",
+              ]}
+            />
+          </Reveal>
+          <Reveal delay={300}>
+            <IconCard
+              icon={<FiBookOpen />}
+              title="Learning & Adaptation"
+              items={[
+                "Learning effectively as a developer",
+                "Turning failures into systems",
+                "Preparing for what matters",
+              ]}
+            />
+          </Reveal>
+        </div>
+      </section>
 
       <section className="posts-section">
         <div className="posts-header">
@@ -35,28 +87,6 @@ const Writing = () => {
           ))}
         </div>
       </section>
-
-      <section className="topics-section">
-        <h2 className="section-title">Topics I Write About</h2>
-        <div className="topics-grid">
-          <TopicCard
-            title="Software Engineering"
-            description="Production systems, technical decisions, and what actually matters in real-world development"
-          />
-          <TopicCard
-            title="Career & Job Search"
-            description="Reflections on interviews, job searching, and the gap between evaluation and real engineering work"
-          />
-          <TopicCard
-            title="Personal Growth & ADHD"
-            description="Managing ADHD, building systems for focus, and turning challenges into momentum"
-          />
-          <TopicCard
-            title="Learning & Adaptation"
-            description="How to learn effectively, turn failures into systems, and prepare for what matters"
-          />
-        </div>
-      </section>
     </div>
   );
 };
@@ -67,14 +97,6 @@ interface PostCardProps {
 }
 
 const PostCard = ({ post, index }: PostCardProps) => {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
 
   return (
     <motion.a
@@ -108,10 +130,6 @@ const PostCard = ({ post, index }: PostCardProps) => {
         <h3 className="post-title">{post.title}</h3>
         {post.subtitle && <p className="post-subtitle">{post.subtitle}</p>}
         <p className="post-description">{post.description}</p>
-        <div className="post-meta">
-          <FiCalendar />
-          <span>{formatDate(post.pubDate)}</span>
-        </div>
         {post.categories.length > 0 && (
           <div className="post-categories">
             {post.categories.map((category, i) => (
@@ -128,17 +146,5 @@ const PostCard = ({ post, index }: PostCardProps) => {
     </motion.a>
   );
 };
-
-interface TopicCardProps {
-  title: string;
-  description: string;
-}
-
-const TopicCard = ({ title, description }: TopicCardProps) => (
-  <div className="topic-card">
-    <h3 className="topic-title">{title}</h3>
-    <p className="topic-description">{description}</p>
-  </div>
-);
 
 export default Writing;

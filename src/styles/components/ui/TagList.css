@@ -26,16 +26,16 @@
   border: 1px solid var(--accent-primary);
 }
 
-/* Pill variant: neutral dark (hero tech stack, case study tags) */
+/* Pill variant: blue (hero tech stack, case study tags) */
 .tag--pill {
-  background: var(--bg-tertiary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
+  background: var(--accent-glow);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-primary);
 }
 
-/* Metric variant: neutral dark (project metrics) */
+/* Metric variant: blue (project metrics) */
 .tag--metric {
-  background: var(--bg-tertiary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
+  background: var(--accent-glow);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-primary);
 }

@@ -18,7 +18,7 @@ const CompanyCard = ({ link, imgLogo, alt }: CompanyCardProps) => {
         transition={{ duration: 0.5 }}
         whileHover={{ y: -10, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)" }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
       >
         <img src={imgLogo} alt={alt} />
       </motion.div>

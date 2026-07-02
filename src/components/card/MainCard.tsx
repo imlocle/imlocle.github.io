@@ -43,7 +43,7 @@ const MainCard = ({
       transition={{ duration: 0.5, delay: index * 0.06 }}
       whileHover={{ y: -6, boxShadow: "var(--box-shadow-hover)" }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
     >
       {(image || icon) && (
         <div className="main-card-media">
