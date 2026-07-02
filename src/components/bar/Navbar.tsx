@@ -54,7 +54,10 @@ const Navbar = () => {
   const isActive = (pathPrefix: string) => pathname.startsWith(pathPrefix);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${hidden && !menuOpen ? "navbar-hidden" : ""}`} ref={navbarRef}>
+    <nav
+      className={`navbar ${scrolled ? "scrolled" : ""} ${hidden && !menuOpen ? "navbar-hidden" : ""}`}
+      ref={navbarRef}
+    >
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img

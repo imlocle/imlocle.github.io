@@ -42,9 +42,9 @@ const Contact = () => {
             <h2 className="contact-card-title">Let's Connect</h2>
 
             <p className="card-description">
-              I'm always open to conversations about <strong>engineering</strong>,{" "}
-              <strong>collaborations</strong>, or interesting projects. For
-              business inquiries, head to{" "}
+              I'm always open to conversations about{" "}
+              <strong>engineering</strong>, <strong>collaborations</strong>, or
+              interesting projects. For business inquiries, head to{" "}
               <a
                 href="https://aethrasystems.com"
                 target="_blank"

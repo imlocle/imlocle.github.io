@@ -114,7 +114,15 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <TagList
-              items={["Python", "TypeScript", "AWS", "Lambda", "DynamoDB", "IaC", "AI/LLM"]}
+              items={[
+                "Python",
+                "TypeScript",
+                "AWS",
+                "Lambda",
+                "DynamoDB",
+                "IaC",
+                "AI/LLM",
+              ]}
               variant="pill"
             />
           </motion.div>
@@ -124,37 +132,53 @@ const Home = () => {
       {/* Social Proof Section */}
       <section className="social-proof-section">
         <div className="page-container">
-        <motion.div
-          className="social-proof-grid"
-          variants={motionVariants.container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
-            <div className="proof-metric">10K+</div>
-            <div className="proof-label">Active Users Supported</div>
-            <div className="proof-detail">Neptune App production platform</div>
-          </motion.div>
+          <motion.div
+            className="social-proof-grid"
+            variants={motionVariants.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            <motion.div
+              className="proof-card card-hover"
+              variants={motionVariants.item}
+            >
+              <div className="proof-metric">10K+</div>
+              <div className="proof-label">Active Users Supported</div>
+              <div className="proof-detail">
+                Neptune App production platform
+              </div>
+            </motion.div>
 
-          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
-            <div className="proof-metric">$1.4M</div>
-            <div className="proof-label">Annual Savings Delivered</div>
-            <div className="proof-detail">Through optimization & scale</div>
-          </motion.div>
+            <motion.div
+              className="proof-card card-hover"
+              variants={motionVariants.item}
+            >
+              <div className="proof-metric">$1.4M</div>
+              <div className="proof-label">Annual Savings Delivered</div>
+              <div className="proof-detail">Through optimization & scale</div>
+            </motion.div>
 
-          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
-            <div className="proof-metric">40%</div>
-            <div className="proof-label">Response Time Improvement</div>
-            <div className="proof-detail">AI-powered systems optimization</div>
-          </motion.div>
+            <motion.div
+              className="proof-card card-hover"
+              variants={motionVariants.item}
+            >
+              <div className="proof-metric">40%</div>
+              <div className="proof-label">Response Time Improvement</div>
+              <div className="proof-detail">
+                AI-powered systems optimization
+              </div>
+            </motion.div>
 
-          <motion.div className="proof-card card-hover" variants={motionVariants.item}>
-            <div className="proof-metric">8+</div>
-            <div className="proof-label">Years Building Systems</div>
-            <div className="proof-detail">Across backend, cloud & AI</div>
+            <motion.div
+              className="proof-card card-hover"
+              variants={motionVariants.item}
+            >
+              <div className="proof-metric">8+</div>
+              <div className="proof-label">Years Building Systems</div>
+              <div className="proof-detail">Across backend, cloud & AI</div>
+            </motion.div>
           </motion.div>
-        </motion.div>
         </div>
       </section>
 
@@ -204,7 +228,13 @@ const Home = () => {
 
             <div className="case-study-tech">
               <TagList
-                items={["AWS Bedrock", "Lambda", "DynamoDB", "Terraform", "LLM Guardrails"]}
+                items={[
+                  "AWS Bedrock",
+                  "Lambda",
+                  "DynamoDB",
+                  "Terraform",
+                  "LLM Guardrails",
+                ]}
                 variant="pill"
               />
             </div>
@@ -232,61 +262,61 @@ const Home = () => {
       {/* Expertise Grid */}
       <section className="expertise-section">
         <div className="page-container">
-        <SectionHeader
-          title="What I Specialize In"
-          subtitle="Domains where deep expertise creates value"
-        />
+          <SectionHeader
+            title="What I Specialize In"
+            subtitle="Domains where deep expertise creates value"
+          />
 
-        <div className="expertise-grid">
-          <Reveal>
-            <IconCard
-              icon={<FiCode />}
-              title="Backend Architecture & APIs"
-              items={[
-                "Serverless systems design",
-                "Scalable API architecture",
-                "Database design & optimization",
-                "Auth & authorization patterns",
-              ]}
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <IconCard
-              icon={<FiZap />}
-              title="Cloud Infrastructure (AWS)"
-              items={[
-                "Lambda-first architecture",
-                "Infrastructure as Code",
-                "Cost optimization strategies",
-                "Migration & modernization",
-              ]}
-            />
-          </Reveal>
-          <Reveal delay={200}>
-            <IconCard
-              icon={<FiTrendingUp />}
-              title="AI/LLM Integration"
-              items={[
-                "Production LLM systems",
-                "Guardrails & safety controls",
-                "RAG & knowledge bases",
-                "Cost-aware inference",
-              ]}
-            />
-          </Reveal>
-          <Reveal delay={300}>
-            <IconCard
-              icon={<FiGithub />}
-              title="System Optimization"
-              items={[
-                "Performance tuning",
-                "Cost reduction initiatives",
-                "Reliability improvements",
-                "Technical debt resolution",
-              ]}
-            />
-          </Reveal>
-        </div>
+          <div className="expertise-grid">
+            <Reveal>
+              <IconCard
+                icon={<FiCode />}
+                title="Backend Architecture & APIs"
+                items={[
+                  "Serverless systems design",
+                  "Scalable API architecture",
+                  "Database design & optimization",
+                  "Auth & authorization patterns",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={100}>
+              <IconCard
+                icon={<FiZap />}
+                title="Cloud Infrastructure (AWS)"
+                items={[
+                  "Lambda-first architecture",
+                  "Infrastructure as Code",
+                  "Cost optimization strategies",
+                  "Migration & modernization",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={200}>
+              <IconCard
+                icon={<FiTrendingUp />}
+                title="AI/LLM Integration"
+                items={[
+                  "Production LLM systems",
+                  "Guardrails & safety controls",
+                  "RAG & knowledge bases",
+                  "Cost-aware inference",
+                ]}
+              />
+            </Reveal>
+            <Reveal delay={300}>
+              <IconCard
+                icon={<FiGithub />}
+                title="System Optimization"
+                items={[
+                  "Performance tuning",
+                  "Cost reduction initiatives",
+                  "Reliability improvements",
+                  "Technical debt resolution",
+                ]}
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 

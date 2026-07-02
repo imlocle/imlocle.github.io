@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiGithub, FiExternalLink, FiFileText, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import {
+  FiGithub,
+  FiExternalLink,
+  FiFileText,
+  FiChevronDown,
+  FiChevronUp,
+} from "react-icons/fi";
 
 import { PROJECTS, type Project } from "@data/projects";
 import "@styles/pages/Work.css";
@@ -54,9 +60,13 @@ const Work = () => {
                 onClick={() => setShowMore(!showMore)}
               >
                 {showMore ? (
-                  <>Show Less <FiChevronUp /></>
+                  <>
+                    Show Less <FiChevronUp />
+                  </>
                 ) : (
-                  <>Show More Projects <FiChevronDown /></>
+                  <>
+                    Show More Projects <FiChevronDown />
+                  </>
                 )}
               </button>
             </div>

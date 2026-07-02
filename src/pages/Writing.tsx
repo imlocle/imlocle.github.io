@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { FiExternalLink, FiCode, FiBriefcase, FiZap, FiBookOpen } from "react-icons/fi";
+import {
+  FiExternalLink,
+  FiCode,
+  FiBriefcase,
+  FiZap,
+  FiBookOpen,
+} from "react-icons/fi";
 
 import mediumPosts from "@data/medium-posts.json";
 import type { MediumPost } from "@models/medium";
@@ -97,7 +103,6 @@ interface PostCardProps {
 }
 
 const PostCard = ({ post, index }: PostCardProps) => {
-
   return (
     <motion.a
       href={post.link}

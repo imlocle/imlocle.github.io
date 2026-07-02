@@ -41,8 +41,8 @@ const About = () => {
               <strong>scalable systems</strong>,{" "}
               <strong>cloud infrastructure</strong>, and{" "}
               <strong>AI platforms</strong>. Previously led engineering at{" "}
-              <strong>Envia</strong> and{" "}
-              <strong>Neptune App</strong> (10K+ users). Now building{" "}
+              <strong>Envia</strong> and <strong>Neptune App</strong> (10K+
+              users). Now building{" "}
               <a
                 href="https://aethrasystems.com"
                 target="_blank"
@@ -198,10 +198,7 @@ const About = () => {
                     <li key={i}>{achievement}</li>
                   ))}
                 </ul>
-                <TagList
-                  items={exp.techStack.slice(0, 6)}
-                  variant="tech"
-                />
+                <TagList items={exp.techStack.slice(0, 6)} variant="tech" />
               </div>
             </motion.div>
           ))}
@@ -216,7 +213,11 @@ const About = () => {
             <div className="skill-category card-hover">
               <h3>Languages</h3>
               <TagList
-                items={[...SKILLS.languages.expert, ...SKILLS.languages.proficient, ...SKILLS.languages.familiar]}
+                items={[
+                  ...SKILLS.languages.expert,
+                  ...SKILLS.languages.proficient,
+                  ...SKILLS.languages.familiar,
+                ]}
                 variant="skill"
               />
             </div>
