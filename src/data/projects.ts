@@ -70,7 +70,6 @@ export const PROJECTS: Project[] = [
       "Structured JSON logging with CloudWatch",
     ],
     links: {
-      github: "https://github.com/imlocle/alfred-ai-assistant",
       live: "https://imlocle.com",
       caseStudy: ALFRED_CASE_STUDY_PATH,
     },
@@ -153,44 +152,6 @@ export const PROJECTS: Project[] = [
     },
     image: codeIntelLogo,
   },
-  // {
-  //   id: "self-growth-backend",
-  //   name: "Self-Growth Backend",
-  //   tagline:
-  //     "Production-ready serverless backend for personal development tracking",
-  //   description:
-  //     "Personal open-source project: comprehensive SaaS backend supporting habits, todos, blog posts, and multi-user households with analytics. Built with 37 Lambda functions, single-table DynamoDB design, and complete API documentation. Frontend still in development.",
-  //   category: "opensource",
-  //   featured: true,
-  //   status: "ongoing",
-  //   metrics: [
-  //     "37 Lambda functions",
-  //     "Multi-user households",
-  //     "Production-ready",
-  //     "Comprehensive docs",
-  //   ],
-  //   techStack: [
-  //     "Python 3.13",
-  //     "AWS Lambda",
-  //     "API Gateway",
-  //     "DynamoDB",
-  //     "Cognito",
-  //     "Terraform",
-  //     "CloudWatch",
-  //   ],
-  //   highlights: [
-  //     "Layered architecture (Handler → Controller → Service → Repository)",
-  //     "Single-table DynamoDB design with GSIs",
-  //     "JWT authentication with Cognito",
-  //     "Rate limiting and input sanitization",
-  //     "Habit analytics with streaks and completion rates",
-  //     "Comprehensive API documentation and integration guides",
-  //   ],
-  //   links: {
-  //     github: "https://github.com/imlocle/self-growth-backend",
-  //     docs: "https://github.com/imlocle/self-growth-backend#readme",
-  //   },
-  // },
   {
     id: "envia",
     name: "Envia",

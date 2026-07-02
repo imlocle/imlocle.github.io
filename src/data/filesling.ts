@@ -1,5 +1,4 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type { PreviewCardData } from "@models/card";
 
 export const FILESLING_TITLE = "FileSling — File Manager for Mac";
 export const FILESLING_CASE_STUDY_PATH = "/work/case-study/filesling";
@@ -16,13 +15,6 @@ export const FILESLING_TECHNOLOGIES = [
   "PyInstaller",
   "macOS Keychain",
 ];
-
-export const FILESLING_PREVIEW_CARD: PreviewCardData = {
-  title: FILESLING_TITLE,
-  description:
-    "A file manager for Mac that sends files to connected devices — SSH servers, Raspberry Pis, Android phones, iPhones, tablets, and VR headsets — through a clean drag-and-drop interface.",
-  link: FILESLING_CASE_STUDY_PATH,
-};
 
 export const FILESLING_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${FILESLING_TITLE}: Case Study`,

@@ -1,6 +1,4 @@
-import alfredLogo from "@assets/alfred-logo.png";
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type { MainCardData, PreviewCardData } from "@models/card";
 
 export const ALFRED_GREETINGS = [
   "Good day. I am Alfred, Mr. Loc Le's trusted AI butler. How may I be of service to you today?",
@@ -29,28 +27,6 @@ export const ALFRED_TECHNOLOGIES = [
   "IP-based Rate Limiting",
   "Serverless Architecture",
 ];
-
-export const ALFRED_MAIN_CARD: MainCardData = {
-  id: "alfred",
-  title: `${ALFRED_TITLE} (AWS Bedrock)`,
-  description:
-    "Production-ready AI assistant platform built with AWS Bedrock and Lambda, designed with strict guardrails, rate limiting, and cost-aware infrastructure.",
-  outcomes:
-    "Implemented rate limiting and a stable serverless architecture so the chatbot can handle real traffic without spiking cost or failing under load.",
-  technologies: ALFRED_TECHNOLOGIES,
-  image: alfredLogo,
-  link: ALFRED_CASE_STUDY_PATH,
-  ctaLabel: "View Case Study",
-  target: "_self",
-};
-
-export const ALFRED_PREVIEW_CARD: PreviewCardData = {
-  title: ALFRED_TITLE,
-  description:
-    "Production AI assistant with strict guardrails and low-cost AWS infrastructure.",
-  image: alfredLogo,
-  link: ALFRED_CASE_STUDY_PATH,
-};
 
 export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${ALFRED_TITLE}: Case Study`,
@@ -143,7 +119,6 @@ export const ALFRED_CASE_STUDY_CONFIG: CaseStudyConfig = {
   technologies: ALFRED_TECHNOLOGIES,
 
   projectLinks: {
-    github: "https://github.com/imlocle/alfred-ai-assistant",
     live: "https://imlocle.com?chat=true",
   },
 

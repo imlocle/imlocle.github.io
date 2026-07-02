@@ -1,5 +1,3 @@
-import codeIntelPlatformLogo from "@assets/code-intel-platform-logo.png";
-import type { MainCardData, PreviewCardData } from "@models/card";
 import type { CaseStudyConfig } from "@models/caseStudy";
 
 export const CODE_INTELLIGENCE_TITLE = "Code Intelligence Platform";
@@ -14,27 +12,6 @@ export const CODE_INTELLIGENCE_TECHNOLOGIES = [
   "Vector Search",
   "CLI Tooling",
 ];
-
-export const CODE_INTELLIGENCE_MAIN_CARD: MainCardData = {
-  id: "code-intelligence-platform",
-  title: `${CODE_INTELLIGENCE_TITLE} — RAG for Local Codebases`,
-  description:
-    "Python CLI that indexes a repository, generates embeddings, retrieves relevant context, and answers questions with grounded code-aware responses.",
-  outcomes:
-    "Speeds up onboarding and debugging by turning large codebases into a searchable assistant for code discovery and explanations.",
-  technologies: CODE_INTELLIGENCE_TECHNOLOGIES,
-  image: codeIntelPlatformLogo,
-  ctaLabel: "View Case Study",
-  link: CODE_INTELLIGENCE_CASE_STUDY_PATH,
-  target: "_self",
-};
-
-export const CODE_INTELLIGENCE_PREVIEW_CARD: PreviewCardData = {
-  title: CODE_INTELLIGENCE_TITLE,
-  description: "RAG CLI that answers questions about your repo.",
-  image: codeIntelPlatformLogo,
-  link: CODE_INTELLIGENCE_CASE_STUDY_PATH,
-};
 
 export const CODE_INTELLIGENCE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${CODE_INTELLIGENCE_TITLE}: Case Study`,

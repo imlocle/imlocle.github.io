@@ -1,10 +1,4 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type {
-  MainCardData,
-  PreviewCardData,
-  CompanyCardData,
-} from "@models/card";
-import neptuneLogo from "@assets/neptune-logo.svg";
 
 export const NEPTUNE_TITLE = "Neptune App — Cloud-Native SaaS Platform";
 export const NEPTUNE_CASE_STUDY_PATH = "/work/case-study/neptune";
@@ -29,43 +23,6 @@ export const NEPTUNE_TECHNOLOGIES = [
   "Event-Driven Design",
   "Analytics Pipelines",
 ];
-
-export const NEPTUNE_MAIN_CARD: MainCardData = {
-  id: "neptune",
-  title: NEPTUNE_TITLE,
-  description:
-    "Led backend architecture and delivery for a cloud-native SaaS platform supporting 10,000+ active iOS users with scalable serverless APIs, real-time data processing, analytics pipelines (Jupiter ETL), and AI chatbot integration (Moody).",
-  outcomes:
-    "Designed and delivered production-ready serverless backend that scaled to 10K+ users while maintaining high reliability and improving team delivery velocity by ~20%. Built Jupiter ETL for analytics and Moody AI chatbot using AWS Bedrock.",
-  highlights: [
-    "Architected serverless backend using TypeScript, Python, AWS Lambda, and API Gateway",
-    "Built Jupiter ETL pipeline for analytics data ingestion and Parquet generation",
-    "Implemented Moody AI chatbot using AWS Bedrock Nova Lite with knowledge base injection",
-    "Designed scalable data models and analytics pipelines for product insights",
-    "Guided team of 4 engineers through system design and technical planning",
-    "Implemented operational tooling to support AI-driven features",
-    "Translated product requirements into reliable, scalable backend systems",
-  ],
-  technologies: NEPTUNE_TECHNOLOGIES,
-  // image: neptuneLogo,
-  link: NEPTUNE_CASE_STUDY_PATH,
-  ctaLabel: "View Case Study",
-  target: "_self",
-};
-
-export const NEPTUNE_PREVIEW_CARD: PreviewCardData = {
-  title: "Neptune App",
-  description:
-    "Cloud-native SaaS platform serving 10K+ users with serverless architecture.",
-  // image: neptuneLogo,
-  link: NEPTUNE_CASE_STUDY_PATH,
-};
-
-export const NEPTUNE_COMPANY_CARD: CompanyCardData = {
-  alt: "Neptune App",
-  imageLogo: neptuneLogo,
-  link: "https://www.linkedin.com/company/theneptuneapp/",
-};
 
 export const NEPTUNE_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${NEPTUNE_TITLE}: Case Study`,

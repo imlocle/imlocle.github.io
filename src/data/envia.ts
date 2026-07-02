@@ -1,10 +1,4 @@
 import type { CaseStudyConfig } from "@models/caseStudy";
-import type {
-  MainCardData,
-  PreviewCardData,
-  CompanyCardData,
-} from "@models/card";
-import enviaLogo from "@assets/envia-logo.jpeg";
 
 export const ENVIA_TITLE = "Envia — Family Communication Platform";
 export const ENVIA_CASE_STUDY_PATH = "/work/case-study/envia";
@@ -29,41 +23,6 @@ export const ENVIA_TECHNOLOGIES = [
   "Terraform",
   "SQLAlchemy",
 ];
-
-export const ENVIA_MAIN_CARD: MainCardData = {
-  id: "envia",
-  title: ENVIA_TITLE,
-  description:
-    "Restructured and built core backend services for a family communication platform. Designed notification scheduling, media processing infrastructure, OAuth token management, and invitation delivery systems across 7 microservices.",
-  outcomes:
-    "Delivered production-ready microservices architecture with event-driven communication, multi-provider OAuth, AI-powered notifications, and CDN-backed media delivery. Restructured legacy services into clean layered architectures.",
-  highlights: [
-    "Restructured user-api with layered architecture (Handler → Controller → Service → Repository)",
-    "Designed and built Notification Scheduler Sender with 12 Lambda functions and 6 DynamoDB tables",
-    "Implemented media processing infrastructure with S3, CloudFront CDN, and presigned URL uploads",
-    "Built invitation processing system with SQS FIFO, Step Functions, and SES email delivery",
-    "Restructured OAuth Forge for multi-provider token management (Gmail, Microsoft, Auth0, Apple)",
-    "Redesigned custom authorizer supporting Auth0, Google, and Microsoft JWT validation",
-    "Restructured Ingest pipeline with 28 Lambda functions for email/calendar ingestion",
-  ],
-  technologies: ENVIA_TECHNOLOGIES,
-  link: ENVIA_CASE_STUDY_PATH,
-  ctaLabel: "View Case Study",
-  target: "_self",
-};
-
-export const ENVIA_PREVIEW_CARD: PreviewCardData = {
-  title: "Envia",
-  description:
-    "Family communication platform with serverless microservices architecture.",
-  link: ENVIA_CASE_STUDY_PATH,
-};
-
-export const ENVIA_COMPANY_CARD: CompanyCardData = {
-  alt: "Envia",
-  imageLogo: enviaLogo,
-  link: "https://enviatogether.com/",
-};
 
 export const ENVIA_CASE_STUDY_CONFIG: CaseStudyConfig = {
   pageTitle: `${ENVIA_TITLE}: Case Study`,
